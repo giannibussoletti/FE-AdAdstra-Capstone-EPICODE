@@ -9,11 +9,13 @@ import { fab } from "@fortawesome/free-brands-svg-icons"
 library.add(fas, far, fab)
 import type { JSX } from "react/jsx-runtime"
 import Navbar from "./assets/components/Navbar"
+import HomeSlider from "./assets/components/HomeSlider"
 
 const App = (): JSX.Element => {
   return (
     <>
       <Navbar />
+      <HomeSlider />
     </>
   )
 }
