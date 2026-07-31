@@ -13,12 +13,12 @@ const Navbar = (): JSX.Element => {
               src="logo_nav.png"
               alt="logo adastra cinema"
               style={{ maxHeight: "55px" }}
-              className=" ms-3"
+              className=" ms-3 py-2"
             />
             <FontAwesomeIcon
               icon={faBars}
               style={{ color: "#fff" }}
-              size="2xl"
+              size="xl"
             />
           </Col>
         </Row>
