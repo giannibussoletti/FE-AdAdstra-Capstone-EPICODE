@@ -1,4 +1,4 @@
-import { Dropdown, Container, Row, Col, Button } from "react-bootstrap"
+import { Dropdown, Container, Row, Col } from "react-bootstrap"
 import { province, randomNum } from "../temp"
 import { useState } from "react"
 
@@ -8,13 +8,18 @@ const CitySearch = () => {
   return (
     <Container>
       <Row>
-        <Col>
-          <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
+        <Col className="p-0">
+          <p>seleziona la tua città</p>
+          <Dropdown className="w-100">
+            <Dropdown.Toggle
+              variant="success"
+              id="dropdown-basic"
+              className="w-100 d-flex justify-content-between align-items-center px-3 rounded-0 bg-danger"
+            >
               {city}
             </Dropdown.Toggle>
 
-            <Dropdown.Menu>
+            <Dropdown.Menu className="w-100">
               {province.map((prv) => {
                 return (
                   <Dropdown.Item
@@ -27,9 +32,6 @@ const CitySearch = () => {
               })}
             </Dropdown.Menu>
           </Dropdown>
-        </Col>
-        <Col>
-          <Button variant="primary">Primary</Button>
         </Col>
       </Row>
     </Container>
