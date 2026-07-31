@@ -9,12 +9,14 @@ library.add(fas, far, fab)
 import Navbar from "./assets/components/Navbar"
 import HomeSlider from "./assets/components/HomeSlider"
 import CitySearch from "./assets/components/CitySearch"
+import MustSeeMovies from "./assets/components/MustSeeMovies"
 const App = () => {
   return (
     <>
       <Navbar />
       <HomeSlider />
       <CitySearch />
+      <MustSeeMovies />
     </>
   )
 }
