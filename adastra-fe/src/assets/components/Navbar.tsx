@@ -1,9 +1,9 @@
 import { Col, Container, Row } from "react-bootstrap"
-import type { JSX } from "react/jsx-runtime"
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars } from "@fortawesome/free-solid-svg-icons"
 
-const Navbar = (): JSX.Element => {
+const Navbar = () => {
   return (
     <>
       <Container fluid className="bg-black">
