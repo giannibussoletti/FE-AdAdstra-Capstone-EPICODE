@@ -1,11 +1,6 @@
 import { Carousel } from "react-bootstrap"
 // TODO da cancellare una volta fatta la fetch per richiamare le immagini dal DB
-const arrayMapImg: string[] = [
-  "https://placehold.co/600x300",
-  "https://placehold.co/600x300",
-  "https://placehold.co/600x300",
-]
-const randomNum: number = Math.ceil(Math.random() * 1200)
+import { arrayMapImg, randomNum } from "../temp"
 
 const HomeSlider = () => {
   return (
