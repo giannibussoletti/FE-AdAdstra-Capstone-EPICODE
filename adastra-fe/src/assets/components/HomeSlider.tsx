@@ -1,5 +1,4 @@
 import { Carousel } from "react-bootstrap"
-import type { JSX } from "react/jsx-runtime"
 // TODO da cancellare una volta fatta la fetch per richiamare le immagini dal DB
 const arrayMapImg: string[] = [
   "https://placehold.co/600x300",
@@ -8,7 +7,7 @@ const arrayMapImg: string[] = [
 ]
 const randomNum: number = Math.ceil(Math.random() * 1200)
 
-const HomeSlider = (): JSX.Element => {
+const HomeSlider = () => {
   return (
     <>
       <Carousel controls={false} indicators={false}>
