@@ -1,5 +1,4 @@
-import "bootstrap/dist/css/bootstrap.min.css"
-import "./assets/css/style.css"
+import "./assets/custom/custom.scss"
 import { library } from "@fortawesome/fontawesome-svg-core"
 
 import { fas } from "@fortawesome/free-solid-svg-icons"
