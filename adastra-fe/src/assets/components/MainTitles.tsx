@@ -1,7 +1,13 @@
-const MainTitles = () => {
+type propString = {
+  title: string
+}
+
+const MainTitles = ({ title }: propString) => {
   return (
     <>
-      <h2>da non perdere</h2>
+      <h2 className="mb-4">
+        <span className="underline-gradient">{title}</span>
+      </h2>
     </>
   )
 }

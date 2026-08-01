@@ -1,10 +1,11 @@
 import { Carousel } from "react-bootstrap"
 import { arrayPoster, randomNum } from "../temp"
-// import MainTitles from "./MainTitles"
+import MainTitles from "./MainTitles"
+
 const MustSeeMovies = () => {
   return (
     <>
-      {/* <MainTitles /> */}
+      <MainTitles title={"da non perdere"} />
       <Carousel indicators={false}>
         {arrayPoster.map((poster) => {
           return (
