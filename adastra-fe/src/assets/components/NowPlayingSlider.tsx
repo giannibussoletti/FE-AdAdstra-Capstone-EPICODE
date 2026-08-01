@@ -3,9 +3,11 @@ import SingleSlide from "./SliderComponents/SingleSlide"
 import SliderButton from "./SliderComponents/SliderButton"
 import { arrayPoster } from "../temp"
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons"
+import MainTitles from "./MainTitles"
 const NowPlayingSlider = function () {
   return (
-    <Container fluid className="px-5 my-5">
+    <Container className="mt-3">
+      <MainTitles string="ora in sala" />
       <Row className="position-relative my-5 pb-3">
         <Row
           xs={1}

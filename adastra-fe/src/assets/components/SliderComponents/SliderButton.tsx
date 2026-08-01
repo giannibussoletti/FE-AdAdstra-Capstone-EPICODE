@@ -7,7 +7,7 @@ const SliderButton = function ({
   arrowDirectionIcon,
 }: ArrowSlider) {
   const buttonSliderClass =
-    "p-0 position-absolute top-0 text-end h-100 d-flex justify-content-center align-items-center"
+    "p-0 position-absolute top-0 text-end h-100 d-flex align-items-center"
 
   return (
     <span
@@ -31,12 +31,14 @@ const SliderButton = function ({
         " " +
         arrowPosition +
         "-0 " +
-        buttonSliderClass
+        buttonSliderClass +
+        " justify-content-" +
+        arrowPosition
       }
     >
       <FontAwesomeIcon
         icon={arrowDirectionIcon}
-        className="mt-5"
+        className={"arrow-" + arrowDirection + "-bg"}
         size="2x"
         style={{
           color: "rgb(255, 255, 255)",

@@ -15,6 +15,7 @@ const SingleSlide = function ({
         alt={originalTitle}
         id={uniqueId}
       />
+      <h4 className=" fw-normal text-uppercase mt-3">{originalTitle}</h4>
     </Col>
   )
 }
