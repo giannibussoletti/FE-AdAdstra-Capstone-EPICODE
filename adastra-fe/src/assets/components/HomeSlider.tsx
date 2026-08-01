@@ -6,7 +6,7 @@ const HomeSlider = () => {
   return (
     <Container fluid>
       <Row>
-        <Col>
+        <Col className="p-0">
           <Carousel controls={false} indicators={false}>
             {arrayMapImg.map((img) => {
               return (

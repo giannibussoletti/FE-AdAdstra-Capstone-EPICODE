@@ -19,16 +19,53 @@ export const arrayMapImg = [
 export const randomNum = Math.ceil(Math.random() * 1200)
 
 type Poster = {
-  nome: string
+  name: string
   link: string
+  date: Date
+  time: string
 }
 
 export const arrayPoster: Poster[] = [
-  { nome: "backrooms", link: "img/backrooms.jpg" },
-  { nome: "evil dead", link: "img/evil_dead.jpg" },
-  { nome: "moana", link: "img/moana.jpg" },
-  { nome: "obsession", link: "img/obsession.jpg" },
-  { nome: "odissey", link: "img/odissey.jpg" },
-  { nome: "supergirl", link: "img/supergirl.jpg" },
-  { nome: "toy story", link: "img/toystory.jpg" },
+  {
+    name: "backrooms",
+    link: "img/backrooms.jpg",
+    date: new Date(2026, 8, 17),
+    time: "2:50",
+  },
+  {
+    name: "evil dead il rogo del male",
+    link: "img/evil_dead.jpg",
+    date: new Date(2026, 8, 17),
+    time: "2:50",
+  },
+  {
+    name: "moana",
+    link: "img/moana.jpg",
+    date: new Date(2026, 8, 17),
+    time: "2:50",
+  },
+  {
+    name: "obsession",
+    link: "img/obsession.jpg",
+    date: new Date(2026, 8, 17),
+    time: "2:50",
+  },
+  {
+    name: "the odissey",
+    link: "img/odissey.jpg",
+    date: new Date(2026, 8, 17),
+    time: "2:50",
+  },
+  {
+    name: "supergirl",
+    link: "img/supergirl.jpg",
+    date: new Date(2026, 8, 17),
+    time: "2:50",
+  },
+  {
+    name: "toy story",
+    link: "img/toystory.jpg",
+    date: new Date(2026, 8, 17),
+    time: "2:50",
+  },
 ]
