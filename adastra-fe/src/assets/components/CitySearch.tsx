@@ -7,7 +7,9 @@ const CitySearch = () => {
 
   return (
     <>
-      <p>seleziona la tua città</p>
+      <p className="text-uppercase mb-0 mt-3 fw-medium">
+        seleziona la tua città
+      </p>
       <Dropdown className="w-100">
         <Dropdown.Toggle
           variant="success"
