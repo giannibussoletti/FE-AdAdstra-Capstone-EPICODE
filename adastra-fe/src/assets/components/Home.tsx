@@ -8,12 +8,12 @@ const Home = () => {
       <HomeSlider />
       <Container>
         <Row>
-          <Col className="p-0 mt-2 mb-5">
+          <Col className="p-0 mt-2 mb-5 mx-3">
             <CitySearch />
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col className="mx-3">
             <MustSeeMovies />
           </Col>
         </Row>
