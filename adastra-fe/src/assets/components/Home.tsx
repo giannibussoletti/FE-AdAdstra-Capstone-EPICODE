@@ -2,6 +2,7 @@ import { Container, Row, Col } from "react-bootstrap"
 import CitySearch from "./CitySearch"
 import MustSeeMovies from "./MustSeeMovies"
 import HomeSlider from "./HomeSlider"
+import NowPlayingSlider from "./NowPlayingSlider"
 const Home = () => {
   return (
     <>
@@ -17,7 +18,12 @@ const Home = () => {
             <MustSeeMovies />
           </Col>
         </Row>
+        <hr />
+        <Row>
+          <Col></Col>
+        </Row>
       </Container>
+      <NowPlayingSlider />
     </>
   )
 }
