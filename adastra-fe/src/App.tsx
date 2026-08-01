@@ -8,13 +8,14 @@ import { fab } from "@fortawesome/free-brands-svg-icons"
 library.add(fas, far, fab)
 import Navbar from "./assets/components/Navbar"
 import HomeSlider from "./assets/components/HomeSlider"
-import CitySearch from "./assets/components/CitySearch"
+import Home from "./assets/components/Home"
+
 const App = () => {
   return (
     <>
       <Navbar />
       <HomeSlider />
-      <CitySearch />
+      <Home />
     </>
   )
 }
