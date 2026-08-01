@@ -1,11 +1,11 @@
 import { Carousel } from "react-bootstrap"
 import { arrayPoster, randomNum } from "../temp"
 import MainTitles from "./MainTitles"
-
+import Buttons from "./Buttons"
 const MustSeeMovies = () => {
   return (
     <>
-      <MainTitles title={"da non perdere"} />
+      <MainTitles string={"da non perdere"} />
       <Carousel indicators={false}>
         {arrayPoster.map((poster) => {
           return (
@@ -30,6 +30,9 @@ const MustSeeMovies = () => {
           )
         })}
       </Carousel>
+      <div className="text-center mb-3 mt-4">
+        <Buttons string={"acquista biglietto"} />
+      </div>
     </>
   )
 }
