@@ -1,12 +1,10 @@
-type propString = {
-  title: string
-}
+import type { propString } from "../types"
 
-const MainTitles = ({ title }: propString) => {
+const MainTitles = ({ string }: propString) => {
   return (
     <>
       <h2 className="mb-4">
-        <span className="underline-gradient">{title}</span>
+        <span className="underline-gradient">{string}</span>
       </h2>
     </>
   )
