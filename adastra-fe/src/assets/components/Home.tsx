@@ -20,10 +20,17 @@ const Home = () => {
         </Row>
         <hr />
         <Row>
-          <Col></Col>
+          <Col>
+            <NowPlayingSlider string="ora in sala" />
+          </Col>
+        </Row>
+        <hr />
+        <Row>
+          <Col>
+            <NowPlayingSlider string="prevendite aperte" />
+          </Col>
         </Row>
       </Container>
-      <NowPlayingSlider />
     </>
   )
 }
