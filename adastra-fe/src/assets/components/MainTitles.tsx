@@ -1,6 +1,6 @@
-import type { propString } from "../types"
+import type { PropString } from "../types"
 
-const MainTitles = ({ string }: propString) => {
+const MainTitles = ({ string }: PropString) => {
   return (
     <>
       <h2 className="mb-4">
