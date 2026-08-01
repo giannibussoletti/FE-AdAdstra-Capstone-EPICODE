@@ -7,7 +7,7 @@ import MainTitles from "./MainTitles"
 import type { PropString } from "../types"
 const NowPlayingSlider = function ({ string }: PropString) {
   return (
-    <Row className="position-relative mt-3">
+    <Row className="position-relative mt-3 mx-5">
       <MainTitles string={string} />
       <Row
         xs={1}
