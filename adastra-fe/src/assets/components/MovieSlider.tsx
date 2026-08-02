@@ -10,8 +10,7 @@ const MovieSlider = function ({ string }: PropString) {
     <Row className="position-relative mt-3 mx-5">
       <MainTitles string={string} />
       <Row
-        xs={1}
-        md={2}
+        xs={2}
         lg={3}
         xxl={5}
         className="p-0 smooth-carousel m-0 flex-nowrap overflow-scroll hiding-bar"
