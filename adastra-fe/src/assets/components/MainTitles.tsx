@@ -1,4 +1,4 @@
-import type { PropString } from "../types"
+import type { PropString } from "../misc/types"
 
 const MainTitles = ({ string }: PropString) => {
   return (

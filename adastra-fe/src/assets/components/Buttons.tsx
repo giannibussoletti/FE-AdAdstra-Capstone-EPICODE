@@ -1,5 +1,5 @@
 import { Button } from "react-bootstrap"
-import type { PropString } from "../types"
+import type { PropString } from "../misc/types"
 
 const Buttons = ({ string }: PropString) => {
   return (

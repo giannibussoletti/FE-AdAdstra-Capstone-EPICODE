@@ -18,7 +18,7 @@ export const arrayMapImg = [
 // Questa forse la tengo
 export const randomNum = Math.ceil(Math.random() * 1200)
 
-import type { Poster } from "../types"
+import type { Poster } from "../misc/types"
 
 export const arrayPoster: Poster[] = [
   {
