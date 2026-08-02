@@ -5,7 +5,7 @@ const Footer = () => {
     <div className="bg-black">
       <Container fluid="md" className="px-4 pb-5 mt-5">
         <Row xs={1} md={2}>
-          <Col className="p-0">
+          <Col xs={{ order: 1 }} md={{ order: 0 }} className="p-0">
             <Accordion className="" flush alwaysOpen>
               {footerInfo.map((info, i) => {
                 return (
@@ -22,8 +22,9 @@ const Footer = () => {
             </Accordion>
           </Col>
           <Col
-            className="py-4 d-flex justify-content-md-end justify-content-center
-          align-items-center"
+            md={{ order: 1 }}
+            xs={{ order: 0 }}
+            className="py-4 d-flex justify-content-md-end justify-content-center align-items-start"
           >
             <Image style={{ maxHeight: "190px" }} src="./logo-adastra.png" />
           </Col>
