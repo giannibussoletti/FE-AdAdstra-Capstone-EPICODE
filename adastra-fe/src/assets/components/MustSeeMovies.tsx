@@ -4,7 +4,7 @@ import MainTitles from "./MainTitles"
 import Buttons from "./Buttons"
 const MustSeeMovies = () => {
   return (
-    <div className="mb-3 mb-lg-4">
+    <>
       <MainTitles string={"da non perdere"} />
       <Carousel indicators={false}>
         {arrayPoster.map((poster) => {
@@ -74,7 +74,7 @@ const MustSeeMovies = () => {
       <div className="text-center mt-4 d-block d-md-none">
         <Buttons string={"acquista biglietto"} />
       </div>
-    </div>
+    </>
   )
 }
 

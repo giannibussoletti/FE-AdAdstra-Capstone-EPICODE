@@ -7,13 +7,13 @@ import MainTitles from "./MainTitles"
 import type { PropString } from "../types"
 const MovieSlider = function ({ string }: PropString) {
   return (
-    <Row className="position-relative mt-3 mx-5">
+    <Row className="position-relative mt-3">
       <MainTitles string={string} />
       <Row
         xs={2}
         lg={3}
         xxl={5}
-        className="p-0 smooth-carousel m-0 flex-nowrap overflow-scroll hiding-bar"
+        className="smooth-carousel flex-nowrap overflow-scroll hiding-bar p-0 m-0"
       >
         {arrayPoster.map((linkPoster) => {
           return (
