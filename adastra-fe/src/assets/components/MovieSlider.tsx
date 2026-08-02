@@ -4,7 +4,7 @@ import SliderButton from "./SliderComponents/SliderButton"
 import { arrayPoster } from "../temp"
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons"
 import MainTitles from "./MainTitles"
-import type { PropString } from "../types"
+import type { PropString } from "../misc/types"
 const MovieSlider = function ({ string }: PropString) {
   return (
     <Row className="position-relative mt-3">

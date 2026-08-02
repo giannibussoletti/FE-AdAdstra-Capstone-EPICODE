@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import type { ArrowSlider } from "../../types"
+import type { ArrowSlider } from "../../misc/types"
 
 const SliderButton = function ({
   arrowPosition,

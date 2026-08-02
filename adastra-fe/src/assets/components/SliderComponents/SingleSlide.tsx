@@ -1,6 +1,6 @@
 import { Col, Image } from "react-bootstrap"
 // import { useNavigate } from "react-router"
-import type { SliderPoster } from "../../types"
+import type { SliderPoster } from "../../misc/types"
 const SingleSlide = function ({
   uniqueId,
   posterLink,
@@ -15,7 +15,7 @@ const SingleSlide = function ({
         alt={originalTitle}
         id={uniqueId}
       />
-      <h4 className=" fw-normal text-uppercase mt-3">{originalTitle}</h4>
+      <h4 className="fw-normal text-uppercase mt-3">{originalTitle}</h4>
     </Col>
   )
 }
