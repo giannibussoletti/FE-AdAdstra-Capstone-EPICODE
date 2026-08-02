@@ -4,8 +4,8 @@ import { faBars } from "@fortawesome/free-solid-svg-icons"
 
 const Navbar = () => {
   return (
-    <>
-      <Container fluid className="bg-black">
+    <div className="bg-black">
+      <Container fluid="md">
         <Row>
           <Col className="ps-0 d-flex justify-content-between align-items-center">
             <img
@@ -22,7 +22,7 @@ const Navbar = () => {
           </Col>
         </Row>
       </Container>
-    </>
+    </div>
   )
 }
 
