@@ -3,7 +3,7 @@ import { footerInfo } from "../misc/arrays"
 const Footer = () => {
   return (
     <div className="bg-black">
-      <Container fluid="md" className="px-4 pb-5 mt-5">
+      <Container fluid="md" className="px-4 pb-3 pt-2 mt-5">
         <Row xs={1} md={2}>
           <Col xs={{ order: 1 }} md={{ order: 0 }} className="p-0">
             <Accordion className="" flush alwaysOpen>
