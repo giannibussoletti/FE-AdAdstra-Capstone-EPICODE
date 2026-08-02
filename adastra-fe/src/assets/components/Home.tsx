@@ -9,12 +9,12 @@ const Home = () => {
       <HomeSlider />
       <Container>
         <Row>
-          <Col className="p-0 mt-2 mb-5 mx-3">
+          <Col className="p-0 mt-4 mb-5">
             <CitySearch />
           </Col>
         </Row>
         <Row>
-          <Col className="mx-3">
+          <Col className="p-0 mb-3 mb-lg-4">
             <MustSeeMovies />
           </Col>
         </Row>
