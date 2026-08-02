@@ -27,8 +27,6 @@ const MustSeeMovies = () => {
                     "h"}
                 </p>
               </div>
-              {/* Usare le dimensioni di bootstrap per decidere quando far apparire il carosello con le carde e quando far apparire solo quello con il poster
-               */}
               <Card className="rounded-0 bg-transparent text-light d-md-block d-none">
                 <Row>
                   <Col>
