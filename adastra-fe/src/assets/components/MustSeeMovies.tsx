@@ -4,7 +4,7 @@ import MainTitles from "./MainTitles"
 import Buttons from "./Buttons"
 const MustSeeMovies = () => {
   return (
-    <>
+    <div className="mb-3 mb-lg-4">
       <MainTitles string={"da non perdere"} />
       <Carousel indicators={false}>
         {arrayPoster.map((poster) => {
@@ -13,21 +13,23 @@ const MustSeeMovies = () => {
               className="text-center"
               key={poster.name + " " + randomNum}
             >
-              <img
-                className="w-100"
-                src={poster.link}
-                alt={poster.name + " poster"}
-              />
-              <h3 className="m-0 pt-3 text-uppercase">{poster.name}</h3>
-              <p className="m-0 date-and-time">
-                {poster.date.toLocaleDateString("it-IT") +
-                  " " +
-                  poster.time +
-                  "h"}
-              </p>
+              <div className="d-md-none">
+                <img
+                  className="w-100 "
+                  src={poster.link}
+                  alt={poster.name + " poster"}
+                />
+                <h3 className="m-0 pt-3 text-uppercase">{poster.name}</h3>
+                <p className="m-0 date-and-time">
+                  {poster.date.toLocaleDateString("it-IT") +
+                    " " +
+                    poster.time +
+                    "h"}
+                </p>
+              </div>
               {/* Usare le dimensioni di bootstrap per decidere quando far apparire il carosello con le carde e quando far apparire solo quello con il poster
                */}
-              <Card className=" rounded-0 bg-transparent text-light">
+              <Card className="rounded-0 bg-transparent text-light d-md-block d-none">
                 <Row>
                   <Col>
                     <Card.Img className="rounded-0" src={poster.link} />
@@ -59,7 +61,10 @@ const MustSeeMovies = () => {
                           pariatur aliquid!
                         </p>
                       </Card.Text>
-                      <Buttons string={"acquista biglietto"} />
+
+                      <div className="mt-4">
+                        <Buttons string={"acquista biglietto"} />
+                      </div>
                     </Card.Body>
                   </Col>
                 </Row>
@@ -68,10 +73,10 @@ const MustSeeMovies = () => {
           )
         })}
       </Carousel>
-      <div className="text-center mb-3 mt-4">
-        <Buttons className="d-f" string={"acquista biglietto"} />
+      <div className="text-center mt-4 d-block d-md-none">
+        <Buttons string={"acquista biglietto"} />
       </div>
-    </>
+    </div>
   )
 }
 
