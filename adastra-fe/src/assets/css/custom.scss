@@ -8,6 +8,29 @@ $custom-colors: (
   "subtext-time": #2261ae,
 );
 
+$accordion-padding-y: 0rem;
+$accordion-padding-x: 1rem;
+$accordion-body-padding-y: $accordion-padding-y;
+
+$accordion-bg: rgba(0, 0, 0, 0);
+$accordion-border-width: 0;
+$accordion-color: #fff;
+$accordion-inner-border-radius: 0;
+
+$accordion-button-color: #fff;
+$accordion-button-bg: rgba(0, 0, 0, 0);
+$accordion-button-active-bg: rgba(0, 0, 0, 0);
+$accordion-button-active-color: #fff;
+
+// fusv-disable
+$accordion-button-focus-border-color: rgba(0, 0, 0, 0);
+// fusv-enable
+$accordion-button-focus-box-shadow: rgba(0, 0, 0, 0);
+
+$accordion-icon-width: 0;
+$accordion-icon-color: rgba(0, 0, 0, 0);
+$accordion-icon-active-color: rgba(0, 0, 0, 0);
+
 $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "bootstrap/scss/bootstrap.scss";
 
