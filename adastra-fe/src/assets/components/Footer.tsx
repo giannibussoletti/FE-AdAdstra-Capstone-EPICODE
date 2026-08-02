@@ -1,9 +1,9 @@
-import { Container, Accordion, Row, Col } from "react-bootstrap"
+import { Container, Accordion, Row, Col, Image } from "react-bootstrap"
 import { footerInfo } from "../misc/arrays"
 const Footer = () => {
   return (
     <div className="bg-black">
-      <Container fluid="md">
+      <Container fluid="md" className="px-4 pb-5 mt-5">
         <Row xs={1} md={2}>
           <Col className="p-0">
             <Accordion className="" flush alwaysOpen>
@@ -21,7 +21,12 @@ const Footer = () => {
               })}
             </Accordion>
           </Col>
-          <Col></Col>
+          <Col
+            className="py-4 d-flex justify-content-md-end justify-content-center
+          align-items-center"
+          >
+            <Image style={{ maxHeight: "190px" }} src="./logo-adastra.png" />
+          </Col>
         </Row>
       </Container>
     </div>
