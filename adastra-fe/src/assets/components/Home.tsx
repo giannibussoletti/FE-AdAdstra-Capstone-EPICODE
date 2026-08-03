@@ -31,10 +31,9 @@ const Home = () => {
           <Col className="p-0 mt-3 pb-4">
             <NowPlayingSection />
           </Col>
-          <hr />
         </Row>
         <Row>
-          <Col className="p-0 mt-3 ">
+          <Col className="p-0 mt-3">
             <CardMoreInfo />
           </Col>
         </Row>
