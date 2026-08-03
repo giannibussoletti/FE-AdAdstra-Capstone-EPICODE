@@ -4,6 +4,7 @@ import MustSeeMovies from "./MustSeeMovies"
 import HomeSlider from "./HomeSlider"
 import PreSalesSlider from "./PreSalesSlider"
 import NowPlayingSection from "./NowPlayingSection"
+import CardMoreInfo from "./CardMoreInfo"
 const Home = () => {
   return (
     <>
@@ -27,8 +28,14 @@ const Home = () => {
           <hr />
         </Row>
         <Row>
-          <Col className="p-0 mt-3">
+          <Col className="p-0 mt-3 pb-4">
             <NowPlayingSection />
+          </Col>
+          <hr />
+        </Row>
+        <Row>
+          <Col className="p-0 mt-3 ">
+            <CardMoreInfo />
           </Col>
         </Row>
       </Container>

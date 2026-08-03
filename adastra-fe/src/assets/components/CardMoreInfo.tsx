@@ -1,0 +1,16 @@
+import { Card } from "react-bootstrap"
+
+const CardMoreInfo = () => {
+  return (
+    <Card className="border-0">
+      <Card.Img src="https://placehold.co/600x300" alt="Card image" />
+      <Card.ImgOverlay className="p-0">
+        <Card.Title className="pb-3 ps-4 d-flex h-100 m-0 align-items-end fw-normal text-uppercase text-white card-info-bg">
+          Scopri di più
+        </Card.Title>
+      </Card.ImgOverlay>
+    </Card>
+  )
+}
+
+export default CardMoreInfo
