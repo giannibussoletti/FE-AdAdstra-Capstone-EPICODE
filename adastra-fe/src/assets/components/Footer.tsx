@@ -10,8 +10,8 @@ const Footer = () => {
               {footerInfo.map((info, i) => {
                 return (
                   <Accordion.Item className="p-0 " eventKey={i.toString()}>
-                    <Accordion.Header>
-                      <h5 className="fw-normal text-uppercase mt-3">
+                    <Accordion.Header className="">
+                      <h5 className="fw-normal text-uppercase mt-3 text-center text-md-start w-100">
                         {info.title}
                       </h5>
                     </Accordion.Header>
