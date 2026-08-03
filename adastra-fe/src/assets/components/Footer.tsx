@@ -11,9 +11,9 @@ const Footer = () => {
                 return (
                   <Accordion.Item className="p-0 " eventKey={i.toString()}>
                     <Accordion.Header className="">
-                      <h5 className="fw-normal text-uppercase mt-3 text-center text-md-start w-100">
+                      <h6 className="h5 fw-normal text-uppercase mt-3 text-center text-md-start w-100">
                         {info.title}
-                      </h5>
+                      </h6>
                     </Accordion.Header>
                     <Accordion.Body>{info.text}</Accordion.Body>
                   </Accordion.Item>
