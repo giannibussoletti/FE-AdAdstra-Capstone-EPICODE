@@ -93,7 +93,22 @@ h3 {
   background-size: 2em;
 }
 
-//Carosello Ora in sala
+//SingleCardMovieCSS
+.single-movie-title-section,
+.single-movie-details-section {
+  margin: 0;
+}
+
+.single-movie-title-section {
+  color: #d4d4d4;
+  font-size: 0.9rem;
+}
+.single-movie-details-section {
+  color: #7e7e7e;
+  font-size: 0.85rem;
+}
+
+//Carosello Prevendite Aperte
 .arrow-left-bg,
 .arrow-right-bg {
   padding: 0.7em 0.2em;
