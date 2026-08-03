@@ -4,7 +4,7 @@
 $custom-colors: (
   "buttons": #023f87,
   "text-field": #1c2047,
-  "time-color": #0d004c,
+  "time-color": #070038,
   "subtext-time": #2261ae,
 );
 
@@ -106,6 +106,18 @@ h3 {
 .single-movie-details-section {
   color: #7e7e7e;
   font-size: 0.85rem;
+}
+
+//MovieStartTimeCSS
+.single-movie-time {
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  transition: all 200ms ease-in-out;
+  border: #fff solid 1px;
+}
+.single-movie-time:hover {
+  box-shadow: 0 0 9px 4px rgba(255, 255, 255, 0.6);
+  scale: 101%;
+  border: #ffffff00 solid 1px;
 }
 
 //Carosello Prevendite Aperte

@@ -19,16 +19,17 @@ const Home = () => {
             <MustSeeMovies />
           </Col>
         </Row>
+
         <hr />
         <Row>
           <Col>
-            <SingleMovieCard />
+            <PreSalesSlider string="prevendite aperte" />
           </Col>
         </Row>
         <hr />
         <Row>
           <Col>
-            <PreSalesSlider string="prevendite aperte" />
+            <SingleMovieCard />
           </Col>
         </Row>
       </Container>

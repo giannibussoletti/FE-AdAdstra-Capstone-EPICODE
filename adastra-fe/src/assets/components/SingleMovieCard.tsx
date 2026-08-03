@@ -1,4 +1,5 @@
 import { Row, Col, Image } from "react-bootstrap"
+import MovieStartTime from "./MovieStartTime"
 const SingleMovieCard = () => {
   return (
     <>
@@ -24,7 +25,9 @@ const SingleMovieCard = () => {
         </Col>
       </Row>
       <Row>
-        <Col>Orari</Col>
+        <Col>
+          <MovieStartTime />
+        </Col>
       </Row>
     </>
   )
