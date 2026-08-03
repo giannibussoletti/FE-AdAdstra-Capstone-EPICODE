@@ -155,4 +155,13 @@ h3 {
 //Card More info CSS
 .card-info-bg {
   background-image: linear-gradient(to top, #000000b5, #00000000);
+  transition: all 200ms ease-in-out;
+}
+
+.card-info {
+  transition: scale 200ms ease-in-out;
+}
+
+.card-info:hover {
+  scale: 102%;
 }
