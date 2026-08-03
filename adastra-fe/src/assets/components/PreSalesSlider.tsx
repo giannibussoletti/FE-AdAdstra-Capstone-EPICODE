@@ -7,7 +7,7 @@ import MainTitles from "./MainTitles"
 import type { PropString } from "../misc/types"
 const PreSalesSlider = function ({ string }: PropString) {
   return (
-    <Row className="position-relative mt-3">
+    <Row className="position-relative">
       <MainTitles string={string} />
       <Row
         xs={2}

@@ -3,7 +3,7 @@ import CitySearch from "./CitySearch"
 import MustSeeMovies from "./MustSeeMovies"
 import HomeSlider from "./HomeSlider"
 import PreSalesSlider from "./PreSalesSlider"
-import SingleMovieCard from "./SingleMovieCard"
+import NowPlayingSection from "./NowPlayingSection"
 const Home = () => {
   return (
     <>
@@ -15,21 +15,20 @@ const Home = () => {
           </Col>
         </Row>
         <Row>
-          <Col className="p-0 mb-3 mb-lg-4">
+          <Col className="p-0 mb-3 pb-4 mb-lg-4">
             <MustSeeMovies />
           </Col>
+          <hr />
         </Row>
-
-        <hr />
         <Row>
-          <Col>
+          <Col className="mt-3 pb-4">
             <PreSalesSlider string="prevendite aperte" />
           </Col>
+          <hr />
         </Row>
-        <hr />
         <Row>
-          <Col>
-            <SingleMovieCard />
+          <Col className="p-0 mt-3">
+            <NowPlayingSection />
           </Col>
         </Row>
       </Container>
