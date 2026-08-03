@@ -24,7 +24,7 @@ const SingleMovieCard = () => {
           </div>
         </Col>
       </Row>
-      <Row>
+      <Row xs={1} md={6}>
         <Col>
           <MovieStartTime />
         </Col>
