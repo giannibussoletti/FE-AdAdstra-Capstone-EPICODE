@@ -2,7 +2,6 @@ import { Row, Col } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useAppDispatch, useAppSelector } from "../redux/hooks"
 import { setBurger } from "../redux/reducers/mobileMenuSlice"
-import { burgerMenuArray } from "../misc/arrays"
 
 const pMenuClass = "text-uppercase fw-medium mb-4"
 const MobileMenu = () => {
@@ -10,6 +9,7 @@ const MobileMenu = () => {
   const selector = useAppSelector
 
   const closeUpdate = selector((state) => state.menuState.burgerMenu)
+  const arrayMenu = selector((state) => state.menuState.arrayMenu)
 
   return (
     <Row
@@ -24,14 +24,21 @@ const MobileMenu = () => {
         className="d-flex justify-content-end pt-4 pe-5 fw-semibold fs-3"
       >
         <span
-          onClick={() => dispatch(setBurger("start-100"))}
+          onClick={() =>
+            dispatch(
+              setBurger({
+                burgerMenu: "start-100",
+                arrayMenu: [],
+              }),
+            )
+          }
           className="mobile-menu-icon"
         >
           &#120;
         </span>
       </Col>
       <Col className="m-0 mb-5 pb-5 px-5 mx-5">
-        {burgerMenuArray.map((menuItem) => {
+        {arrayMenu.map((menuItem) => {
           return (
             <div
               className={pMenuClass}
