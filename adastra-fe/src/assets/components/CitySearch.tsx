@@ -1,19 +1,14 @@
 import { Dropdown, Row, Col } from "react-bootstrap"
 import { province, randomNum } from "../temp"
 import { useState } from "react"
-
+import { setCity } from "../redux/reducers/NavBarSlice"
 const CitySearch = () => {
   const [city, setCity] = useState("Roma")
 
   return (
     <>
       <Row className="align-items-center">
-        <Col xs={12} xxl={2}>
-          <p className="text-uppercase mb-0 fw-medium">
-            seleziona la tua città
-          </p>
-        </Col>
-        <Col xs={12} xxl={10}>
+        <Col>
           <Dropdown className="w-100">
             <Dropdown.Toggle
               variant="success"

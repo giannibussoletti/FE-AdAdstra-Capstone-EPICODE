@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit"
-import menuSlice from "../reducers/mobileMenuSlice"
+import menuSlice from "../reducers/NavBarSlice"
 export const store = configureStore({
   reducer: {
     menuState: menuSlice,
