@@ -1,5 +1,5 @@
 import { Carousel, Card, Row, Col } from "react-bootstrap"
-import { arrayPoster, randomNum } from "../temp"
+import { arrayPoster } from "../temp"
 import MainTitles from "./MainTitles"
 import Buttons from "./Buttons"
 const MustSeeMovies = () => {
@@ -10,8 +10,9 @@ const MustSeeMovies = () => {
         {arrayPoster.map((poster) => {
           return (
             <Carousel.Item
+              interval={3000}
               className="text-center"
-              key={poster.name + " " + randomNum}
+              key={poster.id}
             >
               <div className="d-md-none">
                 <img
@@ -39,25 +40,23 @@ const MustSeeMovies = () => {
                           {poster.name}
                         </h3>
                       </Card.Title>
-                      <Card.Text>
-                        <p className="m-0 p-0 date-and-time">
-                          {poster.date.toLocaleDateString("it-IT") +
-                            " " +
-                            poster.time +
-                            "h"}
-                        </p>
-                        <p className="mt-2">
-                          Lorem, ipsum dolor sit amet consectetur adipisicing
-                          elit. Necessitatibus iusto consequuntur quis fugit nam
-                          vel corporis cumque consectetur architecto? Ut fugiat
-                          molestias consectetur dolor expedita sequi aliquid.
-                          Veritatis, maxime sapiente? Lorem ipsum dolor sit
-                          amet, consectetur adipisicing elit. Pariatur rerum
-                          sint, id consequuntur doloremque porro obcaecati
-                          accusantium neque minima ad dolore mollitia provident
-                          dicta dignissimos blanditiis consectetur. Earum,
-                          pariatur aliquid!
-                        </p>
+                      <Card.Text className="m-0 p-0 date-and-time">
+                        {poster.date.toLocaleDateString("it-IT") +
+                          " " +
+                          poster.time +
+                          "h"}
+                      </Card.Text>
+                      <Card.Text className="mt-2">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Necessitatibus iusto consequuntur quis fugit nam
+                        vel corporis cumque consectetur architecto? Ut fugiat
+                        molestias consectetur dolor expedita sequi aliquid.
+                        Veritatis, maxime sapiente? Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit. Pariatur rerum sint, id
+                        consequuntur doloremque porro obcaecati accusantium
+                        neque minima ad dolore mollitia provident dicta
+                        dignissimos blanditiis consectetur. Earum, pariatur
+                        aliquid!
                       </Card.Text>
 
                       <div className="mt-4">
