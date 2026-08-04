@@ -18,7 +18,6 @@ export type Poster = {
 }
 
 export type SliderPoster = {
-  uniqueId: string
   posterLink: string
   originalTitle: string
 }
@@ -27,6 +26,7 @@ export type ArrowSlider = {
   arrowDirectionIcon: IconDefinition
   arrowDirection: string
   arrowPosition: string
+  arrowFunction: () => void
 }
 
 export type FooterTypes = {
