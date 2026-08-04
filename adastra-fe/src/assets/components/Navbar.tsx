@@ -30,6 +30,7 @@ const Navbar = () => {
                   setMenu({
                     isOpen: "start-0",
                     arrayMenu: userMenuArray,
+                    isCities: false,
                   }),
                 )
               }
@@ -44,6 +45,7 @@ const Navbar = () => {
                   setMenu({
                     isOpen: "start-0",
                     arrayMenu: burgerMenuArray,
+                    isCities: false,
                   }),
                 )
               }
