@@ -19,12 +19,12 @@ const CitySearch = () => {
                     isOpen: "start-0",
                     arrayCity: province,
                     isCities: true,
-                    citySearchMenu: "-",
+                    citySearchMenu: city,
                   }),
                 )
               }}
               id="dropdown-basic"
-              className="w-100 d-flex justify-content-between align-items-center px-3 rounded-0 bg-text-field border-1 border-white"
+              className="w-100 d-flex justify-content-between align-items-center px-3 rounded-0 bg-transparent border-1 border-white"
             >
               {city}
             </Dropdown.Toggle>
