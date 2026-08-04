@@ -37,7 +37,20 @@ export const footerInfo: FooterTypes[] = [
 ]
 
 export const burgerMenuArray: MobileMenu[] = [
+  { name: "bebo", link: "#", icon: faCircle },
   { name: "item", link: "#", icon: faCircle },
   { name: "item", link: "#", icon: faCircle },
   { name: "item", link: "#", icon: faCircle },
+]
+export const userMenuArray: MobileMenu[] = [
+  { name: "user", link: "#", icon: faCircle },
+  { name: "user", link: "#", icon: faCircle },
+  { name: "user", link: "#", icon: faCircle },
+  { name: "user", link: "#", icon: faCircle },
+]
+export const cityMenuArray: MobileMenu[] = [
+  { name: "user", link: "#", icon: faCircle },
+  { name: "user", link: "#", icon: faCircle },
+  { name: "user", link: "#", icon: faCircle },
+  { name: "user", link: "#", icon: faCircle },
 ]

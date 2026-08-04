@@ -1,8 +1,9 @@
 import { Col, Container, Row } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faBars } from "@fortawesome/free-solid-svg-icons"
+import { faBars, faCircleUser } from "@fortawesome/free-solid-svg-icons"
 import { useAppDispatch } from "../redux/hooks"
-import { setBurger } from "../redux/reducers/mobileMenuSlice"
+import { setBurger, setUser } from "../redux/reducers/mobileMenuSlice"
+import { burgerMenuArray, userMenuArray } from "../misc/arrays"
 import MobileMenu from "./MobileMenu"
 const Navbar = () => {
   const dispatch = useAppDispatch()
@@ -19,7 +20,27 @@ const Navbar = () => {
               className="ms-3 py-2"
             />
             <FontAwesomeIcon
-              onClick={() => dispatch(setBurger("start-0"))}
+              onClick={() =>
+                dispatch(
+                  setBurger({
+                    burgerMenu: "start-0",
+                    arrayMenu: userMenuArray,
+                  }),
+                )
+              }
+              icon={faCircleUser}
+              style={{ color: "#fff" }}
+              size="xl"
+            />
+            <FontAwesomeIcon
+              onClick={() =>
+                dispatch(
+                  setBurger({
+                    burgerMenu: "start-0",
+                    arrayMenu: burgerMenuArray,
+                  }),
+                )
+              }
               icon={faBars}
               style={{ color: "#fff" }}
               size="xl"
