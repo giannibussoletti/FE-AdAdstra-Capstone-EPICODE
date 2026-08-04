@@ -2,8 +2,9 @@ import { Col, Container, Row } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faCircleUser } from "@fortawesome/free-solid-svg-icons"
 import { useAppDispatch } from "../redux/hooks"
-import { setBurger, setUser } from "../redux/reducers/mobileMenuSlice"
+import { setMenu } from "../redux/reducers/NavBarSlice"
 import { burgerMenuArray, userMenuArray } from "../misc/arrays"
+import CitySearch from "./CitySearch"
 import MobileMenu from "./MobileMenu"
 const Navbar = () => {
   const dispatch = useAppDispatch()
@@ -12,18 +13,22 @@ const Navbar = () => {
     <div className="bg-black">
       <Container fluid="md">
         <Row>
-          <Col className="ps-0 d-flex justify-content-between align-items-center">
+          <Col className="ps-0 d-flex align-items-center">
             <img
               src="logo_nav.png"
               alt="logo adastra cinema"
               style={{ maxHeight: "55px" }}
-              className="ms-3 py-2"
+              className="ms-3 py-2 me-5"
             />
-            <FontAwesomeIcon
+            <div className="me-auto">
+              <CitySearch />
+            </div>
+
+            <FontAwesomeIcon //USER
               onClick={() =>
                 dispatch(
-                  setBurger({
-                    burgerMenu: "start-0",
+                  setMenu({
+                    isOpen: "start-0",
                     arrayMenu: userMenuArray,
                   }),
                 )
@@ -31,12 +36,13 @@ const Navbar = () => {
               icon={faCircleUser}
               style={{ color: "#fff" }}
               size="xl"
+              className="mobile-menu-icon me-3"
             />
-            <FontAwesomeIcon
+            <FontAwesomeIcon // BURGER
               onClick={() =>
                 dispatch(
-                  setBurger({
-                    burgerMenu: "start-0",
+                  setMenu({
+                    isOpen: "start-0",
                     arrayMenu: burgerMenuArray,
                   }),
                 )

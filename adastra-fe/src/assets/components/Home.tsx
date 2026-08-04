@@ -1,5 +1,4 @@
 import { Container, Row, Col } from "react-bootstrap"
-import CitySearch from "./CitySearch"
 import MustSeeMovies from "./MustSeeMovies"
 import HomeSlider from "./HomeSlider"
 import PreSalesSlider from "./PreSalesSlider"
@@ -11,12 +10,7 @@ const Home = () => {
       <HomeSlider />
       <Container>
         <Row>
-          <Col className="p-0 mt-4 mb-5">
-            <CitySearch />
-          </Col>
-        </Row>
-        <Row>
-          <Col className="p-0 mb-3 pb-4 mb-lg-4">
+          <Col className="p-0 mt-4 mb-3 pb-4 mb-lg-4">
             <MustSeeMovies />
           </Col>
           <hr />

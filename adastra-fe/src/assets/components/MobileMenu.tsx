@@ -1,14 +1,14 @@
 import { Row, Col } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useAppDispatch, useAppSelector } from "../redux/hooks"
-import { setBurger } from "../redux/reducers/mobileMenuSlice"
+import { setMenu } from "../redux/reducers/NavBarSlice"
 
-const pMenuClass = "text-uppercase fw-medium mb-4"
+const pMenuClass = "text-uppercase fw-medium mb-4 mobile-menu-icon"
 const MobileMenu = () => {
   const dispatch = useAppDispatch()
   const selector = useAppSelector
 
-  const closeUpdate = selector((state) => state.menuState.burgerMenu)
+  const closeUpdate = selector((state) => state.menuState.isOpen)
   const arrayMenu = selector((state) => state.menuState.arrayMenu)
 
   return (
@@ -26,8 +26,8 @@ const MobileMenu = () => {
         <span
           onClick={() =>
             dispatch(
-              setBurger({
-                burgerMenu: "start-100",
+              setMenu({
+                isOpen: "start-100",
                 arrayMenu: [],
               }),
             )
