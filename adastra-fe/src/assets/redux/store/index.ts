@@ -1,7 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit"
-
+import menuSlice from "../reducers/mobileMenuSlice"
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    menuState: menuSlice,
+  },
 })
 
 export type RootState = ReturnType<typeof store.getState>
