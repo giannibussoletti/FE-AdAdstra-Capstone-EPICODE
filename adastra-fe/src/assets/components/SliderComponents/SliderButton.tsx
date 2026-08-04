@@ -5,6 +5,7 @@ const SliderButton = function ({
   arrowPosition,
   arrowDirection,
   arrowDirectionIcon,
+  arrowFunction,
 }: ArrowSlider) {
   const buttonSliderClass =
     "p-0 position-absolute top-0 text-end h-100 d-flex align-items-center"
@@ -12,6 +13,8 @@ const SliderButton = function ({
   return (
     <span
       onClick={(e) => {
+        arrowFunction()
+
         const targetCarousel =
           e.currentTarget.closest<HTMLElement>(".smooth-carousel")
         if (!targetCarousel) {
@@ -19,7 +22,7 @@ const SliderButton = function ({
         }
 
         if (arrowDirection === "right") {
-          targetCarousel.scrollBy(targetCarousel.offsetWidth, 0)
+          // targetCarousel.scrollBy(targetCarousel.offsetWidth, 0)
         } else {
           targetCarousel.scrollBy(-targetCarousel.offsetWidth, 0)
         }
