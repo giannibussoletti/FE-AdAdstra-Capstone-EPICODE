@@ -1,6 +1,6 @@
-import type { footerTypes } from "./types"
-
-export const footerInfo: footerTypes[] = [
+import type { FooterTypes, MobileMenu } from "./types"
+import { faCircle } from "@fortawesome/free-solid-svg-icons"
+export const footerInfo: FooterTypes[] = [
   {
     title: "informazioni",
     text: `Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -34,4 +34,10 @@ export const footerInfo: footerTypes[] = [
                   cupidatat non proident, sunt in culpa qui officia deserunt
                   mollit anim id est laborum.`,
   },
+]
+
+export const burgerMenuArray: MobileMenu[] = [
+  { name: "item", link: "#", icon: faCircle },
+  { name: "item", link: "#", icon: faCircle },
+  { name: "item", link: "#", icon: faCircle },
 ]

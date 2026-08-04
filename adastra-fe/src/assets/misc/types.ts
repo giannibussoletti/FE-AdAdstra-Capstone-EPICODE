@@ -23,7 +23,13 @@ export type ArrowSlider = {
   arrowPosition: string
 }
 
-export type footerTypes = {
+export type FooterTypes = {
   title: string
   text: string
+}
+
+export type MobileMenu = {
+  name: string
+  link: string
+  icon: IconDefinition
 }
