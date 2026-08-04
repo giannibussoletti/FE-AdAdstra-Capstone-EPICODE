@@ -4,7 +4,13 @@ export type PropString = {
   string: string
 }
 
+export type TopSlider = {
+  id: number
+  slide: string
+}
+
 export type Poster = {
+  id: number
   name: string
   link: string
   date: Date
@@ -24,8 +30,10 @@ export type ArrowSlider = {
 }
 
 export type FooterTypes = {
+  id: number
   title: string
   text: string
+  eventKey: string
 }
 
 export type MobileMenu = {

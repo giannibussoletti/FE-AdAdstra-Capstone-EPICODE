@@ -2,6 +2,7 @@ import type { FooterTypes, MobileMenu } from "./types"
 import { faCircle } from "@fortawesome/free-solid-svg-icons"
 export const footerInfo: FooterTypes[] = [
   {
+    id: 40,
     title: "informazioni",
     text: `Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -11,8 +12,10 @@ export const footerInfo: FooterTypes[] = [
                   dolore eu fugiat nulla pariatur. Excepteur sint occaecat
                   cupidatat non proident, sunt in culpa qui officia deserunt
                   mollit anim id est laborum.`,
+    eventKey: "41",
   },
   {
+    id: 42,
     title: "privacy",
     text: `Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -22,8 +25,10 @@ export const footerInfo: FooterTypes[] = [
                   dolore eu fugiat nulla pariatur. Excepteur sint occaecat
                   cupidatat non proident, sunt in culpa qui officia deserunt
                   mollit anim id est laborum.`,
+    eventKey: "43",
   },
   {
+    id: 44,
     title: "contatti",
     text: `Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -33,6 +38,7 @@ export const footerInfo: FooterTypes[] = [
                   dolore eu fugiat nulla pariatur. Excepteur sint occaecat
                   cupidatat non proident, sunt in culpa qui officia deserunt
                   mollit anim id est laborum.`,
+    eventKey: "45",
   },
 ]
 

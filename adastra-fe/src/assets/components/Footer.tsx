@@ -7,9 +7,13 @@ const Footer = () => {
         <Row xs={1} md={2}>
           <Col xs={{ order: 1 }} md={{ order: 0 }} className="p-0">
             <Accordion className="" flush alwaysOpen>
-              {footerInfo.map((info, i) => {
+              {footerInfo.map((info) => {
                 return (
-                  <Accordion.Item className="p-0 " eventKey={i.toString()}>
+                  <Accordion.Item
+                    className="p-0 "
+                    eventKey={info.eventKey}
+                    key={info.id}
+                  >
                     <Accordion.Header className="">
                       <h6 className="h5 fw-normal text-uppercase mt-3 text-center text-md-start w-100">
                         {info.title}
