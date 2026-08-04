@@ -1,10 +1,10 @@
 import { Row, Col } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCircle } from "@fortawesome/free-solid-svg-icons"
 import { useAppDispatch, useAppSelector } from "../redux/hooks"
 import { setBurger } from "../redux/reducers/mobileMenuSlice"
+import { burgerMenuArray } from "../misc/arrays"
 
-const pMenuClass = "text-uppercase fw-medium"
+const pMenuClass = "text-uppercase fw-medium mb-4"
 const MobileMenu = () => {
   const dispatch = useAppDispatch()
   const selector = useAppSelector
@@ -31,21 +31,17 @@ const MobileMenu = () => {
         </span>
       </Col>
       <Col className="m-0 mb-5 pb-5 px-5 mx-5">
-        <span className={pMenuClass}>
-          <FontAwesomeIcon icon={faCircle} /> item 1
-        </span>
-        <hr />
-        <span className={pMenuClass}>
-          <FontAwesomeIcon icon={faCircle} /> item 2
-        </span>
-        <hr />
-        <span className={pMenuClass}>
-          <FontAwesomeIcon icon={faCircle} /> item 3
-        </span>
-        <hr />
-        <span className={pMenuClass}>
-          <FontAwesomeIcon icon={faCircle} /> item 4
-        </span>
+        {burgerMenuArray.map((menuItem) => {
+          return (
+            <div
+              className={pMenuClass}
+              onClick={() => (window.location.href = menuItem.link)}
+            >
+              <FontAwesomeIcon icon={menuItem.icon} className="me-3" />
+              {menuItem.name}
+            </div>
+          )
+        })}
       </Col>
     </Row>
   )
