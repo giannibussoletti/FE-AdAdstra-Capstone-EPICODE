@@ -26,7 +26,7 @@ const Footer = () => {
             xs={{ order: 0 }}
             className="py-4 d-flex justify-content-md-end justify-content-center align-items-start"
           >
-            <Image style={{ maxHeight: "190px" }} src="./logo-adastra.png" />
+            <Image style={{ maxHeight: "190px" }} src="/logo-adastra.png" />
           </Col>
         </Row>
       </Container>

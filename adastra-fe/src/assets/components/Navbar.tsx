@@ -6,23 +6,32 @@ import { setMenu } from "../redux/reducers/NavBarSlice"
 import { burgerMenuArray, userMenuArray } from "../misc/arrays"
 import CitySearch from "./CitySearch"
 import MobileMenu from "./MobileMenu"
+import { useLocation, Link } from "react-router"
+
 const Navbar = () => {
   const dispatch = useAppDispatch()
+  const location = useLocation()
+  const marginLogo = location.pathname !== "/" ? "me-auto" : ""
 
   return (
     <div className="bg-black">
       <Container fluid="md">
         <Row>
           <Col className="ps-0 d-flex align-items-center">
-            <img
-              src="logo_nav.png"
-              alt="logo adastra cinema"
-              style={{ maxHeight: "55px" }}
-              className="ms-3 py-2 me-5"
-            />
-            <div className="me-auto">
-              <CitySearch />
-            </div>
+            <Link to={"/"} className={"ms-3 py-1  me-5" + " " + marginLogo}>
+              <img
+                src="/logo_nav.png"
+                alt="logo adastra cinema"
+                style={{ maxHeight: "55px" }}
+              />
+            </Link>
+            {location.pathname !== "/" ? (
+              ""
+            ) : (
+              <div className="me-auto">
+                <CitySearch />
+              </div>
+            )}
 
             <FontAwesomeIcon //USER
               onClick={() =>
