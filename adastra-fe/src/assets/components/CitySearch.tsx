@@ -38,10 +38,14 @@ const CitySearch = () => {
             >
               {city}
             </Dropdown.Toggle>
-            <Dropdown.Menu>
+            <Dropdown.Menu
+              style={{ maxHeight: "270px" }}
+              className="w-100 bg-black overflow-scroll"
+            >
               {province.map((prv) => {
                 return (
                   <Dropdown.Item
+                    className="text-light"
                     onClick={() => {
                       dispatch(
                         setCity({

@@ -1,4 +1,4 @@
-import type { FooterTypes, MobileMenu, MoreInfoCard } from "./types"
+import type { FooterTypes, MobileMenu, InfoCardAndDesktopNav } from "./types"
 import { faCircle } from "@fortawesome/free-solid-svg-icons"
 export const footerInfo: FooterTypes[] = [
   {
@@ -61,9 +61,17 @@ export const cityMenuArray: MobileMenu[] = [
   { name: "user", link: "#", icon: faCircle },
 ]
 
-export const moreInfoArray: MoreInfoCard[] = [
-  { label: "lavora con noi", imgLink: "https://placehold.co/600x300" },
-  { label: "poltrone vip", imgLink: "https://placehold.co/600x300" },
-  { label: "Lorem ipsum", imgLink: "https://placehold.co/600x300" },
-  { label: "Per le aziende", imgLink: "https://placehold.co/600x300" },
+export const moreInfoArray: InfoCardAndDesktopNav[] = [
+  { label: "lavora con noi", link: "https://placehold.co/600x300" },
+  { label: "poltrone vip", link: "https://placehold.co/600x300" },
+  { label: "Lorem ipsum", link: "https://placehold.co/600x300" },
+  { label: "Per le aziende", link: "https://placehold.co/600x300" },
+]
+
+export const navbarDesktopArray: InfoCardAndDesktopNav[] = [
+  { label: "trailer", link: "#" },
+  { label: "coming soon", link: "#" },
+  { label: "adastra pass", link: "#" },
+  { label: "in sala", link: "#" },
+  { label: "pre-vendite", link: "#" },
 ]
