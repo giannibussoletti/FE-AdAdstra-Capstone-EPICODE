@@ -10,7 +10,7 @@ library.add(fas, far, fab)
 
 //Components
 import Navbar from "./assets/components/Navbar"
-import Home from "./assets/components/Home"
+import Home from "./assets/components/mainPages/Home"
 import Footer from "./assets/components/Footer"
 
 //React Router

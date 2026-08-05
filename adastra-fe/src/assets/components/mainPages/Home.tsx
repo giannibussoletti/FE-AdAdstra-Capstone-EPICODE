@@ -1,10 +1,10 @@
 import { Container, Row, Col } from "react-bootstrap"
-import MustSeeMovies from "./MustSeeMovies"
-import HomeSlider from "./HomeSlider"
-import PreSalesSlider from "./PreSalesSlider"
-import NowPlayingSection from "./NowPlayingSection"
-import CardMoreInfo from "./CardMoreInfo"
-import { moreInfoArray } from "../misc/arrays"
+import MustSeeMovies from "../MustSeeMovies"
+import HomeSlider from "../HomeSlider"
+import PreSalesSlider from "../PreSalesSlider"
+import NowPlayingSection from "../NowPlayingSection"
+import CardMoreInfo from "../CardMoreInfo"
+import { moreInfoArray } from "../../misc/arrays"
 const Home = () => {
   return (
     <>
