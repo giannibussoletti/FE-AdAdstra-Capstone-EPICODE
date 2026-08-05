@@ -10,11 +10,14 @@ export type TopSlider = {
 }
 
 export type Poster = {
-  id: number
   name: string
   link: string
   date: Date
   time: string
+}
+
+export type PosterID = Poster & {
+  id: number
 }
 
 export type SliderPoster = {

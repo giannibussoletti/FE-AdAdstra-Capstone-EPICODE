@@ -17,9 +17,9 @@ export const arrayMapImg: TopSlider[] = [
   { id: 33, slide: "https://placehold.co/600x300" },
 ]
 
-import type { Poster } from "../misc/types"
+import type { PosterID } from "../misc/types"
 
-export const arrayPoster: Poster[] = [
+export const arrayPoster: PosterID[] = [
   {
     id: 10,
     name: "backrooms",
