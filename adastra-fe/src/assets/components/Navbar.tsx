@@ -11,27 +11,11 @@ import {
 import CitySearch from "./CitySearch"
 import MobileMenu from "./MobileMenu"
 import { useLocation, Link } from "react-router"
-import { useEffect, useState } from "react"
 
 const Navbar = () => {
   const dispatch = useAppDispatch()
   const location = useLocation()
   const marginLogo = location.pathname !== "/" ? "me-auto" : ""
-  const [tabWidth, setTabWidth] = useState(window.innerWidth)
-
-  useEffect(() => {
-    const handleResize = () => setTabWidth(window.innerWidth)
-
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
-
-  const citySeachCond = () => {
-    if (tabWidth >= 992) return ""
-    else {
-      return
-    }
-  }
 
   return (
     <div className="bg-black">

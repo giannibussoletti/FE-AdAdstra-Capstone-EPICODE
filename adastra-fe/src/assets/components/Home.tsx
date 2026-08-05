@@ -31,7 +31,7 @@ const Home = () => {
           {moreInfoArray.map((card, i) => {
             return (
               <Col className={i % 2 === 0 ? "ms-0 mt-3" : "me-0 mt-3"}>
-                <CardMoreInfo imgLink={card.imgLink} label={card.label} />
+                <CardMoreInfo link={card.link} label={card.label} />
               </Col>
             )
           })}
