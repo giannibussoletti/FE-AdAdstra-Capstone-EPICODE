@@ -1,25 +1,9 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit"
-import type { MobileMenu } from "../../misc/types"
-type MenuState = {
-  isOpen: string
-  citySearchMenu: string
-  arrayMenu: MobileMenu[]
-  isCities: boolean
-  arrayCity: string[]
-}
-
-type PayloadStateMenu = {
-  isOpen: string
-  arrayMenu: MobileMenu[]
-  isCities: boolean
-}
-
-type PayloadStateCity = {
-  isOpen: string
-  citySearchMenu: string
-  isCities: boolean
-  arrayCity: string[]
-}
+import type {
+  MenuState,
+  PayloadStateMenu,
+  PayloadStateCity,
+} from "./navBarSlice/SlicesTypes"
 
 const initialState: MenuState = {
   isOpen: "start-100",

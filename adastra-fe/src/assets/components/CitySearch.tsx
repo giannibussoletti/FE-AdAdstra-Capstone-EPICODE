@@ -10,7 +10,8 @@ const CitySearch = () => {
     <>
       <Row className="align-items-center" style={{ minWidth: "300px" }}>
         <Col>
-          <Dropdown className="w-100">
+          {/* Mobile version */}
+          <Dropdown className="w-100  d-md-none">
             <Dropdown.Toggle
               onClick={(e) => {
                 e.preventDefault()
@@ -24,10 +25,39 @@ const CitySearch = () => {
                 )
               }}
               id="dropdown-basic"
+              className="w-100 d-flex justify-content-between align-items-center px-3 rounded-0 bg-transparent border-1 border-white "
+            >
+              {city}
+            </Dropdown.Toggle>
+          </Dropdown>
+          {/* Tablet / Desktop version */}
+          <Dropdown className="w-100 d-none d-md-block">
+            <Dropdown.Toggle
+              id="dropdown-basic"
               className="w-100 d-flex justify-content-between align-items-center px-3 rounded-0 bg-transparent border-1 border-white"
             >
               {city}
             </Dropdown.Toggle>
+            <Dropdown.Menu>
+              {province.map((prv) => {
+                return (
+                  <Dropdown.Item
+                    onClick={() => {
+                      dispatch(
+                        setCity({
+                          isOpen: "start-100",
+                          arrayCity: [],
+                          isCities: false,
+                          citySearchMenu: prv,
+                        }),
+                      )
+                    }}
+                  >
+                    {prv}
+                  </Dropdown.Item>
+                )
+              })}
+            </Dropdown.Menu>
           </Dropdown>
         </Col>
       </Row>
