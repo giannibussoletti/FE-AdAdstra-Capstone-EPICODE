@@ -1,4 +1,4 @@
-import type { FooterTypes, MobileMenu } from "./types"
+import type { FooterTypes, MobileMenu, MoreInfoCard } from "./types"
 import { faCircle } from "@fortawesome/free-solid-svg-icons"
 export const footerInfo: FooterTypes[] = [
   {
@@ -59,4 +59,11 @@ export const cityMenuArray: MobileMenu[] = [
   { name: "user", link: "#", icon: faCircle },
   { name: "user", link: "#", icon: faCircle },
   { name: "user", link: "#", icon: faCircle },
+]
+
+export const moreInfoArray: MoreInfoCard[] = [
+  { label: "lavora con noi", imgLink: "https://placehold.co/600x300" },
+  { label: "poltrone vip", imgLink: "https://placehold.co/600x300" },
+  { label: "Lorem ipsum", imgLink: "https://placehold.co/600x300" },
+  { label: "Per le aziende", imgLink: "https://placehold.co/600x300" },
 ]

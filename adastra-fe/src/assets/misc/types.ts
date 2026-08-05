@@ -41,3 +41,8 @@ export type MobileMenu = {
   link: string
   icon: IconDefinition
 }
+
+export type MoreInfoCard = {
+  label: string
+  imgLink: string
+}

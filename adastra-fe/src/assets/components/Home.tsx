@@ -4,6 +4,7 @@ import HomeSlider from "./HomeSlider"
 import PreSalesSlider from "./PreSalesSlider"
 import NowPlayingSection from "./NowPlayingSection"
 import CardMoreInfo from "./CardMoreInfo"
+import { moreInfoArray } from "../misc/arrays"
 const Home = () => {
   return (
     <>
@@ -26,10 +27,14 @@ const Home = () => {
             <NowPlayingSection />
           </Col>
         </Row>
-        <Row>
-          <Col className="p-0 mt-3">
-            <CardMoreInfo />
-          </Col>
+        <Row xs={1} md={2}>
+          {moreInfoArray.map((card, i) => {
+            return (
+              <Col className={i % 2 === 0 ? "ms-0 mt-3" : "me-0 mt-3"}>
+                <CardMoreInfo imgLink={card.imgLink} label={card.label} />
+              </Col>
+            )
+          })}
         </Row>
       </Container>
     </>
