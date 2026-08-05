@@ -42,7 +42,7 @@ export type MobileMenu = {
   icon: IconDefinition
 }
 
-export type MoreInfoCard = {
+export type InfoCardAndDesktopNav = {
   label: string
-  imgLink: string
+  link: string
 }
