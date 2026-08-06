@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit"
-import menuSlice from "../reducers/navBarSlice"
-import filmDetailsSlice from "../reducers/filmDetailsSlice"
+import menuSlice from "../reducers/NavBsrSlice"
+// import filmDetailsSlice from "../reducers/filmDetailsSlice"
 export const store = configureStore({
   reducer: {
     menuState: menuSlice,
-    filmDetailsState: filmDetailsSlice,
+    // filmDetailsState: filmDetailsSlice,
   },
 })
 

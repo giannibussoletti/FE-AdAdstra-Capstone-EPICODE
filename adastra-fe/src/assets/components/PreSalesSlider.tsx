@@ -7,6 +7,7 @@ import MainTitles from "./MainTitles"
 import type { PropString } from "../misc/types"
 import { useState } from "react"
 import { useRef } from "react"
+
 const PreSalesSlider = function ({ string }: PropString) {
   const [newArrayPoster, setNewArrayPoster] = useState(arrayPoster)
   const [animRules, setAnimRules] = useState({})
@@ -74,9 +75,11 @@ const PreSalesSlider = function ({ string }: PropString) {
               key={poster.id}
             >
               <SingleSlide
-                details={poster}
-                posterLink={poster.link}
-                originalTitle={poster.name}
+                id={poster.id}
+                name={poster.name}
+                link={poster.link}
+                date={poster.date}
+                time={poster.time}
               />
             </div>
           )
