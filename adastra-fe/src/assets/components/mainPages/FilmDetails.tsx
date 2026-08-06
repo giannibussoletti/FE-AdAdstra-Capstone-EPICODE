@@ -1,16 +1,18 @@
+import { arrayPoster } from "../../temp"
 import CardMovieDetails from "../CardMovieDetails"
-
-import { useAppSelector } from "../../redux/hooks"
+import { useParams } from "react-router"
 
 const FilmDetails = () => {
-  const filmDetails = useAppSelector((state) => state.filmDetailsState)
+  const params = useParams()
 
+  console.log(params.movieid)
   return (
     <CardMovieDetails
-      name={filmDetails.name}
-      link={filmDetails.link}
-      date={filmDetails.date}
-      time={filmDetails.time}
+      id={arrayPoster[0].id}
+      name={arrayPoster[0].name}
+      link={arrayPoster[0].link}
+      date={arrayPoster[0].date}
+      time={arrayPoster[0].time}
     />
   )
 }

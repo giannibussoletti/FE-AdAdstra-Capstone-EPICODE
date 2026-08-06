@@ -30,7 +30,10 @@ const Home = () => {
         <Row xs={1} md={2}>
           {moreInfoArray.map((card, i) => {
             return (
-              <Col className={i % 2 === 0 ? "ms-0 mt-3" : "me-0 mt-3"}>
+              <Col
+                key={card.label + card.link}
+                className={i % 2 === 0 ? "ms-0 mt-3" : "me-0 mt-3"}
+              >
                 <CardMoreInfo link={card.link} label={card.label} />
               </Col>
             )

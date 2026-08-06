@@ -3,7 +3,7 @@ import type {
   MenuState,
   PayloadStateMenu,
   PayloadStateCity,
-} from "./navBarSlice/SlicesTypes"
+} from "../SlicesTypes"
 
 const initialState: MenuState = {
   isOpen: "start-100",

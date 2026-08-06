@@ -16,6 +16,7 @@ const MustSeeMovies = () => {
               key={poster.id}
             >
               <CardMovieDetails
+                id={poster.id}
                 name={poster.name}
                 link={poster.link}
                 date={poster.date}
