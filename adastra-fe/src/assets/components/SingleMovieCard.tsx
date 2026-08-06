@@ -40,8 +40,8 @@ const SingleMovieCard = () => {
           </div>
         </Col>
       </Row>
-      <Row xs={1} md={4} lg={5} xxl={6}>
-        {tempArray.map((time) => {
+      <Row xs={1} md={4} lg={5} xxl={6} className="mt-4">
+        {tempArray.map(() => {
           return (
             <Col className="px-2 pb-3 cursor-pointer">
               <MovieStartTime />
