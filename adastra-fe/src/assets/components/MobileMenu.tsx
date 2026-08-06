@@ -36,7 +36,7 @@ const MobileMenu = () => {
                 }),
               )
             }
-            className="mobile-menu-icon"
+            className="cursor-pointer"
           >
             &#120;
           </span>
@@ -45,7 +45,7 @@ const MobileMenu = () => {
           {arrayMenu.map((menuItem) => {
             return (
               <div
-                className="text-uppercase fw-medium mb-4 mobile-menu-icon"
+                className="text-uppercase fw-medium mb-4 cursor-pointer"
                 onClick={() => (window.location.href = menuItem.link)}
               >
                 <FontAwesomeIcon icon={menuItem.icon} className="me-3" />
@@ -82,7 +82,7 @@ const MobileMenu = () => {
                 }),
               )
             }
-            className="mobile-menu-icon d-flex justify-content-end pt-4 pe-5 fw-semibold fs-3"
+            className="cursor-pointer d-flex justify-content-end pt-4 pe-5 fw-semibold fs-3"
           >
             &#120;
           </div>
@@ -93,7 +93,7 @@ const MobileMenu = () => {
           {arrayProvince.map((prv) => {
             return (
               <Col
-                className="mobile-menu-icon"
+                className="cursor-pointer"
                 xs={12}
                 onClick={() =>
                   dispatch(

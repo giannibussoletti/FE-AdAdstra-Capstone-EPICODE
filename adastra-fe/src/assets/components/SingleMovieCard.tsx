@@ -1,6 +1,10 @@
 import { Row, Col, Image } from "react-bootstrap"
 import MovieStartTime from "./MovieStartTime"
 const SingleMovieCard = () => {
+  const tempArray = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+  ]
+
   return (
     <>
       <Row>
@@ -24,10 +28,14 @@ const SingleMovieCard = () => {
           </div>
         </Col>
       </Row>
-      <Row xs={1} md={6}>
-        <Col>
-          <MovieStartTime />
-        </Col>
+      <Row xs={1} md={4} lg={5} xxl={6}>
+        {tempArray.map((time) => {
+          return (
+            <Col className="px-2 pb-3 cursor-pointer">
+              <MovieStartTime />
+            </Col>
+          )
+        })}
       </Row>
     </>
   )
