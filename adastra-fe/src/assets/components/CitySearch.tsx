@@ -1,17 +1,17 @@
 import { Dropdown, Row, Col } from "react-bootstrap"
 import { province } from "../temp"
 import { useAppDispatch, useAppSelector } from "../redux/hooks"
-import { setCity } from "../redux/reducers/navBarSlice"
+import { setCity } from "../redux/reducers/NavBsrSlice"
 const CitySearch = () => {
   const dispatch = useAppDispatch()
   const city = useAppSelector((state) => state.menuState.citySearchMenu)
 
   return (
     <>
-      <Row className="align-items-center" style={{ minWidth: "300px" }}>
+      <Row className="align-items-center" style={{ minWidth: "200px" }}>
         <Col>
           {/* Mobile version */}
-          <Dropdown className="w-100  d-md-none">
+          <Dropdown className="w-100  d-lg-none">
             <Dropdown.Toggle
               onClick={(e) => {
                 e.preventDefault()
@@ -31,7 +31,7 @@ const CitySearch = () => {
             </Dropdown.Toggle>
           </Dropdown>
           {/* Tablet / Desktop version */}
-          <Dropdown className="w-100 d-none d-md-block">
+          <Dropdown className="w-100 d-none d-lg-block">
             <Dropdown.Toggle
               id="dropdown-basic"
               className="w-100 d-flex justify-content-between align-items-center px-3 rounded-0 bg-transparent border-1 border-white"

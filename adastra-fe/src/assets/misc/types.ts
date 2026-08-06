@@ -17,11 +17,6 @@ export type Poster = {
   time: string
 }
 
-export type SliderPoster = {
-  posterLink: string
-  originalTitle: string
-}
-
 export type ArrowSlider = {
   arrowDirectionIcon: IconDefinition
   arrowDirection: string

@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faCircleUser } from "@fortawesome/free-solid-svg-icons"
 import { useAppDispatch } from "../redux/hooks"
-import { setMenu } from "../redux/reducers/navBarSlice"
+import { setMenu } from "../redux/reducers/NavBsrSlice"
 import {
   burgerMenuArray,
   userMenuArray,
@@ -10,13 +10,14 @@ import {
 } from "../misc/arrays"
 import CitySearch from "./CitySearch"
 import MobileMenu from "./MobileMenu"
-import { useLocation, Link } from "react-router"
+import { useLocation } from "react-router"
+import { useNavigate } from "react-router"
 
 const Navbar = () => {
   const dispatch = useAppDispatch()
   const location = useLocation()
   const marginLogo = location.pathname !== "/" ? "me-auto" : ""
-
+  const navigate = useNavigate()
   return (
     <div className="bg-black">
       <Container fluid="md">
@@ -32,11 +33,11 @@ const Navbar = () => {
             {location.pathname !== "/" ? (
               ""
             ) : (
-              <div className="me-auto me-md-5">
+              <div className="me-auto me-lg-5">
                 <CitySearch />
               </div>
             )}
-            <div className="d-md-none">
+            <div className="d-lg-none">
               <FontAwesomeIcon //USER
                 onClick={() =>
                   dispatch(
@@ -68,8 +69,8 @@ const Navbar = () => {
                 className="cursor-pointer"
               />
             </div>
-            <div className="w-100">
-              <ul className=" justify-content-around navbar-list p-0 m-0 d-flex align-items-center">
+            <div className="w-100 d-none d-lg-block">
+              <ul className=" justify-content-around navbar-list p-0 m-0 d-flex  align-items-center">
                 {navbarDesktopArray.map((item) => {
                   return (
                     <li key={item.label + item.label}>
