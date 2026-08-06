@@ -1,6 +1,7 @@
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/variables-dark";
+
 $custom-colors: (
   "buttons": #023f87,
   "text-field": #1c2047,
@@ -63,7 +64,7 @@ body,
   transition: all 200ms ease-in-out;
 }
 
-.mobile-menu-icon {
+.cursor-pointer {
   cursor: pointer;
 }
 

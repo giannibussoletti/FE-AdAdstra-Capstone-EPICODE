@@ -22,13 +22,13 @@ const Navbar = () => {
       <Container fluid="md">
         <Row>
           <Col className="ps-0 d-flex align-items-center">
-            <Link to={"/"} className={"ms-3 py-1  me-5" + " " + marginLogo}>
-              <img
-                src="/logo_nav.png"
-                alt="logo adastra cinema"
-                style={{ maxHeight: "55px" }}
-              />
-            </Link>
+            <img
+              className={"ms-3 py-1 me-3 cursor-pointer" + " " + marginLogo}
+              onClick={() => navigate("/")}
+              src="/logo_nav.png"
+              alt="logo adastra cinema"
+              style={{ maxHeight: "55px" }}
+            />
             {location.pathname !== "/" ? (
               ""
             ) : (
@@ -50,7 +50,7 @@ const Navbar = () => {
                 icon={faCircleUser}
                 style={{ color: "#fff" }}
                 size="xl"
-                className="mobile-menu-icon me-3"
+                className="me-3 cursor-pointer"
               />
               <FontAwesomeIcon // BURGER
                 onClick={() =>
@@ -65,15 +65,18 @@ const Navbar = () => {
                 icon={faBars}
                 style={{ color: "#fff" }}
                 size="xl"
-                className="mobile-menu-icon"
+                className="cursor-pointer"
               />
             </div>
             <div className="w-100">
               <ul className=" justify-content-around navbar-list p-0 m-0 d-flex align-items-center">
                 {navbarDesktopArray.map((item) => {
                   return (
-                    <li>
-                      <a className="text-uppercase fw-medium" href={item.link}>
+                    <li key={item.label + item.label}>
+                      <a
+                        className="text-uppercase fw-medium cursor-pointer"
+                        href={item.link}
+                      >
                         {item.label}
                       </a>
                     </li>
