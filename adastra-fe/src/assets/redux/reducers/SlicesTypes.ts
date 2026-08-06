@@ -1,5 +1,5 @@
-import type { MobileMenu } from "../../../misc/types"
-
+import type { MobileMenu } from "../../misc/types"
+import type { Poster } from "../../misc/types"
 export type MenuState = {
   isOpen: string
   citySearchMenu: string
@@ -19,4 +19,8 @@ export type PayloadStateCity = {
   citySearchMenu: string
   isCities: boolean
   arrayCity: string[]
+}
+
+export type PayloadFilmDetails = {
+  filmDetails: Poster
 }

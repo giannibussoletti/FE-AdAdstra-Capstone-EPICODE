@@ -23,6 +23,7 @@ export type PosterID = Poster & {
 export type SliderPoster = {
   posterLink: string
   originalTitle: string
+  details: Poster
 }
 
 export type ArrowSlider = {

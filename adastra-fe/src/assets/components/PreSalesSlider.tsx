@@ -74,6 +74,7 @@ const PreSalesSlider = function ({ string }: PropString) {
               key={poster.id}
             >
               <SingleSlide
+                details={poster}
                 posterLink={poster.link}
                 originalTitle={poster.name}
               />
