@@ -8,7 +8,7 @@ const CitySearch = () => {
 
   return (
     <>
-      <Row className="align-items-center" style={{ minWidth: "300px" }}>
+      <Row className="align-items-center" style={{ minWidth: "200px" }}>
         <Col>
           {/* Mobile version */}
           <Dropdown className="w-100  d-lg-none">
