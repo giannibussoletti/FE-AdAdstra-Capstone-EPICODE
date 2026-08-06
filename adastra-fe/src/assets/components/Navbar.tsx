@@ -10,25 +10,26 @@ import {
 } from "../misc/arrays"
 import CitySearch from "./CitySearch"
 import MobileMenu from "./MobileMenu"
-import { useLocation, Link } from "react-router"
+import { useLocation } from "react-router"
+import { useNavigate } from "react-router"
 
 const Navbar = () => {
   const dispatch = useAppDispatch()
   const location = useLocation()
   const marginLogo = location.pathname !== "/" ? "me-auto" : ""
-
+  const navigate = useNavigate()
   return (
     <div className="bg-black">
       <Container fluid="md">
         <Row>
           <Col className="ps-0 d-flex align-items-center">
-            <Link to={"/"} className={"ms-3 py-1  me-5" + " " + marginLogo}>
-              <img
-                src="/logo_nav.png"
-                alt="logo adastra cinema"
-                style={{ maxHeight: "55px" }}
-              />
-            </Link>
+            <img
+              className={"ms-3 py-1 me-3" + " " + marginLogo}
+              onClick={() => navigate("/")}
+              src="/logo_nav.png"
+              alt="logo adastra cinema"
+              style={{ maxHeight: "55px" }}
+            />
             {location.pathname !== "/" ? (
               ""
             ) : (
