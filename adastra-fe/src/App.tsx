@@ -13,7 +13,7 @@ import Navbar from "./assets/components/Navbar"
 import Home from "./assets/components/mainPages/Home"
 import Footer from "./assets/components/Footer"
 import FilmDetails from "./assets/components/mainPages/FilmDetails"
-
+import TheaterMap from "./assets/components/TheaterMap"
 //React Router
 import { Route, BrowserRouter as Router, Routes } from "react-router"
 
@@ -28,6 +28,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/details/:movieid" element={<FilmDetails />} />
+            <Route path="/theater-map" element={<TheaterMap />} />
           </Routes>
         </main>
         <footer>
