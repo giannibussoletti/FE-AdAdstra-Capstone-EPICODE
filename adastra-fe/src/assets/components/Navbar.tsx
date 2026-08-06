@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faCircleUser } from "@fortawesome/free-solid-svg-icons"
 import { useAppDispatch } from "../redux/hooks"
-import { setMenu } from "../redux/reducers/NavBarSlice"
+import { setMenu } from "../redux/reducers/navBarSlice"
 import {
   burgerMenuArray,
   userMenuArray,

@@ -1,7 +1,7 @@
 import { Dropdown, Row, Col } from "react-bootstrap"
 import { province } from "../temp"
 import { useAppDispatch, useAppSelector } from "../redux/hooks"
-import { setCity } from "../redux/reducers/NavBarSlice"
+import { setCity } from "../redux/reducers/navBarSlice"
 const CitySearch = () => {
   const dispatch = useAppDispatch()
   const city = useAppSelector((state) => state.menuState.citySearchMenu)
