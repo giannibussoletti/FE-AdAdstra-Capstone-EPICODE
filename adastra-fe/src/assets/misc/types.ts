@@ -41,3 +41,8 @@ export type InfoCardAndDesktopNav = {
   label: string
   link: string
 }
+
+export type SeatsInfo = {
+  coordinates: string
+  position: string
+}
