@@ -12,6 +12,7 @@ library.add(fas, far, fab)
 import Navbar from "./assets/components/Navbar"
 import Home from "./assets/components/mainPages/Home"
 import Footer from "./assets/components/Footer"
+import FilmDetails from "./assets/components/mainPages/FilmDetails"
 
 //React Router
 import { Route, BrowserRouter as Router, Routes } from "react-router"
@@ -20,12 +21,18 @@ const App = () => {
   return (
     <>
       <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/temp" element={<Navbar />} />
-        </Routes>
-        <Footer />
+        <header>
+          <Navbar />
+        </header>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/details" element={<FilmDetails />} />
+          </Routes>
+        </main>
+        <footer>
+          <Footer />
+        </footer>
       </Router>
     </>
   )
