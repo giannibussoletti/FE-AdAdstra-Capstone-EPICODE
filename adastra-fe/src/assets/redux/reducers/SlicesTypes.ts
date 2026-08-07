@@ -27,4 +27,12 @@ export type Booking = {
   redSeats: number
   greenSeats: number
   blueSeats: number
+  isAdding: boolean
+  color: string
+}
+
+export type DispatchSeat = {
+  seat: string
+  color: string
+  isAdding: boolean
 }
