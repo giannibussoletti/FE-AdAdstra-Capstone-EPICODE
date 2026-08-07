@@ -1,5 +1,5 @@
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core"
-
+import type { MouseEvent } from "react"
 export type PropString = {
   string: string
 }
@@ -45,4 +45,11 @@ export type InfoCardAndDesktopNav = {
 export type SeatsInfo = {
   coordinates: string
   position: string
+}
+
+export type FillFunction = {
+  e: MouseEvent<SVGPathElement>
+  fill: string
+  seat: SeatsInfo
+  color: string
 }

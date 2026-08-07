@@ -31,8 +31,10 @@ export type Booking = {
   color: string
 }
 
+import type { SeatsInfo } from "../../misc/types"
+
 export type DispatchSeat = {
-  seat: string
+  seat: SeatsInfo
   color: string
   isAdding: boolean
 }
