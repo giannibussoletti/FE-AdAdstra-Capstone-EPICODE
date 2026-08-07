@@ -22,12 +22,12 @@ export const bookingSlice = createSlice({
         switch (state.isAdding) {
           case true:
             state.greenSeats += 1
-            state.seats = [...state.seats, action.payload.seat]
+            state.seats = [...state.seats, action.payload.seat.position]
             break
           case false:
             state.greenSeats -= 1
             state.seats = state.seats.filter(
-              (pos) => pos !== action.payload.seat,
+              (pos) => pos !== action.payload.seat.position,
             )
             break
         }
@@ -35,12 +35,12 @@ export const bookingSlice = createSlice({
         switch (state.isAdding) {
           case true:
             state.redSeats += 1
-            state.seats = [...state.seats, action.payload.seat]
+            state.seats = [...state.seats, action.payload.seat.position]
             break
           case false:
             state.redSeats -= 1
             state.seats = state.seats.filter(
-              (pos) => pos !== action.payload.seat,
+              (pos) => pos !== action.payload.seat.position,
             )
             break
         }
@@ -48,12 +48,12 @@ export const bookingSlice = createSlice({
         switch (state.isAdding) {
           case true:
             state.blueSeats += 1
-            state.seats = [...state.seats, action.payload.seat]
+            state.seats = [...state.seats, action.payload.seat.position]
             break
           case false:
             state.blueSeats -= 1
             state.seats = state.seats.filter(
-              (pos) => pos !== action.payload.seat,
+              (pos) => pos !== action.payload.seat.position,
             )
             break
         }
