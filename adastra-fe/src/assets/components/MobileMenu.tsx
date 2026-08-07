@@ -65,12 +65,6 @@ const MobileMenu = () => {
           closeUpdate
         }
       >
-        {/* <Col
-          xs={12}
-          className=""
-        >
-          
-        </Col> */}
         <Row className="d-flex flex-column justify-content-start align-items-center">
           <div
             onClick={() =>
@@ -93,6 +87,7 @@ const MobileMenu = () => {
           {arrayProvince.map((prv) => {
             return (
               <Col
+                key={prv}
                 className="cursor-pointer"
                 xs={12}
                 onClick={() =>
