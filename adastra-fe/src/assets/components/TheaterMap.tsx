@@ -10,54 +10,61 @@ import {
   blueSeatNinthRow,
   blueSeatTenthRow,
 } from "../vector/theaterMapArrays"
-import type { ActionCreatorWithPayload } from "@reduxjs/toolkit"
 import type { MouseEvent } from "react"
-
+import {
+  GREEN,
+  RED,
+  BLUE,
+  redSeat,
+  blueSeat,
+  greenSeat,
+} from "../misc/variables"
 import type { SeatsInfo } from "../misc/types"
 import { useAppDispatch, useAppSelector } from "../redux/hooks"
-import {
-  addSeat,
-  removeSeat,
-  addBlueSeat,
-  addRedSeat,
-  addGreenSeat,
-  removeRedSeat,
-  removeGreenSeat,
-  removeBlueSeat,
-} from "../redux/reducers/TicketSlice"
-
-const redSeat = "#b83c2d"
-const blueSeat = "#324ba6"
-const greenSeat = "#007800"
+import { manageSeat } from "../redux/reducers/TicketSlice"
 
 const TheaterMap = () => {
   const dispatch = useAppDispatch()
   const arraySeat = useAppSelector((state) => state.bookingState.seats)
+  const booleanIsAdding = useAppSelector((state) => state.bookingState.isAdding)
+  const rowSeatColor = useAppSelector((state) => state.bookingState.color)
   const countRedSeat = useAppSelector((state) => state.bookingState.redSeats)
-  const countRlueSeat = useAppSelector((state) => state.bookingState.blueSeats)
-  const countRreenSeat = useAppSelector(
+  const countBlueSeat = useAppSelector((state) => state.bookingState.blueSeats)
+  const countGreenSeat = useAppSelector(
     (state) => state.bookingState.greenSeats,
   )
 
   const fillSeat = (
     e: MouseEvent<SVGPathElement>,
     fill: string,
-    seat: SeatsInfo,
-    setColor: ActionCreatorWithPayload<number>,
-    removeColor: ActionCreatorWithPayload<number>,
+    seat: string,
+    color: string,
   ) => {
     if (e.target instanceof SVGPathElement) {
       const target = e.target
       if (!target.style.fill) {
         target.style.fill = fill
-        dispatch(addSeat(seat.position))
-        dispatch(setColor(1))
-        console.log(arraySeat, countRedSeat, countRlueSeat, countRreenSeat)
+
+        dispatch(manageSeat({ seat: seat, color: color, isAdding: true }))
+        console.log(
+          arraySeat,
+          "red:" + countRedSeat,
+          "blue:" + countBlueSeat,
+          "green:" + countGreenSeat,
+          booleanIsAdding,
+          rowSeatColor,
+        )
       } else {
         target.style.fill = ""
-        dispatch(removeSeat(seat.position))
-        dispatch(removeColor(1))
-        console.log(arraySeat, countRedSeat, countRlueSeat, countRreenSeat)
+        dispatch(manageSeat({ seat: seat, color: color, isAdding: false }))
+        console.log(
+          arraySeat,
+          "red:" + countRedSeat,
+          "blue:" + countBlueSeat,
+          "green:" + countGreenSeat,
+          booleanIsAdding,
+          rowSeatColor,
+        )
       }
     }
   }
@@ -150,7 +157,7 @@ const TheaterMap = () => {
                 return (
                   <path
                     onClick={(e) => {
-                      fillSeat(e, redSeat, seat, addRedSeat, removeRedSeat)
+                      fillSeat(e, redSeat, seat.position, RED)
                     }}
                     key={seat.coordinates}
                     className="cls-9"
@@ -161,9 +168,7 @@ const TheaterMap = () => {
               {redSeatSecondRow.map((seat) => {
                 return (
                   <path
-                    onClick={(e) =>
-                      fillSeat(e, redSeat, seat, addRedSeat, removeRedSeat)
-                    }
+                    onClick={(e) => fillSeat(e, redSeat, seat.position, RED)}
                     key={seat.coordinates}
                     className="cls-9"
                     d={seat.coordinates}
@@ -176,9 +181,7 @@ const TheaterMap = () => {
               {blueSeatThirdRow.map((seat) => {
                 return (
                   <path
-                    onClick={(e) =>
-                      fillSeat(e, blueSeat, seat, addBlueSeat, removeBlueSeat)
-                    }
+                    onClick={(e) => fillSeat(e, blueSeat, seat.position, BLUE)}
                     key={seat.coordinates}
                     className="cls-1"
                     d={seat.coordinates}
@@ -188,9 +191,7 @@ const TheaterMap = () => {
               {blueSeatFourthRow.map((seat) => {
                 return (
                   <path
-                    onClick={(e) =>
-                      fillSeat(e, blueSeat, seat, addBlueSeat, removeBlueSeat)
-                    }
+                    onClick={(e) => fillSeat(e, blueSeat, seat.position, BLUE)}
                     key={seat.coordinates}
                     className="cls-1"
                     d={seat.coordinates}
@@ -204,13 +205,7 @@ const TheaterMap = () => {
                 return (
                   <path
                     onClick={(e) =>
-                      fillSeat(
-                        e,
-                        greenSeat,
-                        seat,
-                        addGreenSeat,
-                        removeGreenSeat,
-                      )
+                      fillSeat(e, greenSeat, seat.position, GREEN)
                     }
                     key={seat.coordinates}
                     className="cls-7"
@@ -222,13 +217,7 @@ const TheaterMap = () => {
                 return (
                   <path
                     onClick={(e) =>
-                      fillSeat(
-                        e,
-                        greenSeat,
-                        seat,
-                        addGreenSeat,
-                        removeGreenSeat,
-                      )
+                      fillSeat(e, greenSeat, seat.position, GREEN)
                     }
                     key={seat.coordinates}
                     className="cls-7"
@@ -241,13 +230,7 @@ const TheaterMap = () => {
                 return (
                   <path
                     onClick={(e) =>
-                      fillSeat(
-                        e,
-                        greenSeat,
-                        seat,
-                        addGreenSeat,
-                        removeGreenSeat,
-                      )
+                      fillSeat(e, greenSeat, seat.position, GREEN)
                     }
                     key={seat.coordinates}
                     className="cls-7"
@@ -259,13 +242,7 @@ const TheaterMap = () => {
                 return (
                   <path
                     onClick={(e) =>
-                      fillSeat(
-                        e,
-                        greenSeat,
-                        seat,
-                        addGreenSeat,
-                        removeGreenSeat,
-                      )
+                      fillSeat(e, greenSeat, seat.position, GREEN)
                     }
                     key={seat.coordinates}
                     className="cls-7"
@@ -279,9 +256,7 @@ const TheaterMap = () => {
               {blueSeatNinthRow.map((seat) => {
                 return (
                   <path
-                    onClick={(e) =>
-                      fillSeat(e, blueSeat, seat, addBlueSeat, removeBlueSeat)
-                    }
+                    onClick={(e) => fillSeat(e, blueSeat, seat.position, BLUE)}
                     key={seat.coordinates}
                     className="cls-1"
                     d={seat.coordinates}
@@ -291,9 +266,7 @@ const TheaterMap = () => {
               {blueSeatTenthRow.map((seat) => {
                 return (
                   <path
-                    onClick={(e) =>
-                      fillSeat(e, blueSeat, seat, addBlueSeat, removeBlueSeat)
-                    }
+                    onClick={(e) => fillSeat(e, blueSeat, seat.position, BLUE)}
                     key={seat.coordinates}
                     className="cls-1"
                     d={seat.coordinates}
