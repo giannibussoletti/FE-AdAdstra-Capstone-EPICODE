@@ -41,9 +41,10 @@ const SingleMovieCard = () => {
         </Col>
       </Row>
       <Row xs={1} md={4} lg={5} xxl={6} className="mt-4">
-        {tempArray.map(() => {
+        {/* da rimuovere */}
+        {tempArray.map((_, i) => {
           return (
-            <Col className="px-2 pb-3 cursor-pointer">
+            <Col key={i} className="px-2 pb-3 cursor-pointer">
               <MovieStartTime />
             </Col>
           )
