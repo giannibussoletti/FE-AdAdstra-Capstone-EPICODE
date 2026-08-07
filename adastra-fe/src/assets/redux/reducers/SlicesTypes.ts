@@ -1,4 +1,6 @@
 import type { MobileMenu } from "../../misc/types"
+
+//NAVBAR
 export type MenuState = {
   isOpen: string
   citySearchMenu: string
@@ -18,4 +20,8 @@ export type PayloadStateCity = {
   citySearchMenu: string
   isCities: boolean
   arrayCity: string[]
+}
+//TICKET
+export type Booking = {
+  seats: string[]
 }
