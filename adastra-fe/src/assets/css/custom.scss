@@ -8,7 +8,20 @@ $custom-colors: (
   "time-color": #070038,
   "subtext-time": #2261ae,
 );
+// Input Form
+$input-bg: #1c2047;
+$input-focus-bg: $input-bg;
+$input-color: #fff;
+$input-focus-border-color: $input-color;
+$input-focus-color: $input-color;
+$input-border-width: 0.1em;
 
+// Table
+$table-color: $input-color;
+$table-bg: transparent;
+$table-cell-padding-y: 1rem;
+
+// Accordion variable
 $accordion-padding-y: 0rem;
 $accordion-padding-x: 1rem;
 $accordion-body-padding-y: $accordion-padding-y;
@@ -42,6 +55,10 @@ body {
   font-weight: 300;
   font-style: normal;
   color: #fff;
+}
+
+.montserrat-family {
+  font-family: "Montserrat", sans-serif;
 }
 
 h2 {
@@ -193,6 +210,27 @@ body,
   &:hover {
     scale: 102%;
   }
+}
+
+// seat on total
+.seat-total {
+  --dimension: 30px;
+  --radius: 5px;
+  display: inline-block;
+  margin-right: 10px;
+  height: var(--dimension);
+  width: var(--dimension);
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+}
+.seat-red {
+  background-color: #b83c2d;
+}
+.seat-blue {
+  background-color: #324ba6;
+}
+.seat-green {
+  background-color: #007800;
 }
 
 //Theater Map

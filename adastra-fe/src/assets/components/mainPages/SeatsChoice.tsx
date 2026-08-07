@@ -8,27 +8,36 @@ const SeatsChoice = () => {
       <Row>
         <Col></Col>
       </Row>
-      <Row xs={1} className="m-0 p-0">
+      <Row xs={1} lg={2} className="m-0 p-0">
         <Col>
           <TheaterMap />
         </Col>
-        <Col className="mt-5">
-          <div className="text-center">
+        <Col className="mt-5 mt-lg-0">
+          <div className="text-center pb-4">
             <MainTitles string="totale biglietti" />
           </div>
-          <Table>
+          <Table borderless className="text-uppercase fw-medium">
             <tbody>
               <tr>
-                <td>Rosso</td>
-                <td className="text-end">0.00€</td>
+                <td className="d-flex align-items-center p-0 pb-4">
+                  <span className="seat-total seat-red" />
+                  Rosso
+                </td>
+                <td className="text-end p-0 pb-4">0.00€</td>
               </tr>
               <tr>
-                <td>Verde</td>
-                <td className="text-end">0.00€</td>
+                <td className="d-flex align-items-center p-0 pb-4">
+                  <span className="seat-total seat-green" />
+                  Verde
+                </td>
+                <td className="text-end p-0 pb-4">0.00€</td>
               </tr>
               <tr>
-                <td>Blu</td>
-                <td className="text-end">0.00€</td>
+                <td className="d-flex align-items-center p-0 pb-4">
+                  <span className="seat-total seat-blue" />
+                  Blu
+                </td>
+                <td className="text-end p-0">0.00€</td>
               </tr>
             </tbody>
           </Table>
@@ -37,9 +46,9 @@ const SeatsChoice = () => {
           </h4>
 
           <Form.Control />
-          <div className="d-flex justify-content-between">
-            <h2 className="mb-4 p-0">totale</h2>
-            <h2 className="mb-4 p-0">0.00€</h2>
+          <div className="d-flex justify-content-between mb-3 mt-5 p-0">
+            <h2>totale</h2>
+            <h2>0.00€</h2>
           </div>
           <div className="text-center">
             <Buttons string="verifica ed acquista" />
