@@ -10,6 +10,18 @@ import {
   blueSeatNinthRow,
   blueSeatTenthRow,
 } from "../vector/theaterMapArrays"
+import type { MouseEvent } from "react"
+
+const fillSeat = (e: MouseEvent<SVGPathElement>, fill: string) => {
+  if (e.target instanceof SVGPathElement) {
+    const target = e.target
+    if (!target.style.fill) target.style.fill = fill
+    else target.style.fill = ""
+  }
+}
+const redSeat = "#b83c2d"
+const blueSeat = "#324ba6"
+const greenSeat = "#007800"
 
 const TheaterMap = () => {
   return (
@@ -100,7 +112,7 @@ const TheaterMap = () => {
               {redSeatFirstRow.map((seat) => {
                 return (
                   <path
-                    onClick={() => console.log(seat.position)}
+                    onClick={(e) => fillSeat(e, redSeat)}
                     key={seat.coordinates}
                     className="cls-9"
                     d={seat.coordinates}
@@ -110,7 +122,7 @@ const TheaterMap = () => {
               {redSeatSecondRow.map((seat) => {
                 return (
                   <path
-                    onClick={() => console.log(seat.position)}
+                    onClick={(e) => fillSeat(e, redSeat)}
                     key={seat.coordinates}
                     className="cls-9"
                     d={seat.coordinates}
@@ -123,7 +135,7 @@ const TheaterMap = () => {
               {blueSeatThirdRow.map((seat) => {
                 return (
                   <path
-                    onClick={() => console.log(seat.position)}
+                    onClick={(e) => fillSeat(e, blueSeat)}
                     key={seat.coordinates}
                     className="cls-1"
                     d={seat.coordinates}
@@ -133,7 +145,7 @@ const TheaterMap = () => {
               {blueSeatFourthRow.map((seat) => {
                 return (
                   <path
-                    onClick={() => console.log(seat.position)}
+                    onClick={(e) => fillSeat(e, blueSeat)}
                     key={seat.coordinates}
                     className="cls-1"
                     d={seat.coordinates}
@@ -146,7 +158,7 @@ const TheaterMap = () => {
               {greenSeatFifthRow.map((seat) => {
                 return (
                   <path
-                    onClick={() => console.log(seat.position)}
+                    onClick={(e) => fillSeat(e, greenSeat)}
                     key={seat.coordinates}
                     className="cls-7"
                     d={seat.coordinates}
@@ -156,7 +168,7 @@ const TheaterMap = () => {
               {greenSeatSixthRow.map((seat) => {
                 return (
                   <path
-                    onClick={() => console.log(seat.position)}
+                    onClick={(e) => fillSeat(e, greenSeat)}
                     key={seat.coordinates}
                     className="cls-7"
                     d={seat.coordinates}
@@ -167,7 +179,7 @@ const TheaterMap = () => {
               {greenSeatSeventhRow.map((seat) => {
                 return (
                   <path
-                    onClick={() => console.log(seat.position)}
+                    onClick={(e) => fillSeat(e, greenSeat)}
                     key={seat.coordinates}
                     className="cls-7"
                     d={seat.coordinates}
@@ -177,7 +189,7 @@ const TheaterMap = () => {
               {greenSeatEighthRow.map((seat) => {
                 return (
                   <path
-                    onClick={() => console.log(seat.position)}
+                    onClick={(e) => fillSeat(e, greenSeat)}
                     key={seat.coordinates}
                     className="cls-7"
                     d={seat.coordinates}
@@ -190,7 +202,7 @@ const TheaterMap = () => {
               {blueSeatNinthRow.map((seat) => {
                 return (
                   <path
-                    onClick={() => console.log(seat.position)}
+                    onClick={(e) => fillSeat(e, blueSeat)}
                     key={seat.coordinates}
                     className="cls-1"
                     d={seat.coordinates}
@@ -200,7 +212,7 @@ const TheaterMap = () => {
               {blueSeatTenthRow.map((seat) => {
                 return (
                   <path
-                    onClick={() => console.log(seat.position)}
+                    onClick={(e) => fillSeat(e, blueSeat)}
                     key={seat.coordinates}
                     className="cls-1"
                     d={seat.coordinates}
