@@ -1,10 +1,25 @@
 import TheaterMap from "../TheaterMap"
 import MainTitles from "../MainTitles"
 import Buttons from "../Buttons"
+import { redCost, blueCost, greenCost } from "../../misc/variables"
 import { faPen } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Container, Col, Row, Form, Button } from "react-bootstrap"
+import { useAppSelector } from "../../redux/hooks"
+
 const SeatsChoice = () => {
+  const redTicketsAmount = useAppSelector((red) => red.bookingState.redSeats)
+  const blueTicketsAmount = useAppSelector(
+    (blue) => blue.bookingState.blueSeats,
+  )
+  const greenTicktesAmount = useAppSelector(
+    (green) => green.bookingState.greenSeats,
+  )
+
+  const totalRed = redTicketsAmount * redCost
+  const totalBlue = blueTicketsAmount * blueCost
+  const totalGreen = greenTicktesAmount * greenCost
+  const totalCost = totalRed + totalBlue + totalGreen
   return (
     <>
       <Container fluid>
@@ -32,35 +47,35 @@ const SeatsChoice = () => {
           </Row>
         </Row>
       </Container>
-      <Container fluid="lg" className="px-0 px-lg-3">
+      <Container fluid="lg">
         <Row xs={1} lg={2}>
           <Col className="p-0 px-lg-3">
             <TheaterMap />
           </Col>
-          <Col className="px-1 px-lg-5  mt-5">
+          <Col className=" mt-5">
             <Col className="text-center pb-4">
               <MainTitles string="totale biglietti" />
             </Col>
             <Row className="text-uppercase fw-medium align-items-center px-5 pb-4">
               <Col className="d-flex align-items-center">
                 <span className="seat-total seat-red" />
-                Rosso
+                Rosso X {redTicketsAmount}
               </Col>
-              <Col className="text-end">0.00€</Col>
+              <Col className="text-end">{totalRed.toFixed(2)} €</Col>
             </Row>
             <Row className="text-uppercase fw-medium align-items-center px-5 pb-4">
               <Col className="d-flex align-items-center">
                 <span className="seat-total seat-blue" />
-                Blu
+                Blu X {blueTicketsAmount}
               </Col>
-              <Col className="text-end">0.00€</Col>
+              <Col className="text-end">{totalBlue.toFixed(2)} €</Col>
             </Row>
             <Row className="text-uppercase fw-medium align-items-center px-5 pb-4">
               <Col className="d-flex align-items-center">
                 <span className="seat-total seat-green" />
-                Verde
+                Verde X {greenTicktesAmount}
               </Col>
-              <Col className="text-end">0.00€</Col>
+              <Col className="text-end">{totalGreen.toFixed(2)} €</Col>
             </Row>
             <Row className="px-5">
               <Col>
@@ -70,7 +85,7 @@ const SeatsChoice = () => {
                 <Form.Control />
                 <div className="d-flex justify-content-between mb-3 mt-5 p-0">
                   <h2>totale</h2>
-                  <h2>0.00€</h2>
+                  <h2>{totalCost.toFixed(2)} €</h2>
                 </div>
                 <div className="text-center">
                   <Buttons string="verifica ed acquista" />

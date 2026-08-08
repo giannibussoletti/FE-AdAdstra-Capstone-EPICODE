@@ -17,6 +17,9 @@ import {
   redSeat,
   blueSeat,
   greenSeat,
+  redCost,
+  blueCost,
+  greenCost,
 } from "../misc/variables"
 import { useAppDispatch } from "../redux/hooks"
 import { manageSeat } from "../redux/reducers/TicketSlice"
@@ -92,7 +95,7 @@ const TheaterMap = () => {
             />
             <text className="cls-11" transform="translate(176.72 918.32)">
               <tspan x="0" y="0">
-                Rossa 00,0€
+                Rossa {redCost.toLocaleString()}€
               </tspan>
             </text>
             <path
@@ -101,7 +104,7 @@ const TheaterMap = () => {
             />
             <text className="cls-11" transform="translate(535.61 918.32)">
               <tspan x="0" y="0">
-                Blu 00,0€
+                Blu {blueCost.toLocaleString()}€
               </tspan>
             </text>
             <path
@@ -110,7 +113,7 @@ const TheaterMap = () => {
             />
             <text className="cls-11" transform="translate(866.31 918.32)">
               <tspan x="0" y="0">
-                Verde 00,0€
+                Verde {greenCost.toLocaleString()}€
               </tspan>
             </text>
             <text className="cls-12" transform="translate(419.22 166.17)">
