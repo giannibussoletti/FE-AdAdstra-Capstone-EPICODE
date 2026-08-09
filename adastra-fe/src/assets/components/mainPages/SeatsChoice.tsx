@@ -28,6 +28,11 @@ const SeatsChoice = () => {
     (state) => state.bookingState.blueSeatsPosition,
   )
 
+  const maxSeats = greenSeatsPosition.concat(
+    redSeatsPosition,
+    blueSeatsPosition,
+  )
+
   const totalRed = redTicketsAmount * redCost
   const totalBlue = blueTicketsAmount * blueCost
   const totalGreen = greenTicktesAmount * greenCost
@@ -62,7 +67,7 @@ const SeatsChoice = () => {
       <Container fluid="lg">
         <Row xs={1} lg={2}>
           <Col className="p-0 px-lg-3">
-            <TheaterMap />
+            <TheaterMap maxSeats={maxSeats} />
           </Col>
           <Col className=" mt-5">
             <Col className="text-center pb-4">

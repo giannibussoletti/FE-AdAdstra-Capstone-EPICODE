@@ -23,18 +23,20 @@ import {
 } from "../misc/variables"
 import { useAppDispatch } from "../redux/hooks"
 import { manageSeat } from "../redux/reducers/TicketSlice"
-import type { FillFunction } from "../misc/types"
+import type { MaxSeatsInt, FillFunction } from "../misc/types"
 
-const TheaterMap = () => {
+const TheaterMap = ({ maxSeats }: MaxSeatsInt) => {
   const dispatch = useAppDispatch()
 
   const fillSeat = ({ e, fill, seat, color }: FillFunction) => {
     if (e.target instanceof SVGPathElement) {
       const target = e.target
-      if (!target.style.fill) {
+      if (!target.style.fill && maxSeats.length < 10) {
         target.style.fill = fill
 
         dispatch(manageSeat({ seat, color, isAdding: true }))
+      } else if (!target.style.fill && maxSeats.length === 10) {
+        console.log(maxSeats.length, "NO!")
       } else {
         target.style.fill = ""
         dispatch(manageSeat({ seat, color, isAdding: false }))
