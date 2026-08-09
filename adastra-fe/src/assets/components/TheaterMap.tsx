@@ -33,8 +33,19 @@ const TheaterMap = () => {
   const fillSeat = ({ e, fill, seat, color }: FillFunction) => {
     if (e.target instanceof SVGPathElement) {
       const target = e.target
-
-      if (rowLetter !== seat.position.letter && maxSeats.length >= 1) {
+      const seatNumber = seat.position.number
+      const chosenNumbers = maxSeats.map((m) => m.position.number)
+      const lowerSeat = Math.min(...chosenNumbers)
+      const higherSeat = Math.max(...chosenNumbers)
+      if (
+        seatNumber + 1 !== lowerSeat &&
+        seatNumber - 1 != higherSeat &&
+        maxSeats.length >= 1 &&
+        !target.style.fill &&
+        rowLetter === seat.position.letter
+      ) {
+        window.alert("è possibile acquistare solo posti adiacenti")
+      } else if (rowLetter !== seat.position.letter && maxSeats.length >= 1) {
         window.alert("è possibile acquistare solo nella stessa fila")
       } else if (!target.style.fill && maxSeats.length < 10) {
         target.style.fill = fill

@@ -22,7 +22,7 @@ export const bookingSlice = createSlice({
     manageSeat: (state, action: PayloadAction<DispatchSeat>) => {
       state.color = action.payload.color
       state.isAdding = action.payload.isAdding
-      if (state.maxSeats.length <= 1) {
+      if (state.maxSeats.length < 1) {
         state.rowLetter = action.payload.seat.position.letter
       }
 
@@ -35,6 +35,7 @@ export const bookingSlice = createSlice({
               action.payload.seat.position,
             ]
             state.maxSeats = [...state.maxSeats, action.payload.seat]
+
             break
           case false:
             state.greenSeatsAmount -= 1
@@ -56,6 +57,7 @@ export const bookingSlice = createSlice({
               action.payload.seat.position,
             ]
             state.maxSeats = [...state.maxSeats, action.payload.seat]
+
             break
           case false:
             state.redSeatsAmount -= 1
@@ -75,6 +77,8 @@ export const bookingSlice = createSlice({
               ...state.blueSeatsPosition,
               action.payload.seat.position,
             ]
+            state.maxSeats = [...state.maxSeats, action.payload.seat]
+
             break
           case false:
             state.blueSeatsAmount -= 1
@@ -84,6 +88,7 @@ export const bookingSlice = createSlice({
             state.maxSeats = state.maxSeats.filter(
               (s) => s.id !== action.payload.seat.id,
             )
+
             break
         }
       }
