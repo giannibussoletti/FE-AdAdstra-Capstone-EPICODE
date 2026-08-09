@@ -43,7 +43,7 @@ export type InfoCardAndDesktopNav = {
 }
 
 export type SeatsInfo = {
-  coordinates: string
+  SVGcoordinates: string
   position: string
 }
 

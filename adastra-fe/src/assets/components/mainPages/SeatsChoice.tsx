@@ -8,12 +8,24 @@ import { Container, Col, Row, Form, Button } from "react-bootstrap"
 import { useAppSelector } from "../../redux/hooks"
 
 const SeatsChoice = () => {
-  const redTicketsAmount = useAppSelector((red) => red.bookingState.redSeats)
+  const redTicketsAmount = useAppSelector(
+    (state) => state.bookingState.redSeatsAmount,
+  )
   const blueTicketsAmount = useAppSelector(
-    (blue) => blue.bookingState.blueSeats,
+    (state) => state.bookingState.blueSeatsAmount,
   )
   const greenTicktesAmount = useAppSelector(
-    (green) => green.bookingState.greenSeats,
+    (state) => state.bookingState.greenSeatsAmount,
+  )
+
+  const greenSeatsPosition = useAppSelector(
+    (state) => state.bookingState.greenSeatsPosition,
+  )
+  const redSeatsPosition = useAppSelector(
+    (state) => state.bookingState.redSeatsPosition,
+  )
+  const blueSeatsPosition = useAppSelector(
+    (state) => state.bookingState.blueSeatsPosition,
   )
 
   const totalRed = redTicketsAmount * redCost
@@ -59,23 +71,52 @@ const SeatsChoice = () => {
             <Row className="text-uppercase fw-medium align-items-center px-5 pb-4">
               <Col className="d-flex align-items-center">
                 <span className="seat-total seat-red" />
-                Rosso X {redTicketsAmount}
+                Rosso
               </Col>
               <Col className="text-end">{totalRed.toFixed(2)} €</Col>
+              <Col xs={12} className="mt-1">
+                <span>
+                  {redSeatsPosition.map((pos, i) => {
+                    return pos + (i !== redSeatsPosition.length - 1 ? ", " : "")
+                  })}
+                </span>
+                <span style={{ opacity: "0" }}>.</span>
+              </Col>
             </Row>
+            <Row></Row>
             <Row className="text-uppercase fw-medium align-items-center px-5 pb-4">
               <Col className="d-flex align-items-center">
                 <span className="seat-total seat-blue" />
-                Blu X {blueTicketsAmount}
+                Blu
               </Col>
               <Col className="text-end">{totalBlue.toFixed(2)} €</Col>
+              <Col xs={12} className="mt-1">
+                <span>
+                  {blueSeatsPosition.map((pos, i) => {
+                    return (
+                      pos + (i !== blueSeatsPosition.length - 1 ? ", " : "")
+                    )
+                  })}
+                </span>
+                <span style={{ opacity: "0" }}>.</span>
+              </Col>
             </Row>
             <Row className="text-uppercase fw-medium align-items-center px-5 pb-4">
               <Col className="d-flex align-items-center">
                 <span className="seat-total seat-green" />
-                Verde X {greenTicktesAmount}
+                Verde
               </Col>
               <Col className="text-end">{totalGreen.toFixed(2)} €</Col>
+              <Col xs={12} className="mt-1">
+                <span>
+                  {greenSeatsPosition.map((pos, i) => {
+                    return (
+                      pos + (i !== greenSeatsPosition.length - 1 ? ", " : "")
+                    )
+                  })}
+                </span>
+                <span style={{ opacity: "0" }}>.</span>
+              </Col>
             </Row>
             <Row className="px-5">
               <Col>

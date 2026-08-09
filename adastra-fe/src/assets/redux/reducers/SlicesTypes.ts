@@ -23,10 +23,12 @@ export type PayloadStateCity = {
 }
 //TICKET
 export type Booking = {
-  seats: string[]
-  redSeats: number
-  greenSeats: number
-  blueSeats: number
+  redSeatsPosition: string[]
+  greenSeatsPosition: string[]
+  blueSeatsPosition: string[]
+  redSeatsAmount: number
+  greenSeatsAmount: number
+  blueSeatsAmount: number
   isAdding: boolean
   color: string
 }

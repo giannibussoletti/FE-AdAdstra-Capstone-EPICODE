@@ -3,10 +3,12 @@ import type { Booking, DispatchSeat } from "../SlicesTypes"
 import { GREEN, BLUE, RED } from "../../../misc/variables"
 
 const initialState: Booking = {
-  seats: [],
-  redSeats: 0,
-  greenSeats: 0,
-  blueSeats: 0,
+  redSeatsPosition: [],
+  greenSeatsPosition: [],
+  blueSeatsPosition: [],
+  redSeatsAmount: 0,
+  greenSeatsAmount: 0,
+  blueSeatsAmount: 0,
   isAdding: false,
   color: "",
 }
@@ -21,12 +23,15 @@ export const bookingSlice = createSlice({
       if (state.color === GREEN) {
         switch (state.isAdding) {
           case true:
-            state.greenSeats += 1
-            state.seats = [...state.seats, action.payload.seat.position]
+            state.greenSeatsAmount += 1
+            state.greenSeatsPosition = [
+              ...state.greenSeatsPosition,
+              action.payload.seat.position,
+            ]
             break
           case false:
-            state.greenSeats -= 1
-            state.seats = state.seats.filter(
+            state.greenSeatsAmount -= 1
+            state.greenSeatsPosition = state.greenSeatsPosition.filter(
               (pos) => pos !== action.payload.seat.position,
             )
             break
@@ -34,12 +39,15 @@ export const bookingSlice = createSlice({
       } else if (state.color === RED) {
         switch (state.isAdding) {
           case true:
-            state.redSeats += 1
-            state.seats = [...state.seats, action.payload.seat.position]
+            state.redSeatsAmount += 1
+            state.redSeatsPosition = [
+              ...state.redSeatsPosition,
+              action.payload.seat.position,
+            ]
             break
           case false:
-            state.redSeats -= 1
-            state.seats = state.seats.filter(
+            state.redSeatsAmount -= 1
+            state.redSeatsPosition = state.redSeatsPosition.filter(
               (pos) => pos !== action.payload.seat.position,
             )
             break
@@ -47,12 +55,15 @@ export const bookingSlice = createSlice({
       } else if (state.color === BLUE) {
         switch (state.isAdding) {
           case true:
-            state.blueSeats += 1
-            state.seats = [...state.seats, action.payload.seat.position]
+            state.blueSeatsAmount += 1
+            state.blueSeatsPosition = [
+              ...state.blueSeatsPosition,
+              action.payload.seat.position,
+            ]
             break
           case false:
-            state.blueSeats -= 1
-            state.seats = state.seats.filter(
+            state.blueSeatsAmount -= 1
+            state.blueSeatsPosition = state.blueSeatsPosition.filter(
               (pos) => pos !== action.payload.seat.position,
             )
             break
