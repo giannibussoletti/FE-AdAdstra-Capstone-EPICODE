@@ -77,7 +77,12 @@ const SeatsChoice = () => {
               <Col xs={12} className="mt-1">
                 <span>
                   {redSeatsPosition.map((pos, i) => {
-                    return pos + (i !== redSeatsPosition.length - 1 ? ", " : "")
+                    console.log(redSeatsPosition)
+                    return (
+                      pos.letter +
+                      pos.number +
+                      (i !== redSeatsPosition.length - 1 ? ", " : "")
+                    )
                   })}
                 </span>
                 <span style={{ opacity: "0" }}>.</span>
@@ -94,7 +99,9 @@ const SeatsChoice = () => {
                 <span>
                   {blueSeatsPosition.map((pos, i) => {
                     return (
-                      pos + (i !== blueSeatsPosition.length - 1 ? ", " : "")
+                      pos.letter +
+                      pos.number +
+                      +(i !== blueSeatsPosition.length - 1 ? ", " : "")
                     )
                   })}
                 </span>
@@ -111,7 +118,9 @@ const SeatsChoice = () => {
                 <span>
                   {greenSeatsPosition.map((pos, i) => {
                     return (
-                      pos + (i !== greenSeatsPosition.length - 1 ? ", " : "")
+                      pos.letter +
+                      pos.number +
+                      +(i !== greenSeatsPosition.length - 1 ? ", " : "")
                     )
                   })}
                 </span>
