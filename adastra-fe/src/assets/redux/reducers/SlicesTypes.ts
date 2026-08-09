@@ -1,4 +1,4 @@
-import type { MobileMenu } from "../../misc/types"
+import type { MobileMenu, PositionInfo } from "../../misc/types"
 
 //NAVBAR
 export type MenuState = {
@@ -23,15 +23,15 @@ export type PayloadStateCity = {
 }
 //TICKET
 export type Booking = {
-  redSeatsPosition: string[]
-  greenSeatsPosition: string[]
-  blueSeatsPosition: string[]
+  redSeatsPosition: PositionInfo[]
+  greenSeatsPosition: PositionInfo[]
+  blueSeatsPosition: PositionInfo[]
   redSeatsAmount: number
   greenSeatsAmount: number
   blueSeatsAmount: number
   isAdding: boolean
   color: string
-  rowLetter: string
+  maxSeats: SeatsInfo[]
 }
 
 import type { SeatsInfo } from "../../misc/types"

@@ -39,9 +39,14 @@ export type InfoCardAndDesktopNav = {
   link: string
 }
 
+export type PositionInfo = {
+  letter: string
+  number: number
+}
+
 export type SeatsInfo = {
   SVGcoordinates: string
-  position: string
+  position: PositionInfo
 }
 
 export type FillFunction = {
@@ -49,10 +54,6 @@ export type FillFunction = {
   fill: string
   seat: SeatsInfo
   color: string
-}
-
-export type MaxSeatsInt = {
-  maxSeats: string[]
 }
 
 export type PropString = {

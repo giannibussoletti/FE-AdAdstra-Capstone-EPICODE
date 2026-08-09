@@ -11,7 +11,7 @@ const initialState: Booking = {
   blueSeatsAmount: 0,
   isAdding: false,
   color: "",
-  rowLetter: "",
+  maxSeats: [],
 }
 
 export const bookingSlice = createSlice({
@@ -21,6 +21,7 @@ export const bookingSlice = createSlice({
     manageSeat: (state, action: PayloadAction<DispatchSeat>) => {
       state.color = action.payload.color
       state.isAdding = action.payload.isAdding
+
       if (state.color === GREEN) {
         switch (state.isAdding) {
           case true:
@@ -29,11 +30,15 @@ export const bookingSlice = createSlice({
               ...state.greenSeatsPosition,
               action.payload.seat.position,
             ]
+            state.maxSeats = [...state.maxSeats, action.payload.seat]
             break
           case false:
             state.greenSeatsAmount -= 1
             state.greenSeatsPosition = state.greenSeatsPosition.filter(
               (pos) => pos !== action.payload.seat.position,
+            )
+            state.maxSeats = state.maxSeats.filter(
+              (s) => s !== action.payload.seat,
             )
             break
         }
@@ -45,11 +50,15 @@ export const bookingSlice = createSlice({
               ...state.redSeatsPosition,
               action.payload.seat.position,
             ]
+            state.maxSeats = [...state.maxSeats, action.payload.seat]
             break
           case false:
             state.redSeatsAmount -= 1
             state.redSeatsPosition = state.redSeatsPosition.filter(
               (pos) => pos !== action.payload.seat.position,
+            )
+            state.maxSeats = state.maxSeats.filter(
+              (s) => s !== action.payload.seat,
             )
             break
         }
@@ -61,22 +70,23 @@ export const bookingSlice = createSlice({
               ...state.blueSeatsPosition,
               action.payload.seat.position,
             ]
+
             break
           case false:
             state.blueSeatsAmount -= 1
             state.blueSeatsPosition = state.blueSeatsPosition.filter(
               (pos) => pos !== action.payload.seat.position,
             )
+            state.maxSeats = state.maxSeats.filter(
+              (s) => s !== action.payload.seat,
+            )
             break
         }
       }
     },
-    rowLetterState: (state, action: PayloadAction<string>) => {
-      state.rowLetter = action.payload
-    },
   },
 })
 
-export const { manageSeat, rowLetterState } = bookingSlice.actions
+export const { manageSeat } = bookingSlice.actions
 
 export default bookingSlice.reducer
