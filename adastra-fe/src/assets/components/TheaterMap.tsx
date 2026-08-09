@@ -34,10 +34,10 @@ const TheaterMap = () => {
       if (!target.style.fill) {
         target.style.fill = fill
 
-        dispatch(manageSeat({ seat, color: color, isAdding: true }))
+        dispatch(manageSeat({ seat, color, isAdding: true }))
       } else {
         target.style.fill = ""
-        dispatch(manageSeat({ seat, color: color, isAdding: false }))
+        dispatch(manageSeat({ seat, color, isAdding: false }))
       }
     }
   }
@@ -132,9 +132,9 @@ const TheaterMap = () => {
                     onClick={(e) =>
                       fillSeat({ e, fill: redSeat, seat, color: RED })
                     }
-                    key={seat.coordinates + seat + RED}
+                    key={seat.SVGcoordinates + seat + RED}
                     className="cls-9"
-                    d={seat.coordinates}
+                    d={seat.SVGcoordinates}
                   />
                 )
               })}
@@ -144,9 +144,9 @@ const TheaterMap = () => {
                     onClick={(e) =>
                       fillSeat({ e, fill: redSeat, seat, color: RED })
                     }
-                    key={seat.coordinates + seat + RED}
+                    key={seat.SVGcoordinates + seat + RED}
                     className="cls-9"
-                    d={seat.coordinates}
+                    d={seat.SVGcoordinates}
                   />
                 )
               })}
@@ -164,9 +164,9 @@ const TheaterMap = () => {
                         color: BLUE,
                       })
                     }
-                    key={seat.coordinates + seat + BLUE}
+                    key={seat.SVGcoordinates + seat + BLUE}
                     className="cls-1"
-                    d={seat.coordinates}
+                    d={seat.SVGcoordinates}
                   />
                 )
               })}
@@ -181,9 +181,9 @@ const TheaterMap = () => {
                         color: BLUE,
                       })
                     }
-                    key={seat.coordinates + seat + BLUE}
+                    key={seat.SVGcoordinates + seat + BLUE}
                     className="cls-1"
-                    d={seat.coordinates}
+                    d={seat.SVGcoordinates}
                   />
                 )
               })}
@@ -201,9 +201,9 @@ const TheaterMap = () => {
                         color: GREEN,
                       })
                     }
-                    key={seat.coordinates + seat + GREEN}
+                    key={seat.SVGcoordinates + seat + GREEN}
                     className="cls-7"
-                    d={seat.coordinates}
+                    d={seat.SVGcoordinates}
                   />
                 )
               })}
@@ -218,9 +218,9 @@ const TheaterMap = () => {
                         color: GREEN,
                       })
                     }
-                    key={seat.coordinates + seat + GREEN}
+                    key={seat.SVGcoordinates + seat + GREEN}
                     className="cls-7"
-                    d={seat.coordinates}
+                    d={seat.SVGcoordinates}
                   />
                 )
               })}
@@ -236,9 +236,9 @@ const TheaterMap = () => {
                         color: GREEN,
                       })
                     }
-                    key={seat.coordinates + seat + GREEN}
+                    key={seat.SVGcoordinates + seat + GREEN}
                     className="cls-7"
-                    d={seat.coordinates}
+                    d={seat.SVGcoordinates}
                   />
                 )
               })}
@@ -254,9 +254,9 @@ const TheaterMap = () => {
                         color: GREEN,
                       })
                     }
-                    key={seat.coordinates + seat + GREEN}
+                    key={seat.SVGcoordinates + seat + GREEN}
                     className="cls-7"
-                    d={seat.coordinates}
+                    d={seat.SVGcoordinates}
                   />
                 )
               })}
@@ -274,9 +274,9 @@ const TheaterMap = () => {
                         color: BLUE,
                       })
                     }
-                    key={seat.coordinates + seat + BLUE}
+                    key={seat.SVGcoordinates + seat + BLUE}
                     className="cls-1"
-                    d={seat.coordinates}
+                    d={seat.SVGcoordinates}
                   />
                 )
               })}
@@ -291,9 +291,9 @@ const TheaterMap = () => {
                         color: BLUE,
                       })
                     }
-                    key={seat.coordinates + seat + BLUE}
+                    key={seat.SVGcoordinates + seat + BLUE}
                     className="cls-1"
-                    d={seat.coordinates}
+                    d={seat.SVGcoordinates}
                   />
                 )
               })}
