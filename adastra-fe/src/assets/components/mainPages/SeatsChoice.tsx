@@ -73,11 +73,10 @@ const SeatsChoice = () => {
                 <span className="seat-total seat-red" />
                 Rosso
               </Col>
-              <Col className="text-end">{totalRed.toFixed(2)} €</Col>
+              <Col className="text-end">x {redTicketsAmount}</Col>
               <Col xs={12} className="mt-1">
                 <span>
                   {redSeatsPosition.map((pos, i) => {
-                    console.log(redSeatsPosition)
                     return (
                       pos.letter +
                       pos.number +
@@ -94,7 +93,7 @@ const SeatsChoice = () => {
                 <span className="seat-total seat-blue" />
                 Blu
               </Col>
-              <Col className="text-end">{totalBlue.toFixed(2)} €</Col>
+              <Col className="text-end">x {blueTicketsAmount}</Col>
               <Col xs={12} className="mt-1">
                 <span>
                   {blueSeatsPosition.map((pos, i) => {
@@ -113,7 +112,7 @@ const SeatsChoice = () => {
                 <span className="seat-total seat-green" />
                 Verde
               </Col>
-              <Col className="text-end">{totalGreen.toFixed(2)} €</Col>
+              <Col className="text-end">x {greenTicktesAmount}</Col>
               <Col xs={12} className="mt-1">
                 <span>
                   {greenSeatsPosition.map((pos, i) => {
