@@ -21,22 +21,29 @@ import {
   blueCost,
   greenCost,
 } from "../misc/variables"
-import { useAppDispatch } from "../redux/hooks"
-import { manageSeat } from "../redux/reducers/TicketSlice"
+import { useAppDispatch, useAppSelector } from "../redux/hooks"
+import { manageSeat, rowLetterState } from "../redux/reducers/TicketSlice"
 import type { MaxSeatsInt, FillFunction } from "../misc/types"
 
 const TheaterMap = ({ maxSeats }: MaxSeatsInt) => {
   const dispatch = useAppDispatch()
-
+  const rowLetter = useAppSelector((state) => state.bookingState.rowLetter)
   const fillSeat = ({ e, fill, seat, color }: FillFunction) => {
     if (e.target instanceof SVGPathElement) {
       const target = e.target
-      if (!target.style.fill && maxSeats.length < 10) {
-        target.style.fill = fill
+      const letter = seat.position.split("")[0]
 
+      if (maxSeats.length < 1) {
+        dispatch(rowLetterState(letter))
+      }
+
+      if (rowLetter !== letter && maxSeats.length >= 1) {
+        alert("puoi acquistare posti solo sulla stessa fila")
+      } else if (!target.style.fill && maxSeats.length < 10) {
+        target.style.fill = fill
         dispatch(manageSeat({ seat, color, isAdding: true }))
       } else if (!target.style.fill && maxSeats.length === 10) {
-        console.log(maxSeats.length, "NO!")
+        window.alert("è possibile acquistare un massimo di 10 posti")
       } else {
         target.style.fill = ""
         dispatch(manageSeat({ seat, color, isAdding: false }))
