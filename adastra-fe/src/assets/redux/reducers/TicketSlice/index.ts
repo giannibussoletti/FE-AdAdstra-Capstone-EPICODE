@@ -11,6 +11,7 @@ const initialState: Booking = {
   blueSeatsAmount: 0,
   isAdding: false,
   color: "",
+  rowLetter: "",
 }
 
 export const bookingSlice = createSlice({
@@ -70,9 +71,12 @@ export const bookingSlice = createSlice({
         }
       }
     },
+    rowLetterState: (state, action: PayloadAction<string>) => {
+      state.rowLetter = action.payload
+    },
   },
 })
 
-export const { manageSeat } = bookingSlice.actions
+export const { manageSeat, rowLetterState } = bookingSlice.actions
 
 export default bookingSlice.reducer
