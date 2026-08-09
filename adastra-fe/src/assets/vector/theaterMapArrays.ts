@@ -2,102 +2,122 @@ import type { SeatsInfo } from "../misc/types"
 
 export const redSeatFirstRow: SeatsInfo[] = [
   {
-    position: "A1",
+    id: "A1-seat",
+    position: { id: "A1", letter: "A", number: 1 },
     SVGcoordinates:
       "M135.33,307.34h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "A2",
+    id: "A2-seat",
+    position: { id: "A2", letter: "A", number: 2 },
     SVGcoordinates:
       "M178.69,307.34h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "A3",
+    id: "A3-seat",
+    position: { id: "A3", letter: "A", number: 3 },
     SVGcoordinates:
       "M222.04,307.34h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "A4",
+    id: "A4-seat",
+    position: { id: "A4", letter: "A", number: 4 },
     SVGcoordinates:
       "M265.4,307.34h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "A5",
+    id: "A5-seat",
+    position: { id: "A5", letter: "A", number: 5 },
     SVGcoordinates:
       "M308.76,307.34h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "A6",
+    id: "A6-seat",
+    position: { id: "A6", letter: "A", number: 6 },
     SVGcoordinates:
       "M352.11,307.34h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "A7",
+    id: "A7-seat",
+    position: { id: "A7", letter: "A", number: 7 },
     SVGcoordinates:
       "M395.47,307.34h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "A8",
+    id: "A8-seat",
+    position: { id: "A8", letter: "A", number: 8 },
     SVGcoordinates:
       "M438.83,307.34h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "A9",
+    id: "A9-seat",
+    position: { id: "A9", letter: "A", number: 9 },
     SVGcoordinates:
       "M482.18,307.34h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "A10",
+    id: "A10-seat",
+    position: { id: "A10", letter: "A", number: 10 },
     SVGcoordinates:
       "M525.54,307.34h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "A11",
+    id: "A11-seat",
+    position: { id: "A11", letter: "A", number: 11 },
     SVGcoordinates:
       "M568.9,307.34h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "A12",
+    id: "A12-seat",
+    position: { id: "A12", letter: "A", number: 12 },
     SVGcoordinates:
       "M612.25,307.34h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "A13",
+    id: "A13-seat",
+    position: { id: "A13", letter: "A", number: 13 },
     SVGcoordinates:
       "M655.61,307.34h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "A14",
+    id: "A14-seat",
+    position: { id: "A14", letter: "A", number: 14 },
     SVGcoordinates:
       "M698.97,307.34h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "A15",
+    id: "A15-seat",
+    position: { id: "A15", letter: "A", number: 15 },
     SVGcoordinates:
       "M742.32,307.34h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "A16",
+    id: "A16-seat",
+    position: { id: "A16", letter: "A", number: 16 },
     SVGcoordinates:
       "M785.68,307.34h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "A17",
+    id: "A17-seat",
+    position: { id: "A17", letter: "A", number: 17 },
     SVGcoordinates:
       "M829.04,307.34h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "A18",
+    id: "A18-seat",
+    position: { id: "A18", letter: "A", number: 18 },
     SVGcoordinates:
       "M872.39,307.34h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "A19",
+    id: "A19-seat",
+    position: { id: "A19", letter: "A", number: 19 },
     SVGcoordinates:
       "M915.75,307.34h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "A20",
+    id: "A20-seat",
+    position: { id: "A20", letter: "A", number: 20 },
     SVGcoordinates:
       "M959.11,307.34h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
@@ -105,102 +125,122 @@ export const redSeatFirstRow: SeatsInfo[] = [
 
 export const redSeatSecondRow: SeatsInfo[] = [
   {
-    position: "B1",
+    id: "B1-seat",
+    position: { id: "B1", letter: "B", number: 1 },
     SVGcoordinates:
       "M135.33,355.8h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "B2",
+    id: "B2-seat",
+    position: { id: "B2", letter: "B", number: 2 },
     SVGcoordinates:
       "M178.69,355.8h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "B3",
+    id: "B3-seat",
+    position: { id: "B3", letter: "B", number: 3 },
     SVGcoordinates:
       "M222.04,355.8h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "B4",
+    id: "B4-seat",
+    position: { id: "B4", letter: "B", number: 4 },
     SVGcoordinates:
       "M265.4,355.8h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "B5",
+    id: "B5-seat",
+    position: { id: "B5", letter: "B", number: 5 },
     SVGcoordinates:
       "M308.76,355.8h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "B6",
+    id: "B6-seat",
+    position: { id: "B6", letter: "B", number: 6 },
     SVGcoordinates:
       "M352.11,355.8h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "B7",
+    id: "B7-seat",
+    position: { id: "B7", letter: "B", number: 7 },
     SVGcoordinates:
       "M395.47,355.8h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "B8",
+    id: "B8-seat",
+    position: { id: "B8", letter: "B", number: 8 },
     SVGcoordinates:
       "M438.83,355.8h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "B9",
+    id: "B9-seat",
+    position: { id: "B9", letter: "B", number: 9 },
     SVGcoordinates:
       "M482.18,355.8h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "B10",
+    id: "B10-seat",
+    position: { id: "B10", letter: "B", number: 10 },
     SVGcoordinates:
       "M525.54,355.8h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "B11",
+    id: "B11-seat",
+    position: { id: "B11", letter: "B", number: 11 },
     SVGcoordinates:
       "M568.9,355.8h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "B12",
+    id: "B12-seat",
+    position: { id: "B12", letter: "B", number: 12 },
     SVGcoordinates:
       "M612.25,355.8h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "B13",
+    id: "B13-seat",
+    position: { id: "B13", letter: "B", number: 13 },
     SVGcoordinates:
       "M655.61,355.8h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "B14",
+    id: "B14-seat",
+    position: { id: "B14", letter: "B", number: 14 },
     SVGcoordinates:
       "M698.97,355.8h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "B15",
+    id: "B15-seat",
+    position: { id: "B15", letter: "B", number: 15 },
     SVGcoordinates:
       "M742.32,355.8h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "B16",
+    id: "B16-seat",
+    position: { id: "B16", letter: "B", number: 16 },
     SVGcoordinates:
       "M785.68,355.8h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "B17",
+    id: "B17-seat",
+    position: { id: "B17", letter: "B", number: 17 },
     SVGcoordinates:
       "M829.04,355.8h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "B18",
+    id: "B18-seat",
+    position: { id: "B18", letter: "B", number: 18 },
     SVGcoordinates:
       "M872.39,355.8h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "B19",
+    id: "B19-seat",
+    position: { id: "B19", letter: "B", number: 19 },
     SVGcoordinates:
       "M915.75,355.8h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "B20",
+    id: "B20-seat",
+    position: { id: "B20", letter: "B", number: 20 },
     SVGcoordinates:
       "M959.11,355.8h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
@@ -208,102 +248,122 @@ export const redSeatSecondRow: SeatsInfo[] = [
 
 export const blueSeatThirdRow: SeatsInfo[] = [
   {
-    position: "C1",
+    id: "C1-seat",
+    position: { id: "C1", letter: "C", number: 1 },
     SVGcoordinates:
       "M135.33,404.26h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "C2",
+    id: "C2-seat",
+    position: { id: "C2", letter: "C", number: 2 },
     SVGcoordinates:
       "M178.69,404.26h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "C3",
+    id: "C3-seat",
+    position: { id: "C3", letter: "C", number: 3 },
     SVGcoordinates:
       "M222.04,404.26h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "C4",
+    id: "C4-seat",
+    position: { id: "C4", letter: "C", number: 4 },
     SVGcoordinates:
       "M265.4,404.26h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "C5",
+    id: "C5-seat",
+    position: { id: "C5", letter: "C", number: 5 },
     SVGcoordinates:
       "M308.76,404.26h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "C6",
+    id: "C6-seat",
+    position: { id: "C6", letter: "C", number: 6 },
     SVGcoordinates:
       "M352.11,404.26h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "C7",
+    id: "C7-seat",
+    position: { id: "C7", letter: "C", number: 7 },
     SVGcoordinates:
       "M395.47,404.26h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "C8",
+    id: "C8-seat",
+    position: { id: "C8", letter: "C", number: 8 },
     SVGcoordinates:
       "M438.83,404.26h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "C9",
+    id: "C9-seat",
+    position: { id: "C9", letter: "C", number: 9 },
     SVGcoordinates:
       "M482.18,404.26h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "C10",
+    id: "C10-seat",
+    position: { id: "C10", letter: "C", number: 10 },
     SVGcoordinates:
       "M525.54,404.26h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "C11",
+    id: "C11-seat",
+    position: { id: "C11", letter: "C", number: 11 },
     SVGcoordinates:
       "M568.9,404.26h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "C12",
+    id: "C12-seat",
+    position: { id: "C12", letter: "C", number: 12 },
     SVGcoordinates:
       "M612.25,404.26h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "C13",
+    id: "C13-seat",
+    position: { id: "C13", letter: "C", number: 13 },
     SVGcoordinates:
       "M655.61,404.26h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "C14",
+    id: "C14-seat",
+    position: { id: "C14", letter: "C", number: 14 },
     SVGcoordinates:
       "M698.97,404.26h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "C15",
+    id: "C15-seat",
+    position: { id: "C15", letter: "C", number: 15 },
     SVGcoordinates:
       "M742.32,404.26h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "C16",
+    id: "C16-seat",
+    position: { id: "C16", letter: "C", number: 16 },
     SVGcoordinates:
       "M785.68,404.26h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "C17",
+    id: "C17-seat",
+    position: { id: "C17", letter: "C", number: 17 },
     SVGcoordinates:
       "M829.04,404.26h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "C18",
+    id: "C18-seat",
+    position: { id: "C18", letter: "C", number: 18 },
     SVGcoordinates:
       "M872.39,404.26h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "C19",
+    id: "C19-seat",
+    position: { id: "C19", letter: "C", number: 19 },
     SVGcoordinates:
       "M915.75,404.26h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "C20",
+    id: "C20-seat",
+    position: { id: "C20", letter: "C", number: 20 },
     SVGcoordinates:
       "M959.11,404.26h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
@@ -311,102 +371,122 @@ export const blueSeatThirdRow: SeatsInfo[] = [
 
 export const blueSeatFourthRow: SeatsInfo[] = [
   {
-    position: "D1",
+    id: "D1-seat",
+    position: { id: "D1", letter: "D", number: 1 },
     SVGcoordinates:
       "M135.33,452.72h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "D2",
+    id: "D2-seat",
+    position: { id: "D2", letter: "D", number: 2 },
     SVGcoordinates:
       "M178.69,452.72h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "D3",
+    id: "D3-seat",
+    position: { id: "D3", letter: "D", number: 3 },
     SVGcoordinates:
       "M222.04,452.72h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "D4",
+    id: "D4-seat",
+    position: { id: "D4", letter: "D", number: 4 },
     SVGcoordinates:
       "M265.4,452.72h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "D5",
+    id: "D5-seat",
+    position: { id: "D5", letter: "D", number: 5 },
     SVGcoordinates:
       "M308.76,452.72h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "D6",
+    id: "D6-seat",
+    position: { id: "D6", letter: "D", number: 6 },
     SVGcoordinates:
       "M352.11,452.72h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "D7",
+    id: "D7-seat",
+    position: { id: "D7", letter: "D", number: 7 },
     SVGcoordinates:
       "M395.47,452.72h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "D8",
+    id: "D8-seat",
+    position: { id: "D8", letter: "D", number: 8 },
     SVGcoordinates:
       "M438.83,452.72h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "D9",
+    id: "D9-seat",
+    position: { id: "D9", letter: "D", number: 9 },
     SVGcoordinates:
       "M482.18,452.72h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "D10",
+    id: "D10-seat",
+    position: { id: "D10", letter: "D", number: 10 },
     SVGcoordinates:
       "M525.54,452.72h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "D11",
+    id: "D11-seat",
+    position: { id: "D11", letter: "D", number: 11 },
     SVGcoordinates:
       "M568.9,452.72h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "D12",
+    id: "D12-seat",
+    position: { id: "D12", letter: "D", number: 12 },
     SVGcoordinates:
       "M612.25,452.72h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "D13",
+    id: "D13-seat",
+    position: { id: "D13", letter: "D", number: 13 },
     SVGcoordinates:
       "M655.61,452.72h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "D14",
+    id: "D14-seat",
+    position: { id: "D14", letter: "D", number: 14 },
     SVGcoordinates:
       "M698.97,452.72h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "D15",
+    id: "D15-seat",
+    position: { id: "D15", letter: "D", number: 15 },
     SVGcoordinates:
       "M742.32,452.72h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "D16",
+    id: "D16-seat",
+    position: { id: "D16", letter: "D", number: 16 },
     SVGcoordinates:
       "M785.68,452.72h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "D17",
+    id: "D17-seat",
+    position: { id: "D17", letter: "D", number: 17 },
     SVGcoordinates:
       "M829.04,452.72h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "D18",
+    id: "D18-seat",
+    position: { id: "D18", letter: "D", number: 18 },
     SVGcoordinates:
       "M872.39,452.72h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "D19",
+    id: "D19-seat",
+    position: { id: "D19", letter: "D", number: 19 },
     SVGcoordinates:
       "M915.75,452.72h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "D20",
+    id: "D20-seat",
+    position: { id: "D20", letter: "D", number: 20 },
     SVGcoordinates:
       "M959.11,452.72h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
@@ -414,67 +494,80 @@ export const blueSeatFourthRow: SeatsInfo[] = [
 
 export const greenSeatFifthRow: SeatsInfo[] = [
   {
-    position: "E1",
+    id: "E1-seat",
+    position: { id: "E1", letter: "E", number: 1 },
     SVGcoordinates:
       "M437.09,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "E2",
+    id: "E2-seat",
+    position: { id: "E2", letter: "E", number: 2 },
     SVGcoordinates:
       "M480.45,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "E3",
+    id: "E3-seat",
+    position: { id: "E3", letter: "E", number: 3 },
     SVGcoordinates:
       "M523.8,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "E4",
+    id: "E4-seat",
+    position: { id: "E4", letter: "E", number: 4 },
     SVGcoordinates:
       "M567.16,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "E5",
+    id: "E5-seat",
+    position: { id: "E5", letter: "E", number: 5 },
     SVGcoordinates:
       "M610.52,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "E6",
+    id: "E6-seat",
+    position: { id: "E6", letter: "E", number: 6 },
     SVGcoordinates:
       "M653.87,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "E7",
+    id: "E7-seat",
+    position: { id: "E7", letter: "E", number: 7 },
     SVGcoordinates:
       "M697.23,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "E8",
+    id: "E8-seat",
+    position: { id: "E8", letter: "E", number: 8 },
     SVGcoordinates:
       "M740.59,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "E9",
+    id: "E9-seat",
+    position: { id: "E9", letter: "E", number: 9 },
     SVGcoordinates:
       "M783.94,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "E10",
+    id: "E10-seat",
+    position: { id: "E10", letter: "E", number: 10 },
     SVGcoordinates:
       "M827.3,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "E11",
+    id: "E11-seat",
+    position: { id: "E11", letter: "E", number: 11 },
     SVGcoordinates:
       "M870.66,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "E12",
+    id: "E12-seat",
+    position: { id: "E12", letter: "E", number: 12 },
     SVGcoordinates:
       "M914.01,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "E13",
+    id: "E13-seat",
+    position: { id: "E13", letter: "E", number: 13 },
     SVGcoordinates:
       "M957.37,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
@@ -482,102 +575,122 @@ export const greenSeatFifthRow: SeatsInfo[] = [
 
 export const greenSeatSixthRow: SeatsInfo[] = [
   {
-    position: "F1",
+    id: "F1-seat",
+    position: { id: "F1", letter: "F", number: 1 },
     SVGcoordinates:
       "M135.33,599.37h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "F2",
+    id: "F2-seat",
+    position: { id: "F2", letter: "F", number: 2 },
     SVGcoordinates:
       "M178.69,599.37h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "F3",
+    id: "F3-seat",
+    position: { id: "F3", letter: "F", number: 3 },
     SVGcoordinates:
       "M222.04,599.37h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "F4",
+    id: "F4-seat",
+    position: { id: "F4", letter: "F", number: 4 },
     SVGcoordinates:
       "M265.4,599.37h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "F5",
+    id: "F5-seat",
+    position: { id: "F5", letter: "F", number: 5 },
     SVGcoordinates:
       "M308.76,599.37h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "F6",
+    id: "F6-seat",
+    position: { id: "F6", letter: "F", number: 6 },
     SVGcoordinates:
       "M352.11,599.37h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "F7",
+    id: "F7-seat",
+    position: { id: "F7", letter: "F", number: 7 },
     SVGcoordinates:
       "M395.47,599.37h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "F8",
+    id: "F8-seat",
+    position: { id: "F8", letter: "F", number: 8 },
     SVGcoordinates:
       "M438.83,599.37h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "F9",
+    id: "F9-seat",
+    position: { id: "F9", letter: "F", number: 9 },
     SVGcoordinates:
       "M482.18,599.37h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "F10",
+    id: "F10-seat",
+    position: { id: "F10", letter: "F", number: 10 },
     SVGcoordinates:
       "M525.54,599.37h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "F11",
+    id: "F11-seat",
+    position: { id: "F11", letter: "F", number: 11 },
     SVGcoordinates:
       "M568.9,599.37h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "F12",
+    id: "F12-seat",
+    position: { id: "F12", letter: "F", number: 12 },
     SVGcoordinates:
       "M612.25,599.37h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "F13",
+    id: "F13-seat",
+    position: { id: "F13", letter: "F", number: 13 },
     SVGcoordinates:
       "M655.61,599.37h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "F14",
+    id: "F14-seat",
+    position: { id: "F14", letter: "F", number: 14 },
     SVGcoordinates:
       "M698.97,599.37h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "F15",
+    id: "F15-seat",
+    position: { id: "F15", letter: "F", number: 15 },
     SVGcoordinates:
       "M742.32,599.37h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "F16",
+    id: "F16-seat",
+    position: { id: "F16", letter: "F", number: 16 },
     SVGcoordinates:
       "M785.68,599.37h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "F17",
+    id: "F17-seat",
+    position: { id: "F17", letter: "F", number: 17 },
     SVGcoordinates:
       "M829.04,599.37h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "F18",
+    id: "F18-seat",
+    position: { id: "F18", letter: "F", number: 18 },
     SVGcoordinates:
       "M872.39,599.37h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "F19",
+    id: "F19-seat",
+    position: { id: "F19", letter: "F", number: 19 },
     SVGcoordinates:
       "M915.75,599.37h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "F20",
+    id: "F20-seat",
+    position: { id: "F20", letter: "F", number: 20 },
     SVGcoordinates:
       "M959.11,599.37h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
@@ -585,102 +698,122 @@ export const greenSeatSixthRow: SeatsInfo[] = [
 
 export const greenSeatSeventhRow: SeatsInfo[] = [
   {
-    position: "G1",
+    id: "G1-seat",
+    position: { id: "G1", letter: "G", number: 1 },
     SVGcoordinates:
       "M135.33,647.83h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "G2",
+    id: "G2-seat",
+    position: { id: "G2", letter: "G", number: 2 },
     SVGcoordinates:
       "M178.69,647.83h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "G3",
+    id: "G3-seat",
+    position: { id: "G3", letter: "G", number: 3 },
     SVGcoordinates:
       "M222.04,647.83h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "G4",
+    id: "G4-seat",
+    position: { id: "G4", letter: "G", number: 4 },
     SVGcoordinates:
       "M265.4,647.83h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "G5",
+    id: "G5-seat",
+    position: { id: "G5", letter: "G", number: 5 },
     SVGcoordinates:
       "M308.76,647.83h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "G6",
+    id: "G6-seat",
+    position: { id: "G6", letter: "G", number: 6 },
     SVGcoordinates:
       "M352.11,647.83h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "G7",
+    id: "G7-seat",
+    position: { id: "G7", letter: "G", number: 7 },
     SVGcoordinates:
       "M395.47,647.83h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "G8",
+    id: "G8-seat",
+    position: { id: "G8", letter: "G", number: 8 },
     SVGcoordinates:
       "M438.83,647.83h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "G9",
+    id: "G9-seat",
+    position: { id: "G9", letter: "G", number: 9 },
     SVGcoordinates:
       "M482.18,647.83h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "G10",
+    id: "G10-seat",
+    position: { id: "G10", letter: "G", number: 10 },
     SVGcoordinates:
       "M525.54,647.83h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "G11",
+    id: "G11-seat",
+    position: { id: "G11", letter: "G", number: 11 },
     SVGcoordinates:
       "M568.9,647.83h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "G12",
+    id: "G12-seat",
+    position: { id: "G12", letter: "G", number: 12 },
     SVGcoordinates:
       "M612.25,647.83h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "G13",
+    id: "G13-seat",
+    position: { id: "G13", letter: "G", number: 13 },
     SVGcoordinates:
       "M655.61,647.83h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "G14",
+    id: "G14-seat",
+    position: { id: "G14", letter: "G", number: 14 },
     SVGcoordinates:
       "M698.97,647.83h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "G15",
+    id: "G15-seat",
+    position: { id: "G15", letter: "G", number: 15 },
     SVGcoordinates:
       "M742.32,647.83h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "G16",
+    id: "G16-seat",
+    position: { id: "G16", letter: "G", number: 16 },
     SVGcoordinates:
       "M785.68,647.83h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "G17",
+    id: "G17-seat",
+    position: { id: "G17", letter: "G", number: 17 },
     SVGcoordinates:
       "M829.04,647.83h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "G18",
+    id: "G18-seat",
+    position: { id: "G18", letter: "G", number: 18 },
     SVGcoordinates:
       "M872.39,647.83h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "G19",
+    id: "G19-seat",
+    position: { id: "G19", letter: "G", number: 19 },
     SVGcoordinates:
       "M915.75,647.83h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "G20",
+    id: "G20-seat",
+    position: { id: "G20", letter: "G", number: 20 },
     SVGcoordinates:
       "M959.11,647.83h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
@@ -688,102 +821,122 @@ export const greenSeatSeventhRow: SeatsInfo[] = [
 
 export const greenSeatEighthRow: SeatsInfo[] = [
   {
-    position: "H1",
+    id: "H1-seat",
+    position: { id: "H1", letter: "H", number: 1 },
     SVGcoordinates:
       "M135.33,696.29h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "H2",
+    id: "H2-seat",
+    position: { id: "H2", letter: "H", number: 2 },
     SVGcoordinates:
       "M178.69,696.29h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "H3",
+    id: "H3-seat",
+    position: { id: "H3", letter: "H", number: 3 },
     SVGcoordinates:
       "M222.04,696.29h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "H4",
+    id: "H4-seat",
+    position: { id: "H4", letter: "H", number: 4 },
     SVGcoordinates:
       "M265.4,696.29h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "H5",
+    id: "H5-seat",
+    position: { id: "H5", letter: "H", number: 5 },
     SVGcoordinates:
       "M308.76,696.29h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "H6",
+    id: "H6-seat",
+    position: { id: "H6", letter: "H", number: 6 },
     SVGcoordinates:
       "M352.11,696.29h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "H7",
+    id: "H7-seat",
+    position: { id: "H7", letter: "H", number: 7 },
     SVGcoordinates:
       "M395.47,696.29h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "H8",
+    id: "H8-seat",
+    position: { id: "H8", letter: "H", number: 8 },
     SVGcoordinates:
       "M438.83,696.29h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "H9",
+    id: "H9-seat",
+    position: { id: "H9", letter: "H", number: 9 },
     SVGcoordinates:
       "M482.18,696.29h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "H10",
+    id: "H10-seat",
+    position: { id: "H10", letter: "H", number: 10 },
     SVGcoordinates:
       "M525.54,696.29h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "H11",
+    id: "H11-seat",
+    position: { id: "H11", letter: "H", number: 11 },
     SVGcoordinates:
       "M568.9,696.29h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "H12",
+    id: "H12-seat",
+    position: { id: "H12", letter: "H", number: 12 },
     SVGcoordinates:
       "M612.25,696.29h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "H13",
+    id: "H13-seat",
+    position: { id: "H13", letter: "H", number: 13 },
     SVGcoordinates:
       "M655.61,696.29h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "H14",
+    id: "H14-seat",
+    position: { id: "H14", letter: "H", number: 14 },
     SVGcoordinates:
       "M698.97,696.29h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "H15",
+    id: "H15-seat",
+    position: { id: "H15", letter: "H", number: 15 },
     SVGcoordinates:
       "M742.32,696.29h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "H16",
+    id: "H16-seat",
+    position: { id: "H16", letter: "H", number: 16 },
     SVGcoordinates:
       "M785.68,696.29h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "H17",
+    id: "H17-seat",
+    position: { id: "H17", letter: "H", number: 17 },
     SVGcoordinates:
       "M829.04,696.29h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "H18",
+    id: "H18-seat",
+    position: { id: "H18", letter: "H", number: 18 },
     SVGcoordinates:
       "M872.39,696.29h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "H19",
+    id: "H19-seat",
+    position: { id: "H19", letter: "H", number: 19 },
     SVGcoordinates:
       "M915.75,696.29h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "H20",
+    id: "H20-seat",
+    position: { id: "H20", letter: "H", number: 20 },
     SVGcoordinates:
       "M959.11,696.29h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
@@ -791,102 +944,122 @@ export const greenSeatEighthRow: SeatsInfo[] = [
 
 export const blueSeatNinthRow: SeatsInfo[] = [
   {
-    position: "L1",
+    id: "L1-seat",
+    position: { id: "L1", letter: "L", number: 1 },
     SVGcoordinates:
       "M135.33,746.19h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "L2",
+    id: "L2-seat",
+    position: { id: "L2", letter: "L", number: 2 },
     SVGcoordinates:
       "M178.69,746.19h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "L3",
+    id: "L3-seat",
+    position: { id: "L3", letter: "L", number: 3 },
     SVGcoordinates:
       "M222.04,746.19h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "L4",
+    id: "L4-seat",
+    position: { id: "L4", letter: "L", number: 4 },
     SVGcoordinates:
       "M265.4,746.19h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "L5",
+    id: "L5-seat",
+    position: { id: "L5", letter: "L", number: 5 },
     SVGcoordinates:
       "M308.76,746.19h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "L6",
+    id: "L6-seat",
+    position: { id: "L6", letter: "L", number: 6 },
     SVGcoordinates:
       "M352.11,746.19h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "L7",
+    id: "L7-seat",
+    position: { id: "L7", letter: "L", number: 7 },
     SVGcoordinates:
       "M395.47,746.19h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "L8",
+    id: "L8-seat",
+    position: { id: "L8", letter: "L", number: 8 },
     SVGcoordinates:
       "M438.83,746.19h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "L9",
+    id: "L9-seat",
+    position: { id: "L9", letter: "L", number: 9 },
     SVGcoordinates:
       "M482.18,746.19h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "L10",
+    id: "L10-seat",
+    position: { id: "L10", letter: "L", number: 10 },
     SVGcoordinates:
       "M525.54,746.19h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "L11",
+    id: "L11-seat",
+    position: { id: "L11", letter: "L", number: 11 },
     SVGcoordinates:
       "M568.9,746.19h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "L12",
+    id: "L12-seat",
+    position: { id: "L12", letter: "L", number: 12 },
     SVGcoordinates:
       "M612.25,746.19h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "L13",
+    id: "L13-seat",
+    position: { id: "L13", letter: "L", number: 13 },
     SVGcoordinates:
       "M655.61,746.19h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "L14",
+    id: "L14-seat",
+    position: { id: "L14", letter: "L", number: 14 },
     SVGcoordinates:
       "M698.97,746.19h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "L15",
+    id: "L15-seat",
+    position: { id: "L15", letter: "L", number: 15 },
     SVGcoordinates:
       "M742.32,746.19h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "L16",
+    id: "L16-seat",
+    position: { id: "L16", letter: "L", number: 16 },
     SVGcoordinates:
       "M785.68,746.19h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "L17",
+    id: "L17-seat",
+    position: { id: "L17", letter: "L", number: 17 },
     SVGcoordinates:
       "M829.04,746.19h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "L18",
+    id: "L18-seat",
+    position: { id: "L18", letter: "L", number: 18 },
     SVGcoordinates:
       "M872.39,746.19h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "L19",
+    id: "L19-seat",
+    position: { id: "L19", letter: "L", number: 19 },
     SVGcoordinates:
       "M915.75,746.19h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "L20",
+    id: "L20-seat",
+    position: { id: "L20", letter: "L", number: 20 },
     SVGcoordinates:
       "M959.11,746.19h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
@@ -894,102 +1067,122 @@ export const blueSeatNinthRow: SeatsInfo[] = [
 
 export const blueSeatTenthRow: SeatsInfo[] = [
   {
-    position: "M1",
+    id: "M1-seat",
+    position: { id: "M1", letter: "M", number: 1 },
     SVGcoordinates:
       "M135.33,794.65h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "M2",
+    id: "M2-seat",
+    position: { id: "M2", letter: "M", number: 2 },
     SVGcoordinates:
       "M178.69,794.65h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "M3",
+    id: "M3-seat",
+    position: { id: "M3", letter: "M", number: 3 },
     SVGcoordinates:
       "M222.04,794.65h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "M4",
+    id: "M4-seat",
+    position: { id: "M4", letter: "M", number: 4 },
     SVGcoordinates:
       "M265.4,794.65h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "M5",
+    id: "M5-seat",
+    position: { id: "M5", letter: "M", number: 5 },
     SVGcoordinates:
       "M308.76,794.65h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "M6",
+    id: "M6-seat",
+    position: { id: "M6", letter: "M", number: 6 },
     SVGcoordinates:
       "M352.11,794.65h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "M7",
+    id: "M7-seat",
+    position: { id: "M7", letter: "M", number: 7 },
     SVGcoordinates:
       "M395.47,794.65h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "M8",
+    id: "M8-seat",
+    position: { id: "M8", letter: "M", number: 8 },
     SVGcoordinates:
       "M438.83,794.65h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "M9",
+    id: "M9-seat",
+    position: { id: "M9", letter: "M", number: 9 },
     SVGcoordinates:
       "M482.18,794.65h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "M10",
+    id: "M10-seat",
+    position: { id: "M10", letter: "M", number: 10 },
     SVGcoordinates:
       "M525.54,794.65h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "M11",
+    id: "M11-seat",
+    position: { id: "M11", letter: "M", number: 11 },
     SVGcoordinates:
       "M568.9,794.65h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "M12",
+    id: "M12-seat",
+    position: { id: "M12", letter: "M", number: 12 },
     SVGcoordinates:
       "M612.25,794.65h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "M13",
+    id: "M13-seat",
+    position: { id: "M13", letter: "M", number: 13 },
     SVGcoordinates:
       "M655.61,794.65h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "M14",
+    id: "M14-seat",
+    position: { id: "M14", letter: "M", number: 14 },
     SVGcoordinates:
       "M698.97,794.65h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "M15",
+    id: "M15-seat",
+    position: { id: "M15", letter: "M", number: 15 },
     SVGcoordinates:
       "M742.32,794.65h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "M16",
+    id: "M16-seat",
+    position: { id: "M16", letter: "M", number: 16 },
     SVGcoordinates:
       "M785.68,794.65h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "M17",
+    id: "M17-seat",
+    position: { id: "M17", letter: "M", number: 17 },
     SVGcoordinates:
       "M829.04,794.65h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "M18",
+    id: "M18-seat",
+    position: { id: "M18", letter: "M", number: 18 },
     SVGcoordinates:
       "M872.39,794.65h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "M19",
+    id: "M19-seat",
+    position: { id: "M19", letter: "M", number: 19 },
     SVGcoordinates:
       "M915.75,794.65h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },
   {
-    position: "M20",
+    id: "M20-seat",
+    position: { id: "M20", letter: "M", number: 20 },
     SVGcoordinates:
       "M959.11,794.65h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
   },

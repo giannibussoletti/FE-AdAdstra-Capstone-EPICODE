@@ -12,6 +12,7 @@ const initialState: Booking = {
   isAdding: false,
   color: "",
   maxSeats: [],
+  rowLetter: "",
 }
 
 export const bookingSlice = createSlice({
@@ -21,6 +22,9 @@ export const bookingSlice = createSlice({
     manageSeat: (state, action: PayloadAction<DispatchSeat>) => {
       state.color = action.payload.color
       state.isAdding = action.payload.isAdding
+      if (state.maxSeats.length < 1) {
+        state.rowLetter = action.payload.seat.position.letter
+      }
 
       if (state.color === GREEN) {
         switch (state.isAdding) {
@@ -35,11 +39,12 @@ export const bookingSlice = createSlice({
           case false:
             state.greenSeatsAmount -= 1
             state.greenSeatsPosition = state.greenSeatsPosition.filter(
-              (pos) => pos !== action.payload.seat.position,
+              (pos) => pos.id != action.payload.seat.position.id,
             )
             state.maxSeats = state.maxSeats.filter(
-              (s) => s !== action.payload.seat,
+              (s) => s.id !== action.payload.seat.id,
             )
+
             break
         }
       } else if (state.color === RED) {
@@ -55,10 +60,10 @@ export const bookingSlice = createSlice({
           case false:
             state.redSeatsAmount -= 1
             state.redSeatsPosition = state.redSeatsPosition.filter(
-              (pos) => pos !== action.payload.seat.position,
+              (pos) => pos.id != action.payload.seat.position.id,
             )
             state.maxSeats = state.maxSeats.filter(
-              (s) => s !== action.payload.seat,
+              (s) => s.id !== action.payload.seat.id,
             )
             break
         }
@@ -70,15 +75,14 @@ export const bookingSlice = createSlice({
               ...state.blueSeatsPosition,
               action.payload.seat.position,
             ]
-
             break
           case false:
             state.blueSeatsAmount -= 1
             state.blueSeatsPosition = state.blueSeatsPosition.filter(
-              (pos) => pos !== action.payload.seat.position,
+              (pos) => pos.id != action.payload.seat.position.id,
             )
             state.maxSeats = state.maxSeats.filter(
-              (s) => s !== action.payload.seat,
+              (s) => s.id !== action.payload.seat.id,
             )
             break
         }

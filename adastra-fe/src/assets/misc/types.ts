@@ -40,11 +40,13 @@ export type InfoCardAndDesktopNav = {
 }
 
 export type PositionInfo = {
+  id: string
   letter: string
   number: number
 }
 
 export type SeatsInfo = {
+  id: string
   SVGcoordinates: string
   position: PositionInfo
 }

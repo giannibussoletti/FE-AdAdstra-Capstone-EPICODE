@@ -29,12 +29,15 @@ const TheaterMap = () => {
   const dispatch = useAppDispatch()
 
   const maxSeats = useAppSelector((state) => state.bookingState.maxSeats)
+  const rowLetter = useAppSelector((state) => state.bookingState.rowLetter)
   const fillSeat = ({ e, fill, seat, color }: FillFunction) => {
     if (e.target instanceof SVGPathElement) {
       const target = e.target
-      if (!target.style.fill && maxSeats.length < 10) {
+
+      if (rowLetter !== seat.position.letter && maxSeats.length >= 1) {
+        window.alert("è possibile acquistare solo nella stessa fila")
+      } else if (!target.style.fill && maxSeats.length < 10) {
         target.style.fill = fill
-        console.log(maxSeats.length)
         dispatch(manageSeat({ seat, color, isAdding: true }))
       } else if (!target.style.fill && maxSeats.length === 10) {
         window.alert("è possibile acquistare un massimo di 10 posti")
@@ -135,7 +138,14 @@ const TheaterMap = () => {
                     onClick={(e) =>
                       fillSeat({ e, fill: redSeat, seat, color: RED })
                     }
-                    key={seat.SVGcoordinates + seat + RED}
+                    key={
+                      seat.SVGcoordinates +
+                      seat.id +
+                      seat.position.id +
+                      seat.position.letter +
+                      seat.position.number +
+                      RED
+                    }
                     className="cls-9"
                     d={seat.SVGcoordinates}
                   />
@@ -147,7 +157,14 @@ const TheaterMap = () => {
                     onClick={(e) =>
                       fillSeat({ e, fill: redSeat, seat, color: RED })
                     }
-                    key={seat.SVGcoordinates + seat + RED}
+                    key={
+                      seat.SVGcoordinates +
+                      seat.id +
+                      seat.position.id +
+                      seat.position.letter +
+                      seat.position.number +
+                      RED
+                    }
                     className="cls-9"
                     d={seat.SVGcoordinates}
                   />
@@ -167,7 +184,14 @@ const TheaterMap = () => {
                         color: BLUE,
                       })
                     }
-                    key={seat.SVGcoordinates + seat + BLUE}
+                    key={
+                      seat.SVGcoordinates +
+                      seat.id +
+                      seat.position.id +
+                      seat.position.letter +
+                      seat.position.number +
+                      BLUE
+                    }
                     className="cls-1"
                     d={seat.SVGcoordinates}
                   />
@@ -184,7 +208,14 @@ const TheaterMap = () => {
                         color: BLUE,
                       })
                     }
-                    key={seat.SVGcoordinates + seat + BLUE}
+                    key={
+                      seat.SVGcoordinates +
+                      seat.id +
+                      seat.position.id +
+                      seat.position.letter +
+                      seat.position.number +
+                      BLUE
+                    }
                     className="cls-1"
                     d={seat.SVGcoordinates}
                   />
@@ -204,7 +235,14 @@ const TheaterMap = () => {
                         color: GREEN,
                       })
                     }
-                    key={seat.SVGcoordinates + seat + GREEN}
+                    key={
+                      seat.SVGcoordinates +
+                      seat.id +
+                      seat.position.id +
+                      seat.position.letter +
+                      seat.position.number +
+                      GREEN
+                    }
                     className="cls-7"
                     d={seat.SVGcoordinates}
                   />
@@ -221,7 +259,14 @@ const TheaterMap = () => {
                         color: GREEN,
                       })
                     }
-                    key={seat.SVGcoordinates + seat + GREEN}
+                    key={
+                      seat.SVGcoordinates +
+                      seat.id +
+                      seat.position.id +
+                      seat.position.letter +
+                      seat.position.number +
+                      GREEN
+                    }
                     className="cls-7"
                     d={seat.SVGcoordinates}
                   />
@@ -239,7 +284,14 @@ const TheaterMap = () => {
                         color: GREEN,
                       })
                     }
-                    key={seat.SVGcoordinates + seat + GREEN}
+                    key={
+                      seat.SVGcoordinates +
+                      seat.id +
+                      seat.position.id +
+                      seat.position.letter +
+                      seat.position.number +
+                      GREEN
+                    }
                     className="cls-7"
                     d={seat.SVGcoordinates}
                   />
@@ -257,7 +309,14 @@ const TheaterMap = () => {
                         color: GREEN,
                       })
                     }
-                    key={seat.SVGcoordinates + seat + GREEN}
+                    key={
+                      seat.SVGcoordinates +
+                      seat.id +
+                      seat.position.id +
+                      seat.position.letter +
+                      seat.position.number +
+                      GREEN
+                    }
                     className="cls-7"
                     d={seat.SVGcoordinates}
                   />
@@ -277,7 +336,14 @@ const TheaterMap = () => {
                         color: BLUE,
                       })
                     }
-                    key={seat.SVGcoordinates + seat + BLUE}
+                    key={
+                      seat.SVGcoordinates +
+                      seat.id +
+                      seat.position.id +
+                      seat.position.letter +
+                      seat.position.number +
+                      BLUE
+                    }
                     className="cls-1"
                     d={seat.SVGcoordinates}
                   />
@@ -294,7 +360,14 @@ const TheaterMap = () => {
                         color: BLUE,
                       })
                     }
-                    key={seat.SVGcoordinates + seat + BLUE}
+                    key={
+                      seat.SVGcoordinates +
+                      seat.id +
+                      seat.position.id +
+                      seat.position.letter +
+                      seat.position.number +
+                      BLUE
+                    }
                     className="cls-1"
                     d={seat.SVGcoordinates}
                   />
