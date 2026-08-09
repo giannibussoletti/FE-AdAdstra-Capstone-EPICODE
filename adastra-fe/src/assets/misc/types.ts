@@ -1,8 +1,5 @@
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core"
 import type { MouseEvent } from "react"
-export type PropString = {
-  string: string
-}
 
 export type TopSlider = {
   id: number
@@ -52,4 +49,12 @@ export type FillFunction = {
   fill: string
   seat: SeatsInfo
   color: string
+}
+
+export type MaxSeatsInt = {
+  maxSeats: string[]
+}
+
+export type PropString = {
+  string: string
 }
