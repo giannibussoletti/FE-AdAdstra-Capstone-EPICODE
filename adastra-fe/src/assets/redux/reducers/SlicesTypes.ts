@@ -33,6 +33,7 @@ export type Booking = {
   color: string
   maxSeats: SeatsInfo[]
   rowLetter: string
+  totalCost: number
 }
 
 import type { SeatsInfo } from "../../misc/types"
