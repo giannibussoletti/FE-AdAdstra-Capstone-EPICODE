@@ -13,6 +13,7 @@ const initialState: Booking = {
   color: "",
   maxSeats: [],
   rowLetter: "",
+  totalCost: 0,
 }
 
 export const bookingSlice = createSlice({
@@ -93,9 +94,12 @@ export const bookingSlice = createSlice({
         }
       }
     },
+    updatePrice: (state, action: PayloadAction<number>) => {
+      state.totalCost = action.payload
+    },
   },
 })
 
-export const { manageSeat } = bookingSlice.actions
+export const { manageSeat, updatePrice } = bookingSlice.actions
 
 export default bookingSlice.reducer

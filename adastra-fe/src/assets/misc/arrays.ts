@@ -1,9 +1,4 @@
-import type {
-  FooterTypes,
-  MobileMenu,
-  InfoCardAndDesktopNav,
-  SeatConditionalRender,
-} from "./types"
+import type { FooterTypes, MobileMenu, InfoCardAndDesktopNav } from "./types"
 import { faCircle } from "@fortawesome/free-solid-svg-icons"
 export const footerInfo: FooterTypes[] = [
   {

@@ -61,3 +61,10 @@ export type FillFunction = {
 export type PropString = {
   string: string
 }
+
+export type TicketTypes = {
+  redSeatsPosition: PositionInfo[]
+  greenSeatsPosition: PositionInfo[]
+  blueSeatsPosition: PositionInfo[]
+  totalCost: number
+}

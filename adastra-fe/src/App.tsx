@@ -14,6 +14,7 @@ import Home from "./assets/components/mainPages/Home"
 import Footer from "./assets/components/Footer"
 import FilmDetails from "./assets/components/mainPages/FilmDetails"
 import SeatChoice from "./assets/components/mainPages/SeatsChoice"
+import PaymentPage from "./assets/components/mainPages/PaymentPage"
 //React Router
 import { Route, BrowserRouter as Router, Routes } from "react-router"
 
@@ -27,8 +28,9 @@ const App = () => {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/details/:movieid" element={<FilmDetails />} />
-            <Route path="/seat-choice" element={<SeatChoice />} />
+            <Route path="/dettagli/:movieid" element={<FilmDetails />} />
+            <Route path="/scelta-posto" element={<SeatChoice />} />
+            <Route path="/pagamento" element={<PaymentPage />} />
           </Routes>
         </main>
         <footer>
