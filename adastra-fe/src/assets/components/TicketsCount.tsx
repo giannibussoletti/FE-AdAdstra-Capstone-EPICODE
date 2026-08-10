@@ -14,6 +14,7 @@ const TicketsCount = ({
 
   useEffect(() => {
     dispatch(updatePrice(totalCost))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [totalCost])
 
   return (
