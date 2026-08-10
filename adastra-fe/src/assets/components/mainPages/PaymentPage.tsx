@@ -3,15 +3,7 @@ import TopBarInfoBooking from "../TopBarInfoBooking"
 import MainTitles from "../MainTitles"
 import Buttons from "../Buttons"
 import { useAppSelector } from "../../redux/hooks"
-import {
-  Form,
-  Container,
-  Row,
-  Col,
-  FormCheck,
-  ButtonGroup,
-  Button,
-} from "react-bootstrap"
+import { Form, Container, Row, Col } from "react-bootstrap"
 const PaymentPage = () => {
   const greenSeatsPosition = useAppSelector(
     (state) => state.bookingState.greenSeatsPosition,
@@ -28,28 +20,29 @@ const PaymentPage = () => {
   return (
     <>
       <TopBarInfoBooking />
-      <Container className="mt-5">
-        <div className="text-center pb-4">
-          <MainTitles string="i tuoi biglietti" />
-        </div>
+      <Container className="mt-4 px-5 px-md-0">
+        <Row xs={1} className="text-center">
+          <Col>
+            <MainTitles string="i tuoi biglietti" />
+          </Col>
 
-        <TicketsCount
-          redSeatsPosition={redSeatsPosition}
-          greenSeatsPosition={greenSeatsPosition}
-          blueSeatsPosition={blueSeatsPosition}
-          totalCost={totalCost}
-        />
-      </Container>
-      <Container>
-        <Row className="mb-4">
+          <Col className="mt-3">
+            <TicketsCount
+              redSeatsPosition={redSeatsPosition}
+              greenSeatsPosition={greenSeatsPosition}
+              blueSeatsPosition={blueSeatsPosition}
+              totalCost={totalCost}
+            />
+          </Col>
+        </Row>
+        <Row xs={1} md={2} className="mb-3 p-0 mt-3 mt-md-0">
           <Col>
             <h5 className="f fw-normal text-uppercase mt-3 mb-2">
               <Form.Label className="mb-0">inserisci la tua mail</Form.Label>
             </h5>
             <Form.Control />
           </Col>
-        </Row>
-        <Row>
+
           <Col>
             <h5 className="f fw-normal text-uppercase mt-3 mb-2">
               <Form.Label className="mb-0">inserisci coupon</Form.Label>
@@ -57,40 +50,13 @@ const PaymentPage = () => {
             <Form.Control />
           </Col>
         </Row>
-        <Row className="mb-3 mt-5 p-0">
+
+        <Row xs={1} className="mt-5">
           <Col className="d-flex justify-content-between">
             <h2>totale</h2>
             <h2>{totalCost.toFixed(2)} €</h2>
           </Col>
-        </Row>
-        <Row>
-          <Col>
-            <h5 className="f fw-normal text-uppercase mt-3 mb-2">
-              scegli il metodo di pagamento
-            </h5>
-            <Form>
-              <ButtonGroup>
-                <Button>
-                  <FormCheck
-                    name="paycheck"
-                    type={"radio"}
-                    id={`default-radio-1`}
-                    label={`1`}
-                  />
-                </Button>
-
-                <FormCheck
-                  name="paycheck"
-                  type={"radio"}
-                  id={`default-radio-2`}
-                  label={`default radio`}
-                />
-              </ButtonGroup>
-            </Form>
-          </Col>
-        </Row>
-        <Row className="text-center">
-          <Col>
+          <Col className="text-center mt-4">
             <Buttons string="acquista" />
           </Col>
         </Row>
