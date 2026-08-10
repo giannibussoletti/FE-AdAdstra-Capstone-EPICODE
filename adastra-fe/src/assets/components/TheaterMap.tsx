@@ -39,6 +39,7 @@ const TheaterMap = () => {
       const sameLetter = rowLetter === seatLetter
       const isNextSeat = chosenNumbers.includes(seatNumber + 1)
       const isBeforeSeat = chosenNumbers.includes(seatNumber - 1)
+      const isFilled = target.style.fill
       if (
         !isNextSeat &&
         !isBeforeSeat &&
@@ -52,15 +53,15 @@ const TheaterMap = () => {
         isBeforeSeat &&
         maxSeats.length >= 1 &&
         sameLetter &&
-        target.style.fill
+        isFilled
       ) {
         alert("impossibile un posto in mezzo a due posti prenotati")
       } else if (rowLetter !== seatLetter && maxSeats.length >= 1) {
         window.alert("è possibile acquistare solo nella stessa fila")
-      } else if (!target.style.fill && maxSeats.length < 10) {
+      } else if (!isFilled && maxSeats.length < 10) {
         target.style.fill = fill
         dispatch(manageSeat({ seat, color, isAdding: true }))
-      } else if (!target.style.fill && maxSeats.length === 10) {
+      } else if (!isFilled && maxSeats.length === 10) {
         window.alert("è possibile acquistare un massimo di 10 posti")
       } else {
         target.style.fill = ""
