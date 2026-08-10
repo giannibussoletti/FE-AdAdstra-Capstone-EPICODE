@@ -19,7 +19,7 @@ const TicketsCount = ({
   return (
     <>
       {totalCost === 0 ? (
-        <Row className="text-uppercase fw-medium align-items-center pb-4">
+        <Row className="text-uppercase fw-medium align-items-center">
           <Col className="d-flex align-items-center">
             <span className="seat-total bg-body" />
             Colore
@@ -38,7 +38,7 @@ const TicketsCount = ({
         ""
       )}
       {redSeatsPosition.length > 0 ? (
-        <Row className="text-uppercase fw-medium align-items-center px-5 pb-4">
+        <Row className="text-uppercase fw-medium align-items-center px-5">
           <Col className="d-flex align-items-center">
             <span className="seat-total seat-red" />
             Rosso
@@ -57,7 +57,7 @@ const TicketsCount = ({
         ""
       )}
       {blueSeatsPosition.length > 0 ? (
-        <Row className="text-uppercase fw-medium align-items-center px-5 pb-4">
+        <Row className="text-uppercase fw-medium align-items-center px-5">
           <Col className="d-flex align-items-center">
             <span className="seat-total seat-blue" />
             Blu
@@ -76,7 +76,7 @@ const TicketsCount = ({
         ""
       )}
       {greenSeatsPosition.length > 0 ? (
-        <Row className="text-uppercase fw-medium align-items-center px-5 pb-4">
+        <Row className="text-uppercase fw-medium align-items-center px-5">
           <Col className="d-flex align-items-center">
             <span className="seat-total seat-green" />
             Verde
