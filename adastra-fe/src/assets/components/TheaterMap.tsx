@@ -34,18 +34,28 @@ const TheaterMap = () => {
     if (e.target instanceof SVGPathElement) {
       const target = e.target
       const seatNumber = seat.position.number
+      const seatLetter = seat.position.letter
       const chosenNumbers = maxSeats.map((m) => m.position.number)
-      const lowerSeat = Math.min(...chosenNumbers)
-      const higherSeat = Math.max(...chosenNumbers)
+      const sameLetter = rowLetter === seatLetter
+      const isNextSeat = chosenNumbers.includes(seatNumber + 1)
+      const isBeforeSeat = chosenNumbers.includes(seatNumber - 1)
       if (
-        seatNumber + 1 !== lowerSeat &&
-        seatNumber - 1 != higherSeat &&
+        !isNextSeat &&
+        !isBeforeSeat &&
         maxSeats.length >= 1 &&
-        !target.style.fill &&
-        rowLetter === seat.position.letter
+        sameLetter &&
+        !target.style.fill
       ) {
-        window.alert("è possibile acquistare solo posti adiacenti")
-      } else if (rowLetter !== seat.position.letter && maxSeats.length >= 1) {
+        alert("è possibile prenotare solo posti adiacente")
+      } else if (
+        isNextSeat &&
+        isBeforeSeat &&
+        maxSeats.length >= 1 &&
+        sameLetter &&
+        target.style.fill
+      ) {
+        alert("impossibile un posto in mezzo a due posti prenotati")
+      } else if (rowLetter !== seatLetter && maxSeats.length >= 1) {
         window.alert("è possibile acquistare solo nella stessa fila")
       } else if (!target.style.fill && maxSeats.length < 10) {
         target.style.fill = fill
