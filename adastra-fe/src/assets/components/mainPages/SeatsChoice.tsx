@@ -14,7 +14,7 @@ const SeatsChoice = () => {
   const blueTicketsAmount = useAppSelector(
     (state) => state.bookingState.blueSeatsAmount,
   )
-  const greenTicktesAmount = useAppSelector(
+  const greenTicketsAmount = useAppSelector(
     (state) => state.bookingState.greenSeatsAmount,
   )
 
@@ -30,7 +30,7 @@ const SeatsChoice = () => {
 
   const totalRed = redTicketsAmount * redCost
   const totalBlue = blueTicketsAmount * blueCost
-  const totalGreen = greenTicktesAmount * greenCost
+  const totalGreen = greenTicketsAmount * greenCost
   const totalCost = totalRed + totalBlue + totalGreen
   return (
     <>
@@ -65,61 +65,97 @@ const SeatsChoice = () => {
             <TheaterMap />
           </Col>
           <Col className=" mt-5">
-            <Col className="text-center pb-4">
-              <MainTitles string="totale biglietti" />
-            </Col>
-            <Row className="text-uppercase fw-medium align-items-center px-5 pb-4">
-              <Col className="d-flex align-items-center">
-                <span className="seat-total seat-red" />
-                Rosso
-              </Col>
-              <Col className="text-end">x {redTicketsAmount}</Col>
-              <Col xs={12} className="mt-1">
-                <span>
-                  {redSeatsPosition.map((pos, i) => {
-                    return (
-                      pos.id + (i !== redSeatsPosition.length - 1 ? ", " : "")
-                    )
-                  })}
-                </span>
-                <span style={{ opacity: "0" }}>.</span>
+            <Row>
+              <Col className="text-center pb-4">
+                <MainTitles string="totale biglietti" />
               </Col>
             </Row>
-            <Row></Row>
-            <Row className="text-uppercase fw-medium align-items-center px-5 pb-4">
-              <Col className="d-flex align-items-center">
-                <span className="seat-total seat-blue" />
-                Blu
-              </Col>
-              <Col className="text-end">x {blueTicketsAmount}</Col>
-              <Col xs={12} className="mt-1">
-                <span>
-                  {blueSeatsPosition.map((pos, i) => {
-                    return (
-                      pos.id + (i !== blueSeatsPosition.length - 1 ? ", " : "")
-                    )
-                  })}
-                </span>
-                <span style={{ opacity: "0" }}>.</span>
-              </Col>
-            </Row>
-            <Row className="text-uppercase fw-medium align-items-center px-5 pb-4">
-              <Col className="d-flex align-items-center">
-                <span className="seat-total seat-green" />
-                Verde
-              </Col>
-              <Col className="text-end">x {greenTicktesAmount}</Col>
-              <Col xs={12} className="mt-1">
-                <span>
-                  {greenSeatsPosition.map((pos, i) => {
-                    return (
-                      pos.id + (i !== greenSeatsPosition.length - 1 ? ", " : "")
-                    )
-                  })}
-                </span>
-                <span style={{ opacity: "0" }}>.</span>
-              </Col>
-            </Row>
+            {totalCost === 0 ? (
+              <Row className="text-uppercase fw-medium align-items-center px-5 pb-4">
+                <Col className="d-flex align-items-center">
+                  <span className="seat-total bg-body" />
+                  Colore
+                </Col>
+                <Col className="text-end">x {redTicketsAmount}</Col>
+                <Col xs={12} className="mt-1">
+                  <span>
+                    {redSeatsPosition.map((pos, i) => {
+                      return (
+                        pos.id + (i !== redSeatsPosition.length - 1 ? ", " : "")
+                      )
+                    })}
+                  </span>
+                  <span style={{ opacity: "0" }}>.</span>
+                </Col>
+              </Row>
+            ) : (
+              ""
+            )}
+            {redSeatsPosition.length > 0 ? (
+              <Row className="text-uppercase fw-medium align-items-center px-5 pb-4">
+                <Col className="d-flex align-items-center">
+                  <span className="seat-total seat-red" />
+                  Rosso
+                </Col>
+                <Col className="text-end">x {redTicketsAmount}</Col>
+                <Col xs={12} className="mt-1">
+                  <span>
+                    {redSeatsPosition.map((pos, i) => {
+                      return (
+                        pos.id + (i !== redSeatsPosition.length - 1 ? ", " : "")
+                      )
+                    })}
+                  </span>
+                  <span style={{ opacity: "0" }}>.</span>
+                </Col>
+              </Row>
+            ) : (
+              ""
+            )}
+            {blueSeatsPosition.length > 0 ? (
+              <Row className="text-uppercase fw-medium align-items-center px-5 pb-4">
+                <Col className="d-flex align-items-center">
+                  <span className="seat-total seat-blue" />
+                  Blu
+                </Col>
+                <Col className="text-end">x {blueTicketsAmount}</Col>
+                <Col xs={12} className="mt-1">
+                  <span>
+                    {blueSeatsPosition.map((pos, i) => {
+                      return (
+                        pos.id +
+                        (i !== blueSeatsPosition.length - 1 ? ", " : "")
+                      )
+                    })}
+                  </span>
+                  <span style={{ opacity: "0" }}>.</span>
+                </Col>
+              </Row>
+            ) : (
+              ""
+            )}
+            {greenSeatsPosition.length > 0 ? (
+              <Row className="text-uppercase fw-medium align-items-center px-5 pb-4">
+                <Col className="d-flex align-items-center">
+                  <span className="seat-total seat-green" />
+                  Verde
+                </Col>
+                <Col className="text-end">x {greenTicketsAmount}</Col>
+                <Col xs={12} className="mt-1">
+                  <span>
+                    {greenSeatsPosition.map((pos, i) => {
+                      return (
+                        pos.id +
+                        (i !== greenSeatsPosition.length - 1 ? ", " : "")
+                      )
+                    })}
+                  </span>
+                  <span style={{ opacity: "0" }}>.</span>
+                </Col>
+              </Row>
+            ) : (
+              ""
+            )}
             <Row className="px-5">
               <Col>
                 <h5 className="f fw-normal text-uppercase mt-3 mb-2">

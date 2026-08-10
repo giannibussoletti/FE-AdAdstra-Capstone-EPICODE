@@ -56,7 +56,7 @@ const TheaterMap = () => {
         isFilled
       ) {
         alert("impossibile un posto in mezzo a due posti prenotati")
-      } else if (rowLetter !== seatLetter && maxSeats.length >= 1) {
+      } else if (!sameLetter && maxSeats.length >= 1) {
         window.alert("è possibile acquistare solo nella stessa fila")
       } else if (!isFilled && maxSeats.length < 10) {
         target.style.fill = fill
