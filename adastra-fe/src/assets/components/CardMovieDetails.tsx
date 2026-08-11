@@ -1,7 +1,9 @@
 import { Card, Col, Row } from "react-bootstrap"
 import type { Poster } from "../misc/types"
 import Buttons from "./Buttons"
+import { useNavigate } from "react-router"
 const CardMovieDetails = ({ id, name, link, date, time }: Poster) => {
+  const navigate = useNavigate()
   return (
     <Card className="rounded-0 bg-transparent text-light d-md-block">
       <Row xs={1} md={2}>
@@ -36,7 +38,10 @@ const CardMovieDetails = ({ id, name, link, date, time }: Poster) => {
               consectetur. Earum, pariatur aliquid!
             </Card.Text>
 
-            <div className="mt-4 d-none d-md-inline-block">
+            <div
+              onClick={() => navigate("/dettagli/" + id)}
+              className="mt-4 d-none d-md-inline-block"
+            >
               <Buttons string={"acquista biglietto"} />
             </div>
           </Card.Body>
