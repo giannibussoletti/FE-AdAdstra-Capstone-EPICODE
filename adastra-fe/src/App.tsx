@@ -15,6 +15,7 @@ import Footer from "./assets/components/Footer"
 import FilmDetails from "./assets/components/mainPages/FilmDetails"
 import SeatChoice from "./assets/components/mainPages/SeatsChoice"
 import PaymentPage from "./assets/components/mainPages/PaymentPage"
+import RestorationScroll from "./assets/components/RestorationScroll/RestorationScroll"
 //React Router
 import { Route, BrowserRouter as Router, Routes } from "react-router"
 
@@ -22,6 +23,7 @@ const App = () => {
   return (
     <>
       <Router>
+        <RestorationScroll />
         <header>
           <Navbar />
         </header>

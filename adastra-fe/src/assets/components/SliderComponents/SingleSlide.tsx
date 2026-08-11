@@ -11,7 +11,7 @@ const SingleSlide = function ({ id, name, link }: Poster) {
     <Col
       className="p-0"
       onClick={() => {
-        navigate("/details/" + id)
+        navigate("/dettagli/" + id)
       }}
     >
       <Image className="w-100 image-query" src={link} alt={name + " poster"} />
