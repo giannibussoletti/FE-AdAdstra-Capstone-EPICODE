@@ -45,12 +45,16 @@ const ProfilePage = () => {
           <hr className="d-block d-lg-none" />
         </Col>
         <Col>
-          <Row className="py-1 pt-lg-0 pb-lg-1">
+          <Row xs={1} className="py-1 pt-lg-0 pb-lg-1">
             <Col>
               {" "}
               <h4 className="f fw-normal text-uppercase mt-3 mt-lg-0 mb-2">
                 i tuoi film più recenti
               </h4>
+            </Col>
+            <Col className="d-flex gap-3">
+              <img className="rounded-3" src="./ticket-odissea.jpg" alt="" />
+              <img className="rounded-3" src="./ticket-backrooms.jpg" alt="" />
             </Col>
           </Row>
         </Col>
