@@ -1,17 +1,19 @@
 import { Row, Col, Image } from "react-bootstrap"
 import MovieStartTime from "./MovieStartTime"
+import { useLocation } from "react-router"
 const SingleMovieCard = () => {
-  const tempArray = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-  ]
-
+  const pathname = useLocation().pathname
   return (
     <>
       <Row>
-        <Col xs="auto" lg={3}>
+        <Col xs={pathname !== "/" ? "auto" : 3} md={3}>
           <Image fluid src="https://placehold.co/1500x2000" />
         </Col>
-        <Col lg={7} className="mt-4 mt-lg-0">
+        <Col
+          xs={pathname !== "/" ? 12 : 9}
+          md={9}
+          className={pathname !== "/" ? "mt-4" : "mt-0"}
+        >
           <h4 className="fw-normal text-uppercase fw-medium mb-4">
             spider-man: brand new day
           </h4>
@@ -26,7 +28,7 @@ const SingleMovieCard = () => {
             <p className="single-movie-title-section">Durata</p>
             <p className="single-movie-details-section">2.50h</p>
           </div>
-          <div>
+          <div className={pathname !== "/" ? "" : "d-none d-lg-block"}>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Reprehenderit iusto pariatur facilis perferendis quod, nobis
@@ -41,14 +43,9 @@ const SingleMovieCard = () => {
         </Col>
       </Row>
       <Row xs={1} md={4} lg={5} xxl={6} className="mt-4">
-        {/* da rimuovere */}
-        {tempArray.map((_, i) => {
-          return (
-            <Col key={i} className="px-2 pb-3 cursor-pointer">
-              <MovieStartTime />
-            </Col>
-          )
-        })}
+        <Col className="px-2 pb-3 cursor-pointer">
+          <MovieStartTime />
+        </Col>
       </Row>
     </>
   )
