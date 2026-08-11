@@ -3,11 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faCircleUser } from "@fortawesome/free-solid-svg-icons"
 import { useAppDispatch } from "../redux/hooks"
 import { setMenu } from "../redux/reducers/NavBarSlice"
-import {
-  burgerMenuArray,
-  userMenuArray,
-  navbarDesktopArray,
-} from "../misc/arrays"
+import { burgerMenuArray, userMenuArray } from "../misc/arrays"
 import CitySearch from "./CitySearch"
 import MobileMenu from "./MobileMenu"
 import { useLocation } from "react-router"
@@ -71,12 +67,12 @@ const Navbar = () => {
             </div>
             <div className="w-100 d-none d-lg-block">
               <ul className=" justify-content-around navbar-list p-0 m-0 d-flex  align-items-center">
-                {navbarDesktopArray.map((item) => {
+                {burgerMenuArray.map((item) => {
                   return (
                     <li key={item.label + item.label}>
                       <a
                         className="text-uppercase fw-medium cursor-pointer"
-                        href={item.link}
+                        href={item.imgLink}
                       >
                         {item.label}
                       </a>

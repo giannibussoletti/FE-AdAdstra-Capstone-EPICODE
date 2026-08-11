@@ -28,15 +28,14 @@ export type FooterTypes = {
   eventKey: string
 }
 
-export type MobileMenu = {
-  name: string
-  link: string
-  icon: IconDefinition
+export type Menus = {
+  label: string
+  imgLink: string
+  URL: string
 }
 
-export type InfoCardAndDesktopNav = {
-  label: string
-  link: string
+export type NavBarMenus = Menus & {
+  icon: IconDefinition
 }
 
 export type PositionInfo = {

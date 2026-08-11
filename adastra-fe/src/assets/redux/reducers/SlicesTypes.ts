@@ -1,17 +1,17 @@
-import type { MobileMenu, PositionInfo } from "../../misc/types"
+import type { NavBarMenus, PositionInfo } from "../../misc/types"
 
 //NAVBAR
 export type MenuState = {
   isOpen: string
   citySearchMenu: string
-  arrayMenu: MobileMenu[]
+  arrayMenu: NavBarMenus[]
   isCities: boolean
   arrayCity: string[]
 }
 
 export type PayloadStateMenu = {
   isOpen: string
-  arrayMenu: MobileMenu[]
+  arrayMenu: NavBarMenus[]
   isCities: boolean
 }
 

@@ -46,10 +46,10 @@ const MobileMenu = () => {
             return (
               <div
                 className="text-uppercase fw-medium mb-4 cursor-pointer"
-                onClick={() => (window.location.href = menuItem.link)}
+                onClick={() => (window.location.href = menuItem.URL)}
               >
                 <FontAwesomeIcon icon={menuItem.icon} className="me-3" />
-                {menuItem.name}
+                {menuItem.label}
               </div>
             )
           })}
