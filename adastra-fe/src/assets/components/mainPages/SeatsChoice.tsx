@@ -6,8 +6,11 @@ import TopBarInfoBooking from "../TopBarInfoBooking"
 import { redCost, blueCost, greenCost } from "../../misc/variables"
 import { Container, Col, Row } from "react-bootstrap"
 import { useAppSelector } from "../../redux/hooks"
+import { useNavigate } from "react-router"
 
 const SeatsChoice = () => {
+  const navigate = useNavigate()
+
   const redTicketsAmount = useAppSelector(
     (state) => state.bookingState.redSeatsAmount,
   )
@@ -54,11 +57,12 @@ const SeatsChoice = () => {
                 totalCost={totalCost}
               />
             </Col>
-            <Row className="px-5">
-              <Col>
-                <div className="text-center">
-                  <Buttons string="verifica ed acquista" />
-                </div>
+            <Row className="px-5 mt-4">
+              <Col
+                className="text-center"
+                onClick={() => navigate("/pagamento/")}
+              >
+                <Buttons string="verifica ed acquista" />
               </Col>
             </Row>
           </Col>

@@ -1,4 +1,4 @@
-import type { FooterTypes, MobileMenu, InfoCardAndDesktopNav } from "./types"
+import type { FooterTypes, Menus, NavBarMenus } from "./types"
 import { faCircle } from "@fortawesome/free-solid-svg-icons"
 export const footerInfo: FooterTypes[] = [
   {
@@ -42,36 +42,31 @@ export const footerInfo: FooterTypes[] = [
   },
 ]
 
-export const burgerMenuArray: MobileMenu[] = [
-  { name: "bebo", link: "#", icon: faCircle },
-  { name: "item", link: "#", icon: faCircle },
-  { name: "item", link: "#", icon: faCircle },
-  { name: "item", link: "#", icon: faCircle },
+export const burgerMenuArray: NavBarMenus[] = [
+  { label: "trailer", imgLink: "#", icon: faCircle, URL: "#" },
+  { label: "coming soon", imgLink: "#", icon: faCircle, URL: "#" },
+  { label: "adastra pass", imgLink: "#", icon: faCircle, URL: "#" },
+  { label: "in sala", imgLink: "#", icon: faCircle, URL: "#" },
+  { label: "pre-vendite", imgLink: "#", icon: faCircle, URL: "#" },
 ]
-export const userMenuArray: MobileMenu[] = [
-  { name: "user", link: "#", icon: faCircle },
-  { name: "user", link: "#", icon: faCircle },
-  { name: "user", link: "#", icon: faCircle },
-  { name: "user", link: "#", icon: faCircle },
-]
-export const cityMenuArray: MobileMenu[] = [
-  { name: "user", link: "#", icon: faCircle },
-  { name: "user", link: "#", icon: faCircle },
-  { name: "user", link: "#", icon: faCircle },
-  { name: "user", link: "#", icon: faCircle },
+export const userMenuArray: NavBarMenus[] = [
+  { label: "user", imgLink: "#", icon: faCircle, URL: "#" },
+  { label: "user", imgLink: "#", icon: faCircle, URL: "#" },
+  { label: "user", imgLink: "#", icon: faCircle, URL: "#" },
+  { label: "user", imgLink: "#", icon: faCircle, URL: "#" },
 ]
 
-export const moreInfoArray: InfoCardAndDesktopNav[] = [
-  { label: "lavora con noi", link: "https://placehold.co/600x300" },
-  { label: "poltrone vip", link: "https://placehold.co/600x300" },
-  { label: "Lorem ipsum", link: "https://placehold.co/600x300" },
-  { label: "Per le aziende", link: "https://placehold.co/600x300" },
-]
-
-export const navbarDesktopArray: InfoCardAndDesktopNav[] = [
-  { label: "trailer", link: "#" },
-  { label: "coming soon", link: "#" },
-  { label: "adastra pass", link: "#" },
-  { label: "in sala", link: "#" },
-  { label: "pre-vendite", link: "#" },
+export const moreInfoArray: Menus[] = [
+  {
+    label: "lavora con noi",
+    imgLink: "https://placehold.co/600x300",
+    URL: "#",
+  },
+  { label: "poltrone vip", imgLink: "https://placehold.co/600x300", URL: "#" },
+  { label: "Lorem ipsum", imgLink: "https://placehold.co/600x300", URL: "#" },
+  {
+    label: "Per le aziende",
+    imgLink: "https://placehold.co/600x300",
+    URL: "#",
+  },
 ]
