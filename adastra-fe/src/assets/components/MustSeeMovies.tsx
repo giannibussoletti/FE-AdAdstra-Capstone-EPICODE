@@ -3,11 +3,23 @@ import { arrayPoster } from "../temp"
 import MainTitles from "./MainTitles"
 import Buttons from "./Buttons"
 import CardMovieDetails from "./CardMovieDetails"
+import { useNavigate } from "react-router"
+import { useState } from "react"
+
 const MustSeeMovies = () => {
+  const navigate = useNavigate()
+  const [index, setIndex] = useState(0)
+
+  const handleIndex = (ActualIndex: number) => {
+    setIndex(ActualIndex)
+  }
+
+  const idLink = arrayPoster[index]?.id
+
   return (
     <>
       <MainTitles string={"da non perdere"} />
-      <Carousel indicators={false}>
+      <Carousel indicators={false} touch={true} onSelect={handleIndex}>
         {arrayPoster.map((poster) => {
           return (
             <Carousel.Item
@@ -26,7 +38,10 @@ const MustSeeMovies = () => {
           )
         })}
       </Carousel>
-      <div className="text-center mt-4 d-block d-md-none">
+      <div
+        className="text-center mt-4 d-block d-md-none"
+        onClick={() => navigate("/dettagli/" + idLink)}
+      >
         <Buttons string={"acquista biglietto"} />
       </div>
     </>
