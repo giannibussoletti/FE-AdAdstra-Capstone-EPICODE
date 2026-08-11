@@ -16,6 +16,7 @@ import FilmDetails from "./assets/components/mainPages/FilmDetails"
 import SeatChoice from "./assets/components/mainPages/SeatsChoice"
 import PaymentPage from "./assets/components/mainPages/PaymentPage"
 import RestorationScroll from "./assets/components/RestorationScroll/RestorationScroll"
+import ProfilePage from "./assets/components/mainPages/ProfilePage"
 //React Router
 import { Route, BrowserRouter as Router, Routes } from "react-router"
 
@@ -33,6 +34,7 @@ const App = () => {
             <Route path="/dettagli/:filmid" element={<FilmDetails />} />
             <Route path="/scelta-posto" element={<SeatChoice />} />
             <Route path="/pagamento" element={<PaymentPage />} />
+            <Route path="/profilo" element={<ProfilePage />} />
           </Routes>
         </main>
         <footer>
