@@ -43,3 +43,8 @@ export type DispatchSeat = {
   color: string
   isAdding: boolean
 }
+
+export type DispatchMovie = {
+  movieTitle: string
+  duration: string
+}
