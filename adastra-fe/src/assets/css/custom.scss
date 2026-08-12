@@ -45,6 +45,17 @@ $accordion-icon-width: 0;
 $accordion-icon-color: rgba(0, 0, 0, 0);
 $accordion-icon-active-color: rgba(0, 0, 0, 0);
 
+//Dropdown menu
+$dropdown-color: #fff;
+$dropdown-bg: #000;
+$dropdown-border-color: $dropdown-color;
+$dropdown-border-width: 0.05rem;
+$dropdown-inner-border-radius: 0;
+$dropdown-link-color: $dropdown-color;
+$dropdown-link-hover-color: $dropdown-bg;
+$dropdown-link-hover-bg: $dropdown-color;
+$dropdown-link-active-color: $dropdown-color;
+
 $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "bootstrap/scss/bootstrap.scss";
 
@@ -315,4 +326,22 @@ body,
 .cls-8 {
   fill: #3a96d1;
   stroke: #3a96d1;
+}
+
+//Dropdown user menu Desktop
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.btn-utente {
+  background: transparent;
+  border: none;
+}
+
+.dropdown-item:active {
+  background-color: #023f87 !important;
+}
+
+.dropdown-menu {
+  margin-top: 0.5rem;
 }
