@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router"
 import { useAppDispatch } from "../redux/hooks"
-import { timeAndScreen } from "../redux/reducers/MovieSlice"
-const MovieStartTime = () => {
+import { timeAndScreen, movieChoice } from "../redux/reducers/MovieSlice"
+import type { DispatchMovie } from "../redux/reducers/SlicesTypes"
+const MovieStartTime = ({ movieTitle, movieID, duration }: DispatchMovie) => {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
 
@@ -14,6 +15,7 @@ const MovieStartTime = () => {
       className=" bg-time-color rounded rounded-3 px-3 py-2 single-movie-time"
       onClick={() => {
         dispatch(timeAndScreen({ timeStartEnd, screen }))
+        dispatch(movieChoice({ movieID, movieTitle, duration }))
         navigate("/scelta-posto/")
       }}
     >

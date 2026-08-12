@@ -1,11 +1,13 @@
 import { Row, Col, Image } from "react-bootstrap"
 import { useLocation } from "react-router"
+import TimeTabs from "./TimeTabs"
 const SingleMovieCard = () => {
   const pathname = useLocation().pathname
-  const title = "spider-man: brand new day"
+  const movieID = 8
+  const movieTitle = "spider-man: brand new day"
   const cast =
     "Gianni Fantoni, Mario Rossi, Federico Bianchi, Aldo Baglio,Giacomo Poretti, Giovanni Storti"
-  const duration = 2.5
+  const duration = "2.50"
   return (
     <>
       <Row>
@@ -17,7 +19,9 @@ const SingleMovieCard = () => {
           md={9}
           className={pathname !== "/" ? "mt-4" : "mt-0"}
         >
-          <h4 className="fw-normal text-uppercase fw-medium mb-4">{title}</h4>
+          <h4 className="fw-normal text-uppercase fw-medium mb-4">
+            {movieTitle}
+          </h4>
           <div className="mb-3">
             <p className="single-movie-title-section">Cast</p>
             <p className="single-movie-details-section">{cast}</p>
@@ -39,6 +43,11 @@ const SingleMovieCard = () => {
             </p>
           </div>
         </Col>
+        <TimeTabs
+          movieTitle={movieTitle}
+          movieID={movieID}
+          duration={duration}
+        />
       </Row>
     </>
   )
