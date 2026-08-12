@@ -1,4 +1,4 @@
-import { Col, Container, Row } from "react-bootstrap"
+import { Col, Container, Row, Dropdown, DropdownButton } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faCircleUser } from "@fortawesome/free-solid-svg-icons"
 import { useAppDispatch } from "../redux/hooks"
@@ -80,6 +80,36 @@ const Navbar = () => {
                   )
                 })}
               </ul>
+            </div>
+
+            <div className="d-lg-inline-block d-none">
+              <DropdownButton
+                onClick={() =>
+                  dispatch(
+                    setMenu({
+                      isOpen: "start-100",
+                      arrayMenu: userMenuArray,
+                      isCities: false,
+                    }),
+                  )
+                }
+                bsPrefix="btn-utente"
+                title={
+                  <FontAwesomeIcon //USER
+                    icon={faCircleUser}
+                    style={{ color: "#fff" }}
+                    size="xl"
+                    className="cursor-pointer"
+                  />
+                }
+                align="end"
+              >
+                {userMenuArray.map((item) => {
+                  return (
+                    <Dropdown.Item href={item.URL}>{item.label}</Dropdown.Item>
+                  )
+                })}
+              </DropdownButton>
             </div>
           </Col>
         </Row>
