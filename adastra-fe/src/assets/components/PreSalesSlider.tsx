@@ -72,14 +72,13 @@ const PreSalesSlider = function ({ string }: PropString) {
               className="p-0"
               ref={posterRef}
               style={animRules}
-              key={poster.id}
+              key={poster.movieID}
             >
               <SingleSlide
-                id={poster.id}
-                name={poster.name}
-                link={poster.link}
-                date={poster.date}
-                time={poster.time}
+                movieID={poster.movieID}
+                movieTitle={poster.movieTitle}
+                imglink={poster.imglink}
+                duration={poster.duration}
               />
             </div>
           )

@@ -46,7 +46,7 @@ export type DispatchSeat = {
 
 //Movie
 export type MovieState = {
-  movieID: string
+  movieID: number
   movieTitle: string
   timeStartEnd: string
   duration: string
@@ -57,10 +57,14 @@ export type MovieState = {
 export type DispatchMovie = {
   movieTitle: string
   duration: string
-  movieID: string
+  movieID: number
 }
 
 export type DispatchTime = {
   screen: number
   timeStartEnd: string
+}
+
+export type DispatchDate = {
+  date: string
 }

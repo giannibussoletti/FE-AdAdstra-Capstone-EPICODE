@@ -1,8 +1,11 @@
 import { Row, Col, Image } from "react-bootstrap"
-import MovieStartTime from "./MovieStartTime"
 import { useLocation } from "react-router"
 const SingleMovieCard = () => {
   const pathname = useLocation().pathname
+  const title = "spider-man: brand new day"
+  const cast =
+    "Gianni Fantoni, Mario Rossi, Federico Bianchi, Aldo Baglio,Giacomo Poretti, Giovanni Storti"
+  const duration = 2.5
   return (
     <>
       <Row>
@@ -14,19 +17,14 @@ const SingleMovieCard = () => {
           md={9}
           className={pathname !== "/" ? "mt-4" : "mt-0"}
         >
-          <h4 className="fw-normal text-uppercase fw-medium mb-4">
-            spider-man: brand new day
-          </h4>
+          <h4 className="fw-normal text-uppercase fw-medium mb-4">{title}</h4>
           <div className="mb-3">
             <p className="single-movie-title-section">Cast</p>
-            <p className="single-movie-details-section">
-              Gianni Fantoni, Mario Rossi, Federico Bianchi, Aldo Baglio,
-              Giacomo Poretti, Giovanni Storti
-            </p>
+            <p className="single-movie-details-section">{cast}</p>
           </div>
           <div className="mb-3">
             <p className="single-movie-title-section">Durata</p>
-            <p className="single-movie-details-section">2.50h</p>
+            <p className="single-movie-details-section">{duration}h</p>
           </div>
           <div className={pathname !== "/" ? "" : "d-none d-lg-block"}>
             <p>
@@ -40,11 +38,6 @@ const SingleMovieCard = () => {
               dolorem sit recusandae aspernatur?
             </p>
           </div>
-        </Col>
-      </Row>
-      <Row xs={1} md={4} lg={5} xxl={6} className="mt-4">
-        <Col className="px-2 pb-3 cursor-pointer">
-          <MovieStartTime />
         </Col>
       </Row>
     </>
