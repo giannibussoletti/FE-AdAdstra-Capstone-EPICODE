@@ -5,7 +5,6 @@ import PreSalesSlider from "../PreSalesSlider"
 import NowPlayingSection from "../NowPlayingSection"
 import CardMoreInfo from "../CardMoreInfo"
 import { moreInfoArray } from "../../misc/arrays"
-import TimeTabs from "../TimeTabs"
 const Home = () => {
   return (
     <>
@@ -26,7 +25,6 @@ const Home = () => {
         <Row>
           <Col className="p-0 mt-3 pb-4">
             <NowPlayingSection />
-            <TimeTabs />
           </Col>
         </Row>
         <Row xs={1} md={2}>

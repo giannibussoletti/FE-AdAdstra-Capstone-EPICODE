@@ -2,7 +2,8 @@ import { Tab, Tabs, Row, Col } from "react-bootstrap"
 import { useAppDispatch } from "../redux/hooks"
 import { dateChoice } from "../redux/reducers/MovieSlice"
 import MovieStartTime from "./MovieStartTime"
-const TimeTabs = () => {
+import type { DispatchMovie } from "../redux/reducers/SlicesTypes"
+const TimeTabs = ({ movieTitle, movieID, duration }: DispatchMovie) => {
   const dispatch = useAppDispatch()
 
   const lunedì = new Date(2026, 7, 17).toLocaleDateString()
@@ -27,7 +28,11 @@ const TimeTabs = () => {
       <Tab eventKey={lunedì} title="lunedì">
         <Row xs={1} md={4} lg={5} xxl={6} className="mt-4">
           <Col className="px-2 pb-3 cursor-pointer">
-            <MovieStartTime />
+            <MovieStartTime
+              movieTitle={movieTitle}
+              movieID={movieID}
+              duration={duration}
+            />
           </Col>
         </Row>
       </Tab>
@@ -35,7 +40,11 @@ const TimeTabs = () => {
       <Tab eventKey={martedì} title="martedì">
         <Row xs={1} md={4} lg={5} xxl={6} className="mt-4">
           <Col className="px-2 pb-3 cursor-pointer">
-            <MovieStartTime />
+            <MovieStartTime
+              movieTitle={movieTitle}
+              movieID={movieID}
+              duration={duration}
+            />
           </Col>
         </Row>
       </Tab>
@@ -43,7 +52,11 @@ const TimeTabs = () => {
       <Tab eventKey={mercoledì} title="mercoledì">
         <Row xs={1} md={4} lg={5} xxl={6} className="mt-4">
           <Col className="px-2 pb-3 cursor-pointer">
-            <MovieStartTime />
+            <MovieStartTime
+              movieTitle={movieTitle}
+              movieID={movieID}
+              duration={duration}
+            />
           </Col>
         </Row>
       </Tab>
@@ -51,7 +64,11 @@ const TimeTabs = () => {
       <Tab eventKey={giovedì} title="giovedì">
         <Row xs={1} md={4} lg={5} xxl={6} className="mt-4">
           <Col className="px-2 pb-3 cursor-pointer">
-            <MovieStartTime />
+            <MovieStartTime
+              movieTitle={movieTitle}
+              movieID={movieID}
+              duration={duration}
+            />
           </Col>
         </Row>
       </Tab>
@@ -59,7 +76,11 @@ const TimeTabs = () => {
       <Tab eventKey={venerdì} title="venerdì">
         <Row xs={1} md={4} lg={5} xxl={6} className="mt-4">
           <Col className="px-2 pb-3 cursor-pointer">
-            <MovieStartTime />
+            <MovieStartTime
+              movieTitle={movieTitle}
+              movieID={movieID}
+              duration={duration}
+            />
           </Col>
         </Row>
       </Tab>
@@ -67,7 +88,11 @@ const TimeTabs = () => {
       <Tab eventKey={sabato} title="sabato">
         <Row xs={1} md={4} lg={5} xxl={6} className="mt-4">
           <Col className="px-2 pb-3 cursor-pointer">
-            <MovieStartTime />
+            <MovieStartTime
+              movieTitle={movieTitle}
+              movieID={movieID}
+              duration={duration}
+            />
           </Col>
         </Row>
       </Tab>
@@ -75,7 +100,11 @@ const TimeTabs = () => {
       <Tab eventKey={domenica} title="domenica">
         <Row xs={1} md={4} lg={5} xxl={6} className="mt-4">
           <Col className="px-2 pb-3 cursor-pointer">
-            <MovieStartTime />
+            <MovieStartTime
+              movieTitle={movieTitle}
+              movieID={movieID}
+              duration={duration}
+            />
           </Col>
         </Row>
       </Tab>
