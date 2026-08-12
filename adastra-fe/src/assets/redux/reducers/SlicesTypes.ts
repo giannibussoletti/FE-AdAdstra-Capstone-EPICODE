@@ -44,7 +44,23 @@ export type DispatchSeat = {
   isAdding: boolean
 }
 
+//Movie
+export type MovieState = {
+  movieID: string
+  movieTitle: string
+  timeStartEnd: string
+  duration: string
+  screen: number
+  date: string
+}
+
 export type DispatchMovie = {
   movieTitle: string
   duration: string
+  movieID: string
+}
+
+export type DispatchTime = {
+  screen: number
+  timeStartEnd: string
 }
