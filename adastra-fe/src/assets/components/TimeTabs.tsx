@@ -1,69 +1,83 @@
-import { Tab, Tabs } from "react-bootstrap"
+import { Tab, Tabs, Row, Col } from "react-bootstrap"
 import { useAppDispatch } from "../redux/hooks"
 import { dateChoice } from "../redux/reducers/MovieSlice"
+import MovieStartTime from "./MovieStartTime"
 const TimeTabs = () => {
   const dispatch = useAppDispatch()
 
+  const lunedì = new Date(2026, 7, 17).toLocaleDateString()
+  const martedì = new Date(2026, 7, 18).toLocaleDateString()
+  const mercoledì = new Date(2026, 7, 19).toLocaleDateString()
+  const giovedì = new Date(2026, 7, 20).toLocaleDateString()
+  const venerdì = new Date(2026, 7, 21).toLocaleDateString()
+  const sabato = new Date(2026, 7, 22).toLocaleDateString()
+  const domenica = new Date(2026, 7, 23).toLocaleDateString()
+
   return (
     <Tabs
-      defaultActiveKey="profile"
+      defaultActiveKey={lunedì}
       id="uncontrolled-tab-example"
       className="mb-3"
+      onSelect={(selectedKey) => {
+        if (selectedKey) {
+          dispatch(dateChoice({ date: selectedKey }))
+        }
+      }}
     >
-      <Tab
-        onSelect={() => dispatch(dateChoice("lunedi"))}
-        eventKey="home"
-        title="Home"
-      >
-        lunedi
+      <Tab eventKey={lunedì} title="lunedì">
+        <Row xs={1} md={4} lg={5} xxl={6} className="mt-4">
+          <Col className="px-2 pb-3 cursor-pointer">
+            <MovieStartTime />
+          </Col>
+        </Row>
       </Tab>
 
-      <Tab
-        onSelect={() => dispatch(dateChoice("martedì"))}
-        eventKey="martedì"
-        title="martedì"
-      >
-        martedì
+      <Tab eventKey={martedì} title="martedì">
+        <Row xs={1} md={4} lg={5} xxl={6} className="mt-4">
+          <Col className="px-2 pb-3 cursor-pointer">
+            <MovieStartTime />
+          </Col>
+        </Row>
       </Tab>
 
-      <Tab
-        onSelect={() => dispatch(dateChoice("mercoledì"))}
-        eventKey="mercoledì"
-        title="mercoledì"
-      >
-        mercoledì
+      <Tab eventKey={mercoledì} title="mercoledì">
+        <Row xs={1} md={4} lg={5} xxl={6} className="mt-4">
+          <Col className="px-2 pb-3 cursor-pointer">
+            <MovieStartTime />
+          </Col>
+        </Row>
       </Tab>
 
-      <Tab
-        onSelect={() => dispatch(dateChoice("giovedì"))}
-        eventKey="giovedì"
-        title="giovedì"
-      >
-        giovedì
+      <Tab eventKey={giovedì} title="giovedì">
+        <Row xs={1} md={4} lg={5} xxl={6} className="mt-4">
+          <Col className="px-2 pb-3 cursor-pointer">
+            <MovieStartTime />
+          </Col>
+        </Row>
       </Tab>
 
-      <Tab
-        onSelect={() => dispatch(dateChoice("venerdì"))}
-        eventKey="venerdì"
-        title="venerdì"
-      >
-        venerdì
+      <Tab eventKey={venerdì} title="venerdì">
+        <Row xs={1} md={4} lg={5} xxl={6} className="mt-4">
+          <Col className="px-2 pb-3 cursor-pointer">
+            <MovieStartTime />
+          </Col>
+        </Row>
       </Tab>
 
-      <Tab
-        onSelect={() => dispatch(dateChoice("sabato"))}
-        eventKey="sabato"
-        title="sabato"
-      >
-        sabato
+      <Tab eventKey={sabato} title="sabato">
+        <Row xs={1} md={4} lg={5} xxl={6} className="mt-4">
+          <Col className="px-2 pb-3 cursor-pointer">
+            <MovieStartTime />
+          </Col>
+        </Row>
       </Tab>
 
-      <Tab
-        onSelect={() => dispatch(dateChoice("domenica"))}
-        eventKey="domenica"
-        title="domenica"
-      >
-        domenica
+      <Tab eventKey={domenica} title="domenica">
+        <Row xs={1} md={4} lg={5} xxl={6} className="mt-4">
+          <Col className="px-2 pb-3 cursor-pointer">
+            <MovieStartTime />
+          </Col>
+        </Row>
       </Tab>
     </Tabs>
   )

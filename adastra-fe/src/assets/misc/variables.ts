@@ -1,6 +1,7 @@
 export const GREEN = "green"
 export const RED = "red"
 export const BLUE = "blue"
+export const RESET = "RESET"
 
 export const redSeat = "#b83c2d"
 export const blueSeat = "#324ba6"

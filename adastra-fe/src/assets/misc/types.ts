@@ -7,11 +7,14 @@ export type TopSlider = {
 }
 
 export type Poster = {
-  id: number
-  name: string
-  link: string
+  movieID: number
+  movieTitle: string
+  imglink: string
+  duration: string
+}
+
+export type PosterReleaseDate = Poster & {
   date: Date
-  time: string
 }
 
 export type ArrowSlider = {
