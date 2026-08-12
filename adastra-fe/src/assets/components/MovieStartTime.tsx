@@ -19,7 +19,7 @@ const MovieStartTime = ({ movieTitle, movieID, duration }: DispatchMovie) => {
         navigate("/scelta-posto/")
       }}
     >
-      <p className="m-0 fw-semibold fs-6">1{timeStartEnd}</p>
+      <p className="m-0 fw-semibold fs-6">{timeStartEnd}</p>
       <p className="text-subtext-time fst-italic fw-medium">sala {screen}</p>
       <p className="text-end m-0">
         <span className="text-subtext-time fs-6">da</span>
