@@ -31,7 +31,7 @@ export type Booking = {
   blueSeatsAmount: number
   isAdding: boolean
   color: string
-  maxSeats: SeatsInfo[]
+  maxSeats: PositionInfo[]
   rowLetter: string
   totalCost: number
 }
