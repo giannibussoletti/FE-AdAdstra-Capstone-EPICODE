@@ -35,7 +35,7 @@ const TheaterMap = () => {
       const target = e.target
       const seatNumber = seat.position.number
       const seatLetter = seat.position.letter
-      const chosenNumbers = maxSeats.map((m) => m.position.number)
+      const chosenNumbers = maxSeats.map((m) => m.number)
       const sameLetter = rowLetter === seatLetter
       const isNextSeat = chosenNumbers.includes(seatNumber + 1)
       const isBeforeSeat = chosenNumbers.includes(seatNumber - 1)

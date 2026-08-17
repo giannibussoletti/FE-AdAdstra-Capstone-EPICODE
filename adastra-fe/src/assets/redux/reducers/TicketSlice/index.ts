@@ -23,7 +23,7 @@ export const bookingSlice = createSlice({
     manageSeat: (state, action: PayloadAction<DispatchSeat>) => {
       state.color = action.payload.color
       state.isAdding = action.payload.isAdding
-      if (state.maxSeats.length < 1) {
+      if (state.maxSeats.length <= 1) {
         state.rowLetter = action.payload.seat.position.letter
       }
 
@@ -35,7 +35,7 @@ export const bookingSlice = createSlice({
               ...state.greenSeatsPosition,
               action.payload.seat.position,
             ]
-            state.maxSeats = [...state.maxSeats, action.payload.seat]
+            state.maxSeats = [...state.maxSeats, action.payload.seat.position]
 
             break
           case false:
@@ -44,7 +44,7 @@ export const bookingSlice = createSlice({
               (pos) => pos.id != action.payload.seat.position.id,
             )
             state.maxSeats = state.maxSeats.filter(
-              (s) => s.id !== action.payload.seat.id,
+              (s) => s.id !== action.payload.seat.position.id,
             )
 
             break
@@ -57,7 +57,7 @@ export const bookingSlice = createSlice({
               ...state.redSeatsPosition,
               action.payload.seat.position,
             ]
-            state.maxSeats = [...state.maxSeats, action.payload.seat]
+            state.maxSeats = [...state.maxSeats, action.payload.seat.position]
 
             break
           case false:
@@ -66,7 +66,7 @@ export const bookingSlice = createSlice({
               (pos) => pos.id != action.payload.seat.position.id,
             )
             state.maxSeats = state.maxSeats.filter(
-              (s) => s.id !== action.payload.seat.id,
+              (s) => s.id !== action.payload.seat.position.id,
             )
             break
         }
@@ -78,7 +78,7 @@ export const bookingSlice = createSlice({
               ...state.blueSeatsPosition,
               action.payload.seat.position,
             ]
-            state.maxSeats = [...state.maxSeats, action.payload.seat]
+            state.maxSeats = [...state.maxSeats, action.payload.seat.position]
 
             break
           case false:
@@ -87,7 +87,7 @@ export const bookingSlice = createSlice({
               (pos) => pos.id != action.payload.seat.position.id,
             )
             state.maxSeats = state.maxSeats.filter(
-              (s) => s.id !== action.payload.seat.id,
+              (s) => s.id !== action.payload.seat.position.id,
             )
 
             break
