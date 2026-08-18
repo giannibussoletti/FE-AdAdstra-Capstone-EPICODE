@@ -12,6 +12,7 @@ export type MenuState = {
   arrayMenu: NavBarMenus[]
   isCities: boolean
   arrayCity: CitiesFetchType[]
+  cityId: string
 }
 
 export type PayloadStateMenu = {

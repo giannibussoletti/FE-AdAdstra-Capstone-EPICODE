@@ -11,6 +11,7 @@ const initialState: MenuState = {
   arrayMenu: [],
   isCities: false,
   arrayCity: [],
+  cityId: "",
 }
 
 export const menuSlice = createSlice({
@@ -28,8 +29,11 @@ export const menuSlice = createSlice({
       state.isCities = action.payload.isCities
       state.arrayCity = action.payload.arrayCity
     },
+    setId: (state, action: PayloadAction<string>) => {
+      state.cityId = action.payload
+    },
   },
 })
 
-export const { setMenu, setCity } = menuSlice.actions
+export const { setMenu, setCity, setId } = menuSlice.actions
 export default menuSlice.reducer
