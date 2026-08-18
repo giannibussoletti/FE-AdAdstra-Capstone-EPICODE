@@ -20,18 +20,13 @@ const TicketsCount = ({
   return (
     <>
       {totalCost === 0 ? (
-        <Row className="text-uppercase fw-medium align-items-center">
+        <Row className="text-uppercase fw-medium align-items-center px-5">
           <Col className="d-flex align-items-center">
             <span className="seat-total bg-body" />
             Colore
           </Col>
           <Col className="text-end">{totalCost.toFixed(2)} €</Col>
           <Col xs={12} className="mt-1">
-            <span>
-              {redSeatsPosition.map((pos, i) => {
-                return pos.id + (i !== redSeatsPosition.length - 1 ? ", " : "")
-              })}
-            </span>
             <span style={{ opacity: "0" }}>.</span>
           </Col>
         </Row>

@@ -23,7 +23,7 @@ export const bookingSlice = createSlice({
     manageSeat: (state, action: PayloadAction<DispatchSeat>) => {
       state.color = action.payload.color
       state.isAdding = action.payload.isAdding
-      if (state.maxSeats.length <= 1) {
+      if (state.maxSeats.length < 1) {
         state.rowLetter = action.payload.seat.position.letter
       }
 
