@@ -19,14 +19,8 @@ import RestorationScroll from "./assets/components/RestorationScroll/Restoration
 import ProfilePage from "./assets/components/mainPages/ProfilePage"
 //React Router
 import { Route, BrowserRouter as Router, Routes } from "react-router"
-import { fetchingMovies, fetchCities } from "./assets/misc/fetchs"
-import { useEffect } from "react"
-const App = () => {
-  useEffect(() => {
-    fetchingMovies()
-    fetchCities()
-  }, [])
 
+const App = () => {
   return (
     <>
       <Router>

@@ -70,9 +70,3 @@ export type TicketTypes = {
   blueSeatsPosition: PositionInfo[]
   totalCost: number
 }
-
-export type CitiesFetchType = {
-  city: string
-  id: string
-  isDeleted: string
-}

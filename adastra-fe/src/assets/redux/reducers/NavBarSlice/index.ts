@@ -7,11 +7,11 @@ import type {
 
 const initialState: MenuState = {
   isOpen: "start-100",
-  citySearchMenu: "-",
+  citySearchMenu: "roma",
   arrayMenu: [],
   isCities: false,
   arrayCity: [],
-  cityId: "",
+  cityId: "53156149-dc6f-4653-b48d-fd0ee2cdacdd",
 }
 
 export const menuSlice = createSlice({
