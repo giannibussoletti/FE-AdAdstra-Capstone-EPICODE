@@ -1,4 +1,9 @@
-import type { NavBarMenus, PositionInfo } from "../../misc/types"
+import type {
+  SeatsInfo,
+  NavBarMenus,
+  PositionInfo,
+  CitiesFetchType,
+} from "../../misc/types"
 
 //NAVBAR
 export type MenuState = {
@@ -6,7 +11,7 @@ export type MenuState = {
   citySearchMenu: string
   arrayMenu: NavBarMenus[]
   isCities: boolean
-  arrayCity: string[]
+  arrayCity: CitiesFetchType[]
 }
 
 export type PayloadStateMenu = {
@@ -19,7 +24,7 @@ export type PayloadStateCity = {
   isOpen: string
   citySearchMenu: string
   isCities: boolean
-  arrayCity: string[]
+  arrayCity: CitiesFetchType[]
 }
 //TICKET
 export type Booking = {
@@ -35,8 +40,6 @@ export type Booking = {
   rowLetter: string
   totalCost: number
 }
-
-import type { SeatsInfo } from "../../misc/types"
 
 export type DispatchSeat = {
   seat: SeatsInfo

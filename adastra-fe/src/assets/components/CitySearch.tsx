@@ -1,10 +1,22 @@
 import { Dropdown, Row, Col } from "react-bootstrap"
-import { province } from "../temp"
 import { useAppDispatch, useAppSelector } from "../redux/hooks"
 import { setCity } from "../redux/reducers/NavBarSlice"
+import { fetchCities } from "../misc/fetchs"
+import { useEffect, useState } from "react"
+import type { CitiesFetchType } from "../misc/types"
+
 const CitySearch = () => {
   const dispatch = useAppDispatch()
   const city = useAppSelector((state) => state.menuState.citySearchMenu)
+  const [cities, SetCities] = useState<CitiesFetchType[]>([])
+
+  useEffect(() => {
+    fetchCities()
+      .then((data) => {
+        SetCities(data)
+      })
+      .catch((error) => console.error(error))
+  }, [])
 
   return (
     <>
@@ -18,7 +30,7 @@ const CitySearch = () => {
                 dispatch(
                   setCity({
                     isOpen: "start-0",
-                    arrayCity: province,
+                    arrayCity: cities,
                     isCities: true,
                     citySearchMenu: city,
                   }),
@@ -42,7 +54,7 @@ const CitySearch = () => {
               style={{ maxHeight: "270px" }}
               className="w-100 bg-black overflow-scroll"
             >
-              {province.map((prv) => {
+              {cities.map((prv) => {
                 return (
                   <Dropdown.Item
                     className="text-light"
@@ -52,12 +64,12 @@ const CitySearch = () => {
                           isOpen: "start-100",
                           arrayCity: [],
                           isCities: false,
-                          citySearchMenu: prv,
+                          citySearchMenu: prv.city,
                         }),
                       )
                     }}
                   >
-                    {prv}
+                    {prv.city}
                   </Dropdown.Item>
                 )
               })}
