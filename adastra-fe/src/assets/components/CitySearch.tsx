@@ -1,6 +1,6 @@
 import { Dropdown, Row, Col } from "react-bootstrap"
 import { useAppDispatch, useAppSelector } from "../redux/hooks"
-import { setCity } from "../redux/reducers/NavBarSlice"
+import { setCity, setId } from "../redux/reducers/NavBarSlice"
 import { fetchCities } from "../misc/fetchs"
 import { useEffect, useState } from "react"
 import type { CitiesFetchType } from "../misc/types"
@@ -57,6 +57,7 @@ const CitySearch = () => {
               {cities.map((prv) => {
                 return (
                   <Dropdown.Item
+                    key={prv.id + prv.city}
                     className="text-light"
                     onClick={() => {
                       dispatch(
@@ -67,6 +68,7 @@ const CitySearch = () => {
                           citySearchMenu: prv.city,
                         }),
                       )
+                      dispatch(setId(prv.id))
                     }}
                   >
                     {prv.city}

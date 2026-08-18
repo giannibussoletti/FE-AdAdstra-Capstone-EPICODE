@@ -1,7 +1,7 @@
 import { Row, Col } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useAppDispatch, useAppSelector } from "../redux/hooks"
-import { setCity, setMenu } from "../redux/reducers/NavBarSlice"
+import { setCity, setMenu, setId } from "../redux/reducers/NavBarSlice"
 import { faCircle } from "@fortawesome/free-solid-svg-icons"
 
 const MobileMenu = () => {
@@ -45,6 +45,7 @@ const MobileMenu = () => {
           {arrayMenu.map((menuItem) => {
             return (
               <div
+                key={menuItem.label + menuItem.URL}
                 className="text-uppercase fw-medium mb-4 cursor-pointer"
                 onClick={() => (window.location.href = menuItem.URL)}
               >
@@ -87,22 +88,23 @@ const MobileMenu = () => {
           {arrayProvince.map((prv) => {
             return (
               <Col
-                key={prv}
+                key={prv.id}
                 className="cursor-pointer"
                 xs={12}
-                onClick={() =>
+                onClick={() => {
                   dispatch(
                     setCity({
                       isOpen: "start-100",
-                      citySearchMenu: prv,
+                      citySearchMenu: prv.city,
                       isCities: true,
                       arrayCity: [],
                     }),
+                    dispatch(setId(prv.id)),
                   )
-                }
+                }}
               >
                 <FontAwesomeIcon icon={faCircle} size="2xs" className="me-3" />
-                {prv}
+                {prv.city}
                 <hr />
               </Col>
             )
