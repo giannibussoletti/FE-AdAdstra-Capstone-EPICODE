@@ -1,22 +1,28 @@
 import { Dropdown, Row, Col } from "react-bootstrap"
 import { useAppDispatch, useAppSelector } from "../redux/hooks"
 import { setCity, setId } from "../redux/reducers/NavBarSlice"
-import { fetchCities } from "../misc/fetchs"
+import { fetchCities, fetchCinema } from "../fetchs"
 import { useEffect, useState } from "react"
-import type { CitiesFetchType } from "../misc/types"
+import type { CitiesFetchType, CinemaFetchType } from "../fetchs/fetchTypes"
 
 const CitySearch = () => {
   const dispatch = useAppDispatch()
   const city = useAppSelector((state) => state.menuState.citySearchMenu)
+  const cityId = useAppSelector((state) => state.menuState.cityId)
   const [cities, SetCities] = useState<CitiesFetchType[]>([])
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [cinema, setCinema] = useState<CinemaFetchType>()
 
   useEffect(() => {
     fetchCities()
       .then((data) => {
         SetCities(data)
+        fetchCinema(city, cityId)
+          .then((data) => setCinema(data))
+          .catch((error) => console.error(error))
       })
       .catch((error) => console.error(error))
-  }, [])
+  }, [cityId])
 
   return (
     <>
