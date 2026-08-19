@@ -5,7 +5,7 @@ export type CinemaFetchType = {
   isDeleted: string
 }
 
-export type MovieInfo = {
+export type MovieDetails = {
   starring: string
   duration: number
   title: string
@@ -15,16 +15,16 @@ export type MovieInfo = {
   isDeleted: string
 }
 
-export type ScreenInfo = {
+export type ScreeningTime = {
+  dateTime: string
   screenNumber: number
-  id: string
-  isDeleted: string
 }
 
-export type DateTimeFectch = {
-  dateTime: string
-  movieId: MovieInfo
-  screenId: ScreenInfo
-  id: string
-  isDeleted: string
+export type Times = {
+  [date: string]: ScreeningTime[]
+}
+
+export type MovieGroup = {
+  movieDetails: MovieDetails
+  times: Times
 }
