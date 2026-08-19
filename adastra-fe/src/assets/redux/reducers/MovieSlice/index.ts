@@ -6,7 +6,7 @@ import type {
   DispatchDate,
 } from "../SlicesTypes"
 const initialState: MovieState = {
-  movieID: 0,
+  movieID: "",
   movieTitle: "",
   timeStartEnd: "",
   duration: "",
