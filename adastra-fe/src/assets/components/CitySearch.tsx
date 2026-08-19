@@ -1,28 +1,28 @@
 import { Dropdown, Row, Col } from "react-bootstrap"
 import { useAppDispatch, useAppSelector } from "../redux/hooks"
-import { setCity, setId } from "../redux/reducers/NavBarSlice"
-import { fetchCities, fetchCinema } from "../fetchs"
+import { setCinemaState, setId } from "../redux/reducers/NavBarSlice"
+import { fetchCinemas } from "../fetchs"
 import { useEffect, useState } from "react"
-import type { CitiesFetchType, CinemaFetchType } from "../fetchs/fetchTypes"
+import type { CinemaFetchType } from "../fetchs/fetchTypes"
 
 const CitySearch = () => {
   const dispatch = useAppDispatch()
-  const city = useAppSelector((state) => state.menuState.citySearchMenu)
-  const cityId = useAppSelector((state) => state.menuState.cityId)
-  const [cities, SetCities] = useState<CitiesFetchType[]>([])
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [cinema, setCinema] = useState<CinemaFetchType>()
+  const selectCinema = useAppSelector(
+    (state) => state.menuState.cinemaSearchMenu,
+  )
+  const [cinema, setCinema] = useState<CinemaFetchType[]>([])
 
   useEffect(() => {
-    fetchCities()
+    fetchCinemas()
       .then((data) => {
-        SetCities(data)
-        fetchCinema(city, cityId)
-          .then((data) => setCinema(data))
-          .catch((error) => console.error(error))
+        setCinema(data)
       })
       .catch((error) => console.error(error))
-  }, [cityId])
+  }, [selectCinema])
+
+  if (!cinema) {
+    return <p>Caricamento in corso</p>
+  }
 
   return (
     <>
@@ -34,18 +34,18 @@ const CitySearch = () => {
               onClick={(e) => {
                 e.preventDefault()
                 dispatch(
-                  setCity({
+                  setCinemaState({
                     isOpen: "start-0",
-                    arrayCity: cities,
-                    isCities: true,
-                    citySearchMenu: city,
+                    arrayCinema: cinema,
+                    isCinema: true,
+                    cinemaSearchMenu: selectCinema,
                   }),
                 )
               }}
               id="dropdown-basic"
               className="w-100 d-flex justify-content-between align-items-center px-3 rounded-0 bg-transparent border-1 border-white "
             >
-              {city}
+              {selectCinema}
             </Dropdown.Toggle>
           </Dropdown>
           {/* Tablet / Desktop version */}
@@ -54,30 +54,30 @@ const CitySearch = () => {
               id="dropdown-basic"
               className="w-100 d-flex justify-content-between align-items-center px-3 rounded-0 bg-transparent border-1 border-white"
             >
-              {city}
+              {selectCinema}
             </Dropdown.Toggle>
             <Dropdown.Menu
               style={{ maxHeight: "270px" }}
               className="w-100 bg-black overflow-scroll"
             >
-              {cities.map((prv) => {
+              {cinema.map((cin) => {
                 return (
                   <Dropdown.Item
-                    key={prv.id + prv.city}
+                    key={cin.id + cin.cinemaName}
                     className="text-light"
                     onClick={() => {
                       dispatch(
-                        setCity({
+                        setCinemaState({
                           isOpen: "start-100",
-                          arrayCity: [],
-                          isCities: false,
-                          citySearchMenu: prv.city,
+                          arrayCinema: [],
+                          isCinema: false,
+                          cinemaSearchMenu: cin.cinemaName,
                         }),
                       )
-                      dispatch(setId(prv.id))
+                      dispatch(setId(cin.id))
                     }}
                   >
-                    {prv.city}
+                    {cin.cinemaName}
                   </Dropdown.Item>
                 )
               })}

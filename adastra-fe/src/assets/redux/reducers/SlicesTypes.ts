@@ -1,31 +1,27 @@
-import type {
-  SeatsInfo,
-  NavBarMenus,
-  PositionInfo,
-  CitiesFetchType,
-} from "../../misc/types"
+import type { SeatsInfo, NavBarMenus, PositionInfo } from "../../misc/types"
+import type { CinemaFetchType } from "../../fetchs/fetchTypes"
 
 //NAVBAR
 export type MenuState = {
   isOpen: string
-  citySearchMenu: string
+  cinemaSearchMenu: string
   arrayMenu: NavBarMenus[]
-  isCities: boolean
-  arrayCity: CitiesFetchType[]
-  cityId: string
+  isCinema: boolean
+  arrayCinema: CinemaFetchType[]
+  cinemaId: string
 }
 
 export type PayloadStateMenu = {
   isOpen: string
   arrayMenu: NavBarMenus[]
-  isCities: boolean
+  isCinema: boolean
 }
 
-export type PayloadStateCity = {
+export type PayloadStateCinema = {
   isOpen: string
-  citySearchMenu: string
-  isCities: boolean
-  arrayCity: CitiesFetchType[]
+  cinemaSearchMenu: string
+  isCinema: boolean
+  arrayCinema: CinemaFetchType[]
 }
 //TICKET
 export type Booking = {
