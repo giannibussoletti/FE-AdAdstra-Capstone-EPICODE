@@ -2,16 +2,16 @@ import { createSlice, type PayloadAction } from "@reduxjs/toolkit"
 import type {
   MenuState,
   PayloadStateMenu,
-  PayloadStateCity,
+  PayloadStateCinema,
 } from "../SlicesTypes"
 
 const initialState: MenuState = {
   isOpen: "start-100",
-  citySearchMenu: "roma",
+  cinemaSearchMenu: "-",
   arrayMenu: [],
-  isCities: false,
-  arrayCity: [],
-  cityId: "53156149-dc6f-4653-b48d-fd0ee2cdacdd",
+  isCinema: false,
+  arrayCinema: [],
+  cinemaId: "",
 }
 
 export const menuSlice = createSlice({
@@ -21,19 +21,19 @@ export const menuSlice = createSlice({
     setMenu: (state, action: PayloadAction<PayloadStateMenu>) => {
       state.isOpen = action.payload.isOpen
       state.arrayMenu = action.payload.arrayMenu
-      state.isCities = action.payload.isCities
+      state.isCinema = action.payload.isCinema
     },
-    setCity: (state, action: PayloadAction<PayloadStateCity>) => {
+    setCinemaState: (state, action: PayloadAction<PayloadStateCinema>) => {
       state.isOpen = action.payload.isOpen
-      state.citySearchMenu = action.payload.citySearchMenu
-      state.isCities = action.payload.isCities
-      state.arrayCity = action.payload.arrayCity
+      state.cinemaSearchMenu = action.payload.cinemaSearchMenu
+      state.isCinema = action.payload.isCinema
+      state.arrayCinema = action.payload.arrayCinema
     },
     setId: (state, action: PayloadAction<string>) => {
-      state.cityId = action.payload
+      state.cinemaId = action.payload
     },
   },
 })
 
-export const { setMenu, setCity, setId } = menuSlice.actions
+export const { setMenu, setCinemaState, setId } = menuSlice.actions
 export default menuSlice.reducer
