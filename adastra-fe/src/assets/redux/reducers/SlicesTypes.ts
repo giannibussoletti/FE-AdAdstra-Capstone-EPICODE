@@ -1,5 +1,5 @@
 import type { SeatsInfo, NavBarMenus, PositionInfo } from "../../misc/types"
-import type { CinemaFetchType } from "../../fetchs/fetchTypes"
+import type { CinemaFetchType, MovieGroup } from "../../fetchs/fetchTypes"
 
 //NAVBAR
 export type MenuState = {
@@ -49,20 +49,23 @@ export type MovieState = {
   movieID: string
   movieTitle: string
   timeStartEnd: string
-  duration: string
+  duration: number
   screen: number
   date: string
+  movies: MovieGroup[]
 }
 
 export type DispatchMovie = {
   movieTitle: string
-  duration: string
+  duration: number
   movieID: string
+  timeStart: string
+  screen: number
 }
 
 export type DispatchTime = {
   screen: number
-  timeStartEnd: string
+  timeStart: string
 }
 
 export type DispatchDate = {
