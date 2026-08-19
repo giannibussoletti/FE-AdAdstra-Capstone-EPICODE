@@ -3,7 +3,7 @@ import { useLocation } from "react-router"
 import TimeTabs from "./TimeTabs"
 const SingleMovieCard = () => {
   const pathname = useLocation().pathname
-  const movieID = 8
+  const movieID = "8"
   const movieTitle = "spider-man: brand new day"
   const cast =
     "Gianni Fantoni, Mario Rossi, Federico Bianchi, Aldo Baglio,Giacomo Poretti, Giovanni Storti"

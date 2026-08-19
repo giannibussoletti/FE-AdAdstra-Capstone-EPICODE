@@ -5,28 +5,37 @@ import PreSalesSlider from "../PreSalesSlider"
 import NowPlayingSection from "../NowPlayingSection"
 import CardMoreInfo from "../CardMoreInfo"
 import { moreInfoArray } from "../../misc/arrays"
+import { useAppSelector } from "../../redux/hooks"
 const Home = () => {
+  const cinema = useAppSelector((state) => state.menuState.cinemaId)
+
   return (
     <>
       <HomeSlider />
       <Container>
-        <Row>
-          <Col className="p-0 mt-4 mb-3 pb-4 mb-lg-4">
-            <MustSeeMovies />
-          </Col>
-          <hr />
-        </Row>
-        <Row>
-          <Col className="mt-3 pb-4">
-            <PreSalesSlider string="prevendite aperte" />
-          </Col>
-          <hr />
-        </Row>
-        <Row>
-          <Col className="p-0 mt-3 pb-4">
-            <NowPlayingSection />
-          </Col>
-        </Row>
+        {cinema == "" ? (
+          <Row>
+            <Col className="p-0 mt-4 mb-3 pb-4 mb-lg-4">
+              <MustSeeMovies />
+            </Col>
+            <hr />
+          </Row>
+        ) : (
+          <>
+            <Row>
+              <Col className="mt-3 pb-4">
+                <PreSalesSlider string="prevendite aperte" />
+              </Col>
+              <hr />
+            </Row>
+            <Row>
+              <Col className="p-0 mt-3 pb-4">
+                <NowPlayingSection />
+              </Col>
+            </Row>
+          </>
+        )}
+
         <Row xs={1} md={2}>
           {moreInfoArray.map((card, i) => {
             return (
