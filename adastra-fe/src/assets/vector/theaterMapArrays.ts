@@ -1,6 +1,4 @@
-import type { SeatsInfo } from "../misc/types"
-
-export const redSeatFirstRow: SeatsInfo[] = [
+export const redSeatFirstRow = [
   {
     id: "A1-seat",
     position: { id: "A1", letter: "A", number: 1 },
@@ -123,7 +121,7 @@ export const redSeatFirstRow: SeatsInfo[] = [
   },
 ]
 
-export const redSeatSecondRow: SeatsInfo[] = [
+export const redSeatSecondRow = [
   {
     id: "B1-seat",
     position: { id: "B1", letter: "B", number: 1 },
@@ -246,7 +244,7 @@ export const redSeatSecondRow: SeatsInfo[] = [
   },
 ]
 
-export const blueSeatThirdRow: SeatsInfo[] = [
+export const blueSeatThirdRow = [
   {
     id: "C1-seat",
     position: { id: "C1", letter: "C", number: 1 },
@@ -369,7 +367,7 @@ export const blueSeatThirdRow: SeatsInfo[] = [
   },
 ]
 
-export const blueSeatFourthRow: SeatsInfo[] = [
+export const blueSeatFourthRow = [
   {
     id: "D1-seat",
     position: { id: "D1", letter: "D", number: 1 },
@@ -492,7 +490,7 @@ export const blueSeatFourthRow: SeatsInfo[] = [
   },
 ]
 
-export const greenSeatFifthRow: SeatsInfo[] = [
+export const greenSeatFifthRow = [
   {
     id: "E1-seat",
     position: { id: "E1", letter: "E", number: 1 },
@@ -615,7 +613,7 @@ export const greenSeatFifthRow: SeatsInfo[] = [
   },
 ]
 
-export const greenSeatSixthRow: SeatsInfo[] = [
+export const greenSeatSixthRow = [
   {
     id: "F1-seat",
     position: { id: "F1", letter: "F", number: 1 },
@@ -738,7 +736,7 @@ export const greenSeatSixthRow: SeatsInfo[] = [
   },
 ]
 
-export const greenSeatSeventhRow: SeatsInfo[] = [
+export const greenSeatSeventhRow = [
   {
     id: "G1-seat",
     position: { id: "G1", letter: "G", number: 1 },
@@ -861,7 +859,7 @@ export const greenSeatSeventhRow: SeatsInfo[] = [
   },
 ]
 
-export const greenSeatEighthRow: SeatsInfo[] = [
+export const greenSeatEighthRow = [
   {
     id: "H1-seat",
     position: { id: "H1", letter: "H", number: 1 },
@@ -984,7 +982,7 @@ export const greenSeatEighthRow: SeatsInfo[] = [
   },
 ]
 
-export const blueSeatNinthRow: SeatsInfo[] = [
+export const blueSeatNinthRow = [
   {
     id: "L1-seat",
     position: { id: "L1", letter: "L", number: 1 },
@@ -1107,7 +1105,7 @@ export const blueSeatNinthRow: SeatsInfo[] = [
   },
 ]
 
-export const blueSeatTenthRow: SeatsInfo[] = [
+export const blueSeatTenthRow = [
   {
     id: "M1-seat",
     position: { id: "M1", letter: "M", number: 1 },

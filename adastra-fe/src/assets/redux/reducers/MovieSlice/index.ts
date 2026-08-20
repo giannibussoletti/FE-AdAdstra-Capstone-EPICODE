@@ -12,6 +12,7 @@ const initialState: MovieState = {
   timeStartEnd: "",
   duration: 0,
   screen: 0,
+  screenId: "",
   date: "",
   movies: [],
 }
@@ -28,6 +29,7 @@ export const movieSlice = createSlice({
     timeAndScreen: (state, action: PayloadAction<DispatchTime>) => {
       state.timeStartEnd = action.payload.timeStart
       state.screen = action.payload.screen
+      state.screenId = action.payload.screenId
     },
 
     dateChoice: (state, action: PayloadAction<DispatchDate>) => {

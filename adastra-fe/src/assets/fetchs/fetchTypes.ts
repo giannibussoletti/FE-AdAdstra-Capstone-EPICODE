@@ -18,6 +18,7 @@ export type MovieDetails = {
 export type ScreeningTime = {
   dateTime: string
   screenNumber: number
+  screenId: string
 }
 
 export type Times = {
@@ -27,4 +28,13 @@ export type Times = {
 export type MovieGroup = {
   movieDetails: MovieDetails
   times: Times
+}
+
+export type SeatGroup = {
+  color: string
+  row: string
+  number: number
+  svgCoordinates: string
+  id: string
+  seatStatus: string
 }

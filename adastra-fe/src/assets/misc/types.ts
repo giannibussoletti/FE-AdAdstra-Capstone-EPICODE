@@ -1,5 +1,6 @@
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core"
 import type { MouseEvent } from "react"
+import type { SeatGroup } from "../fetchs/fetchTypes"
 
 export type TopSlider = {
   id: number
@@ -41,22 +42,10 @@ export type NavBarMenus = Menus & {
   icon: IconDefinition
 }
 
-export type PositionInfo = {
-  id: string
-  letter: string
-  number: number
-}
-
-export type SeatsInfo = {
-  id: string
-  SVGcoordinates: string
-  position: PositionInfo
-}
-
 export type FillFunction = {
   e: MouseEvent<SVGPathElement>
   fill: string
-  seat: SeatsInfo
+  seat: SeatGroup
   color: string
 }
 
@@ -65,8 +54,8 @@ export type PropString = {
 }
 
 export type TicketTypes = {
-  redSeatsPosition: PositionInfo[]
-  greenSeatsPosition: PositionInfo[]
-  blueSeatsPosition: PositionInfo[]
+  redSeatsPosition: SeatGroup[]
+  greenSeatsPosition: SeatGroup[]
+  blueSeatsPosition: SeatGroup[]
   totalCost: number
 }

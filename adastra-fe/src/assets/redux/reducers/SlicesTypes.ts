@@ -1,5 +1,9 @@
-import type { SeatsInfo, NavBarMenus, PositionInfo } from "../../misc/types"
-import type { CinemaFetchType, MovieGroup } from "../../fetchs/fetchTypes"
+import type { NavBarMenus } from "../../misc/types"
+import type {
+  CinemaFetchType,
+  MovieGroup,
+  SeatGroup,
+} from "../../fetchs/fetchTypes"
 
 //NAVBAR
 export type MenuState = {
@@ -25,21 +29,21 @@ export type PayloadStateCinema = {
 }
 //TICKET
 export type Booking = {
-  redSeatsPosition: PositionInfo[]
-  greenSeatsPosition: PositionInfo[]
-  blueSeatsPosition: PositionInfo[]
+  redSeatsPosition: SeatGroup[]
+  greenSeatsPosition: SeatGroup[]
+  blueSeatsPosition: SeatGroup[]
   redSeatsAmount: number
   greenSeatsAmount: number
   blueSeatsAmount: number
   isAdding: boolean
   color: string
-  maxSeats: PositionInfo[]
+  maxSeats: SeatGroup[]
   rowLetter: string
   totalCost: number
 }
 
 export type DispatchSeat = {
-  seat: SeatsInfo
+  seat: SeatGroup
   color: string
   isAdding: boolean
 }
@@ -51,6 +55,7 @@ export type MovieState = {
   timeStartEnd: string
   duration: number
   screen: number
+  screenId: string
   date: string
   movies: MovieGroup[]
 }
@@ -61,11 +66,13 @@ export type DispatchMovie = {
   movieID: string
   timeStart: string
   screen: number
+  screenId: string
 }
 
 export type DispatchTime = {
   screen: number
   timeStart: string
+  screenId: string
 }
 
 export type DispatchDate = {
