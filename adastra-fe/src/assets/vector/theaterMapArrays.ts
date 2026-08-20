@@ -494,6 +494,48 @@ export const blueSeatFourthRow: SeatsInfo[] = [
 
 export const greenSeatFifthRow: SeatsInfo[] = [
   {
+    id: "E1-seat",
+    position: { id: "E1", letter: "E", number: 1 },
+    SVGcoordinates:
+      "M135.33,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
+  },
+  {
+    id: "E2-seat",
+    position: { id: "E2", letter: "E", number: 2 },
+    SVGcoordinates:
+      "M178.69,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
+  },
+  {
+    id: "E3-seat",
+    position: { id: "E3", letter: "E", number: 3 },
+    SVGcoordinates:
+      "M222.04,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
+  },
+  {
+    id: "E4-seat",
+    position: { id: "E4", letter: "E", number: 4 },
+    SVGcoordinates:
+      "M265.4,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
+  },
+  {
+    id: "E5-seat",
+    position: { id: "E5", letter: "E", number: 5 },
+    SVGcoordinates:
+      "M308.76,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
+  },
+  {
+    id: "E6-seat",
+    position: { id: "E6", letter: "E", number: 6 },
+    SVGcoordinates:
+      "M352.11,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
+  },
+  {
+    id: "E7-seat",
+    position: { id: "E7", letter: "E", number: 7 },
+    SVGcoordinates:
+      "M395.47,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
+  },
+  {
     id: "E8-seat",
     position: { id: "E8", letter: "E", number: 8 },
     SVGcoordinates:
