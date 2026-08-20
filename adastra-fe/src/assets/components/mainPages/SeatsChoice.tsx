@@ -1,4 +1,4 @@
-import TheaterMap from "../TheaterMap"
+import TheaterMap from "../TheaterMapRightEntrance"
 import MainTitles from "../MainTitles"
 import Buttons from "../Buttons"
 import TicketsCount from "../TicketsCount"
@@ -43,7 +43,7 @@ const SeatsChoice = () => {
           <Col className="p-0 px-lg-3">
             <TheaterMap />
           </Col>
-          <Col className=" mt-5">
+          <Col className="mt-5">
             <Row>
               <Col className="text-center pb-4">
                 <MainTitles string="totale biglietti" />
