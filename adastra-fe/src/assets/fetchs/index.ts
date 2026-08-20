@@ -1,4 +1,8 @@
-import type { CinemaFetchType, MovieGroup } from "../fetchs/fetchTypes"
+import type {
+  CinemaFetchType,
+  MovieGroup,
+  SeatGroup,
+} from "../fetchs/fetchTypes"
 
 export const fetchCinemas = async (): Promise<CinemaFetchType[]> => {
   try {
@@ -34,6 +38,30 @@ export const fetchScreenTimes = async (
       throw new Error(res.statusText || `Errore HTTP ${res.status}`)
     }
     const data: MovieGroup[] = await res.json()
+    return data
+  } catch (err) {
+    console.error(err)
+    throw err
+  }
+}
+export const fetchSeats = async (
+  cinemaId: string,
+  screenId: string,
+): Promise<SeatGroup[]> => {
+  try {
+    const res = await fetch("http://localhost:5555/seats", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ cinemaId, screenId }),
+    })
+
+    if (!res.ok) {
+      console.log(res)
+      throw new Error(res.statusText || `Errore HTTP ${res.status}`)
+    }
+    const data: SeatGroup[] = await res.json()
     return data
   } catch (err) {
     console.error(err)

@@ -1,4 +1,4 @@
-import TheaterMap from "../TheaterMapRightEntrance"
+import TheaterMap from "../TheaterMap"
 import MainTitles from "../MainTitles"
 import Buttons from "../Buttons"
 import TicketsCount from "../TicketsCount"

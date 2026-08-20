@@ -20,6 +20,7 @@ const SingleMovieCard = () => {
         dispatch(moviesArray(data))
       })
       .catch((err) => console.error(err))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cinemaId])
 
   const pathname = useLocation().pathname
@@ -88,6 +89,7 @@ const SingleMovieCard = () => {
                             duration={movie.movieDetails.duration}
                             timeStart={time.dateTime}
                             screen={time.screenNumber}
+                            screenId={time.screenId}
                           />
                         </Col>
                       )

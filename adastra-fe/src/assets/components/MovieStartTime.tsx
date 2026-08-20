@@ -18,6 +18,7 @@ const MovieStartTime = ({
   movieID,
   duration,
   timeStart,
+  screenId,
   screen,
 }: DispatchMovie) => {
   const dispatch = useAppDispatch()
@@ -29,9 +30,16 @@ const MovieStartTime = ({
     <div
       className=" bg-time-color rounded rounded-3 px-3 py-2 single-movie-time"
       onClick={() => {
-        dispatch(timeAndScreen({ timeStart, screen }))
+        dispatch(timeAndScreen({ timeStart, screen, screenId }))
         dispatch(
-          movieChoice({ movieID, movieTitle, duration, timeStart, screen }),
+          movieChoice({
+            movieID,
+            movieTitle,
+            duration,
+            timeStart,
+            screen,
+            screenId,
+          }),
         )
         navigate("/scelta-posto/")
       }}
