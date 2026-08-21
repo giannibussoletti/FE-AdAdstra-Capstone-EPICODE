@@ -14,6 +14,7 @@ const initialState: Booking = {
   maxSeats: [],
   rowLetter: "",
   totalCost: 0,
+  email: "",
 }
 
 export const bookingSlice = createSlice({
@@ -97,6 +98,9 @@ export const bookingSlice = createSlice({
     updatePrice: (state, action: PayloadAction<number>) => {
       state.totalCost = action.payload
     },
+    updateEmail: (state, action: PayloadAction<string>) => {
+      state.email = action.payload
+    },
     resetState: (state, action: PayloadAction<string>) => {
       state.color = action.payload
       if (state.color === RESET) {
@@ -116,6 +120,7 @@ export const bookingSlice = createSlice({
   },
 })
 
-export const { manageSeat, updatePrice, resetState } = bookingSlice.actions
+export const { manageSeat, updatePrice, resetState, updateEmail } =
+  bookingSlice.actions
 
 export default bookingSlice.reducer
