@@ -2,9 +2,12 @@ import TicketsCount from "../TicketsCount"
 import TopBarInfoBooking from "../TopBarInfoBooking"
 import MainTitles from "../MainTitles"
 import Buttons from "../Buttons"
-import { useAppSelector } from "../../redux/hooks"
+import { useAppDispatch, useAppSelector } from "../../redux/hooks"
 import { Form, Container, Row, Col } from "react-bootstrap"
+import { updateEmail } from "../../redux/reducers/TicketSlice"
 const PaymentPage = () => {
+  const dispatch = useAppDispatch()
+
   const greenSeatsPosition = useAppSelector(
     (state) => state.bookingState.greenSeatsPosition,
   )
@@ -40,7 +43,11 @@ const PaymentPage = () => {
             <h5 className="f fw-normal text-uppercase mt-3 mb-2">
               <Form.Label className="mb-0">inserisci la tua mail</Form.Label>
             </h5>
-            <Form.Control />
+            <Form.Control
+              type="email"
+              placeholder="name@example.com"
+              onChange={(e) => dispatch(updateEmail(e.target.value))}
+            />
           </Col>
 
           <Col>

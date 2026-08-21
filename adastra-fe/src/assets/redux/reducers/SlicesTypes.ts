@@ -40,6 +40,7 @@ export type Booking = {
   maxSeats: SeatGroup[]
   rowLetter: string
   totalCost: number
+  email: string
 }
 
 export type DispatchSeat = {
