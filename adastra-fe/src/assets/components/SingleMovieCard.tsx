@@ -90,6 +90,7 @@ const SingleMovieCard = () => {
                             timeStart={time.dateTime}
                             screen={time.screenNumber}
                             screenId={time.screenId}
+                            screeningTimeId={time.screeningTimeId}
                           />
                         </Col>
                       )

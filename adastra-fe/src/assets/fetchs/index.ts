@@ -1,4 +1,5 @@
 import type {
+  BookingType,
   CinemaFetchType,
   MovieGroup,
   SeatGroup,
@@ -62,6 +63,41 @@ export const fetchSeats = async (
       throw new Error(res.statusText || `Errore HTTP ${res.status}`)
     }
     const data: SeatGroup[] = await res.json()
+    return data
+  } catch (err) {
+    console.error(err)
+    throw err
+  }
+}
+export const fetchBooking = async (
+  userId: null,
+  screenTimeId: string,
+  maxSeats: SeatGroup[],
+  totalCost: number,
+  guestEmail: string,
+  coupon: string,
+): Promise<BookingType> => {
+  try {
+    const res = await fetch("http://localhost:5555/bookings", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userId,
+        screenTimeId,
+        maxSeats,
+        totalCost,
+        guestEmail,
+        coupon,
+      }),
+    })
+
+    if (!res.ok) {
+      console.log(res)
+      throw new Error(res.statusText || `Errore HTTP ${res.status}`)
+    }
+    const data: BookingType = await res.json()
     return data
   } catch (err) {
     console.error(err)

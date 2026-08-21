@@ -40,7 +40,6 @@ export type Booking = {
   maxSeats: SeatGroup[]
   rowLetter: string
   totalCost: number
-  email: string
 }
 
 export type DispatchSeat = {
@@ -59,6 +58,7 @@ export type MovieState = {
   screenId: string
   date: string
   movies: MovieGroup[]
+  screeningTimeId: string
 }
 
 export type DispatchMovie = {
@@ -68,6 +68,7 @@ export type DispatchMovie = {
   timeStart: string
   screen: number
   screenId: string
+  screeningTimeId: string
 }
 
 export type DispatchTime = {
