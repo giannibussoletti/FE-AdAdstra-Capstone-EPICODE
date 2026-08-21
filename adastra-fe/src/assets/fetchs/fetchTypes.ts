@@ -19,6 +19,7 @@ export type ScreeningTime = {
   dateTime: string
   screenNumber: number
   screenId: string
+  screeningTimeId: string
 }
 
 export type Times = {
@@ -37,4 +38,10 @@ export type SeatGroup = {
   svgCoordinates: string
   id: string
   seatStatus: string
+}
+
+export type BookingType = {
+  message: string
+  id: string
+  createdAt: string
 }

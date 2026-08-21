@@ -20,6 +20,7 @@ const MovieStartTime = ({
   timeStart,
   screenId,
   screen,
+  screeningTimeId,
 }: DispatchMovie) => {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
@@ -39,6 +40,7 @@ const MovieStartTime = ({
             timeStart,
             screen,
             screenId,
+            screeningTimeId,
           }),
         )
         navigate("/scelta-posto/")
