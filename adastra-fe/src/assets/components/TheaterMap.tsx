@@ -2,20 +2,15 @@ import {
   GREEN,
   RED,
   BLUE,
-  redSeat,
-  blueSeat,
-  greenSeat,
   redCost,
   blueCost,
   greenCost,
 } from "../misc/variables"
 import { useAppDispatch, useAppSelector } from "../redux/hooks"
-import { manageSeat } from "../redux/reducers/TicketSlice"
-import type { FillFunction } from "../misc/types"
 import { useEffect, useState } from "react"
 import { fetchSeats } from "../fetchs"
 import type { SeatGroup } from "../fetchs/fetchTypes"
-
+import { fillSeat } from "../misc/functions"
 const TheaterMap = () => {
   const dispatch = useAppDispatch()
   const [seats, setSeats] = useState<SeatGroup[]>([])
@@ -33,53 +28,6 @@ const TheaterMap = () => {
       .catch((err) => console.error(err))
   }, [cinemaId, screenId])
 
-  const fillSeat = ({ e, fill, seat, color }: FillFunction) => {
-    if (e.target instanceof SVGPathElement) {
-      const fillColor =
-        fill === RED
-          ? redSeat
-          : fill === BLUE
-            ? blueSeat
-            : fill === GREEN
-              ? greenSeat
-              : ""
-      const target = e.target
-      const seatNumber = seat.number
-      const seatLetter = seat.row
-      const chosenNumbers = maxSeats.map((m) => m.number)
-      const sameLetter = rowLetter === seatLetter
-      const isNextSeat = chosenNumbers.includes(seatNumber + 1)
-      const isBeforeSeat = chosenNumbers.includes(seatNumber - 1)
-      const isFilled = target.style.fill
-      if (
-        !isNextSeat &&
-        !isBeforeSeat &&
-        maxSeats.length >= 1 &&
-        sameLetter &&
-        !target.style.fill
-      ) {
-        alert("è possibile prenotare solo posti adiacente")
-      } else if (
-        isNextSeat &&
-        isBeforeSeat &&
-        maxSeats.length >= 1 &&
-        sameLetter &&
-        isFilled
-      ) {
-        alert("impossibile un posto in mezzo a due posti prenotati")
-      } else if (!sameLetter && maxSeats.length >= 1) {
-        window.alert("è possibile acquistare solo nella stessa fila")
-      } else if (!isFilled && maxSeats.length < 10) {
-        target.style.fill = fillColor
-        dispatch(manageSeat({ seat, color, isAdding: true }))
-      } else if (!isFilled && maxSeats.length === 10) {
-        window.alert("è possibile acquistare un massimo di 10 posti")
-      } else {
-        target.style.fill = ""
-        dispatch(manageSeat({ seat, color, isAdding: false }))
-      }
-    }
-  }
   return (
     <svg
       id="theater-map"
@@ -170,7 +118,15 @@ const TheaterMap = () => {
               return (
                 <path
                   onClick={(e) =>
-                    fillSeat({ e, fill: seat.color, seat, color: seat.color })
+                    fillSeat({
+                      e,
+                      fill: seat.color,
+                      seat,
+                      color: seat.color,
+                      maxSeats,
+                      dispatch,
+                      rowLetter,
+                    })
                   }
                   key={
                     seat.svgCoordinates +
