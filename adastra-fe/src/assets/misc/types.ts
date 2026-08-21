@@ -1,6 +1,12 @@
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core"
 import type { MouseEvent } from "react"
 import type { SeatGroup } from "../fetchs/fetchTypes"
+import type { ThunkDispatch, UnknownAction, Dispatch } from "@reduxjs/toolkit"
+import type {
+  MenuState,
+  Booking,
+  MovieState,
+} from "../redux/reducers/SlicesTypes"
 
 export type TopSlider = {
   id: number
@@ -47,6 +53,18 @@ export type FillFunction = {
   fill: string
   seat: SeatGroup
   color: string
+  maxSeats: SeatGroup[]
+  rowLetter: string
+  dispatch: ThunkDispatch<
+    {
+      menuState: MenuState
+      bookingState: Booking
+      movieState: MovieState
+    },
+    undefined,
+    UnknownAction
+  > &
+    Dispatch<UnknownAction>
 }
 
 export type PropString = {
