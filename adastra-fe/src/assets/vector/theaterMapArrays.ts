@@ -1,6 +1,4 @@
-import type { SeatsInfo } from "../misc/types"
-
-export const redSeatFirstRow: SeatsInfo[] = [
+export const redSeatFirstRow = [
   {
     id: "A1-seat",
     position: { id: "A1", letter: "A", number: 1 },
@@ -123,7 +121,7 @@ export const redSeatFirstRow: SeatsInfo[] = [
   },
 ]
 
-export const redSeatSecondRow: SeatsInfo[] = [
+export const redSeatSecondRow = [
   {
     id: "B1-seat",
     position: { id: "B1", letter: "B", number: 1 },
@@ -246,7 +244,7 @@ export const redSeatSecondRow: SeatsInfo[] = [
   },
 ]
 
-export const blueSeatThirdRow: SeatsInfo[] = [
+export const blueSeatThirdRow = [
   {
     id: "C1-seat",
     position: { id: "C1", letter: "C", number: 1 },
@@ -369,7 +367,7 @@ export const blueSeatThirdRow: SeatsInfo[] = [
   },
 ]
 
-export const blueSeatFourthRow: SeatsInfo[] = [
+export const blueSeatFourthRow = [
   {
     id: "D1-seat",
     position: { id: "D1", letter: "D", number: 1 },
@@ -492,7 +490,49 @@ export const blueSeatFourthRow: SeatsInfo[] = [
   },
 ]
 
-export const greenSeatFifthRow: SeatsInfo[] = [
+export const greenSeatFifthRow = [
+  {
+    id: "E1-seat",
+    position: { id: "E1", letter: "E", number: 1 },
+    SVGcoordinates:
+      "M135.33,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
+  },
+  {
+    id: "E2-seat",
+    position: { id: "E2", letter: "E", number: 2 },
+    SVGcoordinates:
+      "M178.69,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
+  },
+  {
+    id: "E3-seat",
+    position: { id: "E3", letter: "E", number: 3 },
+    SVGcoordinates:
+      "M222.04,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
+  },
+  {
+    id: "E4-seat",
+    position: { id: "E4", letter: "E", number: 4 },
+    SVGcoordinates:
+      "M265.4,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
+  },
+  {
+    id: "E5-seat",
+    position: { id: "E5", letter: "E", number: 5 },
+    SVGcoordinates:
+      "M308.76,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
+  },
+  {
+    id: "E6-seat",
+    position: { id: "E6", letter: "E", number: 6 },
+    SVGcoordinates:
+      "M352.11,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
+  },
+  {
+    id: "E7-seat",
+    position: { id: "E7", letter: "E", number: 7 },
+    SVGcoordinates:
+      "M395.47,552.25h33.15v26.7c0,3.56-2.89,6.46-6.46,6.46h-20.24c-3.56,0-6.46-2.89-6.46-6.46v-26.7h0Z",
+  },
   {
     id: "E8-seat",
     position: { id: "E8", letter: "E", number: 8 },
@@ -573,7 +613,7 @@ export const greenSeatFifthRow: SeatsInfo[] = [
   },
 ]
 
-export const greenSeatSixthRow: SeatsInfo[] = [
+export const greenSeatSixthRow = [
   {
     id: "F1-seat",
     position: { id: "F1", letter: "F", number: 1 },
@@ -696,7 +736,7 @@ export const greenSeatSixthRow: SeatsInfo[] = [
   },
 ]
 
-export const greenSeatSeventhRow: SeatsInfo[] = [
+export const greenSeatSeventhRow = [
   {
     id: "G1-seat",
     position: { id: "G1", letter: "G", number: 1 },
@@ -819,7 +859,7 @@ export const greenSeatSeventhRow: SeatsInfo[] = [
   },
 ]
 
-export const greenSeatEighthRow: SeatsInfo[] = [
+export const greenSeatEighthRow = [
   {
     id: "H1-seat",
     position: { id: "H1", letter: "H", number: 1 },
@@ -942,7 +982,7 @@ export const greenSeatEighthRow: SeatsInfo[] = [
   },
 ]
 
-export const blueSeatNinthRow: SeatsInfo[] = [
+export const blueSeatNinthRow = [
   {
     id: "L1-seat",
     position: { id: "L1", letter: "L", number: 1 },
@@ -1065,7 +1105,7 @@ export const blueSeatNinthRow: SeatsInfo[] = [
   },
 ]
 
-export const blueSeatTenthRow: SeatsInfo[] = [
+export const blueSeatTenthRow = [
   {
     id: "M1-seat",
     position: { id: "M1", letter: "M", number: 1 },
