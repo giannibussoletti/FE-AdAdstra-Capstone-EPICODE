@@ -77,3 +77,8 @@ export type TicketTypes = {
   blueSeatsPosition: SeatGroup[]
   totalCost: number
 }
+
+export type InfoCardAndDesktopNav = {
+  label: string
+  link: string
+}
