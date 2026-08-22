@@ -1,68 +1,80 @@
-import type { NavBarMenus, PositionInfo } from "../../misc/types"
+import type { NavBarMenus } from "../../misc/types"
+import type {
+  CinemaFetchType,
+  MovieGroup,
+  SeatGroup,
+} from "../../fetchs/fetchTypes"
 
 //NAVBAR
 export type MenuState = {
   isOpen: string
-  citySearchMenu: string
+  cinemaSearchMenu: string
   arrayMenu: NavBarMenus[]
-  isCities: boolean
-  arrayCity: string[]
+  isCinema: boolean
+  arrayCinema: CinemaFetchType[]
+  cinemaId: string
 }
 
 export type PayloadStateMenu = {
   isOpen: string
   arrayMenu: NavBarMenus[]
-  isCities: boolean
+  isCinema: boolean
 }
 
-export type PayloadStateCity = {
+export type PayloadStateCinema = {
   isOpen: string
-  citySearchMenu: string
-  isCities: boolean
-  arrayCity: string[]
+  cinemaSearchMenu: string
+  isCinema: boolean
+  arrayCinema: CinemaFetchType[]
 }
 //TICKET
 export type Booking = {
-  redSeatsPosition: PositionInfo[]
-  greenSeatsPosition: PositionInfo[]
-  blueSeatsPosition: PositionInfo[]
+  redSeatsPosition: SeatGroup[]
+  greenSeatsPosition: SeatGroup[]
+  blueSeatsPosition: SeatGroup[]
   redSeatsAmount: number
   greenSeatsAmount: number
   blueSeatsAmount: number
   isAdding: boolean
   color: string
-  maxSeats: PositionInfo[]
+  maxSeats: SeatGroup[]
   rowLetter: string
   totalCost: number
 }
 
-import type { SeatsInfo } from "../../misc/types"
-
 export type DispatchSeat = {
-  seat: SeatsInfo
+  seat: SeatGroup
   color: string
   isAdding: boolean
 }
 
 //Movie
 export type MovieState = {
-  movieID: number
+  movieID: string
   movieTitle: string
   timeStartEnd: string
-  duration: string
+  duration: number
   screen: number
+  screenId: string
   date: string
+  movies: MovieGroup[]
+  screeningTimeId: string
 }
 
 export type DispatchMovie = {
   movieTitle: string
-  duration: string
-  movieID: number
+  duration: number
+  movieID: string
+  timeStart: string
+  screen: number
+  screenId: string
+  screeningTimeId: string
 }
 
 export type DispatchTime = {
   screen: number
-  timeStartEnd: string
+  timeStart: string
+  screenId: string
 }
 
 export type DispatchDate = {

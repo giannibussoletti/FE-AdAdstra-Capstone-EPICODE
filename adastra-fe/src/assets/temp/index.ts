@@ -1,14 +1,3 @@
-export const province = [
-  "Roma",
-  "Milano",
-  "Napoli",
-  "Torino",
-  "Palermo",
-  "Genova",
-  "Bologna",
-  "Firenze",
-]
-
 import type { PosterReleaseDate, TopSlider } from "../misc/types"
 
 export const arrayMapImg: TopSlider[] = [
