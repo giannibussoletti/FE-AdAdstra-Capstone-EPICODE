@@ -104,3 +104,37 @@ export const fetchBooking = async (
     throw err
   }
 }
+
+export const fetchRegistration = async (
+  name: string,
+  surname: string,
+  birthDate: Date | null,
+  email: string,
+  password: string,
+): Promise<BookingType> => {
+  try {
+    const res = await fetch("http://localhost:5555/user", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        surname,
+        birthDate,
+        email,
+        password,
+      }),
+    })
+
+    if (!res.ok) {
+      console.log(res)
+      throw new Error(res.statusText || `Errore HTTP ${res.status}`)
+    }
+    const data: BookingType = await res.json()
+    return data
+  } catch (err) {
+    console.error(err)
+    throw err
+  }
+}

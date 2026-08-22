@@ -12,15 +12,18 @@ import {
 import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircleCheck, faCircleXmark } from "@fortawesome/free-solid-svg-icons"
+import PasswordCheck from "../PasswordCheck"
+
+import { fetchRegistration } from "../../fetchs"
 
 const RegistrationPage = () => {
-  const [name, setName] = useState<string>()
-  const [surname, setSurname] = useState<string>()
-  const [birthdate, setBirthdate] = useState<Date | null>()
-  const [email, setEmail] = useState<string>()
-  const [password, setPassword] = useState<string>()
+  const [name, setName] = useState<string>("")
+  const [surname, setSurname] = useState<string>("")
+  const [birthDate, setBirthDate] = useState<Date>(new Date())
+  const [email, setEmail] = useState<string>("")
+  const [password, setPassword] = useState<string>("")
 
-  const infoArray = [name, surname, birthdate, email, password]
+  const infoArray = [name, surname, birthDate, email, password]
 
   const checkOk = (
     <FontAwesomeIcon icon={faCircleCheck} style={{ color: "green" }} />
@@ -39,8 +42,7 @@ const RegistrationPage = () => {
 
   return (
     <Container>
-      <Row className="mt-5"></Row>
-      <Row className="justify-content-center align-items-center ">
+      <Row className="justify-content-center align-items-center my-5">
         <Col className="justify-content-center align-items-center d-flex">
           <Card className=" border-2 border-white">
             <Card.Img variant="top" src="https://placehold.co/400x200" />
@@ -73,7 +75,7 @@ const RegistrationPage = () => {
                   <Form.Control
                     required
                     onChange={(e) =>
-                      setBirthdate((e.target as HTMLInputElement).valueAsDate)
+                      setBirthDate((e.target as HTMLInputElement).valueAsDate!)
                     }
                     size="sm"
                     type="date"
@@ -102,46 +104,9 @@ const RegistrationPage = () => {
                     size="sm"
                     type="password"
                   />
-                  <div className=" d-flex flex-column mt-4">
-                    <Form.Label>
-                      {password && password.length >= 12 ? checkOk : checkNotOk}{" "}
-                      minimo 12 caratteri
-                    </Form.Label>
-                    <Form.Label>
-                      {password && /[A-Z]/.test(password)
-                        ? checkOk
-                        : checkNotOk}{" "}
-                      minino 1 carattere maiuscolo
-                    </Form.Label>
-                    <Form.Label>
-                      {password && /[a-z]/.test(password)
-                        ? checkOk
-                        : checkNotOk}{" "}
-                      minino 1 carattere minuscolo
-                    </Form.Label>
-                    <Form.Label>
-                      {password && /[0-9]/.test(password)
-                        ? checkOk
-                        : checkNotOk}{" "}
-                      minimo un numero
-                    </Form.Label>
-                    <Form.Label>
-                      {password && /[@$!%*?&]/.test(password)
-                        ? checkOk
-                        : checkNotOk}{" "}
-                      almeno un carattere speciale: @ $ ! % * ? &
-                    </Form.Label>
-                    <Form.Label>
-                      {password && /^[@$!%*?&]+$/.test(password)
-                        ? checkNotOk
-                        : checkOk}{" "}
-                      nessun altro carattere speciale
-                    </Form.Label>
-                  </div>
+                  <PasswordCheck checking={password} />
                 </Form.Group>
-                {infoArray.includes(null) ||
-                infoArray.includes(undefined) ||
-                infoArray.includes("") ||
+                {infoArray.includes("") ||
                 !password ||
                 !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$/.test(
                   password,
@@ -169,12 +134,14 @@ const RegistrationPage = () => {
                     <Button
                       onClick={(e) => {
                         e.preventDefault()
-                        console.log(`La registrazione ha avuto successo:
-                        ${name}
-                        ${surname}
-                        ${birthdate}
-                        ${email}
-                        ${password}`)
+                        fetchRegistration(
+                          name,
+                          surname,
+                          birthDate,
+                          email,
+                          password,
+                        )
+                        console.log("registrazione avvenuta con successo")
                       }}
                       variant="buttons"
                       className="rounded-pill fw-semibold text-uppercase py-2 mb-4 mt-3"
