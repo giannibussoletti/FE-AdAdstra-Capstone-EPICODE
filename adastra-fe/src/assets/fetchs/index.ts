@@ -7,7 +7,7 @@ import type {
 
 export const fetchCinemas = async (): Promise<CinemaFetchType[]> => {
   try {
-    const res = await fetch("http://localhost:5555/cinemas")
+    const res = await fetch("http://localhost:5555/public/cinemas")
 
     if (!res.ok) {
       console.log(res)
@@ -26,7 +26,7 @@ export const fetchScreenTimes = async (
   cinemaId: string,
 ): Promise<MovieGroup[]> => {
   try {
-    const res = await fetch("http://localhost:5555/screening-times", {
+    const res = await fetch("http://localhost:5555/public/screening-times", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -50,7 +50,7 @@ export const fetchSeats = async (
   screenId: string,
 ): Promise<SeatGroup[]> => {
   try {
-    const res = await fetch("http://localhost:5555/seats", {
+    const res = await fetch("http://localhost:5555/public/seats", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -69,6 +69,7 @@ export const fetchSeats = async (
     throw err
   }
 }
+
 export const fetchBooking = async (
   userId: null,
   screenTimeId: string,
@@ -90,6 +91,40 @@ export const fetchBooking = async (
         totalCost,
         guestEmail,
         coupon,
+      }),
+    })
+
+    if (!res.ok) {
+      console.log(res)
+      throw new Error(res.statusText || `Errore HTTP ${res.status}`)
+    }
+    const data: BookingType = await res.json()
+    return data
+  } catch (err) {
+    console.error(err)
+    throw err
+  }
+}
+
+export const fetchRegistration = async (
+  name: string,
+  surname: string,
+  birthDate: Date | null,
+  email: string,
+  password: string,
+): Promise<BookingType> => {
+  try {
+    const res = await fetch("http://localhost:5555/auth/registration", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        surname,
+        birthDate,
+        email,
+        password,
       }),
     })
 

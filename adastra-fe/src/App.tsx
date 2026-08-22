@@ -17,6 +17,7 @@ import SeatChoice from "./assets/components/mainPages/SeatsChoice"
 import PaymentPage from "./assets/components/mainPages/PaymentPage"
 import RestorationScroll from "./assets/components/RestorationScroll/RestorationScroll"
 import ProfilePage from "./assets/components/mainPages/ProfilePage"
+import RegistrationPage from "./assets/components/mainPages/RegistrationPage"
 //React Router
 import { Route, BrowserRouter as Router, Routes } from "react-router"
 
@@ -35,6 +36,7 @@ const App = () => {
             <Route path="/scelta-posto" element={<SeatChoice />} />
             <Route path="/pagamento" element={<PaymentPage />} />
             <Route path="/profilo" element={<ProfilePage />} />
+            <Route path="/registrazione" element={<RegistrationPage />} />
           </Routes>
         </main>
         <footer>
