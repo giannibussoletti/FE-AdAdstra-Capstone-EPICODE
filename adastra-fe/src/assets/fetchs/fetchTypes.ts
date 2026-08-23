@@ -45,3 +45,16 @@ export type BookingType = {
   id: string
   createdAt: string
 }
+
+export type AccessToken = {
+  accessToken: string
+}
+
+export type ProfileType = {
+  name: string
+  surname: string
+  email: string
+  birthDate: Date
+  profilePicLink: string
+  username: string
+}

@@ -1,6 +1,6 @@
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core"
 import type { MouseEvent } from "react"
-import type { SeatGroup } from "../fetchs/fetchTypes"
+import type { ProfileType, SeatGroup } from "../fetchs/fetchTypes"
 import type { ThunkDispatch, UnknownAction, Dispatch } from "@reduxjs/toolkit"
 import type {
   MenuState,
@@ -60,6 +60,7 @@ export type FillFunction = {
       menuState: MenuState
       bookingState: Booking
       movieState: MovieState
+      userState: ProfileType
     },
     undefined,
     UnknownAction
