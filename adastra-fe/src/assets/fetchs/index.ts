@@ -1,7 +1,9 @@
 import type {
+  AccessToken,
   BookingType,
   CinemaFetchType,
   MovieGroup,
+  ProfileType,
   SeatGroup,
 } from "../fetchs/fetchTypes"
 
@@ -133,6 +135,53 @@ export const fetchRegistration = async (
       throw new Error(res.statusText || `Errore HTTP ${res.status}`)
     }
     const data: BookingType = await res.json()
+    return data
+  } catch (err) {
+    console.error(err)
+    throw err
+  }
+}
+
+export const fetchLogin = async (
+  email: string,
+  password: string,
+): Promise<AccessToken> => {
+  try {
+    const res = await fetch("http://localhost:5555/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    })
+
+    if (!res.ok) {
+      console.log(res)
+      throw new Error(res.statusText || `Errore HTTP ${res.status}`)
+    }
+    const data: AccessToken = await res.json()
+    return data
+  } catch (err) {
+    console.error(err)
+    throw err
+  }
+}
+export const fetchProfile = async (): Promise<ProfileType> => {
+  try {
+    const res = await fetch("http://localhost:5555/user/profile", {
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("accessToken"),
+      },
+    })
+
+    if (!res.ok) {
+      console.log(res)
+      throw new Error(res.statusText || `Errore HTTP ${res.status}`)
+    }
+    const data: ProfileType = await res.json()
     return data
   } catch (err) {
     console.error(err)

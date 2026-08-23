@@ -18,6 +18,7 @@ import PaymentPage from "./assets/components/mainPages/PaymentPage"
 import RestorationScroll from "./assets/components/RestorationScroll/RestorationScroll"
 import ProfilePage from "./assets/components/mainPages/ProfilePage"
 import RegistrationPage from "./assets/components/mainPages/RegistrationPage"
+import LoginPage from "./assets/components/mainPages/LoginPage"
 //React Router
 import { Route, BrowserRouter as Router, Routes } from "react-router"
 
@@ -37,6 +38,7 @@ const App = () => {
             <Route path="/pagamento" element={<PaymentPage />} />
             <Route path="/profilo" element={<ProfilePage />} />
             <Route path="/registrazione" element={<RegistrationPage />} />
+            <Route path="/login" element={<LoginPage />} />
           </Routes>
         </main>
         <footer>
