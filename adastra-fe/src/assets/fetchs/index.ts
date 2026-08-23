@@ -70,6 +70,30 @@ export const fetchSeats = async (
   }
 }
 
+export const fetchBookedSeats = async (
+  screeningTimeId: string,
+): Promise<SeatGroup[]> => {
+  try {
+    const res = await fetch("http://localhost:5555/public/tickets", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ screeningTimeId }),
+    })
+
+    if (!res.ok) {
+      console.log(res)
+      throw new Error(res.statusText || `Errore HTTP ${res.status}`)
+    }
+    const data: SeatGroup[] = await res.json()
+    return data
+  } catch (err) {
+    console.error(err)
+    throw err
+  }
+}
+
 export const fetchBooking = async (
   userId: null,
   screenTimeId: string,
