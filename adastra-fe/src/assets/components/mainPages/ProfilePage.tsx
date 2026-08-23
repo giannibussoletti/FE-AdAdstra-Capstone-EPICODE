@@ -2,7 +2,36 @@ import MainTitles from "../MainTitles"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircleInfo, faTicket } from "@fortawesome/free-solid-svg-icons"
 import { Container, Row, Col, Image } from "react-bootstrap"
+import { useEffect, useState } from "react"
+import { fetchProfile } from "../../fetchs"
+import { setUserState } from "../../redux/reducers/UserSlice"
+import { useAppDispatch } from "../../redux/hooks"
+import type { ProfileType } from "../../fetchs/fetchTypes"
+
 const ProfilePage = () => {
+  const dispatch = useAppDispatch()
+
+  const [profile, setProfile] = useState<ProfileType>()
+
+  useEffect(() => {
+    fetchProfile()
+      .then((data) => {
+        setProfile(data)
+        dispatch(
+          setUserState({
+            name: data.name,
+            surname: data.surname,
+            email: data.email,
+            birthDate: data.birthDate,
+            profilePicLink: data.profilePicLink,
+            username: data.username,
+          }),
+        )
+      })
+      .catch((err) => console.error(err))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <Container className="mt-5 px-5">
       <Row className="py-1">
@@ -14,10 +43,10 @@ const ProfilePage = () => {
         <Col>
           <Row className="align-items-center">
             <Col xs={"auto"}>
-              <Image fluid src="https://placehold.co/80" roundedCircle />
+              <Image fluid src={profile?.profilePicLink} roundedCircle />
             </Col>
             <Col>
-              nome cognome <br /> email
+              {profile?.name + " " + profile?.surname} <br /> {profile?.email}
             </Col>
           </Row>
           <hr />
