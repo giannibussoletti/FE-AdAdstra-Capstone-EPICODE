@@ -1,10 +1,28 @@
 import { Dropdown, Row, Col } from "react-bootstrap"
-import { province } from "../temp"
 import { useAppDispatch, useAppSelector } from "../redux/hooks"
-import { setCity } from "../redux/reducers/NavBarSlice"
+import { setCinemaState, setId } from "../redux/reducers/NavBarSlice"
+import { fetchCinemas } from "../fetchs"
+import { useEffect, useState } from "react"
+import type { CinemaFetchType } from "../fetchs/fetchTypes"
+
 const CitySearch = () => {
   const dispatch = useAppDispatch()
-  const city = useAppSelector((state) => state.menuState.citySearchMenu)
+  const selectCinema = useAppSelector(
+    (state) => state.menuState.cinemaSearchMenu,
+  )
+  const [cinema, setCinema] = useState<CinemaFetchType[]>([])
+
+  useEffect(() => {
+    fetchCinemas()
+      .then((data) => {
+        setCinema(data)
+      })
+      .catch((error) => console.error(error))
+  }, [selectCinema])
+
+  if (!cinema) {
+    return <p>Caricamento in corso</p>
+  }
 
   return (
     <>
@@ -16,18 +34,18 @@ const CitySearch = () => {
               onClick={(e) => {
                 e.preventDefault()
                 dispatch(
-                  setCity({
+                  setCinemaState({
                     isOpen: "start-0",
-                    arrayCity: province,
-                    isCities: true,
-                    citySearchMenu: city,
+                    arrayCinema: cinema,
+                    isCinema: true,
+                    cinemaSearchMenu: selectCinema,
                   }),
                 )
               }}
               id="dropdown-basic"
               className="w-100 d-flex justify-content-between align-items-center px-3 rounded-0 bg-transparent border-1 border-white "
             >
-              {city}
+              {selectCinema}
             </Dropdown.Toggle>
           </Dropdown>
           {/* Tablet / Desktop version */}
@@ -36,28 +54,30 @@ const CitySearch = () => {
               id="dropdown-basic"
               className="w-100 d-flex justify-content-between align-items-center px-3 rounded-0 bg-transparent border-1 border-white"
             >
-              {city}
+              {selectCinema}
             </Dropdown.Toggle>
             <Dropdown.Menu
               style={{ maxHeight: "270px" }}
               className="w-100 bg-black overflow-scroll"
             >
-              {province.map((prv) => {
+              {cinema.map((cin) => {
                 return (
                   <Dropdown.Item
+                    key={cin.id + cin.cinemaName}
                     className="text-light"
                     onClick={() => {
                       dispatch(
-                        setCity({
+                        setCinemaState({
                           isOpen: "start-100",
-                          arrayCity: [],
-                          isCities: false,
-                          citySearchMenu: prv,
+                          arrayCinema: [],
+                          isCinema: false,
+                          cinemaSearchMenu: cin.cinemaName,
                         }),
                       )
+                      dispatch(setId(cin.id))
                     }}
                   >
-                    {prv}
+                    {cin.cinemaName}
                   </Dropdown.Item>
                 )
               })}

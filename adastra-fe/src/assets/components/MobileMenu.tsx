@@ -1,7 +1,7 @@
 import { Row, Col } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useAppDispatch, useAppSelector } from "../redux/hooks"
-import { setCity, setMenu } from "../redux/reducers/NavBarSlice"
+import { setMenu, setId, setCinemaState } from "../redux/reducers/NavBarSlice"
 import { faCircle } from "@fortawesome/free-solid-svg-icons"
 
 const MobileMenu = () => {
@@ -10,8 +10,8 @@ const MobileMenu = () => {
 
   const closeUpdate = selector((state) => state.menuState.isOpen)
   const arrayMenu = selector((state) => state.menuState.arrayMenu)
-  const isCitiesMenu = selector((state) => state.menuState.isCities)
-  const arrayProvince = selector((state) => state.menuState.arrayCity)
+  const isCitiesMenu = selector((state) => state.menuState.isCinema)
+  const arrayCinema = selector((state) => state.menuState.arrayCinema)
 
   if (!isCitiesMenu) {
     return (
@@ -32,7 +32,7 @@ const MobileMenu = () => {
                 setMenu({
                   isOpen: "start-100",
                   arrayMenu: [],
-                  isCities: false,
+                  isCinema: false,
                 }),
               )
             }
@@ -45,6 +45,7 @@ const MobileMenu = () => {
           {arrayMenu.map((menuItem) => {
             return (
               <div
+                key={menuItem.label + menuItem.URL}
                 className="text-uppercase fw-medium mb-4 cursor-pointer"
                 onClick={() => (window.location.href = menuItem.URL)}
               >
@@ -72,7 +73,7 @@ const MobileMenu = () => {
                 setMenu({
                   isOpen: "start-100",
                   arrayMenu: [],
-                  isCities: false,
+                  isCinema: false,
                 }),
               )
             }
@@ -84,25 +85,26 @@ const MobileMenu = () => {
             xs={12}
             className="d-flex justify-content-end pt-4 pe-5 fw-semibold fs-3"
           ></Col>
-          {arrayProvince.map((prv) => {
+          {arrayCinema.map((cin) => {
             return (
               <Col
-                key={prv}
+                key={cin.id}
                 className="cursor-pointer"
                 xs={12}
-                onClick={() =>
+                onClick={() => {
                   dispatch(
-                    setCity({
+                    setCinemaState({
                       isOpen: "start-100",
-                      citySearchMenu: prv,
-                      isCities: true,
-                      arrayCity: [],
+                      arrayCinema: [],
+                      isCinema: true,
+                      cinemaSearchMenu: cin.cinemaName,
                     }),
+                    dispatch(setId(cin.id)),
                   )
-                }
+                }}
               >
                 <FontAwesomeIcon icon={faCircle} size="2xs" className="me-3" />
-                {prv}
+                {cin.cinemaName}
                 <hr />
               </Col>
             )
