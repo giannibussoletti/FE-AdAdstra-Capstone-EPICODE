@@ -1,5 +1,12 @@
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core"
 import type { MouseEvent } from "react"
+import type { ProfileType, SeatGroup } from "../fetchs/fetchTypes"
+import type { ThunkDispatch, UnknownAction, Dispatch } from "@reduxjs/toolkit"
+import type {
+  MenuState,
+  Booking,
+  MovieState,
+} from "../redux/reducers/SlicesTypes"
 
 export type TopSlider = {
   id: number
@@ -41,23 +48,24 @@ export type NavBarMenus = Menus & {
   icon: IconDefinition
 }
 
-export type PositionInfo = {
-  id: string
-  letter: string
-  number: number
-}
-
-export type SeatsInfo = {
-  id: string
-  SVGcoordinates: string
-  position: PositionInfo
-}
-
 export type FillFunction = {
   e: MouseEvent<SVGPathElement>
   fill: string
-  seat: SeatsInfo
+  seat: SeatGroup
   color: string
+  maxSeats: SeatGroup[]
+  rowLetter: string
+  dispatch: ThunkDispatch<
+    {
+      menuState: MenuState
+      bookingState: Booking
+      movieState: MovieState
+      userState: ProfileType
+    },
+    undefined,
+    UnknownAction
+  > &
+    Dispatch<UnknownAction>
 }
 
 export type PropString = {
@@ -65,8 +73,13 @@ export type PropString = {
 }
 
 export type TicketTypes = {
-  redSeatsPosition: PositionInfo[]
-  greenSeatsPosition: PositionInfo[]
-  blueSeatsPosition: PositionInfo[]
+  redSeatsPosition: SeatGroup[]
+  greenSeatsPosition: SeatGroup[]
+  blueSeatsPosition: SeatGroup[]
   totalCost: number
+}
+
+export type InfoCardAndDesktopNav = {
+  label: string
+  link: string
 }

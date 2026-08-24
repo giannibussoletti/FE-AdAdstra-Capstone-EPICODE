@@ -43,7 +43,11 @@ const TicketsCount = ({
           <Col xs={12} className="mt-1">
             <span>
               {redSeatsPosition.map((pos, i) => {
-                return pos.id + (i !== redSeatsPosition.length - 1 ? ", " : "")
+                return (
+                  pos.row +
+                  pos.number +
+                  (i !== redSeatsPosition.length - 1 ? ", " : "")
+                )
               })}
             </span>
             <span style={{ opacity: "0" }}>.</span>
@@ -62,7 +66,11 @@ const TicketsCount = ({
           <Col xs={12} className="mt-1">
             <span>
               {blueSeatsPosition.map((pos, i) => {
-                return pos.id + (i !== blueSeatsPosition.length - 1 ? ", " : "")
+                return (
+                  pos.row +
+                  pos.number +
+                  (i !== blueSeatsPosition.length - 1 ? ", " : "")
+                )
               })}
             </span>
             <span style={{ opacity: "0" }}>.</span>
@@ -82,7 +90,9 @@ const TicketsCount = ({
             <span>
               {greenSeatsPosition.map((pos, i) => {
                 return (
-                  pos.id + (i !== greenSeatsPosition.length - 1 ? ", " : "")
+                  pos.row +
+                  pos.number +
+                  (i !== greenSeatsPosition.length - 1 ? ", " : "")
                 )
               })}
             </span>
