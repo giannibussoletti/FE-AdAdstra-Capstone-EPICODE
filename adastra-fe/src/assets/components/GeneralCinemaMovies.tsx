@@ -2,12 +2,12 @@ import { Spinner, Container, Row, Col, Button } from "react-bootstrap"
 import MainTitles from "./MainTitles"
 import { useNavigate } from "react-router"
 import { useEffect, useState } from "react"
-import type { MovieType } from "../fetchs/fetchTypes"
+import type { MovieDetails } from "../fetchs/fetchTypes"
 import { fetchMovies } from "../fetchs"
 const GeneralCinemaMovies = () => {
   const navigate = useNavigate()
 
-  const [movies, setMovies] = useState<MovieType[]>()
+  const [movies, setMovies] = useState<MovieDetails[]>()
 
   useEffect(() => {
     fetchMovies()
