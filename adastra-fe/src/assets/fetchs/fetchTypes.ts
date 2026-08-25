@@ -58,3 +58,13 @@ export type ProfileType = {
   profilePicLink: string
   username: string
 }
+
+export type MovieType = {
+  starring: string
+  duration: number
+  title: string
+  posterLink: string
+  plot: string
+  id: string
+  isDeleted: string
+}

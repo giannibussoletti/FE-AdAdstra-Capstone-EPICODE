@@ -1,14 +1,13 @@
-import { Row, Col, Image, Tab, Tabs } from "react-bootstrap"
+import { Row, Col, Image, Tab, Tabs, Container } from "react-bootstrap"
 import MovieStartTime from "./MovieStartTime"
 import { dateChoice } from "../redux/reducers/MovieSlice"
-import { useLocation } from "react-router"
 import { useEffect, useState } from "react"
 import { fetchScreenTimes } from "../fetchs"
 import { useAppSelector, useAppDispatch } from "../redux/hooks"
 import { moviesArray } from "../redux/reducers/MovieSlice"
 import type { MovieGroup } from "../fetchs/fetchTypes"
 
-const SingleMovieCard = () => {
+const NowPlayingMappedMovies = () => {
   const cinemaId = useAppSelector((state) => state.menuState.cinemaId)
   const dispatch = useAppDispatch()
   const [movies, setMovies] = useState<MovieGroup[]>([])
@@ -23,21 +22,15 @@ const SingleMovieCard = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cinemaId])
 
-  const pathname = useLocation().pathname
-
   return (
-    <>
+    <Container className="mt-5">
       {movies.map((movie) => {
         return (
           <Row className="mt-4">
-            <Col xs={pathname !== "/" ? "auto" : 3} md={3}>
-              <Image fluid src="https://placehold.co/1500x2000" />
+            <Col xs="auto" md={3}>
+              <Image fluid src={movie.movieDetails.posterLink} />
             </Col>
-            <Col
-              xs={pathname !== "/" ? 12 : 9}
-              md={9}
-              className={pathname !== "/" ? "mt-4" : "mt-0"}
-            >
+            <Col xs={12} md={9} className="mt-0">
               <h4 className="fw-normal text-uppercase fw-medium mb-4">
                 {movie.movieDetails.title}
               </h4>
@@ -53,17 +46,8 @@ const SingleMovieCard = () => {
                   {movie.movieDetails.duration}h
                 </p>
               </div>
-              <div className={pathname !== "/" ? "" : "d-none d-lg-block"}>
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Reprehenderit iusto pariatur facilis perferendis quod, nobis
-                  dolore, minus distinctio consectetur exercitationem, quaerat
-                  odio excepturi? Vel labore commodi alias dolorem quae dolores.
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Asperiores architecto autem dolores earum eius temporibus
-                  repellat vero quod suscipit natus velit, modi incidunt
-                  reprehenderit. Maiores non dolorem sit recusandae aspernatur?
-                </p>
+              <div className="d-none d-lg-block">
+                <p>{movie.movieDetails.plot}</p>
               </div>
             </Col>
 
@@ -71,9 +55,9 @@ const SingleMovieCard = () => {
               defaultActiveKey={0}
               id="uncontrolled-tab-example"
               className="mt-4"
-              onSelect={(selectedKey) => {
-                if (selectedKey) {
-                  dispatch(dateChoice({ date: selectedKey }))
+              onSelect={(key) => {
+                if (key) {
+                  dispatch(dateChoice({ date: key }))
                 }
               }}
             >
@@ -102,8 +86,8 @@ const SingleMovieCard = () => {
           </Row>
         )
       })}
-    </>
+    </Container>
   )
 }
 
-export default SingleMovieCard
+export default NowPlayingMappedMovies

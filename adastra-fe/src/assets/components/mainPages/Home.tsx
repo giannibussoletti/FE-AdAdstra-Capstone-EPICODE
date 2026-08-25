@@ -1,5 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap"
-import MustSeeMovies from "../MustSeeMovies"
+import GeneralCinemaMovies from "../GeneralCinemaMovies"
 import HomeSlider from "../HomeSlider"
 import PreSalesSlider from "../PreSalesSlider"
 import NowPlayingSection from "../NowPlayingSection"
@@ -16,7 +16,7 @@ const Home = () => {
         {cinema == "" ? (
           <Row>
             <Col className="p-0 mt-4 mb-3 pb-4 mb-lg-4">
-              <MustSeeMovies />
+              <GeneralCinemaMovies />
             </Col>
             <hr />
           </Row>
