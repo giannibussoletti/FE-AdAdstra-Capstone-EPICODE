@@ -43,7 +43,7 @@ const MovieDetailsPage = () => {
                   {details.duration}min.
                 </p>
               </div>
-              <div className="d-none d-lg-block">
+              <div>
                 <p>{details.plot}</p>
               </div>
             </Col>

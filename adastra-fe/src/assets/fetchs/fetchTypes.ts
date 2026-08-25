@@ -13,6 +13,7 @@ export type MovieDetails = {
   plot: string
   id: string
   isDeleted: string
+  releaseDate: string
 }
 
 export type ScreeningTime = {
@@ -57,14 +58,4 @@ export type ProfileType = {
   birthDate: Date
   profilePicLink: string
   username: string
-}
-
-export type MovieType = {
-  starring: string
-  duration: number
-  title: string
-  posterLink: string
-  plot: string
-  id: string
-  isDeleted: string
 }
