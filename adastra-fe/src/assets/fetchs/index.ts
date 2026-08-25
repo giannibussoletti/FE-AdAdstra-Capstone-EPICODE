@@ -2,7 +2,9 @@ import type {
   AccessToken,
   BookingType,
   CinemaFetchType,
+  MovieDetails,
   MovieGroup,
+  MovieType,
   ProfileType,
   SeatGroup,
 } from "../fetchs/fetchTypes"
@@ -193,6 +195,7 @@ export const fetchLogin = async (
     throw err
   }
 }
+
 export const fetchProfile = async (): Promise<ProfileType> => {
   try {
     const res = await fetch("http://localhost:5555/user/profile", {
@@ -206,6 +209,40 @@ export const fetchProfile = async (): Promise<ProfileType> => {
       throw new Error(res.statusText || `Errore HTTP ${res.status}`)
     }
     const data: ProfileType = await res.json()
+    return data
+  } catch (err) {
+    console.error(err)
+    throw err
+  }
+}
+
+export const fetchMovies = async (): Promise<MovieType[]> => {
+  try {
+    const res = await fetch("http://localhost:5555/public/movies")
+
+    if (!res.ok) {
+      console.log(res)
+      throw new Error(res.statusText || `Errore HTTP ${res.status}`)
+    }
+    const data: MovieType[] = await res.json()
+    return data
+  } catch (err) {
+    console.error(err)
+    throw err
+  }
+}
+
+export const fetchMovieDetails = async (
+  movieId: string,
+): Promise<MovieDetails> => {
+  try {
+    const res = await fetch("http://localhost:5555/public/movies/" + movieId)
+
+    if (!res.ok) {
+      console.log(res)
+      throw new Error(res.statusText || `Errore HTTP ${res.status}`)
+    }
+    const data: MovieDetails = await res.json()
     return data
   } catch (err) {
     console.error(err)

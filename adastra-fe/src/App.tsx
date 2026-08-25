@@ -1,7 +1,6 @@
 import "./assets/css/custom.scss"
 //Font awesome
 import { library } from "@fortawesome/fontawesome-svg-core"
-
 import { fas } from "@fortawesome/free-solid-svg-icons"
 import { far } from "@fortawesome/free-regular-svg-icons"
 import { fab } from "@fortawesome/free-brands-svg-icons"
@@ -12,13 +11,13 @@ library.add(fas, far, fab)
 import Navbar from "./assets/components/Navbar"
 import Home from "./assets/components/mainPages/Home"
 import Footer from "./assets/components/Footer"
-import FilmDetails from "./assets/components/mainPages/FilmDetails"
 import SeatChoice from "./assets/components/mainPages/SeatsChoice"
 import PaymentPage from "./assets/components/mainPages/PaymentPage"
 import RestorationScroll from "./assets/components/RestorationScroll/RestorationScroll"
 import ProfilePage from "./assets/components/mainPages/ProfilePage"
 import RegistrationPage from "./assets/components/mainPages/RegistrationPage"
 import LoginPage from "./assets/components/mainPages/LoginPage"
+import MovieDetailsPage from "./assets/components/mainPages/MovieDetailsPage"
 //React Router
 import { Route, BrowserRouter as Router, Routes } from "react-router"
 
@@ -33,7 +32,7 @@ const App = () => {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/dettagli/:filmid" element={<FilmDetails />} />
+            <Route path="/dettagli/:movieId" element={<MovieDetailsPage />} />
             <Route path="/scelta-posto" element={<SeatChoice />} />
             <Route path="/pagamento" element={<PaymentPage />} />
             <Route path="/profilo" element={<ProfilePage />} />
