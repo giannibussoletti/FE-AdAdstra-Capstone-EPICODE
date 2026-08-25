@@ -8,7 +8,6 @@ import { Form, Container, Row, Col } from "react-bootstrap"
 import { fetchBooking } from "../../fetchs"
 import { useState } from "react"
 const PaymentPage = () => {
-  const userId = null
   const screenTimeId = useAppSelector(
     (state) => state.movieState.screeningTimeId,
   )
@@ -74,7 +73,6 @@ const PaymentPage = () => {
             className="text-center mt-4"
             onClick={() =>
               fetchBooking(
-                userId,
                 screenTimeId,
                 maxSeats,
                 totalCost,

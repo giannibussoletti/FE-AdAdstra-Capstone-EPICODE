@@ -5,7 +5,7 @@ const initialState: ProfileType = {
   name: "",
   surname: "",
   email: "",
-  birthDate: new Date(),
+  birthDate: null,
   profilePicLink: "",
   username: "",
 }

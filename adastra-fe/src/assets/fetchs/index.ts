@@ -4,7 +4,6 @@ import type {
   CinemaFetchType,
   MovieDetails,
   MovieGroup,
-  MovieType,
   ProfileType,
   SeatGroup,
 } from "../fetchs/fetchTypes"
@@ -98,8 +97,11 @@ export const fetchBookedSeats = async (
   }
 }
 
+const publicBooking = "http://localhost:5555/public/booking"
+const noPublic = "http://localhost:5555/booking"
+const isLogged = localStorage.getItem("accessToken")
+
 export const fetchBooking = async (
-  userId: null,
   screenTimeId: string,
   maxSeats: SeatGroup[],
   totalCost: number,
@@ -107,13 +109,12 @@ export const fetchBooking = async (
   coupon: string,
 ): Promise<BookingType> => {
   try {
-    const res = await fetch("http://localhost:5555/bookings", {
+    const res = await fetch(isLogged ? noPublic : publicBooking, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        userId,
         screenTimeId,
         maxSeats,
         totalCost,
@@ -216,7 +217,7 @@ export const fetchProfile = async (): Promise<ProfileType> => {
   }
 }
 
-export const fetchMovies = async (): Promise<MovieType[]> => {
+export const fetchMovies = async (): Promise<MovieDetails[]> => {
   try {
     const res = await fetch("http://localhost:5555/public/movies")
 
@@ -224,7 +225,7 @@ export const fetchMovies = async (): Promise<MovieType[]> => {
       console.log(res)
       throw new Error(res.statusText || `Errore HTTP ${res.status}`)
     }
-    const data: MovieType[] = await res.json()
+    const data: MovieDetails[] = await res.json()
     return data
   } catch (err) {
     console.error(err)
