@@ -46,6 +46,14 @@ const NowPlayingMappedMovies = () => {
                   {movie.movieDetails.duration}h
                 </p>
               </div>
+              <div className="mb-3">
+                <p className="single-movie-title-section">Data di uscita</p>
+                <p className="single-movie-details-section">
+                  {new Date(
+                    movie.movieDetails.releaseDate,
+                  ).toLocaleDateString()}
+                </p>
+              </div>
               <div className="d-none d-lg-block">
                 <p>{movie.movieDetails.plot}</p>
               </div>

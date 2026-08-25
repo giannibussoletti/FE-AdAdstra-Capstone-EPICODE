@@ -27,10 +27,10 @@ const MovieDetailsPage = () => {
             <Col xs="auto" md={3}>
               <Image fluid src={details.posterLink} />
             </Col>
-            <Col xs={12} md={9} className="mt-0">
-              <h4 className="fw-normal text-uppercase fw-medium mb-4">
+            <Col xs={12} md={9} className="mt-3 mt-md-0">
+              <h2 className="fw-normal text-uppercase fw-medium mb-4">
                 {details.title}
-              </h4>
+              </h2>
               <div className="mb-3">
                 <p className="single-movie-title-section">Cast</p>
                 <p className="single-movie-details-section">
@@ -43,7 +43,7 @@ const MovieDetailsPage = () => {
                   {details.duration}min.
                 </p>
               </div>
-              <div className="d-none d-lg-block">
+              <div>
                 <p>{details.plot}</p>
               </div>
             </Col>
