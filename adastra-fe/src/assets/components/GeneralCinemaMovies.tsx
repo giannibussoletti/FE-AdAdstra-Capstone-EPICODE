@@ -1,4 +1,4 @@
-import { Spinner, Container, Row, Col, Button } from "react-bootstrap"
+import { Spinner, Container, Row, Col, Button, Image } from "react-bootstrap"
 import MainTitles from "./MainTitles"
 import { useNavigate } from "react-router"
 import { useEffect, useState } from "react"
@@ -27,7 +27,11 @@ const GeneralCinemaMovies = () => {
                 className="text-center mt-5 d-flex justify-content-between flex-column"
               >
                 <div>
-                  <img src={movie.posterLink} alt={movie.title + " poster"} />
+                  <Image
+                    fluid
+                    src={movie.posterLink}
+                    alt={movie.title + " poster"}
+                  />
                   <h5 className="text-uppercase mt-3">{movie.title}</h5>
                 </div>
                 <Button
