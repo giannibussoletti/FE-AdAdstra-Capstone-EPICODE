@@ -55,7 +55,7 @@ export type ProfileType = {
   name: string
   surname: string
   email: string
-  birthDate: Date
+  birthDate: Date | null
   profilePicLink: string
   username: string
 }

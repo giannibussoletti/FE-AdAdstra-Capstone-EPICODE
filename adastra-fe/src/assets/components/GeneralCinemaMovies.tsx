@@ -13,22 +13,27 @@ const GeneralCinemaMovies = () => {
     fetchMovies()
       .then((data) => setMovies(data))
       .catch((err) => console.error(err))
-  })
+  }, [])
 
   return (
     <Container>
       <MainTitles string={"I nostri film"} />
-      <Row>
+      <Row xs={2} md={3} xl={6}>
         {movies ? (
-          movies.map((movie) => {
+          movies.slice(0, 6).map((movie) => {
             return (
-              <Col key={movie.id} className="text-center">
-                <img src={movie.posterLink} alt={movie.title + " poster"} />
-                <h5 className="text-uppercase">{movie.title}</h5>
+              <Col
+                key={movie.id}
+                className="text-center mt-5 d-flex justify-content-between flex-column"
+              >
+                <div>
+                  <img src={movie.posterLink} alt={movie.title + " poster"} />
+                  <h5 className="text-uppercase mt-3">{movie.title}</h5>
+                </div>
                 <Button
                   onClick={() => navigate("/dettagli/" + movie.id)}
                   variant="buttons"
-                  className="rounded-pill fw-semibold text-uppercase py-2"
+                  className="rounded-pill fw-semibold text-uppercase py-2 mt-1"
                 >
                   <span className="mx-3">scheda film</span>
                 </Button>
