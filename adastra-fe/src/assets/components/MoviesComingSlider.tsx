@@ -1,15 +1,22 @@
 import { Row } from "react-bootstrap"
 import SingleSlide from "./SliderComponents/SingleSlide"
 import SliderButton from "./SliderComponents/SliderButton"
-import { arrayPoster } from "../temp"
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons"
 import MainTitles from "./MainTitles"
 import type { PropString } from "../misc/types"
 import { useState } from "react"
 import { useRef } from "react"
+import { useAppSelector } from "../redux/hooks"
+import type { MovieDetails } from "../fetchs/fetchTypes"
 
 const MoviesComingSlider = function ({ string }: PropString) {
-  const [newArrayPoster, setNewArrayPoster] = useState(arrayPoster)
+  const movies = useAppSelector((state) => state.movieState.allMovies)
+  const moviesFilteredByDate = movies.filter(
+    (coming) => new Date(coming.releaseDate) > new Date(),
+  )
+
+  const [newArrayPoster, setNewArrayPoster] =
+    useState<MovieDetails[]>(moviesFilteredByDate)
   const [animRules, setAnimRules] = useState({})
   const posterRef = useRef<HTMLDivElement>(null)
 
@@ -72,13 +79,12 @@ const MoviesComingSlider = function ({ string }: PropString) {
               className="p-0"
               ref={posterRef}
               style={animRules}
-              key={poster.movieID}
+              key={poster.id}
             >
               <SingleSlide
-                movieID={poster.movieID}
-                movieTitle={poster.movieTitle}
-                imglink={poster.imglink}
-                duration={poster.duration}
+                movieID={poster.id}
+                movieTitle={poster.title}
+                imglink={poster.posterLink}
               />
             </div>
           )

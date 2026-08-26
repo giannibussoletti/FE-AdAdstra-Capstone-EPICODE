@@ -1,6 +1,7 @@
 import type { NavBarMenus } from "../../misc/types"
 import type {
   CinemaFetchType,
+  MovieDetails,
   MovieGroup,
   SeatGroup,
 } from "../../fetchs/fetchTypes"
@@ -57,7 +58,8 @@ export type MovieState = {
   screen: number
   screenId: string
   date: string
-  movies: MovieGroup[]
+  cinemaMovies: MovieGroup[]
+  allMovies: MovieDetails[]
   screeningTimeId: string
 }
 
