@@ -82,3 +82,13 @@ export type InfoCardAndDesktopNav = {
   label: string
   link: string
 }
+
+export type ModalInfo = {
+  message: string
+  title: string
+  show: boolean
+  handleClose: () => void
+  icon: IconDefinition
+  style: string
+  buttonText: string
+}
