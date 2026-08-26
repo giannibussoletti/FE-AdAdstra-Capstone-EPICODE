@@ -43,6 +43,12 @@ const MovieDetailsPage = () => {
                   {details.duration}min.
                 </p>
               </div>
+              <div className="mb-3">
+                <p className="single-movie-title-section">Data di uscita</p>
+                <p className="single-movie-details-section">
+                  {new Date(details.releaseDate).toLocaleDateString()}
+                </p>
+              </div>
               <div>
                 <p>{details.plot}</p>
               </div>

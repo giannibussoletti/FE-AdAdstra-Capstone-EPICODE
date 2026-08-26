@@ -7,11 +7,16 @@ import type { PropString } from "../misc/types"
 import { useState } from "react"
 import { useRef } from "react"
 import { useAppSelector } from "../redux/hooks"
-import type { MovieGroup } from "../fetchs/fetchTypes"
+import type { MovieDetails } from "../fetchs/fetchTypes"
 
 const MoviesComingSlider = function ({ string }: PropString) {
-  const movies = useAppSelector((state) => state.movieState.movies)
-  const [newArrayPoster, setNewArrayPoster] = useState<MovieGroup[]>(movies)
+  const movies = useAppSelector((state) => state.movieState.allMovies)
+  const moviesFilteredByDate = movies.filter(
+    (coming) => new Date(coming.releaseDate) > new Date(),
+  )
+
+  const [newArrayPoster, setNewArrayPoster] =
+    useState<MovieDetails[]>(moviesFilteredByDate)
   const [animRules, setAnimRules] = useState({})
   const posterRef = useRef<HTMLDivElement>(null)
 
@@ -74,12 +79,12 @@ const MoviesComingSlider = function ({ string }: PropString) {
               className="p-0"
               ref={posterRef}
               style={animRules}
-              key={poster.movieDetails.id}
+              key={poster.id}
             >
               <SingleSlide
-                movieID={poster.movieDetails.id}
-                movieTitle={poster.movieDetails.title}
-                imglink={poster.movieDetails.posterLink}
+                movieID={poster.id}
+                movieTitle={poster.title}
+                imglink={poster.posterLink}
               />
             </div>
           )
