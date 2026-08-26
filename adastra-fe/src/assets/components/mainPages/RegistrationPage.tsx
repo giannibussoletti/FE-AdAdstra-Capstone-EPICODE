@@ -20,6 +20,7 @@ import { fetchRegistration } from "../../fetchs"
 
 import PasswordCheck from "../PasswordCheck"
 import RegistrationModal from "../RegistrationModal"
+import { GREEN, RED } from "../../misc/variables"
 
 const RegistrationPage = () => {
   const [show, setShow] = useState(false)
@@ -170,7 +171,7 @@ const RegistrationPage = () => {
                               title: "Tutto ok!",
                               message: data.message,
                               icon: faCircleCheck,
-                              style: "green",
+                              style: GREEN,
                               buttonText: "Vai alla homepage",
                             })
                             setShow(true)
@@ -182,7 +183,7 @@ const RegistrationPage = () => {
                               message:
                                 "Qualcosa è andato storto, riprova " + err,
                               icon: faCircleCheck,
-                              style: "red",
+                              style: RED,
                               buttonText: "Riprova",
                             })
                             setShow(true)
