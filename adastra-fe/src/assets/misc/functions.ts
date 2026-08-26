@@ -64,3 +64,13 @@ export const fillSeat = ({
     }
   }
 }
+
+export const calculateMovieTime = (date: string, duration: number) => {
+  const hours = new Date(date).getHours()
+  const minute = new Date(date).getMinutes()
+  const time = new Date(date).getTime()
+  const timeEnd = time + duration * 60000
+  const endHours = new Date(timeEnd).getHours()
+  const endMinute = new Date(timeEnd).getMinutes()
+  return hours + ":" + minute + " - " + endHours + ":" + endMinute
+}

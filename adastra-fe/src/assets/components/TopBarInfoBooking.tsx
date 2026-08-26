@@ -5,15 +5,16 @@ import { useAppSelector, useAppDispatch } from "../redux/hooks"
 import { useNavigate } from "react-router"
 import { resetState } from "../redux/reducers/TicketSlice"
 import { RESET } from "../misc/variables"
+import { calculateMovieTime } from "../misc/functions"
 const TopBarInfoBooking = () => {
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
 
   const title = useAppSelector((state) => state.movieState.movieTitle)
-  const timeStartEnd = useAppSelector((state) => state.movieState.timeStartEnd)
   const screen = useAppSelector((state) => state.movieState.screen)
   const movieID = useAppSelector((state) => state.movieState.movieID)
   const date = useAppSelector((state) => state.movieState.date)
+  const duration = useAppSelector((state) => state.movieState.duration)
 
   return (
     <Container fluid>
@@ -27,9 +28,11 @@ const TopBarInfoBooking = () => {
           <Col>
             <p className="mb-1 text-uppercase fw-semibold">sala {screen}</p>
             <p className="mb-1 text-uppercase fw-semibold">
-              {date.toLocaleString()}
+              {new Date(date).toLocaleDateString()}
             </p>
-            <p className="mb-1 text-uppercase fw-semibold">{timeStartEnd}</p>
+            <p className="mb-1 text-uppercase fw-semibold">
+              {calculateMovieTime(date, duration)}
+            </p>
           </Col>
           <Col className="align-self-center text-end">
             <Button
