@@ -3,13 +3,21 @@ import MainTitles from "../MainTitles"
 import Buttons from "../Buttons"
 import TicketsCount from "../TicketsCount"
 import TopBarInfoBooking from "../TopBarInfoBooking"
-import { redCost, blueCost, greenCost } from "../../misc/variables"
+import { redCost, blueCost, greenCost, RESET } from "../../misc/variables"
 import { Container, Col, Row } from "react-bootstrap"
-import { useAppSelector } from "../../redux/hooks"
+import { useAppSelector, useAppDispatch } from "../../redux/hooks"
 import { useNavigate } from "react-router"
+import { useEffect } from "react"
+import { resetState } from "../../redux/reducers/TicketSlice"
 
 const SeatsChoice = () => {
   const navigate = useNavigate()
+  const dispatch = useAppDispatch()
+  useEffect(() => {
+    return () => {
+      dispatch(resetState(RESET))
+    }
+  }, [])
 
   const redTicketsAmount = useAppSelector(
     (state) => state.bookingState.redSeatsAmount,
