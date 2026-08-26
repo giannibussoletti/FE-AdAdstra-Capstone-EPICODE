@@ -162,6 +162,7 @@ export const fetchRegistration = async (
       throw new Error(res.statusText || `Errore HTTP ${res.status}`)
     }
     const data: BookingType = await res.json()
+    console.log(data)
     return data
   } catch (err) {
     console.error(err)
