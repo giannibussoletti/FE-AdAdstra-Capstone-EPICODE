@@ -126,6 +126,11 @@ body,
   }
 }
 
+.btn-utente {
+  background: transparent;
+  border: none;
+}
+
 //INFORMAZIONI FILM
 .date-and-time {
   font-size: 1.2em;
@@ -144,16 +149,6 @@ body,
   background-repeat: no-repeat;
   background-size: 100% 4px;
   padding-bottom: 2px;
-}
-
-//Carousel Da non perdere
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: #000;
-  width: 3rem;
-  height: 3rem;
-  background-size: 2em;
 }
 
 //SingleCardMovieCSS
@@ -184,7 +179,7 @@ body,
   }
 }
 
-//Carosello Prevendite Aperte
+//Carosello Coming Soon
 .arrow-left-bg,
 .arrow-right-bg {
   padding: 0.7em 0.2em;
@@ -335,11 +330,6 @@ body,
 //Dropdown user menu Desktop
 .dropdown-toggle::after {
   display: none !important;
-}
-
-.btn-utente {
-  background: transparent;
-  border: none;
 }
 
 .dropdown-item:active {

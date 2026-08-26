@@ -34,14 +34,12 @@ const TheaterMap = () => {
     fetchSeats(cinemaId, screenId)
       .then((data) => {
         setSeats(data)
-        console.log(data)
       })
       .catch((err) => console.error(err))
 
     fetchBookedSeats(screeningTimeId)
       .then((data) => {
         setBookedSeats(data)
-        console.log(data)
       })
       .catch((err) => console.error(err))
   }, [])
