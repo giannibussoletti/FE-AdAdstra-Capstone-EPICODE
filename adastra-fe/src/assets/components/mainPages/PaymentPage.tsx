@@ -2,11 +2,13 @@ import TicketsCount from "../TicketsCount"
 import TopBarInfoBooking from "../TopBarInfoBooking"
 import MainTitles from "../MainTitles"
 import Buttons from "../Buttons"
-import { useAppSelector } from "../../redux/hooks"
+import { useAppDispatch, useAppSelector } from "../../redux/hooks"
 import { Form, Container, Row, Col } from "react-bootstrap"
+import { resetState } from "../../redux/reducers/TicketSlice"
 
 import { fetchBooking } from "../../fetchs"
 import { useState } from "react"
+import { RESET } from "../../misc/variables"
 const PaymentPage = () => {
   const screenTimeId = useAppSelector(
     (state) => state.movieState.screeningTimeId,
@@ -25,6 +27,8 @@ const PaymentPage = () => {
 
   const [guestEmail, setEmail] = useState("")
   const [coupon, setCoupon] = useState("")
+
+  const dispatch = useAppDispatch()
 
   return (
     <>
@@ -71,7 +75,7 @@ const PaymentPage = () => {
           </Col>
           <Col
             className="text-center mt-4"
-            onClick={() =>
+            onClick={() => {
               fetchBooking(
                 screenTimeId,
                 maxSeats,
@@ -79,7 +83,8 @@ const PaymentPage = () => {
                 guestEmail,
                 coupon,
               )
-            }
+              dispatch(resetState(RESET))
+            }}
           >
             <Buttons string="acquista" />
           </Col>
