@@ -40,7 +40,7 @@ const TicketsCount = ({
             Rosso
           </Col>
           <Col className="text-end">{totalCost.toFixed(2)} €</Col>
-          <Col xs={12} className="mt-1">
+          <Col xs={12} className="mt-1 text-start">
             <span>
               {redSeatsPosition.map((pos, i) => {
                 return (
@@ -63,7 +63,7 @@ const TicketsCount = ({
             Blu
           </Col>
           <Col className="text-end">{totalCost.toFixed(2)} €</Col>
-          <Col xs={12} className="mt-1">
+          <Col xs={12} className="mt-1 text-start">
             <span>
               {blueSeatsPosition.map((pos, i) => {
                 return (
@@ -86,7 +86,7 @@ const TicketsCount = ({
             Verde
           </Col>
           <Col className="text-end">{totalCost.toFixed(2)} €</Col>
-          <Col xs={12} className="mt-1">
+          <Col xs={12} className="mt-1 text-start">
             <span>
               {greenSeatsPosition.map((pos, i) => {
                 return (

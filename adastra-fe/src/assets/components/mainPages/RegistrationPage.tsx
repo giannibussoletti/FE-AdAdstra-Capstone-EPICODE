@@ -11,17 +11,32 @@ import {
 
 import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCircleCheck, faCircleXmark } from "@fortawesome/free-solid-svg-icons"
-import PasswordCheck from "../PasswordCheck"
-
+import {
+  faCircle,
+  faCircleCheck,
+  faCircleXmark,
+} from "@fortawesome/free-solid-svg-icons"
 import { fetchRegistration } from "../../fetchs"
 
+import PasswordCheck from "../PasswordCheck"
+import RegistrationModal from "../RegistrationModal"
+
 const RegistrationPage = () => {
+  const [show, setShow] = useState(false)
+  const handleClose = () => setShow(false)
+
   const [name, setName] = useState<string>("")
   const [surname, setSurname] = useState<string>("")
   const [birthDate, setBirthDate] = useState<Date>(new Date())
   const [email, setEmail] = useState<string>("")
   const [password, setPassword] = useState<string>("")
+  const [modalData, setModalData] = useState({
+    title: "",
+    message: "",
+    icon: faCircle,
+    style: "",
+    buttonText: "",
+  })
 
   const infoArray = [name, surname, birthDate, email, password]
 
@@ -42,6 +57,15 @@ const RegistrationPage = () => {
 
   return (
     <Container>
+      <RegistrationModal
+        message={modalData.message}
+        title={modalData.title}
+        show={show}
+        handleClose={handleClose}
+        icon={modalData.icon}
+        style={modalData.style}
+        buttonText={modalData.buttonText}
+      />
       <Row className="justify-content-center align-items-center my-5">
         <Col className="justify-content-center align-items-center d-flex">
           <Card className=" border-2 border-white">
@@ -141,7 +165,28 @@ const RegistrationPage = () => {
                           email,
                           password,
                         )
-                        console.log("registrazione avvenuta con successo")
+                          .then((data) => {
+                            setModalData({
+                              title: "Tutto ok!",
+                              message: data.message,
+                              icon: faCircleCheck,
+                              style: "green",
+                              buttonText: "Vai alla homepage",
+                            })
+                            setShow(true)
+                          })
+
+                          .catch((err) => {
+                            setModalData({
+                              title: "Ops!",
+                              message:
+                                "Qualcosa è andato storto, riprova " + err,
+                              icon: faCircleCheck,
+                              style: "red",
+                              buttonText: "Riprova",
+                            })
+                            setShow(true)
+                          })
                       }}
                       variant="buttons"
                       className="rounded-pill fw-semibold text-uppercase py-2 mb-4 mt-3"
