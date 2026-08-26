@@ -7,7 +7,7 @@ import { Form, Container, Row, Col } from "react-bootstrap"
 import { resetState } from "../../redux/reducers/TicketSlice"
 
 import { fetchBooking } from "../../fetchs"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { RESET } from "../../misc/variables"
 const PaymentPage = () => {
   const screenTimeId = useAppSelector(
@@ -29,7 +29,12 @@ const PaymentPage = () => {
   const [coupon, setCoupon] = useState("")
 
   const dispatch = useAppDispatch()
-
+  useEffect(() => {
+    return () => {
+      dispatch(resetState(RESET))
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
   return (
     <>
       <TopBarInfoBooking />
