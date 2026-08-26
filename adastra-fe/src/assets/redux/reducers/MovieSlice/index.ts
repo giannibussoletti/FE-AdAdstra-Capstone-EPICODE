@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit"
-import type { MovieGroup } from "../../../fetchs/fetchTypes"
+import type { MovieDetails, MovieGroup } from "../../../fetchs/fetchTypes"
 import type {
   DispatchMovie,
   MovieState,
@@ -14,7 +14,8 @@ const initialState: MovieState = {
   screen: 0,
   screenId: "",
   date: "",
-  movies: [],
+  cinemaMovies: [],
+  allMovies: [],
   screeningTimeId: "",
 }
 
@@ -37,13 +38,21 @@ export const movieSlice = createSlice({
     dateChoice: (state, action: PayloadAction<DispatchDate>) => {
       state.date = action.payload.date
     },
-    moviesArray: (state, action: PayloadAction<MovieGroup[]>) => {
-      state.movies = action.payload
+    cinemaMoviesArray: (state, action: PayloadAction<MovieGroup[]>) => {
+      state.cinemaMovies = action.payload
+    },
+    AllMoviesArray: (state, action: PayloadAction<MovieDetails[]>) => {
+      state.allMovies = action.payload
     },
   },
 })
 
-export const { movieChoice, timeAndScreen, dateChoice, moviesArray } =
-  movieSlice.actions
+export const {
+  movieChoice,
+  timeAndScreen,
+  dateChoice,
+  cinemaMoviesArray,
+  AllMoviesArray,
+} = movieSlice.actions
 
 export default movieSlice.reducer
