@@ -4,7 +4,7 @@ import HomeSlider from "../HomeSlider"
 import MoviesComingSlider from "../MoviesComingSlider"
 import NowPlayingSection from "../NowPlayingSection"
 import CardMoreInfo from "../CardMoreInfo"
-import { moreInfoArray } from "../../misc/arrays"
+import { moreInfo } from "../../misc/arrays"
 import { useAppSelector } from "../../redux/hooks"
 const Home = () => {
   const cinema = useAppSelector((state) => state.menuState.cinemaId)
@@ -37,7 +37,7 @@ const Home = () => {
         )}
 
         <Row xs={1} md={2}>
-          {moreInfoArray.map((card, i) => {
+          {moreInfo.map((card, i) => {
             return (
               <Col
                 key={card.label + card.imgLink}

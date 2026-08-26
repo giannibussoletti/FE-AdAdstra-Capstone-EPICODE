@@ -2,35 +2,17 @@ import MainTitles from "../MainTitles"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircleInfo, faTicket } from "@fortawesome/free-solid-svg-icons"
 import { Container, Row, Col, Image } from "react-bootstrap"
-import { useEffect, useState } from "react"
-import { fetchProfile } from "../../fetchs"
-import { setUserState } from "../../redux/reducers/UserSlice"
-import { useAppDispatch } from "../../redux/hooks"
-import type { ProfileType } from "../../fetchs/fetchTypes"
+
+import { useAppSelector } from "../../redux/hooks"
 
 const ProfilePage = () => {
-  const dispatch = useAppDispatch()
-
-  const [profile, setProfile] = useState<ProfileType>()
-
-  useEffect(() => {
-    fetchProfile()
-      .then((data) => {
-        setProfile(data)
-        dispatch(
-          setUserState({
-            name: data.name,
-            surname: data.surname,
-            email: data.email,
-            birthDate: data.birthDate,
-            profilePicLink: data.profilePicLink,
-            username: data.username,
-          }),
-        )
-      })
-      .catch((err) => console.error(err))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  // const birthDate = useAppSelector((state) => state.userState.birthDate)
+  const email = useAppSelector((state) => state.userState.email)
+  const name = useAppSelector((state) => state.userState.name)
+  const surname = useAppSelector((state) => state.userState.surname)
+  const profilePicLink = useAppSelector(
+    (state) => state.userState.profilePicLink,
+  )
 
   return (
     <Container className="mt-5 px-5">
@@ -43,10 +25,10 @@ const ProfilePage = () => {
         <Col>
           <Row className="align-items-center">
             <Col xs={"auto"}>
-              <Image fluid src={profile?.profilePicLink} roundedCircle />
+              <Image fluid src={profilePicLink} roundedCircle />
             </Col>
             <Col>
-              {profile?.name + " " + profile?.surname} <br /> {profile?.email}
+              {name + " " + surname} <br /> {email}
             </Col>
           </Row>
           <hr />
