@@ -1,15 +1,17 @@
 import { Row } from "react-bootstrap"
 import SingleSlide from "./SliderComponents/SingleSlide"
 import SliderButton from "./SliderComponents/SliderButton"
-import { arrayPoster } from "../temp"
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons"
 import MainTitles from "./MainTitles"
 import type { PropString } from "../misc/types"
 import { useState } from "react"
 import { useRef } from "react"
+import { useAppSelector } from "../redux/hooks"
+import type { MovieGroup } from "../fetchs/fetchTypes"
 
 const MoviesComingSlider = function ({ string }: PropString) {
-  const [newArrayPoster, setNewArrayPoster] = useState(arrayPoster)
+  const movies = useAppSelector((state) => state.movieState.movies)
+  const [newArrayPoster, setNewArrayPoster] = useState<MovieGroup[]>(movies)
   const [animRules, setAnimRules] = useState({})
   const posterRef = useRef<HTMLDivElement>(null)
 
@@ -72,13 +74,12 @@ const MoviesComingSlider = function ({ string }: PropString) {
               className="p-0"
               ref={posterRef}
               style={animRules}
-              key={poster.movieID}
+              key={poster.movieDetails.id}
             >
               <SingleSlide
-                movieID={poster.movieID}
-                movieTitle={poster.movieTitle}
-                imglink={poster.imglink}
-                duration={poster.duration}
+                movieID={poster.movieDetails.id}
+                movieTitle={poster.movieDetails.title}
+                imglink={poster.movieDetails.posterLink}
               />
             </div>
           )
