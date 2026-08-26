@@ -12,10 +12,11 @@ import {
 
 import { useNavigate } from "react-router"
 import { useState } from "react"
-
+import { useAppDispatch } from "../../redux/hooks"
 import { fetchLogin } from "../../fetchs"
-
+import { setUserState } from "../../redux/reducers/UserSlice"
 const LoginPage = () => {
+  const dispatch = useAppDispatch()
   const navigate = useNavigate()
   const [email, setEmail] = useState<string>("")
   const [password, setPassword] = useState<string>("")
@@ -85,6 +86,17 @@ const LoginPage = () => {
                             localStorage.setItem(
                               "accessToken",
                               data.accessToken,
+                            )
+                            dispatch(
+                              setUserState({
+                                accessToken: data.accessToken,
+                                birthDate: data.birthDate,
+                                email: data.email,
+                                name: data.name,
+                                profilePicLink: data.profilePicLink,
+                                surname: data.surname,
+                                username: data.username,
+                              }),
                             )
                           })
                           .catch((err) => console.error(err))
