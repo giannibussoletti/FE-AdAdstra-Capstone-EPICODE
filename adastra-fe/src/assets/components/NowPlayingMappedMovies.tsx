@@ -4,7 +4,7 @@ import { dateChoice } from "../redux/reducers/MovieSlice"
 import { useEffect, useState } from "react"
 import { fetchScreenTimes } from "../fetchs"
 import { useAppSelector, useAppDispatch } from "../redux/hooks"
-import { moviesArray } from "../redux/reducers/MovieSlice"
+import { cinemaMoviesArray } from "../redux/reducers/MovieSlice"
 import type { MovieGroup } from "../fetchs/fetchTypes"
 
 const NowPlayingMappedMovies = () => {
@@ -16,7 +16,7 @@ const NowPlayingMappedMovies = () => {
     fetchScreenTimes(cinemaId)
       .then((data) => {
         setMovies(data)
-        dispatch(moviesArray(data))
+        dispatch(cinemaMoviesArray(data))
       })
       .catch((err) => console.error(err))
     // eslint-disable-next-line react-hooks/exhaustive-deps

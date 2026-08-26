@@ -4,14 +4,19 @@ import { useNavigate } from "react-router"
 import { useEffect, useState } from "react"
 import type { MovieDetails } from "../fetchs/fetchTypes"
 import { fetchMovies } from "../fetchs"
+import { useAppDispatch } from "../redux/hooks"
+import { AllMoviesArray } from "../redux/reducers/MovieSlice"
 const GeneralCinemaMovies = () => {
   const navigate = useNavigate()
-
+  const dispatch = useAppDispatch()
   const [movies, setMovies] = useState<MovieDetails[]>()
 
   useEffect(() => {
     fetchMovies()
-      .then((data) => setMovies(data))
+      .then((data) => {
+        setMovies(data)
+        dispatch(AllMoviesArray(data))
+      })
       .catch((err) => console.error(err))
   }, [])
 
