@@ -97,8 +97,8 @@ export const fetchBookedSeats = async (
   }
 }
 
-const publicBooking = "http://localhost:5555/public/booking"
-const noPublic = "http://localhost:5555/booking"
+const publicBooking = "http://localhost:5555/public/bookings"
+const noPublic = "http://localhost:5555/bookings"
 const isLogged = localStorage.getItem("accessToken")
 
 export const fetchBooking = async (
@@ -112,6 +112,7 @@ export const fetchBooking = async (
     const res = await fetch(isLogged ? noPublic : publicBooking, {
       method: "POST",
       headers: {
+        Authorization: "Bearer " + isLogged,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
