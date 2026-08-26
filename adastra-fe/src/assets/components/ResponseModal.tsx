@@ -3,7 +3,7 @@ import { Modal, Button } from "react-bootstrap"
 import type { ModalInfo } from "../misc/types"
 import { RED } from "../misc/variables"
 import { useNavigate } from "react-router"
-const RegistrationModal = ({
+const ResponseModal = ({
   message,
   title,
   show,
@@ -41,4 +41,4 @@ const RegistrationModal = ({
   )
 }
 
-export default RegistrationModal
+export default ResponseModal

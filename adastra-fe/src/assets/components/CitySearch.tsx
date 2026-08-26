@@ -58,7 +58,7 @@ const CitySearch = () => {
             </Dropdown.Toggle>
             <Dropdown.Menu
               style={{ maxHeight: "270px" }}
-              className="w-100 bg-black overflow-scroll"
+              className="w-100 bg-black overflow-scroll mt-0"
             >
               {cinema.map((cin) => {
                 return (

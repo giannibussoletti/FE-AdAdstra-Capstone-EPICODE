@@ -19,7 +19,7 @@ import {
 import { fetchRegistration } from "../../fetchs"
 
 import PasswordCheck from "../PasswordCheck"
-import RegistrationModal from "../RegistrationModal"
+import ResponseModal from "../ResponseModal"
 import { GREEN, RED } from "../../misc/variables"
 
 const RegistrationPage = () => {
@@ -58,7 +58,7 @@ const RegistrationPage = () => {
 
   return (
     <Container>
-      <RegistrationModal
+      <ResponseModal
         message={modalData.message}
         title={modalData.title}
         show={show}
