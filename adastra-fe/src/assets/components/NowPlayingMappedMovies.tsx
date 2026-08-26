@@ -76,10 +76,10 @@ const NowPlayingMappedMovies = () => {
                       return (
                         <Col className="px-2 pb-3 cursor-pointer">
                           <MovieStartTime
+                            date={time.dateTime}
                             movieTitle={movie.movieDetails.title}
                             movieID={movie.movieDetails.id}
                             duration={movie.movieDetails.duration}
-                            timeStart={time.dateTime}
                             screen={time.screenNumber}
                             screenId={time.screenId}
                             screeningTimeId={time.screeningTimeId}
