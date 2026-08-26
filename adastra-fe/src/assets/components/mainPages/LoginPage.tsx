@@ -7,13 +7,16 @@ import {
   Card,
   Popover,
   OverlayTrigger,
+  Image,
 } from "react-bootstrap"
 
+import { useNavigate } from "react-router"
 import { useState } from "react"
 
 import { fetchLogin } from "../../fetchs"
 
 const LoginPage = () => {
+  const navigate = useNavigate()
   const [email, setEmail] = useState<string>("")
   const [password, setPassword] = useState<string>("")
 
@@ -29,8 +32,8 @@ const LoginPage = () => {
 
   return (
     <Container>
-      <Row className="justify-content-center align-items-center my-5">
-        <Col className="justify-content-center align-items-center d-flex">
+      <Row lg={2} xs={1} className="my-5 justify-content-center">
+        <Col className="justify-content-center justify-content-lg-end align-items-center d-flex">
           <Card className=" border-2 border-white">
             <Card.Img variant="top" src="https://placehold.co/400x200" />
             <Card.Body className="px-4">
@@ -96,6 +99,25 @@ const LoginPage = () => {
               </Form>
             </Card.Body>
           </Card>
+        </Col>
+
+        <Col className=" justify-content-center d-flex mt-5 mt-lg-0">
+          <Row className="flex-column">
+            <Image src="/logo-adastra.png" className="mb-4" />
+            <Col className="px-4 text-center pb-0">
+              <h5 className="mt-2 mb-3">Non sei ancora registrato?</h5>
+              <Button
+                onClick={(e) => {
+                  e.preventDefault()
+                  navigate("/registrazione")
+                }}
+                variant="buttons"
+                className="rounded-pill fw-semibold text-uppercase py-2 mb-4 mt-3"
+              >
+                Clicca qui!
+              </Button>
+            </Col>
+          </Row>
         </Col>
       </Row>
     </Container>
