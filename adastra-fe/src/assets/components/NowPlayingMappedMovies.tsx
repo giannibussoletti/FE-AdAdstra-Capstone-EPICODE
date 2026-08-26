@@ -26,7 +26,7 @@ const NowPlayingMappedMovies = () => {
     <Container className="mt-5">
       {movies.map((movie) => {
         return (
-          <Row className="mt-4">
+          <Row key={movie.movieDetails.id} className="mt-4">
             <Col xs="auto" md={3}>
               <Image fluid src={movie.movieDetails.posterLink} />
             </Col>
@@ -70,11 +70,18 @@ const NowPlayingMappedMovies = () => {
               }}
             >
               {Object.entries(movie.times).map(([date, screenTime], i) => (
-                <Tab eventKey={i} title={new Date(date).toLocaleDateString()}>
+                <Tab
+                  key={date + screenTime[i] + i + i * 2}
+                  eventKey={i}
+                  title={new Date(date).toLocaleDateString()}
+                >
                   <Row xs={1} md={4} lg={5} xxl={6} className="mt-4">
                     {screenTime.map((time) => {
                       return (
-                        <Col className="px-2 pb-3 cursor-pointer">
+                        <Col
+                          key={time.screeningTimeId}
+                          className="px-2 pb-3 cursor-pointer"
+                        >
                           <MovieStartTime
                             date={time.dateTime}
                             movieTitle={movie.movieDetails.title}
