@@ -1,5 +1,83 @@
 import type { bottomCardInfo, FooterTypes, NavBarMenus } from "./types"
 import { faCircle } from "@fortawesome/free-solid-svg-icons"
+
+export const burgerMenu: NavBarMenus[] = [
+  {
+    label: "trailer",
+    icon: faCircle,
+    link: "#",
+  },
+  {
+    label: "coming soon",
+    icon: faCircle,
+    link: "#",
+  },
+  {
+    label: "adastra pass",
+    icon: faCircle,
+    link: "#",
+  },
+  {
+    label: "in sala",
+    icon: faCircle,
+    link: "#",
+  },
+]
+
+export const userMenu: NavBarMenus[] = [
+  {
+    label: "Profilo",
+    icon: faCircle,
+    link: "/profilo",
+  },
+  {
+    label: "Dettagli Account",
+    icon: faCircle,
+    link: "#",
+  },
+  {
+    label: "Esci",
+    icon: faCircle,
+    link: "/",
+  },
+]
+
+export const registerLoginMenu: NavBarMenus[] = [
+  {
+    label: "Login",
+    icon: faCircle,
+    link: "/login",
+  },
+  {
+    label: "Registrati",
+    icon: faCircle,
+    link: "/registrazione",
+  },
+]
+
+export const moreInfo: bottomCardInfo[] = [
+  {
+    label: "lavora con noi",
+    imgLink: "https://placehold.co/600x300",
+    link: "#",
+  },
+  {
+    label: "poltrone vip",
+    imgLink: "https://placehold.co/600x300",
+    link: "#",
+  },
+  {
+    label: "Lorem ipsum",
+    imgLink: "https://placehold.co/600x300",
+    link: "#",
+  },
+  {
+    label: "Per le aziende",
+    imgLink: "https://placehold.co/600x300",
+    link: "#",
+  },
+]
+
 export const footerInfo: FooterTypes[] = [
   {
     id: 40,
@@ -39,38 +117,5 @@ export const footerInfo: FooterTypes[] = [
                   cupidatat non proident, sunt in culpa qui officia deserunt
                   mollit anim id est laborum.`,
     eventKey: "45",
-  },
-]
-
-export const burgerMenu: NavBarMenus[] = [
-  { label: "trailer", icon: faCircle, URL: "#" },
-  { label: "coming soon", icon: faCircle, URL: "#" },
-  { label: "adastra pass", icon: faCircle, URL: "#" },
-  { label: "in sala", icon: faCircle, URL: "#" },
-  { label: "pre-vendite", icon: faCircle, URL: "#" },
-]
-export const userMenu: NavBarMenus[] = [
-  { label: "Profilo", icon: faCircle, URL: "/profilo" },
-  { label: "Dettagli Account", icon: faCircle, URL: "#" },
-  { label: "Esci", icon: faCircle, URL: "#" },
-]
-
-export const registerLoginMenu: NavBarMenus[] = [
-  { label: "Login", icon: faCircle, URL: "/login" },
-  { label: "Registrati", icon: faCircle, URL: "/registrazione" },
-]
-
-export const moreInfo: bottomCardInfo[] = [
-  {
-    label: "lavora con noi",
-    imgLink: "https://placehold.co/600x300",
-    URL: "#",
-  },
-  { label: "poltrone vip", imgLink: "https://placehold.co/600x300", URL: "#" },
-  { label: "Lorem ipsum", imgLink: "https://placehold.co/600x300", URL: "#" },
-  {
-    label: "Per le aziende",
-    imgLink: "https://placehold.co/600x300",
-    URL: "#",
   },
 ]

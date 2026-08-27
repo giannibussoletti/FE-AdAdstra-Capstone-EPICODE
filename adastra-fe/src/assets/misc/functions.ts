@@ -7,8 +7,10 @@ import {
   greenSeat,
 } from "../misc/variables"
 import { manageSeat } from "../redux/reducers/TicketSlice"
-import type { FillFunction } from "../misc/types"
-
+import type { FillFunction, Menus, PropString } from "../misc/types"
+import { useNavigate } from "react-router"
+import type { useDispatch } from "react-redux"
+import { resetUserState } from "../redux/reducers/UserSlice"
 export const fillSeat = ({
   e,
   fill,
@@ -74,3 +76,29 @@ export const calculateMovieTime = (date: string, duration: number) => {
   const endMinute = new Date(timeEnd).getMinutes()
   return hours + ":" + minute + " - " + endHours + ":" + endMinute
 }
+
+export const handleMenuLink =
+  (navigate: ReturnType<typeof useNavigate>) =>
+  ({ string }: PropString) => {
+    navigate("/" + string)
+  }
+export const handleLogout = (
+  navigate: ReturnType<typeof useNavigate>,
+  dispatch: ReturnType<typeof useDispatch>,
+) => {
+  dispatch(resetUserState())
+  navigate("/")
+}
+
+export const userMenuMapped =
+  (
+    navigate: ReturnType<typeof useNavigate>,
+    dispatch: ReturnType<typeof useDispatch>,
+  ) =>
+  ({ link, label }: Menus) => {
+    if (label !== "Esci") {
+      handleMenuLink(navigate)({ string: link })
+    } else {
+      handleLogout(navigate, dispatch)
+    }
+  }
