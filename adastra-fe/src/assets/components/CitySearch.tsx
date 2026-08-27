@@ -10,15 +10,31 @@ const CitySearch = () => {
   const selectCinema = useAppSelector(
     (state) => state.menuState.cinemaSearchMenu,
   )
+  const cinemaId = useAppSelector((state) => state.menuState.cinemaId)
   const [cinema, setCinema] = useState<CinemaFetchType[]>([])
 
   useEffect(() => {
     fetchCinemas()
-      .then((data) => {
-        setCinema(data)
-      })
+      .then((data) => setCinema(data))
       .catch((error) => console.error(error))
-  }, [selectCinema])
+  }, [])
+
+  useEffect(() => {
+    if (cinema.length > 0 && cinemaId) {
+      const selectedCinema = cinema.find((item) => item.id === cinemaId)
+
+      if (selectedCinema) {
+        dispatch(
+          setCinemaState({
+            isOpen: "start-100",
+            arrayCinema: [],
+            isCinema: false,
+            cinemaSearchMenu: selectedCinema.cinemaName,
+          }),
+        )
+      }
+    }
+  }, [cinema, cinemaId, dispatch])
 
   if (!cinema) {
     return <p>Caricamento in corso</p>
