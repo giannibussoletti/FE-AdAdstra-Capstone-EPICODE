@@ -39,12 +39,15 @@ export type FooterTypes = {
 
 export type Menus = {
   label: string
-  imgLink: string
   URL: string
 }
 
 export type NavBarMenus = Menus & {
   icon: IconDefinition
+}
+
+export type bottomCardInfo = Menus & {
+  imgLink: string
 }
 
 export type FillFunction = {
