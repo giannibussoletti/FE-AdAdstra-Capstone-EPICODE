@@ -1,5 +1,4 @@
 import type {
-  AccessToken,
   BookingType,
   CinemaFetchType,
   MovieDetails,
@@ -174,7 +173,7 @@ export const fetchRegistration = async (
 export const fetchLogin = async (
   email: string,
   password: string,
-): Promise<AccessToken> => {
+): Promise<ProfileType> => {
   try {
     const res = await fetch("http://localhost:5555/auth/login", {
       method: "POST",
@@ -185,26 +184,6 @@ export const fetchLogin = async (
         email,
         password,
       }),
-    })
-
-    if (!res.ok) {
-      console.log(res)
-      throw new Error(res.statusText || `Errore HTTP ${res.status}`)
-    }
-    const data: AccessToken = await res.json()
-    return data
-  } catch (err) {
-    console.error(err)
-    throw err
-  }
-}
-
-export const fetchProfile = async (): Promise<ProfileType> => {
-  try {
-    const res = await fetch("http://localhost:5555/user/profile", {
-      headers: {
-        Authorization: "Bearer " + localStorage.getItem("accessToken"),
-      },
     })
 
     if (!res.ok) {

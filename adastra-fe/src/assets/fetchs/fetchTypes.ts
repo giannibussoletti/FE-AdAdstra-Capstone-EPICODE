@@ -47,10 +47,6 @@ export type BookingType = {
   createdAt: string
 }
 
-export type AccessToken = {
-  accessToken: string
-}
-
 export type ProfileType = {
   name: string
   surname: string
@@ -58,4 +54,5 @@ export type ProfileType = {
   birthDate: Date | null
   profilePicLink: string
   username: string
+  accessToken: string
 }

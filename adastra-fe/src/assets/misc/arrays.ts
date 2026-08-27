@@ -1,4 +1,4 @@
-import type { FooterTypes, Menus, NavBarMenus } from "./types"
+import type { bottomCardInfo, FooterTypes, NavBarMenus } from "./types"
 import { faCircle } from "@fortawesome/free-solid-svg-icons"
 export const footerInfo: FooterTypes[] = [
   {
@@ -42,21 +42,25 @@ export const footerInfo: FooterTypes[] = [
   },
 ]
 
-export const burgerMenuArray: NavBarMenus[] = [
-  { label: "trailer", imgLink: "#", icon: faCircle, URL: "#" },
-  { label: "coming soon", imgLink: "#", icon: faCircle, URL: "#" },
-  { label: "adastra pass", imgLink: "#", icon: faCircle, URL: "#" },
-  { label: "in sala", imgLink: "#", icon: faCircle, URL: "#" },
-  { label: "pre-vendite", imgLink: "#", icon: faCircle, URL: "#" },
+export const burgerMenu: NavBarMenus[] = [
+  { label: "trailer", icon: faCircle, URL: "#" },
+  { label: "coming soon", icon: faCircle, URL: "#" },
+  { label: "adastra pass", icon: faCircle, URL: "#" },
+  { label: "in sala", icon: faCircle, URL: "#" },
+  { label: "pre-vendite", icon: faCircle, URL: "#" },
 ]
-export const userMenuArray: NavBarMenus[] = [
-  { label: "user", imgLink: "#", icon: faCircle, URL: "#" },
-  { label: "user", imgLink: "#", icon: faCircle, URL: "#" },
-  { label: "user", imgLink: "#", icon: faCircle, URL: "#" },
-  { label: "user", imgLink: "#", icon: faCircle, URL: "#" },
+export const userMenu: NavBarMenus[] = [
+  { label: "Profilo", icon: faCircle, URL: "/profilo" },
+  { label: "Dettagli Account", icon: faCircle, URL: "#" },
+  { label: "Esci", icon: faCircle, URL: "#" },
 ]
 
-export const moreInfoArray: Menus[] = [
+export const registerLoginMenu: NavBarMenus[] = [
+  { label: "Login", icon: faCircle, URL: "/login" },
+  { label: "Registrati", icon: faCircle, URL: "/registrazione" },
+]
+
+export const moreInfo: bottomCardInfo[] = [
   {
     label: "lavora con noi",
     imgLink: "https://placehold.co/600x300",

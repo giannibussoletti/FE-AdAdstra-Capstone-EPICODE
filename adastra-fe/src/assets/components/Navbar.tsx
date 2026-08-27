@@ -1,15 +1,18 @@
 import { Col, Container, Row, Dropdown, DropdownButton } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faCircleUser } from "@fortawesome/free-solid-svg-icons"
-import { useAppDispatch } from "../redux/hooks"
+import { useAppDispatch, useAppSelector } from "../redux/hooks"
 import { setMenu } from "../redux/reducers/NavBarSlice"
-import { burgerMenuArray, userMenuArray } from "../misc/arrays"
+import { burgerMenu, userMenu, registerLoginMenu } from "../misc/arrays"
 import CitySearch from "./CitySearch"
 import MobileMenu from "./MobileMenu"
 import { useLocation } from "react-router"
 import { useNavigate } from "react-router"
 
 const Navbar = () => {
+  const accessToken = useAppSelector((state) => state.userState.accessToken)
+  const userMenufilter = accessToken ? userMenu : registerLoginMenu
+
   const dispatch = useAppDispatch()
   const location = useLocation()
   const marginLogo = location.pathname !== "/" ? "me-auto" : ""
@@ -39,7 +42,7 @@ const Navbar = () => {
                   dispatch(
                     setMenu({
                       isOpen: "start-0",
-                      arrayMenu: userMenuArray,
+                      arrayMenu: userMenufilter,
                       isCinema: false,
                     }),
                   )
@@ -54,7 +57,7 @@ const Navbar = () => {
                   dispatch(
                     setMenu({
                       isOpen: "start-0",
-                      arrayMenu: burgerMenuArray,
+                      arrayMenu: burgerMenu,
                       isCinema: false,
                     }),
                   )
@@ -67,15 +70,13 @@ const Navbar = () => {
             </div>
             <div className="w-100 d-none d-lg-block">
               <ul className=" justify-content-around navbar-list p-0 m-0 d-flex  align-items-center">
-                {burgerMenuArray.map((item) => {
+                {burgerMenu.map((item) => {
                   return (
-                    <li key={item.label + item.label}>
-                      <a
-                        className="text-uppercase fw-medium cursor-pointer"
-                        href={item.imgLink}
-                      >
-                        {item.label}
-                      </a>
+                    <li
+                      className="text-uppercase fw-medium cursor-pointer"
+                      key={item.label + item.label}
+                    >
+                      {item.label}
                     </li>
                   )
                 })}
@@ -88,7 +89,7 @@ const Navbar = () => {
                   dispatch(
                     setMenu({
                       isOpen: "start-100",
-                      arrayMenu: userMenuArray,
+                      arrayMenu: userMenufilter,
                       isCinema: false,
                     }),
                   )
@@ -104,9 +105,11 @@ const Navbar = () => {
                 }
                 align="end"
               >
-                {userMenuArray.map((item) => {
+                {userMenufilter.map((item) => {
                   return (
-                    <Dropdown.Item href={item.URL}>{item.label}</Dropdown.Item>
+                    <Dropdown.Item onClick={() => navigate(item.URL)}>
+                      {item.label}
+                    </Dropdown.Item>
                   )
                 })}
               </DropdownButton>

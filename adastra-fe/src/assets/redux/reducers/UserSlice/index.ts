@@ -8,6 +8,7 @@ const initialState: ProfileType = {
   birthDate: null,
   profilePicLink: "",
   username: "",
+  accessToken: "",
 }
 
 export const userSlice = createSlice({
@@ -21,6 +22,7 @@ export const userSlice = createSlice({
       state.birthDate = action.payload.birthDate
       state.profilePicLink = action.payload.profilePicLink
       state.username = action.payload.username
+      state.accessToken = action.payload.accessToken
     },
   },
 })
