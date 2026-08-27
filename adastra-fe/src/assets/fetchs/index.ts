@@ -231,3 +231,26 @@ export const fetchMovieDetails = async (
     throw err
   }
 }
+
+export const verifyAccessToken = async (token: string): Promise<void> => {
+  try {
+    const res = await fetch("http://localhost:5555/auth/token", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        token,
+      }),
+    })
+
+    if (!res.ok) {
+      console.log(res)
+      throw new Error(res.statusText || `Errore HTTP ${res.status}`)
+    }
+    return
+  } catch (err) {
+    console.error(err)
+    throw err
+  }
+}

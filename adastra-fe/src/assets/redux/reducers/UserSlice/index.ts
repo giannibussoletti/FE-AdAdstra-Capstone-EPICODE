@@ -24,8 +24,17 @@ export const userSlice = createSlice({
       state.username = action.payload.username
       state.accessToken = action.payload.accessToken
     },
+    resetUserState: (state) => {
+      state.name = ""
+      state.surname = ""
+      state.email = ""
+      state.birthDate = null
+      state.profilePicLink = ""
+      state.username = ""
+      state.accessToken = ""
+    },
   },
 })
 
-export const { setUserState } = userSlice.actions
+export const { setUserState, resetUserState } = userSlice.actions
 export default userSlice.reducer
