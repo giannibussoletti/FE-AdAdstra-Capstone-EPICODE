@@ -10,20 +10,31 @@ import { verifyAccessToken } from "../../fetchs"
 import { useEffect } from "react"
 import { useAppDispatch } from "../../redux/hooks"
 import { resetUserState } from "../../redux/reducers/UserSlice"
+import { fetchMovies } from "../../fetchs"
+import { AllMoviesArray } from "../../redux/reducers/MovieSlice"
+
 const Home = () => {
   const dispatch = useAppDispatch()
   const cinema = useAppSelector((state) => state.menuState.cinemaId)
   const token = useAppSelector((state) => state.userState.accessToken)
 
   useEffect(() => {
-    if (token) {
-      verifyAccessToken(token)
-        .then()
-        .catch(() => {
-          dispatch(resetUserState())
-        })
+    const initializeApp = async () => {
+      const verifyTokenTask = token
+        ? verifyAccessToken(token).catch(() => {
+            dispatch(resetUserState())
+          })
+        : Promise.resolve()
+
+      const fetchMoviesTask = fetchMovies()
+        .then((data) => dispatch(AllMoviesArray(data)))
+        .catch((err) => console.error("Errore fetch film:", err))
+
+      await Promise.allSettled([verifyTokenTask, fetchMoviesTask])
     }
-  })
+
+    initializeApp()
+  }, [])
 
   return (
     <>

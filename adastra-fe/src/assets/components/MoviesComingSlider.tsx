@@ -4,7 +4,7 @@ import SliderButton from "./SliderComponents/SliderButton"
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons"
 import MainTitles from "./MainTitles"
 import type { PropString } from "../misc/types"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useRef } from "react"
 import { useAppSelector } from "../redux/hooks"
 import type { MovieDetails } from "../fetchs/fetchTypes"
@@ -17,6 +17,13 @@ const MoviesComingSlider = function ({ string }: PropString) {
 
   const [newArrayPoster, setNewArrayPoster] =
     useState<MovieDetails[]>(moviesFilteredByDate)
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setNewArrayPoster(moviesFilteredByDate)
+    console.log("mi sto aggiornando")
+  }, [moviesFilteredByDate])
+
   const [animRules, setAnimRules] = useState({})
   const posterRef = useRef<HTMLDivElement>(null)
 
