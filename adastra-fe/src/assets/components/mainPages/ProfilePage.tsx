@@ -25,7 +25,17 @@ const ProfilePage = () => {
         <Col>
           <Row className="align-items-center">
             <Col xs={"auto"}>
-              <Image fluid src={profilePicLink} roundedCircle />
+              <Image
+                fluid
+                src={profilePicLink}
+                style={{
+                  maxHeight: "100px",
+                  maxWidth: "100px",
+                  minHeight: "100px",
+                  minWidth: "100px",
+                }}
+                roundedCircle
+              />
             </Col>
             <Col>
               {name + " " + surname} <br /> {email}
