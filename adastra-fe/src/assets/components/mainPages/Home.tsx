@@ -6,8 +6,24 @@ import NowPlayingSection from "../NowPlayingSection"
 import CardMoreInfo from "../CardMoreInfo"
 import { moreInfo } from "../../misc/arrays"
 import { useAppSelector } from "../../redux/hooks"
+import { verifyAccessToken } from "../../fetchs"
+import { useEffect } from "react"
+import { useAppDispatch } from "../../redux/hooks"
+import { resetUserState } from "../../redux/reducers/UserSlice"
 const Home = () => {
+  const dispatch = useAppDispatch()
   const cinema = useAppSelector((state) => state.menuState.cinemaId)
+  const token = useAppSelector((state) => state.userState.accessToken)
+
+  useEffect(() => {
+    if (token) {
+      verifyAccessToken(token)
+        .then()
+        .catch(() => {
+          dispatch(resetUserState())
+        })
+    }
+  })
 
   return (
     <>
