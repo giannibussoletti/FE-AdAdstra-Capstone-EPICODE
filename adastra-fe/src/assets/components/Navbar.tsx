@@ -8,6 +8,7 @@ import CitySearch from "./CitySearch"
 import MobileMenu from "./MobileMenu"
 import { useLocation } from "react-router"
 import { useNavigate } from "react-router"
+import { userMenuMapped } from "../misc/functions"
 
 const Navbar = () => {
   const accessToken = useAppSelector((state) => state.userState.accessToken)
@@ -107,7 +108,14 @@ const Navbar = () => {
               >
                 {userMenufilter.map((item) => {
                   return (
-                    <Dropdown.Item onClick={() => navigate(item.URL)}>
+                    <Dropdown.Item
+                      onClick={() => {
+                        userMenuMapped(
+                          navigate,
+                          dispatch,
+                        )({ link: item.link, label: item.label })
+                      }}
+                    >
                       {item.label}
                     </Dropdown.Item>
                   )

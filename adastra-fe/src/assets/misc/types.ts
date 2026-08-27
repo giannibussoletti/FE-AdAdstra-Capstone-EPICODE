@@ -1,12 +1,7 @@
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core"
 import type { MouseEvent } from "react"
-import type { ProfileType, SeatGroup } from "../fetchs/fetchTypes"
-import type { ThunkDispatch, UnknownAction, Dispatch } from "@reduxjs/toolkit"
-import type {
-  MenuState,
-  Booking,
-  MovieState,
-} from "../redux/reducers/SlicesTypes"
+import type { SeatGroup } from "../fetchs/fetchTypes"
+import type { AppDispatch } from "../redux/store"
 
 export type TopSlider = {
   id: number
@@ -40,7 +35,7 @@ export type FooterTypes = {
 
 export type Menus = {
   label: string
-  URL: string
+  link: string
 }
 
 export type NavBarMenus = Menus & {
@@ -58,17 +53,7 @@ export type FillFunction = {
   color: string
   maxSeats: SeatGroup[]
   rowLetter: string
-  dispatch: ThunkDispatch<
-    {
-      menuState: MenuState
-      bookingState: Booking
-      movieState: MovieState
-      userState: ProfileType
-    },
-    undefined,
-    UnknownAction
-  > &
-    Dispatch<UnknownAction>
+  dispatch: AppDispatch
 }
 
 export type PropString = {
