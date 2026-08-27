@@ -21,6 +21,7 @@ export type Poster = {
 
 export type PosterReleaseDate = Poster & {
   date: Date
+  duration: number
 }
 
 export type ArrowSlider = {

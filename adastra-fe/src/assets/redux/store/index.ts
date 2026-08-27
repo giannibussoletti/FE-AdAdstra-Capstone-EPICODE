@@ -17,8 +17,15 @@ import menuSlice from "../reducers/NavBarSlice"
 import bookingSlice from "../reducers/TicketSlice"
 import movieSlice from "../reducers/MovieSlice"
 import userSlice from "../reducers/UserSlice"
+
+const CinemaPersistConfig = {
+  key: "menuState",
+  storage,
+  whitelist: ["cinemaId"],
+}
+
 const rootReducer = combineReducers({
-  menuState: menuSlice,
+  menuState: persistReducer(CinemaPersistConfig, menuSlice),
   bookingState: bookingSlice,
   movieState: movieSlice,
   userState: userSlice,
