@@ -107,16 +107,15 @@ const Navbar = () => {
                 align="end"
               >
                 {userMenufilter.map((item) => {
+                  const link = item.link
+                  const label = item.label
                   return (
                     <Dropdown.Item
                       onClick={() => {
-                        userMenuMapped(
-                          navigate,
-                          dispatch,
-                        )({ link: item.link, label: item.label })
+                        userMenuMapped(navigate, dispatch, { link, label })
                       }}
                     >
-                      {item.label}
+                      {label}
                     </Dropdown.Item>
                   )
                 })}

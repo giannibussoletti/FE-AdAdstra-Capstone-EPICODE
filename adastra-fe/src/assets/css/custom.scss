@@ -60,6 +60,12 @@ $dropdown-link-hover-color: $dropdown-bg;
 $dropdown-link-hover-bg: $dropdown-color;
 $dropdown-link-active-color: $dropdown-color;
 
+//Modal
+$modal-content-color: $input-color;
+$modal-content-bg: $input-bg;
+
+$modal-backdrop-opacity: 0.7;
+
 $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "bootstrap/scss/bootstrap.scss";
 

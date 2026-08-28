@@ -17,9 +17,9 @@ const ResponseModal = ({
   return (
     <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
       <Modal.Header>
-        <Modal.Title>
-          <FontAwesomeIcon icon={icon} style={{ color: style }} />
-          {title}
+        <Modal.Title as={"h5"}>
+          <FontAwesomeIcon icon={icon} style={{ color: style }} size="sm" />
+          {"    " + title}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>{message}</Modal.Body>

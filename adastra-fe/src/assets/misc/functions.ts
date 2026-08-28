@@ -77,11 +77,12 @@ export const calculateMovieTime = (date: string, duration: number) => {
   return hours + ":" + minute + " - " + endHours + ":" + endMinute
 }
 
-export const handleMenuLink =
-  (navigate: ReturnType<typeof useNavigate>) =>
-  ({ string }: PropString) => {
-    navigate("/" + string)
-  }
+export const handleMenuLink = (
+  navigate: ReturnType<typeof useNavigate>,
+  { string }: PropString,
+) => {
+  navigate("/" + string)
+}
 export const handleLogout = (
   navigate: ReturnType<typeof useNavigate>,
   dispatch: ReturnType<typeof useDispatch>,
@@ -90,15 +91,14 @@ export const handleLogout = (
   navigate("/")
 }
 
-export const userMenuMapped =
-  (
-    navigate: ReturnType<typeof useNavigate>,
-    dispatch: ReturnType<typeof useDispatch>,
-  ) =>
-  ({ link, label }: Menus) => {
-    if (label !== "Esci") {
-      handleMenuLink(navigate)({ string: link })
-    } else {
-      handleLogout(navigate, dispatch)
-    }
+export const userMenuMapped = (
+  navigate: ReturnType<typeof useNavigate>,
+  dispatch: ReturnType<typeof useDispatch>,
+  { link, label }: Menus,
+) => {
+  if (label !== "Esci") {
+    handleMenuLink(navigate, { string: link })
+  } else {
+    handleLogout(navigate, dispatch)
   }
+}
