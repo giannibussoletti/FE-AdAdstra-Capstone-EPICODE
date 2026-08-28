@@ -96,6 +96,10 @@ const PaymentPage = () => {
                 guestEmail,
                 coupon,
               )
+                .then((data) => {
+                  console.log(data)
+                })
+                .catch((err) => console.error(err))
               dispatch(resetState(RESET))
             }}
           >
