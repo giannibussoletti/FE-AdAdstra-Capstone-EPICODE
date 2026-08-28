@@ -8,13 +8,14 @@ import { resetState } from "../../redux/reducers/TicketSlice"
 
 import { fetchBooking } from "../../fetchs"
 import { useEffect, useState } from "react"
-import { RESET } from "../../misc/variables"
+import { blueCost, greenCost, redCost, RESET } from "../../misc/variables"
 const PaymentPage = () => {
   const screenTimeId = useAppSelector(
     (state) => state.movieState.screeningTimeId,
   )
   const maxSeats = useAppSelector((state) => state.bookingState.maxSeats)
   const totalCost = useAppSelector((state) => state.bookingState.totalCost)
+
   const greenSeatsPosition = useAppSelector(
     (state) => state.bookingState.greenSeatsPosition,
   )
@@ -24,6 +25,10 @@ const PaymentPage = () => {
   const blueSeatsPosition = useAppSelector(
     (state) => state.bookingState.blueSeatsPosition,
   )
+
+  const totalRed = redSeatsPosition.length * redCost
+  const totalBlue = blueSeatsPosition.length * blueCost
+  const totalGreen = greenSeatsPosition.length * greenCost
 
   const [guestEmail, setEmail] = useState("")
   const [coupon, setCoupon] = useState("")
@@ -50,6 +55,9 @@ const PaymentPage = () => {
               greenSeatsPosition={greenSeatsPosition}
               blueSeatsPosition={blueSeatsPosition}
               totalCost={totalCost}
+              totalRed={totalRed}
+              totalBlue={totalBlue}
+              totalGreen={totalGreen}
             />
           </Col>
         </Row>
