@@ -23,7 +23,7 @@ import ResponseModal from "../ResponseModal"
 import { GREEN, RED } from "../../misc/variables"
 
 const RegistrationPage = () => {
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(true)
   const handleClose = () => setShow(false)
 
   const [name, setName] = useState<string>("")
