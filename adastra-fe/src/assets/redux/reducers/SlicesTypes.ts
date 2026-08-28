@@ -33,9 +33,6 @@ export type Booking = {
   redSeatsPosition: SeatGroup[]
   greenSeatsPosition: SeatGroup[]
   blueSeatsPosition: SeatGroup[]
-  redSeatsAmount: number
-  greenSeatsAmount: number
-  blueSeatsAmount: number
   isAdding: boolean
   color: string
   maxSeats: SeatGroup[]
