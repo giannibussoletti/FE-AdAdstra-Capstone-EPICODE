@@ -32,17 +32,23 @@ const TheaterMap = () => {
   )
 
   useEffect(() => {
-    fetchSeats(cinemaId, screenId)
-      .then((data) => {
-        setSeats(data)
-      })
-      .catch((err) => console.error(err))
+    const initializeApp = async () => {
+      const fetchSeatsTask = fetchSeats(cinemaId, screenId)
+        .then((data) => {
+          setSeats(data)
+        })
+        .catch((err) => console.error(err))
 
-    fetchBookedSeats(screeningTimeId)
-      .then((data) => {
-        setBookedSeats(data)
-      })
-      .catch((err) => console.error(err))
+      const fetchBookedSeatsTask = fetchBookedSeats(screeningTimeId)
+        .then((data) => {
+          setBookedSeats(data)
+        })
+        .catch((err) => console.error(err))
+
+      await Promise.allSettled([fetchSeatsTask, fetchBookedSeatsTask])
+    }
+
+    initializeApp()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 

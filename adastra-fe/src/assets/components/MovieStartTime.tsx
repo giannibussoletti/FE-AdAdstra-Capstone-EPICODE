@@ -1,14 +1,15 @@
 import { useNavigate } from "react-router"
-import { useAppDispatch } from "../redux/hooks"
+import { useAppDispatch, useAppSelector } from "../redux/hooks"
 import { movieChoice } from "../redux/reducers/MovieSlice"
 import type { DispatchMovie } from "../redux/reducers/SlicesTypes"
 import { calculateMovieTime } from "../misc/functions"
+import { resetState } from "../redux/reducers/TicketSlice"
+import { RESET } from "../misc/variables"
 
 const MovieStartTime = ({
   movieTitle,
   movieID,
   duration,
-
   screenId,
   screen,
   screeningTimeId,
@@ -16,22 +17,27 @@ const MovieStartTime = ({
 }: DispatchMovie) => {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
+  const prevTimeId = useAppSelector((state) => state.movieState.screeningTimeId)
 
   return (
     <div
       className=" bg-time-color rounded rounded-3 px-3 py-2 single-movie-time"
       onClick={() => {
-        dispatch(
-          movieChoice({
-            movieID,
-            movieTitle,
-            duration,
-            screen,
-            screenId,
-            screeningTimeId,
-            date,
-          }),
-        )
+        if (screeningTimeId !== prevTimeId) {
+          dispatch(
+            movieChoice({
+              movieID,
+              movieTitle,
+              duration,
+              screen,
+              screenId,
+              screeningTimeId,
+              date,
+            }),
+          )
+          dispatch(resetState(RESET))
+          console.log("reset")
+        }
         navigate("/scelta-posto/")
       }}
     >
