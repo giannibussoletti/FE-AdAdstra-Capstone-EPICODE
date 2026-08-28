@@ -46,14 +46,16 @@ export type bottomCardInfo = Menus & {
   imgLink: string
 }
 
-export type FillFunction = {
+export type EmpyFunction = {
   e: MouseEvent<SVGPathElement>
-  fill: string
   seat: SeatGroup
   color: string
-  maxSeats: SeatGroup[]
-  rowLetter: string
   dispatch: AppDispatch
+}
+
+export type FillFunction = EmpyFunction & {
+  fill: string
+  maxSeats: SeatGroup[]
 }
 
 export type PropString = {
@@ -65,6 +67,9 @@ export type TicketTypes = {
   greenSeatsPosition: SeatGroup[]
   blueSeatsPosition: SeatGroup[]
   totalCost: number
+  totalRed: number
+  totalBlue: number
+  totalGreen: number
 }
 
 export type InfoCardAndDesktopNav = {
