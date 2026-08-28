@@ -98,7 +98,6 @@ export const fetchBookedSeats = async (
 
 const publicBooking = "http://localhost:5555/public/bookings"
 const noPublic = "http://localhost:5555/bookings"
-const isLogged = localStorage.getItem("accessToken")
 
 export const fetchBooking = async (
   screenTimeId: string,
@@ -108,6 +107,7 @@ export const fetchBooking = async (
   coupon: string,
 ): Promise<BookingType> => {
   try {
+    const isLogged = localStorage.getItem("accessToken")
     const res = await fetch(isLogged ? noPublic : publicBooking, {
       method: "POST",
       headers: {
