@@ -10,12 +10,31 @@ import {
   Image,
 } from "react-bootstrap"
 
+import ResponseModal from "../ResponseModal"
+
 import { useNavigate } from "react-router"
 import { useState } from "react"
 import { useAppDispatch } from "../../redux/hooks"
 import { fetchLogin } from "../../fetchs"
 import { setUserState } from "../../redux/reducers/UserSlice"
+import {
+  faCircle,
+  faCircleCheck,
+  faCircleXmark,
+} from "@fortawesome/free-solid-svg-icons"
+import { GREEN, RED } from "../../misc/variables"
+
 const LoginPage = () => {
+  const [show, setShow] = useState(false)
+  const handleClose = () => setShow(false)
+  const [modalData, setModalData] = useState({
+    title: "",
+    message: "",
+    icon: faCircle,
+    style: "",
+    buttonText: "",
+  })
+
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
   const [email, setEmail] = useState<string>("")
@@ -33,6 +52,15 @@ const LoginPage = () => {
 
   return (
     <Container>
+      <ResponseModal
+        message={modalData.message}
+        title={modalData.title}
+        show={show}
+        handleClose={handleClose}
+        icon={modalData.icon}
+        style={modalData.style}
+        buttonText={modalData.buttonText}
+      ></ResponseModal>
       <Row lg={2} xs={1} className="my-5 justify-content-center">
         <Col className="justify-content-center justify-content-lg-end align-items-center d-flex">
           <Card className=" border-2 border-white">
@@ -98,8 +126,26 @@ const LoginPage = () => {
                                 username: data.username,
                               }),
                             )
+                            setModalData({
+                              title: "Tutto ok!",
+                              message: "Login effettuato con successo",
+                              icon: faCircleCheck,
+                              style: GREEN,
+                              buttonText: "Vai alla homepage",
+                            })
+                            setShow(true)
                           })
-                          .catch((err) => console.error(err))
+                          .catch((err) => {
+                            setModalData({
+                              title: "Ops!",
+                              message:
+                                "Qualcosa è andato storto, riprova " + err,
+                              icon: faCircleXmark,
+                              style: RED,
+                              buttonText: "Riprova",
+                            })
+                            setShow(true)
+                          })
                       }}
                       variant="buttons"
                       className="rounded-pill fw-semibold text-uppercase py-2 mb-4 mt-3"
