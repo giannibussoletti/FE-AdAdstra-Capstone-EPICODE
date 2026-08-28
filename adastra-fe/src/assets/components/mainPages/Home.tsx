@@ -50,7 +50,7 @@ const Home = () => {
           </Row>
         ) : (
           <>
-            <Row>
+            <Row className="mt-4">
               <Col className="mt-3 pb-4">
                 <MoviesComingSlider string="prevendite aperte" />
               </Col>

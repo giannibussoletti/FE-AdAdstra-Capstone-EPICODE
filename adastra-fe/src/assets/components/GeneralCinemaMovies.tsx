@@ -19,7 +19,7 @@ const GeneralCinemaMovies = () => {
             return (
               <Col
                 key={movie.id}
-                className="text-center mt-5 d-flex justify-content-between flex-column"
+                className="text-center d-flex justify-content-between flex-column"
               >
                 <div>
                   <Image
