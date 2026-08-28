@@ -13,17 +13,18 @@ import { useAppDispatch, useAppSelector } from "../redux/hooks"
 import { useEffect, useState } from "react"
 import { fetchBookedSeats, fetchSeats } from "../fetchs"
 import type { SeatGroup } from "../fetchs/fetchTypes"
-import { fillSeat } from "../misc/functions"
+import { emptySeat, fillSeat } from "../misc/functions"
 const TheaterMap = () => {
   const dispatch = useAppDispatch()
   const [seats, setSeats] = useState<SeatGroup[]>([])
   const [bookedSeats, setBookedSeats] = useState<SeatGroup[]>([])
-  const bookedId = bookedSeats.map((seat) => seat.id)
-
-  const seatsFiltered = seats.filter((seat) => !bookedId.includes(seat.id))
-
   const maxSeats = useAppSelector((state) => state.bookingState.maxSeats)
-  const rowLetter = useAppSelector((state) => state.bookingState.rowLetter)
+  const tempSeats = maxSeats.map((seat) => seat.id)
+  const bookedId = bookedSeats.map((seat) => seat.id)
+  const seatsFiltered = seats.filter(
+    (seat) => !bookedId.includes(seat.id) && !tempSeats.includes(seat.id),
+  )
+
   const cinemaId = useAppSelector((state) => state.menuState.cinemaId)
   const screenId = useAppSelector((state) => state.movieState.screenId)
   const screeningTimeId = useAppSelector(
@@ -142,7 +143,6 @@ const TheaterMap = () => {
                       color: seat.color,
                       maxSeats,
                       dispatch,
-                      rowLetter,
                     })
                   }
                   key={
@@ -165,6 +165,44 @@ const TheaterMap = () => {
                 />
               )
             })}
+            {maxSeats.length > 0
+              ? maxSeats.map((seat) => {
+                  return (
+                    <path
+                      onClick={(e) =>
+                        emptySeat({ e, seat, color: seat.color, dispatch })
+                      }
+                      fill={
+                        seat.color === RED
+                          ? redSeat
+                          : seat.color === BLUE
+                            ? blueSeat
+                            : seat.color === GREEN
+                              ? greenSeat
+                              : ""
+                      }
+                      key={
+                        seat.svgCoordinates +
+                        seat.id +
+                        seat.row +
+                        seat.number +
+                        seat.color
+                      }
+                      stroke={
+                        seat.color === RED
+                          ? redSeat
+                          : seat.color === BLUE
+                            ? blueSeat
+                            : seat.color === GREEN
+                              ? greenSeat
+                              : ""
+                      }
+                      d={seat.svgCoordinates}
+                    />
+                  )
+                })
+              : null}
+
             {bookedSeats.map((seat) => {
               return (
                 <path

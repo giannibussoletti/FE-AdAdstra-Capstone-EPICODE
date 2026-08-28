@@ -7,7 +7,12 @@ import {
   greenSeat,
 } from "../misc/variables"
 import { manageSeat } from "../redux/reducers/TicketSlice"
-import type { FillFunction, Menus, PropString } from "../misc/types"
+import type {
+  EmpyFunction,
+  FillFunction,
+  Menus,
+  PropString,
+} from "../misc/types"
 import { useNavigate } from "react-router"
 import type { useDispatch } from "react-redux"
 import { resetUserState } from "../redux/reducers/UserSlice"
@@ -17,7 +22,6 @@ export const fillSeat = ({
   seat,
   color,
   maxSeats,
-  rowLetter,
   dispatch,
 }: FillFunction) => {
   if (e.target instanceof SVGPathElement) {
@@ -30,40 +34,20 @@ export const fillSeat = ({
             ? greenSeat
             : ""
     const target = e.target
-    const seatNumber = seat.number
-    const seatLetter = seat.row
-    const chosenNumbers = maxSeats.map((m) => m.number)
-    const sameLetter = rowLetter === seatLetter
-    const isNextSeat = chosenNumbers.includes(seatNumber + 1)
-    const isBeforeSeat = chosenNumbers.includes(seatNumber - 1)
     const isFilled = target.style.fill
-    if (
-      !isNextSeat &&
-      !isBeforeSeat &&
-      maxSeats.length >= 1 &&
-      sameLetter &&
-      !target.style.fill
-    ) {
-      alert("è possibile prenotare solo posti adiacenti")
-    } else if (
-      isNextSeat &&
-      isBeforeSeat &&
-      maxSeats.length >= 1 &&
-      sameLetter &&
-      isFilled
-    ) {
-      alert("impossibile un posto in mezzo a due posti prenotati")
-    } else if (!sameLetter && maxSeats.length >= 1) {
-      window.alert("è possibile acquistare solo nella stessa fila")
-    } else if (!isFilled && maxSeats.length < 10) {
+    if (!isFilled && maxSeats.length < 10) {
       target.style.fill = fillColor
       dispatch(manageSeat({ seat, color, isAdding: true }))
     } else if (!isFilled && maxSeats.length === 10) {
       window.alert("è possibile acquistare un massimo di 10 posti")
-    } else {
-      target.style.fill = ""
-      dispatch(manageSeat({ seat, color, isAdding: false }))
     }
+  }
+}
+
+export const emptySeat = ({ e, seat, color, dispatch }: EmpyFunction) => {
+  if (e.target instanceof SVGPathElement) {
+    e.target.style.fill = ""
+    dispatch(manageSeat({ seat, color, isAdding: false }))
   }
 }
 

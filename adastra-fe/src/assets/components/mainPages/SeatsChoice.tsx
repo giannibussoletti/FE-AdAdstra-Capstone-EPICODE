@@ -11,16 +11,6 @@ import { useNavigate } from "react-router"
 const SeatsChoice = () => {
   const navigate = useNavigate()
 
-  const redTicketsAmount = useAppSelector(
-    (state) => state.bookingState.redSeatsAmount,
-  )
-  const blueTicketsAmount = useAppSelector(
-    (state) => state.bookingState.blueSeatsAmount,
-  )
-  const greenTicketsAmount = useAppSelector(
-    (state) => state.bookingState.greenSeatsAmount,
-  )
-
   const greenSeatsPosition = useAppSelector(
     (state) => state.bookingState.greenSeatsPosition,
   )
@@ -31,9 +21,9 @@ const SeatsChoice = () => {
     (state) => state.bookingState.blueSeatsPosition,
   )
 
-  const totalRed = redTicketsAmount * redCost
-  const totalBlue = blueTicketsAmount * blueCost
-  const totalGreen = greenTicketsAmount * greenCost
+  const totalRed = redSeatsPosition.length * redCost
+  const totalBlue = blueSeatsPosition.length * blueCost
+  const totalGreen = greenSeatsPosition.length * greenCost
   const totalCost = totalRed + totalBlue + totalGreen
   return (
     <>
@@ -51,6 +41,9 @@ const SeatsChoice = () => {
             </Row>
             <Col className="px-5">
               <TicketsCount
+                totalRed={totalRed}
+                totalBlue={totalBlue}
+                totalGreen={totalGreen}
                 redSeatsPosition={redSeatsPosition}
                 greenSeatsPosition={greenSeatsPosition}
                 blueSeatsPosition={blueSeatsPosition}
