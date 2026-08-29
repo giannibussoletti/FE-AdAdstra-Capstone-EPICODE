@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Container, Row, Col, Image, Spinner } from "react-bootstrap"
+import { Container, Row, Col, Image, Spinner, Accordion } from "react-bootstrap"
 import { useParams } from "react-router"
 import { fetchMovieDetails } from "../../fetchs"
 import type { MovieDetails } from "../../fetchs/fetchTypes"
@@ -25,13 +25,13 @@ const MovieDetailsPage = () => {
 
   return (
     <Container className="mt-5">
-      <Row className="mt-4">
+      <Row className="mt-4 px-5 p-lg-0">
         {details ? (
           <>
-            <Col xs="auto" md={3}>
+            <Col xs="auto" lg={4}>
               <Image fluid src={details.posterLink} />
             </Col>
-            <Col xs={12} md={9} className="mt-3 mt-md-0">
+            <Col xs={12} lg={8} className="mt-3 mt-md-0">
               <h2 className="fw-normal text-uppercase fw-medium mb-4">
                 {details.title}
               </h2>
@@ -49,7 +49,17 @@ const MovieDetailsPage = () => {
                   </div>
                 )
               })}
-              <div>
+              <Accordion className="d-lg-none">
+                <Accordion.Item eventKey="0">
+                  <Accordion.Header>
+                    <span className=" fs-4 fw-medium">TRAMA</span>
+                  </Accordion.Header>
+                  <Accordion.Body className="m-0 p-0">
+                    <p>{details.plot}</p>
+                  </Accordion.Body>
+                </Accordion.Item>
+              </Accordion>
+              <div className="d-none d-lg-block">
                 <p>{details.plot}</p>
               </div>
             </Col>
