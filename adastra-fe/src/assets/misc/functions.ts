@@ -16,6 +16,8 @@ import type {
 import { useNavigate } from "react-router"
 import type { useDispatch } from "react-redux"
 import { resetUserState } from "../redux/reducers/UserSlice"
+import type { MovieDetails } from "../fetchs/fetchTypes"
+
 export const fillSeat = ({
   e,
   fill,
@@ -85,4 +87,15 @@ export const userMenuMapped = (
   } else {
     handleLogout(navigate, dispatch)
   }
+}
+
+export const movieDetailsMapped = (movie: MovieDetails) => {
+  return [
+    { name: "Cast", details: movie.starring },
+    { name: "Durata", details: movie.duration + "m" },
+    {
+      name: "Data di uscita",
+      details: new Date(movie.releaseDate).toLocaleDateString(),
+    },
+  ]
 }
