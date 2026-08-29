@@ -4,7 +4,6 @@ import { movieChoice } from "../redux/reducers/MovieSlice"
 import type { DispatchMovie } from "../redux/reducers/SlicesTypes"
 import { calculateMovieTime } from "../misc/functions"
 import { resetState } from "../redux/reducers/TicketSlice"
-import { RESET } from "../misc/variables"
 
 const MovieStartTime = ({
   movieTitle,
@@ -35,7 +34,7 @@ const MovieStartTime = ({
               date,
             }),
           )
-          dispatch(resetState(RESET))
+          dispatch(resetState())
           console.log("reset")
         }
         navigate("/scelta-posto/")
