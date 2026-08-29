@@ -20,16 +20,17 @@ import LoginPage from "./assets/components/mainPages/LoginPage"
 import MovieDetailsPage from "./assets/components/mainPages/MovieDetailsPage"
 //React Router
 import { Route, BrowserRouter as Router, Routes } from "react-router"
+import NotFound from "./assets/components/mainPages/NotFound"
 
 const App = () => {
   return (
-    <>
+    <div className="d-flex flex-column" style={{ minHeight: "100vh" }}>
       <Router>
         <RestorationScroll />
         <header>
           <Navbar />
         </header>
-        <main>
+        <main style={{ flex: "1" }}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/dettagli/:movieId" element={<MovieDetailsPage />} />
@@ -38,13 +39,14 @@ const App = () => {
             <Route path="/profilo" element={<ProfilePage />} />
             <Route path="/registrazione" element={<RegistrationPage />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <footer>
           <Footer />
         </footer>
       </Router>
-    </>
+    </div>
   )
 }
 
