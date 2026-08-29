@@ -27,13 +27,17 @@ const NowPlayingMappedMovies = () => {
       {movies.map((movie) => {
         return (
           <Row key={movie.movieDetails.id} className="mt-4">
-            <Col xs="auto" md={3}>
+            <Col xs={4}>
               <Image fluid src={movie.movieDetails.posterLink} />
             </Col>
-            <Col xs={12} md={9} className="mt-0">
-              <h4 className="fw-normal text-uppercase fw-medium mb-4">
+            <Col xs={8} className="mt-0">
+              <h3 className="fw-normal text-uppercase fw-medium d-none d-lg-block  mt-0 mb-4">
                 {movie.movieDetails.title}
-              </h4>
+              </h3>
+
+              <h5 className="fw-normal text-uppercase fw-medium d-lg-none d-block mt-0 mb-4">
+                {movie.movieDetails.title}
+              </h5>
               <div className="mb-3">
                 <p className="single-movie-title-section">Cast</p>
                 <p className="single-movie-details-section">
