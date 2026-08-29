@@ -20,6 +20,7 @@ const MovieDetailsPage = () => {
         .catch((err) => console.error(err))
     }
     return
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

@@ -5,11 +5,26 @@ import Buttons from "../Buttons"
 import { useAppDispatch, useAppSelector } from "../../redux/hooks"
 import { Form, Container, Row, Col } from "react-bootstrap"
 import { resetState } from "../../redux/reducers/TicketSlice"
-
+import ResponseModal from "../ResponseModal"
 import { fetchBooking } from "../../fetchs"
-import { useEffect, useState } from "react"
-import { blueCost, greenCost, redCost, RESET } from "../../misc/variables"
+import { useState } from "react"
+import { blueCost, GREEN, greenCost, RED, redCost } from "../../misc/variables"
+import {
+  faCircle,
+  faCircleCheck,
+  faCircleXmark,
+} from "@fortawesome/free-solid-svg-icons"
 const PaymentPage = () => {
+  const [show, setShow] = useState(false)
+  const handleClose = () => setShow(false)
+  const [modalData, setModalData] = useState({
+    title: "",
+    message: "",
+    icon: faCircle,
+    style: "",
+    buttonText: "",
+  })
+
   const screenTimeId = useAppSelector(
     (state) => state.movieState.screeningTimeId,
   )
@@ -34,14 +49,17 @@ const PaymentPage = () => {
   const [coupon, setCoupon] = useState("")
 
   const dispatch = useAppDispatch()
-  useEffect(() => {
-    return () => {
-      dispatch(resetState(RESET))
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
   return (
     <>
+      <ResponseModal
+        message={modalData.message}
+        title={modalData.title}
+        show={show}
+        handleClose={handleClose}
+        icon={modalData.icon}
+        style={modalData.style}
+        buttonText={modalData.buttonText}
+      />
       <TopBarInfoBooking />
       <Container className="mt-4 px-5 px-md-0">
         <Row xs={1} className="text-center">
@@ -97,10 +115,26 @@ const PaymentPage = () => {
                 coupon,
               )
                 .then((data) => {
-                  console.log(data)
+                  setModalData({
+                    title: "Tutto ok!",
+                    message: data.message,
+                    icon: faCircleCheck,
+                    style: GREEN,
+                    buttonText: "Vai alla homepage",
+                  })
+                  setShow(true)
+                  dispatch(resetState())
                 })
-                .catch((err) => console.error(err))
-              dispatch(resetState(RESET))
+                .catch((err) => {
+                  setModalData({
+                    title: "Ops!",
+                    message: "Acquisto non riuscito " + err,
+                    icon: faCircleXmark,
+                    style: RED,
+                    buttonText: "Riprova",
+                  })
+                  setShow(true)
+                })
             }}
           >
             <Buttons string="acquista" />
