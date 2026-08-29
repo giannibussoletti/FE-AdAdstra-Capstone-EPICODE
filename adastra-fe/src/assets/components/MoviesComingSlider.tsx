@@ -21,7 +21,6 @@ const MoviesComingSlider = function ({ string }: PropString) {
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setNewArrayPoster(moviesFilteredByDate)
-    console.log("mi sto aggiornando")
   }, [moviesFilteredByDate])
 
   const [animRules, setAnimRules] = useState({})
