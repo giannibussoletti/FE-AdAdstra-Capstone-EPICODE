@@ -113,6 +113,9 @@ const Navbar = () => {
                     <Dropdown.Item
                       onClick={() => {
                         userMenuMapped(navigate, dispatch, { link, label })
+                        if (label === "Esci") {
+                          window.location.reload()
+                        }
                       }}
                     >
                       {label}
