@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit"
 import type { Booking, DispatchSeat } from "../SlicesTypes"
-import { GREEN, BLUE, RED, RESET } from "../../../misc/variables"
+import { GREEN, BLUE, RED } from "../../../misc/variables"
 
 const initialState: Booking = {
   redSeatsPosition: [],
@@ -90,18 +90,15 @@ export const bookingSlice = createSlice({
       state.totalCost = action.payload
     },
 
-    resetState: (state, action: PayloadAction<string>) => {
-      state.color = action.payload
-      if (state.color === RESET) {
-        state.redSeatsPosition = []
-        state.greenSeatsPosition = []
-        state.blueSeatsPosition = []
-        state.isAdding = false
-        state.color = ""
-        state.maxSeats = []
-        state.rowLetter = ""
-        state.totalCost = 0
-      }
+    resetState: (state) => {
+      state.redSeatsPosition = []
+      state.greenSeatsPosition = []
+      state.blueSeatsPosition = []
+      state.isAdding = false
+      state.color = ""
+      state.maxSeats = []
+      state.rowLetter = ""
+      state.totalCost = 0
     },
   },
 })
