@@ -46,16 +46,17 @@ export type bottomCardInfo = Menus & {
   imgLink: string
 }
 
-export type EmpyFunction = {
+export type EmptyFunction = {
   e: MouseEvent<SVGPathElement>
   seat: SeatGroup
   color: string
   dispatch: AppDispatch
 }
 
-export type FillFunction = EmpyFunction & {
+export type FillFunction = EmptyFunction & {
   fill: string
   maxSeats: SeatGroup[]
+  handleOpen: () => void
 }
 
 export type PropString = {
