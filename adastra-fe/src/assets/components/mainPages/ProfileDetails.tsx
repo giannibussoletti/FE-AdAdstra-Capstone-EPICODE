@@ -1,5 +1,7 @@
+import { useEffect } from "react"
 import { useAppSelector } from "../../redux/hooks"
 import { Container, Row, Col, Image, Button } from "react-bootstrap"
+import { fetchUserMovies } from "../../fetchs"
 const ProfileDetails = () => {
   const name = useAppSelector((state) => state.userState.name)
   const surname = useAppSelector((state) => state.userState.surname)
@@ -8,6 +10,12 @@ const ProfileDetails = () => {
     (state) => state.userState.profilePicLink,
   )
   const birthDate = useAppSelector((state) => state.userState.birthDate)
+
+  useEffect(() => {
+    fetchUserMovies()
+      .then((data) => console.log(data))
+      .catch((err) => console.error(err))
+  }, [])
 
   return (
     <Container className="justify-content-center align-items-center text-center d-flex pt-5">

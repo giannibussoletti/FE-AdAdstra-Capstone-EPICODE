@@ -5,6 +5,7 @@ import type {
   MovieGroup,
   ProfileType,
   SeatGroup,
+  UserMovies,
 } from "../fetchs/fetchTypes"
 
 export const fetchCinemas = async (): Promise<CinemaFetchType[]> => {
@@ -249,6 +250,28 @@ export const verifyAccessToken = async (token: string): Promise<void> => {
       throw new Error(res.statusText || `Errore HTTP ${res.status}`)
     }
     return
+  } catch (err) {
+    console.error(err)
+    throw err
+  }
+}
+
+export const fetchUserMovies = async (): Promise<UserMovies[]> => {
+  try {
+    const isLogged = localStorage.getItem("accessToken")
+    const res = await fetch("http://localhost:5555/tickets/user-movies", {
+      headers: {
+        Authorization: "Bearer " + isLogged,
+      },
+    })
+
+    if (!res.ok) {
+      console.log(res)
+      throw new Error(res.statusText || `Errore HTTP ${res.status}`)
+    }
+    const data: UserMovies[] = await res.json()
+
+    return data
   } catch (err) {
     console.error(err)
     throw err
