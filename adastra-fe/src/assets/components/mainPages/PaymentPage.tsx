@@ -1,7 +1,6 @@
 import TicketsCount from "../TicketsCount"
 import TopBarInfoBooking from "../TopBarInfoBooking"
 import MainTitles from "../MainTitles"
-import Buttons from "../Buttons"
 import { useAppDispatch, useAppSelector } from "../../redux/hooks"
 import {
   Form,
@@ -22,9 +21,7 @@ import {
   faCircle,
   faCircleCheck,
   faCircleXmark,
-  faQuestion,
 } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const PaymentPage = () => {
   const requiredPopover = (
