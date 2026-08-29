@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useAppSelector, useAppDispatch } from "../redux/hooks"
 import { useNavigate } from "react-router"
 import { resetState } from "../redux/reducers/TicketSlice"
-import { RESET } from "../misc/variables"
 import { calculateMovieTime } from "../misc/functions"
 const TopBarInfoBooking = () => {
   const navigate = useNavigate()
@@ -38,7 +37,7 @@ const TopBarInfoBooking = () => {
             <Button
               onClick={() => {
                 navigate("/dettagli/" + movieID)
-                dispatch(resetState(RESET))
+                dispatch(resetState())
               }}
               className="bg-buttons border-0 text-uppercase"
             >
