@@ -141,6 +141,7 @@ const PaymentPage = () => {
                 onClick={() => {
                   if (guestEmail) {
                     setShowConfirmation(true)
+                    setShowAlert(false)
                   } else {
                     setShowAlert(true)
                   }
