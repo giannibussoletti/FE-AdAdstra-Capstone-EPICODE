@@ -138,7 +138,7 @@ export const fetchBooking = async (
 export const fetchRegistration = async (
   name: string,
   surname: string,
-  birthDate: Date | null,
+  birthDate: string,
   email: string,
   password: string,
 ): Promise<BookingType> => {
