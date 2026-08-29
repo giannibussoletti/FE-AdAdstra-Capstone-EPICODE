@@ -28,10 +28,15 @@ const MovieDetailsPage = () => {
       <Row className="mt-4 px-5 p-lg-0">
         {details ? (
           <>
-            <Col xs="auto" lg={4}>
+            <Col xs="auto" lg={4} xxl={cinemaId && findMovie ? 3 : 4}>
               <Image fluid src={details.posterLink} />
             </Col>
-            <Col xs={12} lg={8} className="mt-3 mt-md-0">
+            <Col
+              xs={12}
+              lg={8}
+              xxl={cinemaId && findMovie ? 5 : 8}
+              className="mt-3 mt-md-0"
+            >
               <h2 className="fw-normal text-uppercase fw-medium mb-4">
                 {details.title}
               </h2>
@@ -63,8 +68,11 @@ const MovieDetailsPage = () => {
                 <p>{details.plot}</p>
               </div>
             </Col>
-
-            {cinemaId && findMovie && <MovieTimesTabs movie={findMovie!} />}
+            {cinemaId && findMovie && (
+              <Col xxl={4}>
+                <MovieTimesTabs movie={findMovie} />
+              </Col>
+            )}
           </>
         ) : (
           <Spinner animation="grow" variant="buttons" />

@@ -8,11 +8,11 @@ const MovieTimesTabs = ({ movie }: { movie: MovieGroup }) => {
   const dispatch = useAppDispatch()
 
   return (
-    <Container>
+    <Container fluid className="p-0">
       <Tabs
         defaultActiveKey={0}
         id="uncontrolled-tab-example"
-        className="mt-4"
+        className="mt-4 mt-xxl-0"
         onSelect={(key) => {
           if (key) {
             dispatch(dateChoice({ date: key }))
@@ -25,7 +25,7 @@ const MovieTimesTabs = ({ movie }: { movie: MovieGroup }) => {
             eventKey={i}
             title={new Date(date).toLocaleDateString()}
           >
-            <Row xs={1} md={4} lg={5} xxl={6} className="mt-4">
+            <Row xs={1} md={4} lg={5} xxl={2} className="mt-4">
               {screenTime.map((time) => {
                 return (
                   <Col

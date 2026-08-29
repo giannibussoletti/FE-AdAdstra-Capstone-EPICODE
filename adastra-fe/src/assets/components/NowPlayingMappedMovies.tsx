@@ -26,11 +26,11 @@ const NowPlayingMappedMovies = () => {
     <div className="mt-5">
       {movies.map((movie) => {
         return (
-          <Row key={movie.movieDetails.id} className="mt-4">
-            <Col xs={4}>
+          <Row key={movie.movieDetails.id} className="mt-4 mb-xxl-5">
+            <Col xs={4} xxl={3}>
               <Image fluid src={movie.movieDetails.posterLink} />
             </Col>
-            <Col xs={8} className="mt-0">
+            <Col xs={8} xxl={5} className="mt-0">
               <h3 className="fw-normal text-uppercase fw-medium d-none d-lg-block  mt-0 mb-4">
                 {movie.movieDetails.title}
               </h3>
@@ -62,7 +62,9 @@ const NowPlayingMappedMovies = () => {
                 <p>{movie.movieDetails.plot}</p>
               </div>
             </Col>
-            <MovieTimesTabs movie={movie} />
+            <Col xxl={4}>
+              <MovieTimesTabs movie={movie} />
+            </Col>
           </Row>
         )
       })}
