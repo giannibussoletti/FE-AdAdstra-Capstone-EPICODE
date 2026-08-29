@@ -8,7 +8,7 @@ import {
 } from "../misc/variables"
 import { manageSeat } from "../redux/reducers/TicketSlice"
 import type {
-  EmpyFunction,
+  EmptyFunction,
   FillFunction,
   Menus,
   PropString,
@@ -25,6 +25,7 @@ export const fillSeat = ({
   color,
   maxSeats,
   dispatch,
+  handleOpen,
 }: FillFunction) => {
   if (e.target instanceof SVGPathElement) {
     const fillColor =
@@ -41,12 +42,12 @@ export const fillSeat = ({
       target.style.fill = fillColor
       dispatch(manageSeat({ seat, color, isAdding: true }))
     } else if (!isFilled && maxSeats.length === 10) {
-      window.alert("è possibile acquistare un massimo di 10 posti")
+      handleOpen()
     }
   }
 }
 
-export const emptySeat = ({ e, seat, color, dispatch }: EmpyFunction) => {
+export const emptySeat = ({ e, seat, color, dispatch }: EmptyFunction) => {
   if (e.target instanceof SVGPathElement) {
     e.target.style.fill = ""
     dispatch(manageSeat({ seat, color, isAdding: false }))

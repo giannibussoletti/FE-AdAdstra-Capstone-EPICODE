@@ -240,7 +240,7 @@ body,
   border-bottom-right-radius: var(--radius);
 }
 .seat-red {
-  background-color: #b83c2d;
+  background-color: rgb(203, 0, 0);
 }
 .seat-blue {
   background-color: #324ba6;
@@ -331,6 +331,13 @@ body,
 .cls-8 {
   fill: #3a96d1;
   stroke: #3a96d1;
+}
+
+.letterAndNumbers {
+  font-family: Montserrat-Medium, Montserrat;
+  font-size: 25.5px;
+  font-variation-settings: "wght" 500;
+  font-weight: 500;
 }
 
 //Dropdown user menu Desktop
