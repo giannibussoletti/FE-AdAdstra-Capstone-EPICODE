@@ -1,4 +1,4 @@
-import { Row, Col, Image, Container } from "react-bootstrap"
+import { Row, Col, Image } from "react-bootstrap"
 import MovieTimesTabs from "./MovieTimesTabs"
 
 import { useEffect, useState } from "react"
@@ -23,7 +23,7 @@ const NowPlayingMappedMovies = () => {
   }, [cinemaId])
 
   return (
-    <Container className="mt-5">
+    <div className="mt-5">
       {movies.map((movie) => {
         return (
           <Row key={movie.movieDetails.id} className="mt-4">
@@ -66,7 +66,7 @@ const NowPlayingMappedMovies = () => {
           </Row>
         )
       })}
-    </Container>
+    </div>
   )
 }
 

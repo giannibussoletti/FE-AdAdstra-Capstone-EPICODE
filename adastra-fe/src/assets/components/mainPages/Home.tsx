@@ -40,7 +40,7 @@ const Home = () => {
   return (
     <>
       <HomeSlider />
-      <Container>
+      <Container className="px-5 px-sm-0">
         {cinema == "" ? (
           <Row>
             <Col className="p-0 mt-4 mb-3 pb-4 mb-lg-4">
@@ -52,7 +52,7 @@ const Home = () => {
           <>
             <Row className="mt-4">
               <Col className="mt-3 pb-4">
-                <MoviesComingSlider string="prevendite aperte" />
+                <MoviesComingSlider string="Coming Soon" />
               </Col>
               <hr />
             </Row>
