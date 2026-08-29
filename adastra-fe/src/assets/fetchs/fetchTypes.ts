@@ -56,3 +56,9 @@ export type ProfileType = {
   username: string
   accessToken: string
 }
+
+export type UserMovies = {
+  title: string
+  releaseDate: string
+  movieId: string
+}
