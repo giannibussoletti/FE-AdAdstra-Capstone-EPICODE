@@ -111,6 +111,7 @@ const Navbar = () => {
                   const label = item.label
                   return (
                     <Dropdown.Item
+                      key={link + label}
                       onClick={() => {
                         userMenuMapped(navigate, dispatch, { link, label })
                         if (label === "Esci") {
