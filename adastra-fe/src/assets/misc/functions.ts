@@ -76,6 +76,7 @@ export const handleLogout = (
 ) => {
   dispatch(resetUserState())
   navigate("/")
+  window.location.reload()
 }
 
 export const userMenuMapped = (

@@ -2,11 +2,11 @@ import MainTitles from "../MainTitles"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircleInfo, faTicket } from "@fortawesome/free-solid-svg-icons"
 import { Container, Row, Col, Image } from "react-bootstrap"
-
+import { useNavigate } from "react-router"
 import { useAppSelector } from "../../redux/hooks"
 
 const ProfilePage = () => {
-  // const birthDate = useAppSelector((state) => state.userState.birthDate)
+  const navigate = useNavigate()
   const email = useAppSelector((state) => state.userState.email)
   const name = useAppSelector((state) => state.userState.name)
   const surname = useAppSelector((state) => state.userState.surname)
@@ -43,7 +43,7 @@ const ProfilePage = () => {
           </Row>
           <hr />
           <Row className="py-1">
-            <Col>
+            <Col onClick={() => navigate("/dettagli-profilo")}>
               <FontAwesomeIcon
                 icon={faCircleInfo}
                 style={{ color: "rgb(255, 255, 255)" }}
