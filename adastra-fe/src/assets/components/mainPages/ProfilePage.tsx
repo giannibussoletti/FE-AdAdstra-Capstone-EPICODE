@@ -31,7 +31,7 @@ const ProfilePage = () => {
           <Row className="align-items-center">
             <Col xs={"auto"}>
               <Image
-                fluid
+                className="border border-5"
                 src={profilePicLink}
                 style={{
                   maxHeight: "100px",

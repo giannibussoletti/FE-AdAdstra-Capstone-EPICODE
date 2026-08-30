@@ -8,10 +8,19 @@ import {
   Button,
   Form,
   ListGroup,
+  Modal,
 } from "react-bootstrap"
-import { fetchUserMovies } from "../../fetchs"
+import { fetchUpdatePsw, fetchUserMovies } from "../../fetchs"
 import type { UserMovies } from "../../fetchs/fetchTypes"
 import { useNavigate } from "react-router"
+import ResponseModal from "../ResponseModal"
+import {
+  faCircle,
+  faCircleCheck,
+  faCircleXmark,
+} from "@fortawesome/free-solid-svg-icons"
+import { BLUE, RED } from "../../misc/variables"
+import PasswordCheck from "../PasswordCheck"
 const ProfileDetails = () => {
   const navigate = useNavigate()
   const name = useAppSelector((state) => state.userState.name)
@@ -21,7 +30,23 @@ const ProfileDetails = () => {
     (state) => state.userState.profilePicLink,
   )
   const birthDate = useAppSelector((state) => state.userState.birthDate)
+  const [show, setShow] = useState(false)
+  const handleClose = () => setShow(false)
+  const [modalData, setModalData] = useState({
+    title: "",
+    message: "",
+    icon: faCircle,
+    style: "",
+    buttonText: "",
+  })
+
   const [userMovies, setUserMovies] = useState<UserMovies[]>([])
+  const [formIsDisabled, setFormIsDisabled] = useState(true)
+  const [oldPsw, setOldPsw] = useState<string>("")
+  const [newPsw, setNewPsw] = useState<string>("")
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [newMail, setNewMail] = useState<string>("")
+  const [showConfirmation, setShowConfirmation] = useState(false)
 
   useEffect(() => {
     fetchUserMovies()
@@ -29,13 +54,25 @@ const ProfileDetails = () => {
       .catch((err) => console.error(err))
   }, [])
 
+  useEffect(() => {}, [])
+
   return (
     <Container className="justify-content-center align-items-center d-flex pt-5">
-      <Row xs={1} md={2}>
+      <ResponseModal
+        message={modalData.message}
+        title={modalData.title}
+        show={show}
+        handleClose={handleClose}
+        icon={modalData.icon}
+        style={modalData.style}
+        buttonText={modalData.buttonText}
+      />
+      <Row xs={1} lg={2}>
         <Col>
-          <Row className="justify-content-center align-items-center">
+          <Row xs={1} className="justify-content-center align-items-center">
             <Col className="text-center">
               <Image
+                className="border border-5"
                 style={{
                   minHeight: "150px",
                   maxHeight: "150px",
@@ -57,43 +94,70 @@ const ProfileDetails = () => {
                 <Form.Label className="mb-0">Email:</Form.Label>
                 <div className="d-flex">
                   <Form.Control
+                    onChange={(e) => setNewMail(e.target.value)}
                     style={{ width: "auto" }}
                     size="sm"
-                    disabled
-                    plaintext
+                    disabled={formIsDisabled}
+                    plaintext={formIsDisabled}
                     defaultValue={email}
                     className="text-light"
                   />
-                  <Button
-                    size="sm"
-                    variant="buttons"
-                    className="rounded-pill fw-semibold text-uppercase py-2 ms-auto"
-                  >
-                    <span className="mx-2">Modifica</span>
-                  </Button>
+                  {formIsDisabled ? (
+                    <Button
+                      onClick={() => setFormIsDisabled(!formIsDisabled)}
+                      size="sm"
+                      variant="buttons"
+                      className="rounded-pill fw-semibold text-uppercase py-2 ms-auto"
+                    >
+                      <span className="mx-2">Modifica</span>
+                    </Button>
+                  ) : (
+                    <Button
+                      onClick={() => setFormIsDisabled(!formIsDisabled)}
+                      size="sm"
+                      variant="buttons"
+                      className="rounded-pill fw-semibold text-uppercase py-2 ms-auto"
+                    >
+                      <span className="mx-2">Aggiorna</span>
+                    </Button>
+                  )}
                 </div>
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formPlaintextEmail">
                 <Form.Label className="mb-0">Password:</Form.Label>
-                <div className="d-flex">
-                  <Form.Control
-                    style={{ width: "auto" }}
-                    size="sm"
-                    disabled
-                    plaintext
-                    type="password"
-                    className="text-light"
-                    defaultValue={String.fromCharCode(9679).repeat(15)}
-                  />
-                  <Button
-                    size="sm"
-                    variant="buttons"
-                    className="rounded-pill fw-semibold text-uppercase py-2 ms-auto"
-                  >
-                    <span className="mx-2">Modifica</span>
-                  </Button>
-                </div>
+                <Row xs={2}>
+                  <Col>
+                    <Form.Control
+                      onChange={(e) => setOldPsw(e.target.value)}
+                      style={{ width: "auto" }}
+                      size="sm"
+                      type="password"
+                      className="text-light mb-3"
+                      placeholder="Vecchia password"
+                    />
+                    <Form.Control
+                      className="text-light"
+                      onChange={(e) => setNewPsw(e.target.value)}
+                      style={{ width: "auto" }}
+                      size="sm"
+                      type="password"
+                      placeholder="Nuova password"
+                    />
+                  </Col>
+
+                  <Col className="text-end">
+                    <Button
+                      onClick={() => setShowConfirmation(true)}
+                      size="sm"
+                      variant="buttons"
+                      className="rounded-pill fw-semibold text-uppercase py-2"
+                    >
+                      <span className="mx-2">Aggiorna</span>
+                    </Button>
+                  </Col>
+                </Row>
+                {newPsw && <PasswordCheck checking={newPsw} />}
               </Form.Group>
             </Col>
           </Row>
@@ -123,6 +187,54 @@ const ProfileDetails = () => {
           <Form.Label>Disabled file input example</Form.Label>
           <Form.Control type="file" />
         </Col> */}
+      {/* */}
+      {/* */}
+      {/* */}
+      <Modal
+        show={showConfirmation}
+        onHide={() => setShowConfirmation(false)}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header>
+          <Modal.Title as={"h5"}></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Confermi di voler cambiare la password?</Modal.Body>
+        <Modal.Footer>
+          <Button
+            variant="buttons"
+            onClick={() => {
+              setShowConfirmation(false)
+              fetchUpdatePsw(oldPsw, newPsw)
+                .then((data) => {
+                  setModalData({
+                    title: "Tutto ok!",
+                    message: data.message,
+                    icon: faCircleCheck,
+                    style: BLUE,
+                    buttonText: "torna ai dettagli",
+                  })
+                  setShow(true)
+                })
+                .catch(() => {
+                  setModalData({
+                    title: "Ops!",
+                    message: "C'è stato un errore nell'aggiornamento",
+                    icon: faCircleXmark,
+                    style: RED,
+                    buttonText: "Riprova",
+                  })
+                  setShow(true)
+                })
+            }}
+          >
+            Confermo
+          </Button>
+          <Button variant="buttons" onClick={() => setShowConfirmation(false)}>
+            Ci ho ripensato
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Container>
   )
 }

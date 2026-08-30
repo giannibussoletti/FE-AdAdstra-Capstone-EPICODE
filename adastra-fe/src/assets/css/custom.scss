@@ -16,8 +16,8 @@ $input-focus-border-color: $input-color;
 $input-focus-color: $input-color;
 $input-border-width: 0.1em;
 
+$input-placeholder-color: $input-color;
 $input-disabled-color: grey;
-$input-disabled-bg: var(--#{$prefix}secondary-bg);
 $input-disabled-border-color: $input-color;
 
 // Table

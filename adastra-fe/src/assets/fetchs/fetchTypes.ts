@@ -62,3 +62,8 @@ export type UserMovies = {
   releaseDate: string
   movieId: string
 }
+
+export type UpdateResponse = {
+  message: string
+  dateTime: string
+}

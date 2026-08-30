@@ -5,6 +5,7 @@ import type {
   MovieGroup,
   ProfileType,
   SeatGroup,
+  UpdateResponse,
   UserMovies,
 } from "../fetchs/fetchTypes"
 
@@ -97,9 +98,6 @@ export const fetchBookedSeats = async (
   }
 }
 
-const publicBooking = "http://localhost:5555/public/bookings"
-const noPublic = "http://localhost:5555/bookings"
-
 export const fetchBooking = async (
   screenTimeId: string,
   maxSeats: SeatGroup[],
@@ -107,6 +105,8 @@ export const fetchBooking = async (
   guestEmail: string,
   coupon: string,
 ): Promise<BookingType> => {
+  const publicBooking = "http://localhost:5555/public/bookings"
+  const noPublic = "http://localhost:5555/bookings"
   try {
     const isLogged = localStorage.getItem("accessToken")
     const res = await fetch(isLogged ? noPublic : publicBooking, {
@@ -271,6 +271,37 @@ export const fetchUserMovies = async (): Promise<UserMovies[]> => {
     }
     const data: UserMovies[] = await res.json()
 
+    return data
+  } catch (err) {
+    console.error(err)
+    throw err
+  }
+}
+
+export const fetchUpdatePsw = async (
+  oldPassword: string,
+  newPassword: string,
+): Promise<UpdateResponse> => {
+  try {
+    const isLogged = localStorage.getItem("accessToken")
+    console.log(isLogged)
+    const res = await fetch("http://localhost:5555/user/profile/password", {
+      method: "PATCH",
+      headers: {
+        Authorization: "Bearer " + isLogged,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        oldPassword,
+        newPassword,
+      }),
+    })
+    console.log(res)
+    if (!res.ok) {
+      console.log(res)
+      throw new Error(res.statusText || `Errore HTTP ${res.status}`)
+    }
+    const data: UpdateResponse = await res.json()
     return data
   } catch (err) {
     console.error(err)
