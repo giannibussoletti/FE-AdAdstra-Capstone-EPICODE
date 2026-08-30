@@ -16,6 +16,10 @@ $input-focus-border-color: $input-color;
 $input-focus-color: $input-color;
 $input-border-width: 0.1em;
 
+$input-disabled-color: grey;
+$input-disabled-bg: var(--#{$prefix}secondary-bg);
+$input-disabled-border-color: $input-color;
+
 // Table
 $table-color: $input-color;
 $table-bg: transparent;
@@ -63,8 +67,21 @@ $dropdown-link-active-color: $dropdown-color;
 //Modal
 $modal-content-color: $input-color;
 $modal-content-bg: $input-bg;
-
 $modal-backdrop-opacity: 0.7;
+
+//List Group
+$list-group-color: $input-color;
+$list-group-bg: $card-bg;
+
+$list-group-hover-bg: #023f87;
+$list-group-active-color: null;
+$list-group-active-bg: null;
+
+$list-group-action-color: $input-color;
+$list-group-action-hover-color: $input-color;
+
+$list-group-action-active-color: null;
+$list-group-action-active-bg: null;
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "bootstrap/scss/bootstrap.scss";
