@@ -11,7 +11,9 @@ import {
 } from "react-bootstrap"
 import { fetchUserMovies } from "../../fetchs"
 import type { UserMovies } from "../../fetchs/fetchTypes"
+import { useNavigate } from "react-router"
 const ProfileDetails = () => {
+  const navigate = useNavigate()
   const name = useAppSelector((state) => state.userState.name)
   const surname = useAppSelector((state) => state.userState.surname)
   const email = useAppSelector((state) => state.userState.email)
@@ -104,6 +106,7 @@ const ProfileDetails = () => {
                 return (
                   <ListGroup.Item
                     action
+                    onClick={() => navigate("/dettagli/" + movie.movieId)}
                     className="d-flex align-items-center justify-content-between"
                   >
                     <span>{movie.title}</span>
