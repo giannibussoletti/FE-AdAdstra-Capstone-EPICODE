@@ -110,13 +110,23 @@ const RegistrationPage = () => {
                   <Form.Label>data di nascita</Form.Label>
                   <Form.Control
                     required
-                    onChange={(e) =>
-                      setBirthDate(
-                        (
-                          e.target as HTMLInputElement
-                        ).valueAsDate!.toLocaleDateString(),
-                      )
-                    }
+                    onChange={(e) => {
+                      const date = (e.target as HTMLInputElement).valueAsDate
+
+                      if (date) {
+                        const year = date.getFullYear()
+                        const month =
+                          date.getMonth() + 1 < 10
+                            ? `0${date.getMonth() + 1}`
+                            : date.getMonth() + 1
+                        const day =
+                          date.getDate() < 10
+                            ? `0${date.getDate()}`
+                            : date.getDate()
+
+                        setBirthDate(`${day}/${month}/${year}`)
+                      }
+                    }}
                     size="sm"
                     type="date"
                   />

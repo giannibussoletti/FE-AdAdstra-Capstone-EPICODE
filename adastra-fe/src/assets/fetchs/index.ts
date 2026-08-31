@@ -11,7 +11,7 @@ import type {
 
 export const fetchCinemas = async (): Promise<CinemaFetchType[]> => {
   try {
-    const res = await fetch("http://localhost:5555/public/cinemas")
+    const res = await fetch("http://192.168.178.81:5555/public/cinemas")
 
     if (!res.ok) {
       console.log(res)
@@ -147,7 +147,7 @@ export const fetchRegistration = async (
   password: string,
 ): Promise<BookingType> => {
   try {
-    const res = await fetch("http://localhost:5555/auth/registration", {
+    const res = await fetch("http://192.168.178.81:5555/auth/registration", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
