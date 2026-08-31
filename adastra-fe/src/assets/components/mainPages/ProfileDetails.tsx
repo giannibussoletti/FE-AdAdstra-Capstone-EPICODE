@@ -17,6 +17,7 @@ import UpdateProfileResponseModal from "../UpdateProfileResponseModal"
 import { faCircle } from "@fortawesome/free-solid-svg-icons"
 import PasswordCheck from "../PasswordCheck"
 import { MAIL, PASSWORD } from "../../misc/variables"
+import UploadPicModal from "../UploadPicModal"
 
 const ProfileDetails = () => {
   const navigate = useNavigate()
@@ -36,15 +37,15 @@ const ProfileDetails = () => {
     style: "",
     buttonText: "",
   })
+  const [modalPicShow, setModalPicShow] = useState(false)
+  const handleCloseModalPic = () => setModalPicShow(false)
 
   const [userMovies, setUserMovies] = useState<UserMovies[]>([])
-  const [formIsDisabled, setFormIsDisabled] = useState(true)
   const [oldPsw, setOldPsw] = useState<string>("")
   const [newPsw, setNewPsw] = useState<string>("")
   const [newMail, setNewMail] = useState<string>("")
   const [showConfirmation, setShowConfirmation] = useState(false)
   const [mailOrPsw, setMailOrPsw] = useState("")
-
   const handleCloseShowConfirmation = () => setShowConfirmation(false)
 
   useEffect(() => {
@@ -55,30 +56,21 @@ const ProfileDetails = () => {
 
   return (
     <Container className="justify-content-center align-items-center d-flex pt-5">
-      <ResponseModal
-        message={modalData.message}
-        title={modalData.title}
-        show={show}
-        handleClose={handleClose}
-        icon={modalData.icon}
-        style={modalData.style}
-        buttonText={modalData.buttonText}
-      />
       <Row xs={1} lg={2}>
         <Col>
           <Row xs={1} className="justify-content-center align-items-center">
             <Col className="text-center">
-              <Image
-                className="border border-5"
-                style={{
-                  minHeight: "150px",
-                  maxHeight: "150px",
-                  minWidth: "150px",
-                  maxWidth: "150px",
-                }}
-                roundedCircle
-                src={profilePicLink}
-              />
+              <div
+                className="image-container border border-5 rounded-circle cursor-pointer"
+                onClick={() => setModalPicShow(true)}
+              >
+                <Image
+                  className="pic-dimension"
+                  roundedCircle
+                  src={profilePicLink}
+                />
+                <span className="image-text">Modifica</span>
+              </div>
               <h3 className="text-capitalize mt-3">
                 {name} {surname}
               </h3>
@@ -94,38 +86,26 @@ const ProfileDetails = () => {
                     onChange={(e) => setNewMail(e.target.value)}
                     style={{ width: "auto" }}
                     size="sm"
-                    disabled={formIsDisabled}
-                    plaintext={formIsDisabled}
+                    type="email"
                     defaultValue={email}
                     className="text-light"
                   />
-                  {formIsDisabled ? (
-                    <Button
-                      onClick={() => setFormIsDisabled(!formIsDisabled)}
-                      size="sm"
-                      variant="buttons"
-                      className="rounded-pill fw-semibold text-uppercase py-2 ms-auto"
-                    >
-                      <span className="mx-2">Modifica</span>
-                    </Button>
-                  ) : (
-                    <Button
-                      onClick={() => {
-                        setFormIsDisabled(!formIsDisabled)
-                        setShowConfirmation(true)
-                        setMailOrPsw(MAIL)
-                      }}
-                      size="sm"
-                      variant="buttons"
-                      className="rounded-pill fw-semibold text-uppercase py-2 ms-auto"
-                    >
-                      <span className="mx-2">Aggiorna</span>
-                    </Button>
-                  )}
+
+                  <Button
+                    onClick={() => {
+                      setShowConfirmation(true)
+                      setMailOrPsw(MAIL)
+                    }}
+                    size="sm"
+                    variant="buttons"
+                    className="rounded-pill fw-semibold text-uppercase py-2 ms-auto"
+                  >
+                    <span className="mx-2">Aggiorna</span>
+                  </Button>
                 </div>
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formPlaintextEmail">
+              <Form.Group className="mb-3">
                 <Form.Label className="mb-0">Password:</Form.Label>
                 <Row xs={2}>
                   <Col>
@@ -173,6 +153,7 @@ const ProfileDetails = () => {
               {userMovies.map((movie) => {
                 return (
                   <ListGroup.Item
+                    key={movie.movieId}
                     action
                     onClick={() => navigate("/dettagli/" + movie.movieId)}
                     className="d-flex align-items-center justify-content-between"
@@ -187,13 +168,8 @@ const ProfileDetails = () => {
           )}
         </Col>
       </Row>
-      {/* <Col>
-          <Form.Label>Disabled file input example</Form.Label>
-          <Form.Control type="file" />
-        </Col> */}
-      {/* */}
-      {/* */}
-      {/* */}
+
+      {/* Modal*/}
       <UpdateProfileResponseModal
         newMail={newMail}
         showConfirmation={showConfirmation}
@@ -203,6 +179,19 @@ const ProfileDetails = () => {
         newPsw={newPsw}
         setModalData={setModalData}
         setShow={setShow}
+      />
+      <ResponseModal
+        message={modalData.message}
+        title={modalData.title}
+        show={show}
+        handleClose={handleClose}
+        icon={modalData.icon}
+        style={modalData.style}
+        buttonText={modalData.buttonText}
+      />
+      <UploadPicModal
+        modalPicShow={modalPicShow}
+        handleCloseModalPic={handleCloseModalPic}
       />
     </Container>
   )

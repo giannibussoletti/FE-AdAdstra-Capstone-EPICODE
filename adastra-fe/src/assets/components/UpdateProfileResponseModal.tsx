@@ -21,7 +21,7 @@ const UpdateProfileResponseModal = ({
       keyboard={false}
     >
       <Modal.Header>
-        <Modal.Title as={"h5"}></Modal.Title>
+        <Modal.Title as={"h5"}>Update {mailOrPsw}?</Modal.Title>
       </Modal.Header>
       <Modal.Body>Confermi di voler cambiare la {mailOrPsw}?</Modal.Body>
       <Modal.Footer>

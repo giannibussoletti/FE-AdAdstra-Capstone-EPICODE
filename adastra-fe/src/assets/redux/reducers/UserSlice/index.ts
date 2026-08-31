@@ -33,8 +33,11 @@ export const userSlice = createSlice({
       state.username = ""
       state.accessToken = ""
     },
+    setProPicLink: (state, action: PayloadAction<string>) => {
+      state.profilePicLink = action.payload
+    },
   },
 })
 
-export const { setUserState, resetUserState } = userSlice.actions
+export const { setUserState, resetUserState, setProPicLink } = userSlice.actions
 export default userSlice.reducer
