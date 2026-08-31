@@ -47,6 +47,7 @@ const PaymentPage = () => {
   const [showAlert, setShowAlert] = useState(false)
   const [showConfirmation, setShowConfirmation] = useState(false)
 
+  const emailUser = useAppSelector((state) => state.userState.email)
   const screenTimeId = useAppSelector(
     (state) => state.movieState.screeningTimeId,
   )
@@ -111,7 +112,7 @@ const PaymentPage = () => {
             <Form.Control
               ref={target}
               type="email"
-              placeholder="name@example.com"
+              defaultValue={emailUser ? emailUser : ""}
               onChange={(e) => setEmail(e.target.value)}
             />
           </Col>
@@ -139,7 +140,7 @@ const PaymentPage = () => {
             <Col className="text-center mt-4">
               <Button
                 onClick={() => {
-                  if (guestEmail) {
+                  if (guestEmail || emailUser) {
                     setShowConfirmation(true)
                     setShowAlert(false)
                   } else {

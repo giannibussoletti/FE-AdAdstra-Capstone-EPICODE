@@ -30,13 +30,16 @@ export const fetchScreenTimes = async (
   cinemaId: string,
 ): Promise<MovieGroup[]> => {
   try {
-    const res = await fetch("http://localhost:5555/public/screening-times", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+    const res = await fetch(
+      "http://192.168.178.81:5555/public/screening-times",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ cinemaId }),
       },
-      body: JSON.stringify({ cinemaId }),
-    })
+    )
 
     if (!res.ok) {
       console.log(res)
@@ -54,7 +57,7 @@ export const fetchSeats = async (
   screenId: string,
 ): Promise<SeatGroup[]> => {
   try {
-    const res = await fetch("http://localhost:5555/public/seats", {
+    const res = await fetch("http://192.168.178.81:5555/public/seats", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -78,7 +81,7 @@ export const fetchBookedSeats = async (
   screeningTimeId: string,
 ): Promise<SeatGroup[]> => {
   try {
-    const res = await fetch("http://localhost:5555/public/tickets", {
+    const res = await fetch("http://192.168.178.81:5555/public/tickets", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -105,8 +108,8 @@ export const fetchBooking = async (
   guestEmail: string,
   coupon: string,
 ): Promise<BookingType> => {
-  const publicBooking = "http://localhost:5555/public/bookings"
-  const noPublic = "http://localhost:5555/bookings"
+  const publicBooking = "http://192.168.178.81:5555/public/bookings"
+  const noPublic = "http://192.168.178.81:5555/bookings"
   try {
     const isLogged = localStorage.getItem("accessToken")
     const res = await fetch(isLogged ? noPublic : publicBooking, {
@@ -176,7 +179,7 @@ export const fetchLogin = async (
   password: string,
 ): Promise<ProfileType> => {
   try {
-    const res = await fetch("http://localhost:5555/auth/login", {
+    const res = await fetch("http://192.168.178.81:5555/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -201,7 +204,7 @@ export const fetchLogin = async (
 
 export const fetchMovies = async (): Promise<MovieDetails[]> => {
   try {
-    const res = await fetch("http://localhost:5555/public/movies")
+    const res = await fetch("http://192.168.178.81:5555/public/movies")
 
     if (!res.ok) {
       console.log(res)
@@ -219,7 +222,9 @@ export const fetchMovieDetails = async (
   movieId: string,
 ): Promise<MovieDetails> => {
   try {
-    const res = await fetch("http://localhost:5555/public/movies/" + movieId)
+    const res = await fetch(
+      "http://192.168.178.81:5555/public/movies/" + movieId,
+    )
 
     if (!res.ok) {
       console.log(res)
@@ -235,7 +240,7 @@ export const fetchMovieDetails = async (
 
 export const verifyAccessToken = async (token: string): Promise<void> => {
   try {
-    const res = await fetch("http://localhost:5555/auth/token", {
+    const res = await fetch("http://192.168.178.81:5555/auth/token", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -259,7 +264,7 @@ export const verifyAccessToken = async (token: string): Promise<void> => {
 export const fetchUserMovies = async (): Promise<UserMovies[]> => {
   try {
     const isLogged = localStorage.getItem("accessToken")
-    const res = await fetch("http://localhost:5555/tickets/user-movies", {
+    const res = await fetch("http://192.168.178.81:5555/tickets/user-movies", {
       headers: {
         Authorization: "Bearer " + isLogged,
       },
@@ -285,17 +290,20 @@ export const fetchUpdatePsw = async (
   try {
     const isLogged = localStorage.getItem("accessToken")
     console.log(isLogged)
-    const res = await fetch("http://localhost:5555/user/profile/password", {
-      method: "PATCH",
-      headers: {
-        Authorization: "Bearer " + isLogged,
-        "Content-Type": "application/json",
+    const res = await fetch(
+      "http://192.168.178.81:5555/user/profile/password",
+      {
+        method: "PATCH",
+        headers: {
+          Authorization: "Bearer " + isLogged,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          oldPassword,
+          newPassword,
+        }),
       },
-      body: JSON.stringify({
-        oldPassword,
-        newPassword,
-      }),
-    })
+    )
     console.log(res)
     if (!res.ok) {
       console.log(res)
@@ -315,16 +323,19 @@ export const fetchUpdateMail = async (
   try {
     const isLogged = localStorage.getItem("accessToken")
     console.log(isLogged)
-    const res = await fetch("http://localhost:5555/user/profile/new-email", {
-      method: "PATCH",
-      headers: {
-        Authorization: "Bearer " + isLogged,
-        "Content-Type": "application/json",
+    const res = await fetch(
+      "http://192.168.178.81:5555/user/profile/new-email",
+      {
+        method: "PATCH",
+        headers: {
+          Authorization: "Bearer " + isLogged,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          newEmail,
+        }),
       },
-      body: JSON.stringify({
-        newEmail,
-      }),
-    })
+    )
     console.log(res)
     if (!res.ok) {
       console.log(res)
@@ -347,7 +358,7 @@ export const fetchUpdateProPic = async (
 
     const isLogged = localStorage.getItem("accessToken")
     console.log(isLogged)
-    const res = await fetch("http://localhost:5555/user/profile/avatar", {
+    const res = await fetch("http://192.168.178.81:5555/user/profile/avatar", {
       method: "POST",
       headers: {
         Authorization: "Bearer " + isLogged,

@@ -51,7 +51,7 @@ const LoginPage = () => {
   )
 
   return (
-    <Container>
+    <Container className="px-3">
       <ResponseModal
         message={modalData.message}
         title={modalData.title}
@@ -66,9 +66,7 @@ const LoginPage = () => {
           <Card className=" border-2 border-white">
             <Card.Img variant="top" src="https://placehold.co/400x200" />
             <Card.Body className="px-4">
-              <Card.Title className="mt-2 mb-3">
-                Registrazione utente
-              </Card.Title>
+              <Card.Title className="mt-2 mb-3">Login utente</Card.Title>
 
               <Form>
                 <Form.Group className="mb-3">
