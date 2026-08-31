@@ -1,5 +1,7 @@
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core"
 import type { MouseEvent } from "react"
+import type { SeatGroup } from "../fetchs/fetchTypes"
+import type { AppDispatch } from "../redux/store"
 
 export type TopSlider = {
   id: number
@@ -7,14 +9,14 @@ export type TopSlider = {
 }
 
 export type Poster = {
-  movieID: number
+  movieID: string
   movieTitle: string
   imglink: string
-  duration: string
 }
 
 export type PosterReleaseDate = Poster & {
   date: Date
+  duration: number
 }
 
 export type ArrowSlider = {
@@ -33,31 +35,28 @@ export type FooterTypes = {
 
 export type Menus = {
   label: string
-  imgLink: string
-  URL: string
+  link: string
 }
 
 export type NavBarMenus = Menus & {
   icon: IconDefinition
 }
 
-export type PositionInfo = {
-  id: string
-  letter: string
-  number: number
+export type bottomCardInfo = Menus & {
+  imgLink: string
 }
 
-export type SeatsInfo = {
-  id: string
-  SVGcoordinates: string
-  position: PositionInfo
-}
-
-export type FillFunction = {
+export type EmptyFunction = {
   e: MouseEvent<SVGPathElement>
-  fill: string
-  seat: SeatsInfo
+  seat: SeatGroup
   color: string
+  dispatch: AppDispatch
+}
+
+export type FillFunction = EmptyFunction & {
+  fill: string
+  maxSeats: SeatGroup[]
+  handleOpen: () => void
 }
 
 export type PropString = {
@@ -65,8 +64,45 @@ export type PropString = {
 }
 
 export type TicketTypes = {
-  redSeatsPosition: PositionInfo[]
-  greenSeatsPosition: PositionInfo[]
-  blueSeatsPosition: PositionInfo[]
+  redSeatsPosition: SeatGroup[]
+  greenSeatsPosition: SeatGroup[]
+  blueSeatsPosition: SeatGroup[]
   totalCost: number
+  totalRed: number
+  totalBlue: number
+  totalGreen: number
+}
+
+export type InfoCardAndDesktopNav = {
+  label: string
+  link: string
+}
+
+export type ModalResponse = {
+  title: string
+  message: string
+  icon: IconDefinition
+  style: string
+  buttonText: string
+}
+
+export type ModalInfo = ModalResponse & {
+  show: boolean
+  handleClose: () => void
+}
+
+export type UpdateProfileModalType = {
+  showConfirmation: boolean
+  oldPsw: string
+  newPsw: string
+  newMail: string
+  mailOrPsw: string
+  handleCloseShowConfirmation: () => void
+  setModalData: (modalResponse: ModalResponse) => void
+  setShow: (boolean: boolean) => void
+}
+
+export type UploadProPicType = {
+  modalPicShow: boolean
+  handleCloseModalPic: () => void
 }

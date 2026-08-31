@@ -1,28 +1,51 @@
 import { useNavigate } from "react-router"
-import { useAppDispatch } from "../redux/hooks"
-import { timeAndScreen, movieChoice } from "../redux/reducers/MovieSlice"
+import { useAppDispatch, useAppSelector } from "../redux/hooks"
+import { movieChoice } from "../redux/reducers/MovieSlice"
 import type { DispatchMovie } from "../redux/reducers/SlicesTypes"
-const MovieStartTime = ({ movieTitle, movieID, duration }: DispatchMovie) => {
+import { calculateMovieTime } from "../misc/functions"
+import { resetState } from "../redux/reducers/TicketSlice"
+
+const MovieStartTime = ({
+  movieTitle,
+  movieID,
+  duration,
+  screenId,
+  screen,
+  screeningTimeId,
+  date,
+}: DispatchMovie) => {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
-
-  //Temp variables
-  const timeStartEnd = "16:00 - 19:27"
-  const screen = 1
+  const prevTimeId = useAppSelector((state) => state.movieState.screeningTimeId)
 
   return (
     <div
       className=" bg-time-color rounded rounded-3 px-3 py-2 single-movie-time"
       onClick={() => {
-        dispatch(timeAndScreen({ timeStartEnd, screen }))
-        dispatch(movieChoice({ movieID, movieTitle, duration }))
+        if (screeningTimeId !== prevTimeId) {
+          dispatch(
+            movieChoice({
+              movieID,
+              movieTitle,
+              duration,
+              screen,
+              screenId,
+              screeningTimeId,
+              date,
+            }),
+          )
+          dispatch(resetState())
+          console.log("reset")
+        }
         navigate("/scelta-posto/")
       }}
     >
-      <p className="m-0 fw-semibold fs-6">{timeStartEnd}</p>
+      <p className="m-0 fw-semibold fs-6">
+        {calculateMovieTime(date, duration)}
+      </p>
       <p className="text-subtext-time fst-italic fw-medium">sala {screen}</p>
       <p className="text-end m-0">
-        <span className="text-subtext-time fs-6">da</span>
+        <span className="text-subtext-time fs-6">da </span>
         <span className="fw-semibold fs-6">4,99€</span>
       </p>
     </div>
