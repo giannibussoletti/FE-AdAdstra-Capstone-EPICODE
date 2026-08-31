@@ -1,12 +1,17 @@
 import MainTitles from "../MainTitles"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCircleInfo, faTicket } from "@fortawesome/free-solid-svg-icons"
+import {
+  faCircleInfo,
+  faRightFromBracket,
+} from "@fortawesome/free-solid-svg-icons"
 import { Container, Row, Col, Image } from "react-bootstrap"
-
-import { useAppSelector } from "../../redux/hooks"
+import { useNavigate } from "react-router"
+import { useAppDispatch, useAppSelector } from "../../redux/hooks"
+import { handleLogout } from "../../misc/functions"
 
 const ProfilePage = () => {
-  // const birthDate = useAppSelector((state) => state.userState.birthDate)
+  const dispatch = useAppDispatch()
+  const navigate = useNavigate()
   const email = useAppSelector((state) => state.userState.email)
   const name = useAppSelector((state) => state.userState.name)
   const surname = useAppSelector((state) => state.userState.surname)
@@ -26,7 +31,7 @@ const ProfilePage = () => {
           <Row className="align-items-center">
             <Col xs={"auto"}>
               <Image
-                fluid
+                className="border border-5"
                 src={profilePicLink}
                 style={{
                   maxHeight: "100px",
@@ -43,24 +48,20 @@ const ProfilePage = () => {
           </Row>
           <hr />
           <Row className="py-1">
-            <Col>
+            <Col onClick={() => navigate("/dettagli-profilo")}>
               <FontAwesomeIcon
                 icon={faCircleInfo}
                 style={{ color: "rgb(255, 255, 255)" }}
                 size="xl"
               />
-              <span className="ms-2">Dettagli Account</span>
+              <span className="ms-2 cursor-pointer">Dettagli Account</span>
             </Col>
           </Row>
           <hr />
           <Row className="py-1">
-            <Col>
-              <FontAwesomeIcon
-                icon={faTicket}
-                size="xl"
-                style={{ color: "rgb(255, 255, 255)" }}
-              />
-              <span className="ms-2">I tuoi biglietti</span>
+            <Col onClick={() => handleLogout(navigate, dispatch)}>
+              <FontAwesomeIcon icon={faRightFromBracket} />
+              <span className="ms-2 cursor-pointer">Esci</span>
             </Col>
           </Row>
           <hr className="d-block d-lg-none" />

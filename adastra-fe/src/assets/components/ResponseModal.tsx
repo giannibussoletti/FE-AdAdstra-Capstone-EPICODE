@@ -1,8 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Modal, Button } from "react-bootstrap"
 import type { ModalInfo } from "../misc/types"
-import { RED } from "../misc/variables"
+import { BLUE, RED } from "../misc/variables"
 import { useNavigate } from "react-router"
+import { handleLogout } from "../misc/functions"
+import { useAppDispatch } from "../redux/hooks"
 const ResponseModal = ({
   message,
   title,
@@ -13,31 +15,41 @@ const ResponseModal = ({
   buttonText,
 }: ModalInfo) => {
   const navigate = useNavigate()
-
+  const dispatch = useAppDispatch()
   return (
-    <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
-      <Modal.Header>
-        <Modal.Title as={"h5"}>
-          <FontAwesomeIcon icon={icon} style={{ color: style }} size="sm" />
-          {"    " + title}
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body>{message}</Modal.Body>
-      <Modal.Footer>
-        <Button
-          variant="buttons"
-          onClick={() => {
-            if (style === RED) {
-              handleClose()
-            } else {
-              navigate("/")
-            }
-          }}
-        >
-          {buttonText}
-        </Button>
-      </Modal.Footer>
-    </Modal>
+    <>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title as={"h5"}>
+            <FontAwesomeIcon icon={icon} style={{ color: style }} size="sm" />
+            {"    " + title}
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{message}</Modal.Body>
+        <Modal.Footer>
+          <Button
+            variant="buttons"
+            onClick={() => {
+              if (style === RED) {
+                handleClose()
+              } else if (style === BLUE) {
+                handleClose()
+                handleLogout(navigate, dispatch)
+              } else {
+                navigate("/")
+              }
+            }}
+          >
+            {buttonText}
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
   )
 }
 

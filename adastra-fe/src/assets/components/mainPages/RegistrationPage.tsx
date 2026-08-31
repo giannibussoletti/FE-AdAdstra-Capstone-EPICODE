@@ -28,7 +28,7 @@ const RegistrationPage = () => {
 
   const [name, setName] = useState<string>("")
   const [surname, setSurname] = useState<string>("")
-  const [birthDate, setBirthDate] = useState<Date>(new Date())
+  const [birthDate, setBirthDate] = useState<string>("")
   const [email, setEmail] = useState<string>("")
   const [password, setPassword] = useState<string>("")
   const [modalData, setModalData] = useState({
@@ -100,7 +100,11 @@ const RegistrationPage = () => {
                   <Form.Control
                     required
                     onChange={(e) =>
-                      setBirthDate((e.target as HTMLInputElement).valueAsDate!)
+                      setBirthDate(
+                        (
+                          e.target as HTMLInputElement
+                        ).valueAsDate!.toLocaleDateString(),
+                      )
                     }
                     size="sm"
                     type="date"

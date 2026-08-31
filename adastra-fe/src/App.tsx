@@ -18,6 +18,7 @@ import ProfilePage from "./assets/components/mainPages/ProfilePage"
 import RegistrationPage from "./assets/components/mainPages/RegistrationPage"
 import LoginPage from "./assets/components/mainPages/LoginPage"
 import MovieDetailsPage from "./assets/components/mainPages/MovieDetailsPage"
+import ProfileDetails from "./assets/components/mainPages/ProfileDetails"
 //React Router
 import { Route, BrowserRouter as Router, Routes } from "react-router"
 import NotFound from "./assets/components/mainPages/NotFound"
@@ -39,6 +40,7 @@ const App = () => {
             <Route path="/profilo" element={<ProfilePage />} />
             <Route path="/registrazione" element={<RegistrationPage />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/dettagli-profilo" element={<ProfileDetails />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

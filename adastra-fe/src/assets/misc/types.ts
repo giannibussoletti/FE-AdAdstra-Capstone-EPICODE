@@ -78,12 +78,31 @@ export type InfoCardAndDesktopNav = {
   link: string
 }
 
-export type ModalInfo = {
-  message: string
+export type ModalResponse = {
   title: string
-  show: boolean
-  handleClose: () => void
+  message: string
   icon: IconDefinition
   style: string
   buttonText: string
+}
+
+export type ModalInfo = ModalResponse & {
+  show: boolean
+  handleClose: () => void
+}
+
+export type UpdateProfileModalType = {
+  showConfirmation: boolean
+  oldPsw: string
+  newPsw: string
+  newMail: string
+  mailOrPsw: string
+  handleCloseShowConfirmation: () => void
+  setModalData: (modalResponse: ModalResponse) => void
+  setShow: (boolean: boolean) => void
+}
+
+export type UploadProPicType = {
+  modalPicShow: boolean
+  handleCloseModalPic: () => void
 }

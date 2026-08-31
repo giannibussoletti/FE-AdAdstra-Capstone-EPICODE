@@ -3,8 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useAppDispatch, useAppSelector } from "../redux/hooks"
 import { setMenu, setId, setCinemaState } from "../redux/reducers/NavBarSlice"
 import { faCircle } from "@fortawesome/free-solid-svg-icons"
-
+import { userMenuMapped } from "../misc/functions"
+import { useNavigate } from "react-router"
 const MobileMenu = () => {
+  const navigate = useNavigate()
   const dispatch = useAppDispatch()
   const selector = useAppSelector
 
@@ -43,11 +45,22 @@ const MobileMenu = () => {
         </Col>
         <Col className="m-0 mb-5 pb-5 px-5 mx-5">
           {arrayMenu.map((menuItem) => {
+            const link = menuItem.link
+            const label = menuItem.label
             return (
               <div
-                key={menuItem.label + menuItem.URL}
+                key={menuItem.label + menuItem.link}
                 className="text-uppercase fw-medium mb-4 cursor-pointer"
-                onClick={() => (window.location.href = menuItem.URL)}
+                onClick={() => {
+                  userMenuMapped(navigate, dispatch, { link, label })
+                  dispatch(
+                    setMenu({
+                      isOpen: "start-100",
+                      arrayMenu: [],
+                      isCinema: false,
+                    }),
+                  )
+                }}
               >
                 <FontAwesomeIcon icon={menuItem.icon} className="me-3" />
                 {menuItem.label}
