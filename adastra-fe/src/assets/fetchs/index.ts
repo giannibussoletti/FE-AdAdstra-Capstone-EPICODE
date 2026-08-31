@@ -308,3 +308,32 @@ export const fetchUpdatePsw = async (
     throw err
   }
 }
+
+export const fetchUpdateMail = async (
+  newEmail: string,
+): Promise<UpdateResponse> => {
+  try {
+    const isLogged = localStorage.getItem("accessToken")
+    console.log(isLogged)
+    const res = await fetch("http://localhost:5555/user/profile/new-email", {
+      method: "PATCH",
+      headers: {
+        Authorization: "Bearer " + isLogged,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        newEmail,
+      }),
+    })
+    console.log(res)
+    if (!res.ok) {
+      console.log(res)
+      throw new Error(res.statusText || `Errore HTTP ${res.status}`)
+    }
+    const data: UpdateResponse = await res.json()
+    return data
+  } catch (err) {
+    console.error(err)
+    throw err
+  }
+}

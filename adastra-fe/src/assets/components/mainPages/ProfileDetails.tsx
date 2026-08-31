@@ -8,19 +8,16 @@ import {
   Button,
   Form,
   ListGroup,
-  Modal,
 } from "react-bootstrap"
-import { fetchUpdatePsw, fetchUserMovies } from "../../fetchs"
+import { fetchUserMovies } from "../../fetchs"
 import type { UserMovies } from "../../fetchs/fetchTypes"
 import { useNavigate } from "react-router"
 import ResponseModal from "../ResponseModal"
-import {
-  faCircle,
-  faCircleCheck,
-  faCircleXmark,
-} from "@fortawesome/free-solid-svg-icons"
-import { BLUE, RED } from "../../misc/variables"
+import UpdateProfileResponseModal from "../UpdateProfileResponseModal"
+import { faCircle } from "@fortawesome/free-solid-svg-icons"
 import PasswordCheck from "../PasswordCheck"
+import { MAIL, PASSWORD } from "../../misc/variables"
+
 const ProfileDetails = () => {
   const navigate = useNavigate()
   const name = useAppSelector((state) => state.userState.name)
@@ -44,17 +41,17 @@ const ProfileDetails = () => {
   const [formIsDisabled, setFormIsDisabled] = useState(true)
   const [oldPsw, setOldPsw] = useState<string>("")
   const [newPsw, setNewPsw] = useState<string>("")
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [newMail, setNewMail] = useState<string>("")
   const [showConfirmation, setShowConfirmation] = useState(false)
+  const [mailOrPsw, setMailOrPsw] = useState("")
+
+  const handleCloseShowConfirmation = () => setShowConfirmation(false)
 
   useEffect(() => {
     fetchUserMovies()
       .then((data) => setUserMovies(data))
       .catch((err) => console.error(err))
   }, [])
-
-  useEffect(() => {}, [])
 
   return (
     <Container className="justify-content-center align-items-center d-flex pt-5">
@@ -113,7 +110,11 @@ const ProfileDetails = () => {
                     </Button>
                   ) : (
                     <Button
-                      onClick={() => setFormIsDisabled(!formIsDisabled)}
+                      onClick={() => {
+                        setFormIsDisabled(!formIsDisabled)
+                        setShowConfirmation(true)
+                        setMailOrPsw(MAIL)
+                      }}
                       size="sm"
                       variant="buttons"
                       className="rounded-pill fw-semibold text-uppercase py-2 ms-auto"
@@ -148,7 +149,10 @@ const ProfileDetails = () => {
 
                   <Col className="text-end">
                     <Button
-                      onClick={() => setShowConfirmation(true)}
+                      onClick={() => {
+                        setShowConfirmation(true)
+                        setMailOrPsw(PASSWORD)
+                      }}
                       size="sm"
                       variant="buttons"
                       className="rounded-pill fw-semibold text-uppercase py-2"
@@ -190,51 +194,16 @@ const ProfileDetails = () => {
       {/* */}
       {/* */}
       {/* */}
-      <Modal
-        show={showConfirmation}
-        onHide={() => setShowConfirmation(false)}
-        backdrop="static"
-        keyboard={false}
-      >
-        <Modal.Header>
-          <Modal.Title as={"h5"}></Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Confermi di voler cambiare la password?</Modal.Body>
-        <Modal.Footer>
-          <Button
-            variant="buttons"
-            onClick={() => {
-              setShowConfirmation(false)
-              fetchUpdatePsw(oldPsw, newPsw)
-                .then((data) => {
-                  setModalData({
-                    title: "Tutto ok!",
-                    message: data.message,
-                    icon: faCircleCheck,
-                    style: BLUE,
-                    buttonText: "torna ai dettagli",
-                  })
-                  setShow(true)
-                })
-                .catch(() => {
-                  setModalData({
-                    title: "Ops!",
-                    message: "C'è stato un errore nell'aggiornamento",
-                    icon: faCircleXmark,
-                    style: RED,
-                    buttonText: "Riprova",
-                  })
-                  setShow(true)
-                })
-            }}
-          >
-            Confermo
-          </Button>
-          <Button variant="buttons" onClick={() => setShowConfirmation(false)}>
-            Ci ho ripensato
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      <UpdateProfileResponseModal
+        newMail={newMail}
+        showConfirmation={showConfirmation}
+        handleCloseShowConfirmation={handleCloseShowConfirmation}
+        mailOrPsw={mailOrPsw}
+        oldPsw={oldPsw}
+        newPsw={newPsw}
+        setModalData={setModalData}
+        setShow={setShow}
+      />
     </Container>
   )
 }
