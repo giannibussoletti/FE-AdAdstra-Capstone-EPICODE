@@ -337,3 +337,32 @@ export const fetchUpdateMail = async (
     throw err
   }
 }
+
+export const fetchUpdateProPic = async (
+  image: FileList,
+): Promise<{ imageLink: string }> => {
+  try {
+    const formData = new FormData()
+    formData.append("avatar_pic", image[0])
+
+    const isLogged = localStorage.getItem("accessToken")
+    console.log(isLogged)
+    const res = await fetch("http://localhost:5555/user/profile/avatar", {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + isLogged,
+      },
+      body: formData,
+    })
+    console.log(res)
+    if (!res.ok) {
+      console.log(res)
+      throw new Error(res.statusText || `Errore HTTP ${res.status}`)
+    }
+    const data: { imageLink: string } = await res.json()
+    return data
+  } catch (err) {
+    console.error(err)
+    throw err
+  }
+}

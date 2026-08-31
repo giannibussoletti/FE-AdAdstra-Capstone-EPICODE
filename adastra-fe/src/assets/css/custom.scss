@@ -369,3 +369,52 @@ body,
 .dropdown-menu {
   margin-top: 0.5rem;
 }
+
+// Profile pic over
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+}
+
+.image-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s ease;
+  border-radius: 100%;
+}
+
+.image-container:hover::after {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 100%;
+}
+
+.image-text {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 400;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-container:hover .image-text {
+  opacity: 1;
+}
+
+.pic-dimension {
+  min-width: 150px;
+  max-width: 150px;
+  max-height: 150px;
+  min-height: 150px;
+}

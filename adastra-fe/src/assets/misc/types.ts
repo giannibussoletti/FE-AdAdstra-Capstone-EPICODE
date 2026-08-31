@@ -101,3 +101,8 @@ export type UpdateProfileModalType = {
   setModalData: (modalResponse: ModalResponse) => void
   setShow: (boolean: boolean) => void
 }
+
+export type UploadProPicType = {
+  modalPicShow: boolean
+  handleCloseModalPic: () => void
+}
