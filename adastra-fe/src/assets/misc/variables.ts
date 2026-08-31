@@ -1,9 +1,10 @@
 export const GREEN = "green"
 export const RED = "red"
 export const BLUE = "blue"
-export const RESET = "RESET"
+export const PASSWORD = "password"
+export const MAIL = "mail"
 
-export const redSeat = "#b83c2d"
+export const redSeat = "rgb(203, 0, 0)"
 export const blueSeat = "#324ba6"
 export const greenSeat = "#007800"
 

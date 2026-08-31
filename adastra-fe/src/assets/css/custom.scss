@@ -16,6 +16,10 @@ $input-focus-border-color: $input-color;
 $input-focus-color: $input-color;
 $input-border-width: 0.1em;
 
+$input-placeholder-color: $input-color;
+$input-disabled-color: grey;
+$input-disabled-border-color: $input-color;
+
 // Table
 $table-color: $input-color;
 $table-bg: transparent;
@@ -35,7 +39,7 @@ $accordion-button-color: #fff;
 $accordion-button-bg: rgba(0, 0, 0, 0);
 $accordion-button-active-bg: rgba(0, 0, 0, 0);
 $accordion-button-active-color: #fff;
-
+$accordion-button-padding-x: 0;
 // fusv-disable
 $accordion-button-focus-border-color: rgba(0, 0, 0, 0);
 // fusv-enable
@@ -44,6 +48,10 @@ $accordion-button-focus-box-shadow: rgba(0, 0, 0, 0);
 $accordion-icon-width: 0;
 $accordion-icon-color: rgba(0, 0, 0, 0);
 $accordion-icon-active-color: rgba(0, 0, 0, 0);
+
+//Card
+$card-color: $input-color;
+$card-bg: #04001b;
 
 //Dropdown menu
 $dropdown-color: #fff;
@@ -55,6 +63,25 @@ $dropdown-link-color: $dropdown-color;
 $dropdown-link-hover-color: $dropdown-bg;
 $dropdown-link-hover-bg: $dropdown-color;
 $dropdown-link-active-color: $dropdown-color;
+
+//Modal
+$modal-content-color: $input-color;
+$modal-content-bg: $input-bg;
+$modal-backdrop-opacity: 0.7;
+
+//List Group
+$list-group-color: $input-color;
+$list-group-bg: $card-bg;
+
+$list-group-hover-bg: #023f87;
+$list-group-active-color: null;
+$list-group-active-bg: null;
+
+$list-group-action-color: $input-color;
+$list-group-action-hover-color: $input-color;
+
+$list-group-action-active-color: null;
+$list-group-action-active-bg: null;
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "bootstrap/scss/bootstrap.scss";
@@ -122,6 +149,11 @@ body,
   }
 }
 
+.btn-utente {
+  background: transparent;
+  border: none;
+}
+
 //INFORMAZIONI FILM
 .date-and-time {
   font-size: 1.2em;
@@ -140,16 +172,6 @@ body,
   background-repeat: no-repeat;
   background-size: 100% 4px;
   padding-bottom: 2px;
-}
-
-//Carousel Da non perdere
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: #000;
-  width: 3rem;
-  height: 3rem;
-  background-size: 2em;
 }
 
 //SingleCardMovieCSS
@@ -180,7 +202,7 @@ body,
   }
 }
 
-//Carosello Prevendite Aperte
+//Carosello Coming Soon
 .arrow-left-bg,
 .arrow-right-bg {
   padding: 0.7em 0.2em;
@@ -235,7 +257,7 @@ body,
   border-bottom-right-radius: var(--radius);
 }
 .seat-red {
-  background-color: #b83c2d;
+  background-color: rgb(203, 0, 0);
 }
 .seat-blue {
   background-color: #324ba6;
@@ -328,14 +350,16 @@ body,
   stroke: #3a96d1;
 }
 
+.letterAndNumbers {
+  font-family: Montserrat-Medium, Montserrat;
+  font-size: 25.5px;
+  font-variation-settings: "wght" 500;
+  font-weight: 500;
+}
+
 //Dropdown user menu Desktop
 .dropdown-toggle::after {
   display: none !important;
-}
-
-.btn-utente {
-  background: transparent;
-  border: none;
 }
 
 .dropdown-item:active {
@@ -344,4 +368,53 @@ body,
 
 .dropdown-menu {
   margin-top: 0.5rem;
+}
+
+// Profile pic over
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+}
+
+.image-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s ease;
+  border-radius: 100%;
+}
+
+.image-container:hover::after {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 100%;
+}
+
+.image-text {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 400;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-container:hover .image-text {
+  opacity: 1;
+}
+
+.pic-dimension {
+  min-width: 150px;
+  max-width: 150px;
+  max-height: 150px;
+  min-height: 150px;
 }

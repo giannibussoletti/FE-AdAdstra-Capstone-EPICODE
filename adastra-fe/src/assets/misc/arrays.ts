@@ -1,5 +1,83 @@
-import type { FooterTypes, Menus, NavBarMenus } from "./types"
+import type { bottomCardInfo, FooterTypes, NavBarMenus } from "./types"
 import { faCircle } from "@fortawesome/free-solid-svg-icons"
+
+export const burgerMenu: NavBarMenus[] = [
+  {
+    label: "trailer",
+    icon: faCircle,
+    link: "#",
+  },
+  {
+    label: "coming soon",
+    icon: faCircle,
+    link: "#",
+  },
+  {
+    label: "adastra pass",
+    icon: faCircle,
+    link: "#",
+  },
+  {
+    label: "in sala",
+    icon: faCircle,
+    link: "#",
+  },
+]
+
+export const userMenu: NavBarMenus[] = [
+  {
+    label: "Profilo",
+    icon: faCircle,
+    link: "/profilo",
+  },
+  {
+    label: "Dettagli Account",
+    icon: faCircle,
+    link: "/dettagli-profilo",
+  },
+  {
+    label: "Esci",
+    icon: faCircle,
+    link: "/",
+  },
+]
+
+export const registerLoginMenu: NavBarMenus[] = [
+  {
+    label: "Login",
+    icon: faCircle,
+    link: "/login",
+  },
+  {
+    label: "Registrati",
+    icon: faCircle,
+    link: "/registrazione",
+  },
+]
+
+export const moreInfo: bottomCardInfo[] = [
+  {
+    label: "lavora con noi",
+    imgLink: "https://placehold.co/600x300",
+    link: "#",
+  },
+  {
+    label: "poltrone vip",
+    imgLink: "https://placehold.co/600x300",
+    link: "#",
+  },
+  {
+    label: "Lorem ipsum",
+    imgLink: "https://placehold.co/600x300",
+    link: "#",
+  },
+  {
+    label: "Per le aziende",
+    imgLink: "https://placehold.co/600x300",
+    link: "#",
+  },
+]
+
 export const footerInfo: FooterTypes[] = [
   {
     id: 40,
@@ -39,34 +117,5 @@ export const footerInfo: FooterTypes[] = [
                   cupidatat non proident, sunt in culpa qui officia deserunt
                   mollit anim id est laborum.`,
     eventKey: "45",
-  },
-]
-
-export const burgerMenuArray: NavBarMenus[] = [
-  { label: "trailer", imgLink: "#", icon: faCircle, URL: "#" },
-  { label: "coming soon", imgLink: "#", icon: faCircle, URL: "#" },
-  { label: "adastra pass", imgLink: "#", icon: faCircle, URL: "#" },
-  { label: "in sala", imgLink: "#", icon: faCircle, URL: "#" },
-  { label: "pre-vendite", imgLink: "#", icon: faCircle, URL: "#" },
-]
-export const userMenuArray: NavBarMenus[] = [
-  { label: "user", imgLink: "#", icon: faCircle, URL: "#" },
-  { label: "user", imgLink: "#", icon: faCircle, URL: "#" },
-  { label: "user", imgLink: "#", icon: faCircle, URL: "#" },
-  { label: "user", imgLink: "#", icon: faCircle, URL: "#" },
-]
-
-export const moreInfoArray: Menus[] = [
-  {
-    label: "lavora con noi",
-    imgLink: "https://placehold.co/600x300",
-    URL: "#",
-  },
-  { label: "poltrone vip", imgLink: "https://placehold.co/600x300", URL: "#" },
-  { label: "Lorem ipsum", imgLink: "https://placehold.co/600x300", URL: "#" },
-  {
-    label: "Per le aziende",
-    imgLink: "https://placehold.co/600x300",
-    URL: "#",
   },
 ]

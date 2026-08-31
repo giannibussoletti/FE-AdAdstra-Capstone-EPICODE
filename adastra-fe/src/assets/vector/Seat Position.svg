@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1130 1000">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        font-family: Montserrat-Medium, Montserrat;
+        font-size: 25.5px;
+        font-variation-settings: 'wght' 500;
+        font-weight: 500;
+      }
+
+      .cls-3 {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <g>
+        <g>
+          <text class="letterAndNumbers" transform="translate(74.13 332.84)"><tspan x="0" y="0">A</tspan></text>
+          <text class="letterAndNumbers" transform="translate(73.82 381.3)"><tspan x="0" y="0">B</tspan></text>
+          <text class="letterAndNumbers" transform="translate(73.11 429.76)"><tspan x="0" y="0">C</tspan></text>
+          <text class="letterAndNumbers" transform="translate(71.67 478.22)"><tspan x="0" y="0">D</tspan></text>
+          <text class="letterAndNumbers" transform="translate(74.93 577.74)"><tspan x="0" y="0">E</tspan></text>
+          <text class="letterAndNumbers" transform="translate(75.37 626.23)"><tspan x="0" y="0">F</tspan></text>
+          <text class="letterAndNumbers" transform="translate(72.36 674.71)"><tspan x="0" y="0">G</tspan></text>
+          <text class="letterAndNumbers" transform="translate(71.85 723.19)"><tspan x="0" y="0">H</tspan></text>
+          <text class="letterAndNumbers" transform="translate(74.63 771.67)"><tspan x="0" y="0">L</tspan></text>
+          <text class="letterAndNumbers" transform="translate(70.03 820.15)"><tspan x="0" y="0">M</tspan></text>
+        </g>
+        <g>
+          <text class="letterAndNumbers" transform="translate(148.31 269.54)"><tspan x="0" y="0">1</tspan></text>
+          <text class="letterAndNumbers" transform="translate(189.07 269.54)"><tspan x="0" y="0">2</tspan></text>
+          <text class="letterAndNumbers" transform="translate(232.45 269.54)"><tspan x="0" y="0">3</tspan></text>
+          <text class="letterAndNumbers" transform="translate(274.57 269.54)"><tspan x="0" y="0">4</tspan></text>
+          <text class="letterAndNumbers" transform="translate(319.14 269.54)"><tspan x="0" y="0">5</tspan></text>
+          <text class="letterAndNumbers" transform="translate(361.95 269.54)"><tspan x="0" y="0">6</tspan></text>
+          <text class="letterAndNumbers" transform="translate(405.54 269.54)"><tspan x="0" y="0">7</tspan></text>
+          <text class="letterAndNumbers" transform="translate(448.31 269.54)"><tspan x="0" y="0">8</tspan></text>
+          <text class="letterAndNumbers" transform="translate(492.02 269.54)"><tspan x="0" y="0">9</tspan></text>
+          <text class="letterAndNumbers" transform="translate(530.02 269.54)"><tspan x="0" y="0">10</tspan></text>
+          <text class="letterAndNumbers" transform="translate(577.16 269.54)"><tspan x="0" y="0">11</tspan></text>
+          <text class="letterAndNumbers" transform="translate(617.92 269.54)"><tspan x="0" y="0">12</tspan></text>
+          <text class="letterAndNumbers" transform="translate(661.3 269.54)"><tspan x="0" y="0">13</tspan></text>
+          <text class="letterAndNumbers" transform="translate(703.42 269.54)"><tspan x="0" y="0">14</tspan></text>
+          <text class="letterAndNumbers" transform="translate(747.99 269.54)"><tspan x="0" y="0">15</tspan></text>
+          <text class="letterAndNumbers" transform="translate(790.8 269.54)"><tspan x="0" y="0">16</tspan></text>
+          <text class="letterAndNumbers" transform="translate(834.4 269.54)"><tspan x="0" y="0">17</tspan></text>
+          <text class="letterAndNumbers" transform="translate(877.16 269.54)"><tspan x="0" y="0">18</tspan></text>
+          <text class="letterAndNumbers" transform="translate(920.87 269.54)"><tspan x="0" y="0">19</tspan></text>
+          <text class="letterAndNumbers" transform="translate(961 269.54)"><tspan x="0" y="0">20</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
