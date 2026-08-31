@@ -55,9 +55,20 @@ const RegistrationPage = () => {
       </Popover.Body>
     </Popover>
   )
-
+  console.log("Stato validazione:", {
+    mancaInfoArray: infoArray.includes(""),
+    mancaPassword: !password,
+    passwordInvalida:
+      !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$/.test(
+        password,
+      ),
+    mancaEmail: !email,
+    emailInvalida: !/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/.test(
+      email,
+    ),
+  })
   return (
-    <Container>
+    <Container className="px-3">
       <ResponseModal
         message={modalData.message}
         title={modalData.title}
