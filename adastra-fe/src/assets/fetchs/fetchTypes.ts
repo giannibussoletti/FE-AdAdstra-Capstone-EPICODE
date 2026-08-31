@@ -51,8 +51,19 @@ export type ProfileType = {
   name: string
   surname: string
   email: string
-  birthDate: Date | null
+  birthDate: string
   profilePicLink: string
   username: string
   accessToken: string
+}
+
+export type UserMovies = {
+  title: string
+  releaseDate: string
+  movieId: string
+}
+
+export type UpdateResponse = {
+  message: string
+  dateTime: string
 }

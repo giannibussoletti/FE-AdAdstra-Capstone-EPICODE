@@ -33,7 +33,7 @@ export const userMenu: NavBarMenus[] = [
   {
     label: "Dettagli Account",
     icon: faCircle,
-    link: "#",
+    link: "/dettagli-profilo",
   },
   {
     label: "Esci",

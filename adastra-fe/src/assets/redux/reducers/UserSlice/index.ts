@@ -5,7 +5,7 @@ const initialState: ProfileType = {
   name: "",
   surname: "",
   email: "",
-  birthDate: null,
+  birthDate: "",
   profilePicLink: "",
   username: "",
   accessToken: "",
@@ -28,13 +28,16 @@ export const userSlice = createSlice({
       state.name = ""
       state.surname = ""
       state.email = ""
-      state.birthDate = null
+      state.birthDate = ""
       state.profilePicLink = ""
       state.username = ""
       state.accessToken = ""
     },
+    setProPicLink: (state, action: PayloadAction<string>) => {
+      state.profilePicLink = action.payload
+    },
   },
 })
 
-export const { setUserState, resetUserState } = userSlice.actions
+export const { setUserState, resetUserState, setProPicLink } = userSlice.actions
 export default userSlice.reducer
