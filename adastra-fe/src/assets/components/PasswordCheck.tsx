@@ -34,7 +34,9 @@ function PasswordCheck({ checking }: { checking: string }) {
           un carattere speciale: @ $ ! % * ? &
         </Form.Label>
         <Form.Label>
-          {checking && /^[@$!%*?&]+$/.test(checking) ? checkNotOk : checkOk}{" "}
+          {checking && /[^a-zA-Z0-9@$!%*?&]/.test(checking)
+            ? checkNotOk
+            : checkOk}{" "}
           nessun altro carattere speciale
         </Form.Label>
       </Col>
