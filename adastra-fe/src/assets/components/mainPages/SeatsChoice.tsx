@@ -1,10 +1,9 @@
 import TheaterMap from "../TheaterMap"
 import MainTitles from "../MainTitles"
-import Buttons from "../Buttons"
 import TicketsCount from "../TicketsCount"
 import TopBarInfoBooking from "../TopBarInfoBooking"
 import { redCost, blueCost, greenCost } from "../../misc/variables"
-import { Container, Col, Row } from "react-bootstrap"
+import { Container, Col, Row, Button } from "react-bootstrap"
 import { useAppSelector } from "../../redux/hooks"
 import { useNavigate } from "react-router"
 
@@ -51,11 +50,14 @@ const SeatsChoice = () => {
               />
             </Col>
             <Row className="px-5 mt-4">
-              <Col
-                className="text-center"
-                onClick={() => navigate("/pagamento/")}
-              >
-                <Buttons string="verifica ed acquista" />
+              <Col className="text-center">
+                <Button
+                  onClick={() => navigate("/pagamento/")}
+                  variant="buttons"
+                  className="rounded-pill fw-semibold text-uppercase py-2"
+                >
+                  <span className="mx-3">verifica ed acquista</span>
+                </Button>
               </Col>
             </Row>
           </Col>
