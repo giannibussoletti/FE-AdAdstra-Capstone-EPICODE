@@ -4,14 +4,14 @@ import { arrayMapImg } from "../temp"
 
 const HomeSlider = () => {
   return (
-    <Container fluid>
+    <Container className="p-0">
       <Row>
         <Col className="p-0">
-          <Carousel controls={false} indicators={false}>
+          <Carousel controls={false} indicators={false} className="mt-4">
             {arrayMapImg.map((img) => {
               return (
                 <Carousel.Item key={img.id} interval={5000}>
-                  <img className="w-100" src={img.slide} alt="" />
+                  <img className="w-100 rounded-4" src={img.slide} alt="" />
                 </Carousel.Item>
               )
             })}

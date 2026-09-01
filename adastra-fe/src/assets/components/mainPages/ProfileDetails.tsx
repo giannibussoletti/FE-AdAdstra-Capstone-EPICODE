@@ -1,14 +1,6 @@
 import { useEffect, useState } from "react"
 import { useAppSelector } from "../../redux/hooks"
-import {
-  Container,
-  Row,
-  Col,
-  Image,
-  Button,
-  Form,
-  ListGroup,
-} from "react-bootstrap"
+import { Container, Row, Col, Image, Button, Form, ListGroup } from "react-bootstrap"
 import { fetchUserMovies } from "../../fetchs"
 import type { UserMovies } from "../../fetchs/fetchTypes"
 import { useNavigate } from "react-router"
@@ -24,9 +16,7 @@ const ProfileDetails = () => {
   const name = useAppSelector((state) => state.userState.name)
   const surname = useAppSelector((state) => state.userState.surname)
   const email = useAppSelector((state) => state.userState.email)
-  const profilePicLink = useAppSelector(
-    (state) => state.userState.profilePicLink,
-  )
+  const profilePicLink = useAppSelector((state) => state.userState.profilePicLink)
   const birthDate = useAppSelector((state) => state.userState.birthDate)
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false)
@@ -62,13 +52,8 @@ const ProfileDetails = () => {
             <Col className="text-center">
               <div
                 className="image-container border border-5 rounded-circle cursor-pointer"
-                onClick={() => setModalPicShow(true)}
-              >
-                <Image
-                  className="pic-dimension"
-                  roundedCircle
-                  src={profilePicLink}
-                />
+                onClick={() => setModalPicShow(true)}>
+                <Image className="pic-dimension" roundedCircle src={profilePicLink} />
                 <span className="image-text">Modifica</span>
               </div>
               <h3 className="text-capitalize mt-3">
@@ -98,8 +83,7 @@ const ProfileDetails = () => {
                     }}
                     size="sm"
                     variant="buttons"
-                    className="rounded-pill fw-semibold text-uppercase py-2 ms-auto"
-                  >
+                    className="rounded-pill fw-semibold text-uppercase py-2 ms-auto">
                     <span className="mx-2">Aggiorna</span>
                   </Button>
                 </div>
@@ -135,8 +119,7 @@ const ProfileDetails = () => {
                       }}
                       size="sm"
                       variant="buttons"
-                      className="rounded-pill fw-semibold text-uppercase py-2"
-                    >
+                      className="rounded-pill fw-semibold text-uppercase py-2">
                       <span className="mx-2">Aggiorna</span>
                     </Button>
                   </Col>
@@ -156,15 +139,14 @@ const ProfileDetails = () => {
                     key={movie.movieId}
                     action
                     onClick={() => navigate("/dettagli/" + movie.movieId)}
-                    className="d-flex align-items-center justify-content-between"
-                  >
+                    className="d-flex align-items-center justify-content-between">
                     <span>{movie.title}</span>
                   </ListGroup.Item>
                 )
               })}
             </ListGroup>
           ) : (
-            "Ops semnra che tu non abbia visto film nell'ultimo anno 🤔"
+            "Ops! Sembra che tu non abbia visto film nell'ultimo anno 🤔"
           )}
         </Col>
       </Row>
@@ -189,10 +171,7 @@ const ProfileDetails = () => {
         style={modalData.style}
         buttonText={modalData.buttonText}
       />
-      <UploadPicModal
-        modalPicShow={modalPicShow}
-        handleCloseModalPic={handleCloseModalPic}
-      />
+      <UploadPicModal modalPicShow={modalPicShow} handleCloseModalPic={handleCloseModalPic} />
     </Container>
   )
 }
