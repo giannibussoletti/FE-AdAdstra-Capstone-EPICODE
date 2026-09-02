@@ -69,17 +69,17 @@ $modal-content-color: $input-color;
 $modal-content-bg: $input-bg;
 $modal-backdrop-opacity: 0.7;
 
+//Carousel
+$carousel-caption-width: 100%;
+$carousel-caption-spacer: 0%;
 //List Group
 $list-group-color: $input-color;
 $list-group-bg: $card-bg;
-
 $list-group-hover-bg: #023f87;
 $list-group-active-color: null;
 $list-group-active-bg: null;
-
 $list-group-action-color: $input-color;
 $list-group-action-hover-color: $input-color;
-
 $list-group-action-active-color: null;
 $list-group-action-active-bg: null;
 
@@ -111,8 +111,7 @@ h3 {
 
 body,
 .mobile-menu {
-  background: linear-gradient(-60deg, #00001f 50%, #191a29 50%);
-  background-size: 100%;
+  background: linear-gradient(45deg, #04042c 0%, #010217 100%);
 }
 //NAVBAR
 .mobile-menu {
