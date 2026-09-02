@@ -15,9 +15,14 @@ const GeneralCinemaMovies = () => {
         {movies.slice(0, 12).map((movie) => {
           return (
             <Col key={movie.id} className="d-flex">
-              <Col className="text-center d-flex justify-content-between flex-column mb-5 p-4 rounded-5 shadow-lg bg-gradient">
+              <Col className="text-center d-flex justify-content-between flex-column mb-5 p-4 rounded-4 shadow-lg bg-gradient">
                 <div>
-                  <Image fluid src={movie.posterLink} alt={movie.title + " poster"} />
+                  <Image
+                    fluid
+                    src={movie.posterLink}
+                    alt={movie.title + " poster"}
+                    className=" rounded-3"
+                  />
                   <h6 className="text-uppercase mt-3">{movie.title}</h6>
                 </div>
                 <Button
