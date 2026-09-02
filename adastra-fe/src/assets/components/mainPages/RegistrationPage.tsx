@@ -1,21 +1,8 @@
-import {
-  Button,
-  Container,
-  Form,
-  Row,
-  Col,
-  Card,
-  Popover,
-  OverlayTrigger,
-} from "react-bootstrap"
+import { Button, Container, Form, Row, Col, Card, Popover, OverlayTrigger } from "react-bootstrap"
 
 import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {
-  faCircle,
-  faCircleCheck,
-  faCircleXmark,
-} from "@fortawesome/free-solid-svg-icons"
+import { faCircle, faCircleCheck, faCircleXmark } from "@fortawesome/free-solid-svg-icons"
 import { fetchRegistration } from "../../fetchs"
 
 import PasswordCheck from "../PasswordCheck"
@@ -41,12 +28,8 @@ const RegistrationPage = () => {
 
   const infoArray = [name, surname, birthDate, email, password]
 
-  const checkOk = (
-    <FontAwesomeIcon icon={faCircleCheck} style={{ color: "green" }} />
-  )
-  const checkNotOk = (
-    <FontAwesomeIcon icon={faCircleXmark} style={{ color: "red" }} />
-  )
+  const checkOk = <FontAwesomeIcon icon={faCircleCheck} style={{ color: "green" }} />
+  const checkNotOk = <FontAwesomeIcon icon={faCircleXmark} style={{ color: "red" }} />
 
   const requiredPopover = (
     <Popover id="requeried-popover" className=" bg-danger-subtle">
@@ -55,18 +38,6 @@ const RegistrationPage = () => {
       </Popover.Body>
     </Popover>
   )
-  console.log("Stato validazione:", {
-    mancaInfoArray: infoArray.includes(""),
-    mancaPassword: !password,
-    passwordInvalida:
-      !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$/.test(
-        password,
-      ),
-    mancaEmail: !email,
-    emailInvalida: !/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/.test(
-      email,
-    ),
-  })
   return (
     <Container className="px-3">
       <ResponseModal
@@ -83,9 +54,7 @@ const RegistrationPage = () => {
           <Card className=" border-2 border-white">
             <Card.Img variant="top" src="https://placehold.co/400x200" />
             <Card.Body className="px-4">
-              <Card.Title className="mt-2 mb-3">
-                Registrazione utente
-              </Card.Title>
+              <Card.Title className="mt-2 mb-3">Registrazione utente</Card.Title>
 
               <Form>
                 <Form.Group className="mb-3">
@@ -116,13 +85,8 @@ const RegistrationPage = () => {
                       if (date) {
                         const year = date.getFullYear()
                         const month =
-                          date.getMonth() + 1 < 10
-                            ? `0${date.getMonth() + 1}`
-                            : date.getMonth() + 1
-                        const day =
-                          date.getDate() < 10
-                            ? `0${date.getDate()}`
-                            : date.getDate()
+                          date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1
+                        const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate()
 
                         setBirthDate(`${day}/${month}/${year}`)
                       }
@@ -133,8 +97,7 @@ const RegistrationPage = () => {
                 </Form.Group>
                 <Form.Group className="mb-3">
                   <Form.Label>
-                    {email &&
-                    /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/.test(email)
+                    {email && /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/.test(email)
                       ? checkOk
                       : checkNotOk}{" "}
                     Email
@@ -162,19 +125,15 @@ const RegistrationPage = () => {
                   password,
                 ) ||
                 !email ||
-                !/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/.test(
-                  email,
-                ) ? (
+                !/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/.test(email) ? (
                   <div className="text-center">
                     <OverlayTrigger
                       delay={{ show: 100, hide: 400 }}
                       placement="top"
-                      overlay={requiredPopover}
-                    >
+                      overlay={requiredPopover}>
                       <Button
                         variant="buttons"
-                        className="rounded-pill fw-semibold text-uppercase py-2 mb-4 mt-3"
-                      >
+                        className="rounded-pill fw-semibold text-uppercase py-2 mb-4 mt-3">
                         registrati
                       </Button>
                     </OverlayTrigger>
@@ -184,13 +143,7 @@ const RegistrationPage = () => {
                     <Button
                       onClick={(e) => {
                         e.preventDefault()
-                        fetchRegistration(
-                          name,
-                          surname,
-                          birthDate,
-                          email,
-                          password,
-                        )
+                        fetchRegistration(name, surname, birthDate, email, password)
                           .then((data) => {
                             setModalData({
                               title: "Tutto ok!",
@@ -205,8 +158,7 @@ const RegistrationPage = () => {
                           .catch((err) => {
                             setModalData({
                               title: "Ops!",
-                              message:
-                                "Qualcosa è andato storto, riprova " + err,
+                              message: "Qualcosa è andato storto, riprova " + err,
                               icon: faCircleCheck,
                               style: RED,
                               buttonText: "Riprova",
@@ -215,8 +167,7 @@ const RegistrationPage = () => {
                           })
                       }}
                       variant="buttons"
-                      className="rounded-pill fw-semibold text-uppercase py-2 mb-4 mt-3"
-                    >
+                      className="rounded-pill fw-semibold text-uppercase py-2 mb-4 mt-3">
                       registrati
                     </Button>
                   </div>
