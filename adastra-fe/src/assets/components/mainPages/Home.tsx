@@ -69,7 +69,7 @@ const Home = () => {
             return (
               <Col
                 key={card.label + card.imgLink}
-                className={i % 2 === 0 ? "ms-0 mt-3" : "me-0 mt-3"}>
+                className={i % 2 === 0 ? "ms-0 mt-3 cursor-pointer" : "me-0 mt-3 cursor-pointer"}>
                 <CardMoreInfo link={card.imgLink} label={card.label} />
               </Col>
             )

@@ -9,14 +9,9 @@ const SingleSlide = function ({ movieID, movieTitle, imglink }: Poster) {
       className="p-0"
       onClick={() => {
         navigate("/dettagli/" + movieID)
-      }}
-    >
-      <Image
-        className="w-100 image-query"
-        src={imglink}
-        alt={movieTitle + " poster"}
-      />
-      <h4 className="fw-normal text-uppercase mt-3">{movieTitle}</h4>
+      }}>
+      <Image className="w-100 image-query" src={imglink} alt={movieTitle + " poster"} />
+      <h4 className="fw-normal text-center text-uppercase mt-3">{movieTitle}</h4>
     </Col>
   )
 }
