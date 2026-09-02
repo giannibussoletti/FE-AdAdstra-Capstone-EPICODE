@@ -84,6 +84,7 @@ export const fetchBookedSeats = async (screeningTimeId: string): Promise<SeatGro
       throw new Error(res.statusText || `Errore HTTP ${res.status}`)
     }
     const data: SeatGroup[] = await res.json()
+    console.log(data)
     return data
   } catch (err) {
     console.error(err)
@@ -329,7 +330,7 @@ export const fetchUpdateProPic = async (image: FileList): Promise<{ imageLink: s
     const isLogged = localStorage.getItem("accessToken")
 
     const res = await fetch("http://localhost:5555/user/profile/avatar", {
-      method: "POST",
+      method: "PATCH",
       headers: {
         Authorization: "Bearer " + isLogged,
       },
