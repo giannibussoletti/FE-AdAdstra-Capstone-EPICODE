@@ -10,15 +10,9 @@ import { useNavigate } from "react-router"
 const SeatsChoice = () => {
   const navigate = useNavigate()
 
-  const greenSeatsPosition = useAppSelector(
-    (state) => state.bookingState.greenSeatsPosition,
-  )
-  const redSeatsPosition = useAppSelector(
-    (state) => state.bookingState.redSeatsPosition,
-  )
-  const blueSeatsPosition = useAppSelector(
-    (state) => state.bookingState.blueSeatsPosition,
-  )
+  const greenSeatsPosition = useAppSelector((state) => state.bookingState.greenSeatsPosition)
+  const redSeatsPosition = useAppSelector((state) => state.bookingState.redSeatsPosition)
+  const blueSeatsPosition = useAppSelector((state) => state.bookingState.blueSeatsPosition)
 
   const totalRed = redSeatsPosition.length * redCost
   const totalBlue = blueSeatsPosition.length * blueCost
@@ -52,10 +46,15 @@ const SeatsChoice = () => {
             <Row className="px-5 mt-4">
               <Col className="text-center">
                 <Button
-                  onClick={() => navigate("/pagamento/")}
+                  onClick={() => {
+                    if (totalCost > 0) {
+                      navigate("/pagamento/")
+                    } else {
+                      alert("nessun posto selezionato")
+                    }
+                  }}
                   variant="buttons"
-                  className="rounded-pill fw-semibold text-uppercase py-2"
-                >
+                  className="rounded-pill fw-semibold text-uppercase py-2">
                   <span className="mx-3">verifica ed acquista</span>
                 </Button>
               </Col>
