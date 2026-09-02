@@ -156,7 +156,6 @@ export const fetchRegistration = async (
       throw new Error(res.statusText || `Errore HTTP ${res.status}`)
     }
     const data: BookingType = await res.json()
-    console.log(data)
     return data
   } catch (err) {
     console.error(err)
@@ -272,7 +271,6 @@ export const fetchUpdatePsw = async (
 ): Promise<UpdateResponse> => {
   try {
     const isLogged = localStorage.getItem("accessToken")
-    console.log(isLogged)
     const res = await fetch("http://localhost:5555/user/profile/password", {
       method: "PATCH",
       headers: {
@@ -300,7 +298,6 @@ export const fetchUpdatePsw = async (
 export const fetchUpdateMail = async (newEmail: string): Promise<UpdateResponse> => {
   try {
     const isLogged = localStorage.getItem("accessToken")
-    console.log(isLogged)
     const res = await fetch("http://localhost:5555/user/profile/new-email", {
       method: "PATCH",
       headers: {
@@ -330,7 +327,7 @@ export const fetchUpdateProPic = async (image: FileList): Promise<{ imageLink: s
     formData.append("avatar_pic", image[0])
 
     const isLogged = localStorage.getItem("accessToken")
-    console.log(isLogged)
+
     const res = await fetch("http://localhost:5555/user/profile/avatar", {
       method: "POST",
       headers: {

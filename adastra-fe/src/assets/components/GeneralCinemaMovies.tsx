@@ -7,7 +7,7 @@ const GeneralCinemaMovies = () => {
   const navigate = useNavigate()
 
   const movies = useAppSelector((state) => state.movieState.allMovies)
-  console.log(movies)
+
   return (
     <Container>
       <MainTitles string={"I nostri film"} />

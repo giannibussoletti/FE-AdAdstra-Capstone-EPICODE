@@ -18,16 +18,13 @@ const MobileMenu = () => {
   if (!isCitiesMenu) {
     return (
       <Row
+        style={{ zIndex: "100" }}
         className={
-          "mobile-menu p-0 m-0 h-100 w-100 bg-black position-fixed top-0 bottom-100 end-100 z-3" +
+          "mobile-menu p-0 m-0 h-100 w-100 bg-black position-fixed top-0 bottom-100 end-100" +
           " " +
           closeUpdate
-        }
-      >
-        <Col
-          xs={12}
-          className="d-flex justify-content-end pt-4 pe-5 fw-semibold fs-3"
-        >
+        }>
+        <Col xs={12} className="d-flex justify-content-end pt-4 pe-5 fw-semibold fs-3">
           <span
             onClick={() =>
               dispatch(
@@ -38,8 +35,7 @@ const MobileMenu = () => {
                 }),
               )
             }
-            className="cursor-pointer"
-          >
+            className="cursor-pointer">
             &#120;
           </span>
         </Col>
@@ -60,8 +56,7 @@ const MobileMenu = () => {
                       isCinema: false,
                     }),
                   )
-                }}
-              >
+                }}>
                 <FontAwesomeIcon icon={menuItem.icon} className="me-3" />
                 {menuItem.label}
               </div>
@@ -73,12 +68,12 @@ const MobileMenu = () => {
   } else {
     return (
       <Row
+        style={{ zIndex: "100" }}
         className={
-          "mobile-menu p-0 m-0 h-100 w-100 bg-black position-fixed top-0 bottom-100 end-100 z-3" +
+          "mobile-menu p-0 m-0 h-100 w-100 bg-black position-fixed top-0 bottom-100 end-100" +
           " " +
           closeUpdate
-        }
-      >
+        }>
         <Row className="d-flex flex-column justify-content-start align-items-center">
           <div
             onClick={() =>
@@ -90,14 +85,10 @@ const MobileMenu = () => {
                 }),
               )
             }
-            className="cursor-pointer d-flex justify-content-end pt-4 pe-5 fw-semibold fs-3"
-          >
+            className="cursor-pointer d-flex justify-content-end pt-4 pe-5 fw-semibold fs-3">
             &#120;
           </div>
-          <Col
-            xs={12}
-            className="d-flex justify-content-end pt-4 pe-5 fw-semibold fs-3"
-          ></Col>
+          <Col xs={12} className="d-flex justify-content-end pt-4 pe-5 fw-semibold fs-3"></Col>
           {arrayCinema.map((cin) => {
             return (
               <Col
@@ -114,8 +105,7 @@ const MobileMenu = () => {
                     }),
                     dispatch(setId(cin.id)),
                   )
-                }}
-              >
+                }}>
                 <FontAwesomeIcon icon={faCircle} size="2xs" className="me-3" />
                 {cin.cinemaName}
                 <hr />
