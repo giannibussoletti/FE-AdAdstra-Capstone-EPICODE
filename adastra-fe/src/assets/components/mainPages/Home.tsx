@@ -50,16 +50,16 @@ const Home = () => {
           </Row>
         ) : (
           <>
+            <Row>
+              <Col className="p-0 mt-3 pb-4">
+                <NowPlayingSection />
+              </Col>
+            </Row>
             <Row className="mt-4">
               <Col className="mt-3 pb-4">
                 <MoviesComingSlider string="Coming Soon" />
               </Col>
               <hr />
-            </Row>
-            <Row>
-              <Col className="p-0 mt-3 pb-4">
-                <NowPlayingSection />
-              </Col>
             </Row>
           </>
         )}
@@ -69,8 +69,7 @@ const Home = () => {
             return (
               <Col
                 key={card.label + card.imgLink}
-                className={i % 2 === 0 ? "ms-0 mt-3" : "me-0 mt-3"}
-              >
+                className={i % 2 === 0 ? "ms-0 mt-3" : "me-0 mt-3"}>
                 <CardMoreInfo link={card.imgLink} label={card.label} />
               </Col>
             )
