@@ -189,16 +189,32 @@ body,
 }
 
 //MovieStartTimeCSS
-.single-movie-time {
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  transition: all 200ms ease-in-out;
-  border: #fff solid 1px;
+.golden-border {
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    #c48429 15%,
+    #fde778 30%,
+    #c48429 55%,
+    #fde778 75%,
+    #c48429 100%
+  );
+  padding: 2px;
+  transition: all 100ms ease-in-out;
 
   &:hover {
-    box-shadow: 0 0 9px 4px rgba(255, 255, 255, 0.6);
-    scale: 101%;
-    border: #ffffff00 solid 1px;
+    scale: 105%;
   }
+}
+
+.single-movie-time,
+.more-info-slider-button {
+  background-image: linear-gradient(#023f87 0%, #070038 100%);
+}
+
+.golden-border,
+.single-movie-time {
+  border-radius: 1rem;
 }
 
 //Carosello Coming Soon
