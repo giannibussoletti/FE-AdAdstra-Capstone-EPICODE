@@ -91,8 +91,9 @@ export const userMenuMapped = (
 
 export const movieDetailsMapped = (movie: MovieDetails) => {
   return [
+    { name: "Regia", details: movie.director },
     { name: "Cast", details: movie.starring },
-    { name: "Durata", details: movie.duration + "m" },
+    { name: "Durata", details: movie.duration },
     {
       name: "Data di uscita",
       details: new Date(movie.releaseDate).toLocaleDateString(),
