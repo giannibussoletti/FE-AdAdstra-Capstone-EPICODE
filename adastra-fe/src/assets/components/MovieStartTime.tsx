@@ -35,14 +35,10 @@ const MovieStartTime = ({
             }),
           )
           dispatch(resetState())
-          console.log("reset")
         }
         navigate("/scelta-posto/")
-      }}
-    >
-      <p className="m-0 fw-semibold fs-6">
-        {calculateMovieTime(date, duration)}
-      </p>
+      }}>
+      <p className="m-0 fw-semibold fs-6">{calculateMovieTime(date, duration)}</p>
       <p className="text-subtext-time fst-italic fw-medium">sala {screen}</p>
       <p className="text-end m-0">
         <span className="text-subtext-time fs-6">da </span>

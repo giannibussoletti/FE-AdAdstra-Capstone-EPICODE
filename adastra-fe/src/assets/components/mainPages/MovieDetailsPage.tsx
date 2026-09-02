@@ -31,26 +31,14 @@ const MovieDetailsPage = () => {
             <Col xs="auto" lg={4} xxl={cinemaId && findMovie ? 3 : 4}>
               <Image fluid src={details.posterLink} />
             </Col>
-            <Col
-              xs={12}
-              lg={8}
-              xxl={cinemaId && findMovie ? 5 : 8}
-              className="mt-3 mt-md-0"
-            >
-              <h2 className="fw-normal text-uppercase fw-medium mb-4">
-                {details.title}
-              </h2>
+            <Col xs={12} lg={8} xxl={cinemaId && findMovie ? 5 : 8} className="mt-3 mt-lg-0">
+              <h2 className="fw-normal text-uppercase fw-medium mb-4">{details.title}</h2>
 
               {movieDetailsMapped(details).map((detail, i) => {
                 return (
-                  <div
-                    key={detail.details + detail.name + "0" + i}
-                    className="mb-3"
-                  >
+                  <div key={detail.details + detail.name + "0" + i} className="mb-3">
                     <p className="single-movie-title-section">{detail.name}</p>
-                    <p className="single-movie-details-section">
-                      {detail.details}
-                    </p>
+                    <p className="single-movie-details-section">{detail.details}</p>
                   </div>
                 )
               })}
