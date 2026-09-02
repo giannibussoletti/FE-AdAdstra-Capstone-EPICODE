@@ -1,18 +1,6 @@
-import {
-  GREEN,
-  RED,
-  BLUE,
-  redSeat,
-  blueSeat,
-  greenSeat,
-} from "../misc/variables"
+import { GREEN, RED, BLUE, redSeat, blueSeat, greenSeat } from "../misc/variables"
 import { manageSeat } from "../redux/reducers/TicketSlice"
-import type {
-  EmptyFunction,
-  FillFunction,
-  Menus,
-  PropString,
-} from "../misc/types"
+import type { EmptyFunction, FillFunction, Menus, PropString } from "../misc/types"
 import { useNavigate } from "react-router"
 import type { useDispatch } from "react-redux"
 import { resetUserState } from "../redux/reducers/UserSlice"
@@ -29,13 +17,7 @@ export const fillSeat = ({
 }: FillFunction) => {
   if (e.target instanceof SVGPathElement) {
     const fillColor =
-      fill === RED
-        ? redSeat
-        : fill === BLUE
-          ? blueSeat
-          : fill === GREEN
-            ? greenSeat
-            : ""
+      fill === RED ? redSeat : fill === BLUE ? blueSeat : fill === GREEN ? greenSeat : ""
     const target = e.target
     const isFilled = target.style.fill
     if (!isFilled && maxSeats.length < 10) {
@@ -54,6 +36,13 @@ export const emptySeat = ({ e, seat, color, dispatch }: EmptyFunction) => {
   }
 }
 
+export const numbersToTime = (value: number) => {
+  const hours = String(Math.floor(value / 60)).padStart(2, "0")
+  const minutes = String(value % 60).padStart(2, "0")
+
+  return `${hours}h ${minutes}`
+}
+
 export const calculateMovieTime = (date: string, duration: number) => {
   const hours = new Date(date).getHours()
   const minute = new Date(date).getMinutes()
@@ -61,7 +50,16 @@ export const calculateMovieTime = (date: string, duration: number) => {
   const timeEnd = time + duration * 60000
   const endHours = new Date(timeEnd).getHours()
   const endMinute = new Date(timeEnd).getMinutes()
-  return hours + ":" + minute + " - " + endHours + ":" + endMinute
+
+  const isAddingZero = (minute: number) => {
+    if (minute < 10) {
+      return `0${minute}`
+    } else {
+      return minute
+    }
+  }
+
+  return hours + ":" + isAddingZero(minute) + " - " + endHours + ":" + isAddingZero(endMinute)
 }
 
 export const handleMenuLink = (

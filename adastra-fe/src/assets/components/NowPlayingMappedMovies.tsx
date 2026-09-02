@@ -6,6 +6,7 @@ import { fetchScreenTimes } from "../fetchs"
 import { useAppSelector, useAppDispatch } from "../redux/hooks"
 import { cinemaMoviesArray } from "../redux/reducers/MovieSlice"
 import type { MovieGroup } from "../fetchs/fetchTypes"
+import { numbersToTime } from "../misc/functions"
 
 const NowPlayingMappedMovies = () => {
   const cinemaId = useAppSelector((state) => state.menuState.cinemaId)
@@ -40,22 +41,18 @@ const NowPlayingMappedMovies = () => {
               </h5>
               <div className="mb-3">
                 <p className="single-movie-title-section">Cast</p>
-                <p className="single-movie-details-section">
-                  {movie.movieDetails.starring}
-                </p>
+                <p className="single-movie-details-section">{movie.movieDetails.starring}</p>
               </div>
               <div className="mb-3">
                 <p className="single-movie-title-section">Durata</p>
                 <p className="single-movie-details-section">
-                  {movie.movieDetails.duration}h
+                  {numbersToTime(movie.movieDetails.duration)}m
                 </p>
               </div>
               <div className="mb-3">
                 <p className="single-movie-title-section">Data di uscita</p>
                 <p className="single-movie-details-section">
-                  {new Date(
-                    movie.movieDetails.releaseDate,
-                  ).toLocaleDateString()}
+                  {new Date(movie.movieDetails.releaseDate).toLocaleDateString()}
                 </p>
               </div>
               <div className="d-none d-lg-block">
