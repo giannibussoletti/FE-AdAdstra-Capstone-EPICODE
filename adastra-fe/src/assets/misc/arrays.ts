@@ -58,22 +58,26 @@ export const registerLoginMenu: NavBarMenus[] = [
 export const moreInfo: bottomCardInfo[] = [
   {
     label: "lavora con noi",
-    imgLink: "https://placehold.co/600x300",
+    imgLink:
+      "https://res.cloudinary.com/yx1tcr1y/image/upload/t_optimize-more-info/lavora-con-noi.png",
     link: "#",
   },
   {
     label: "poltrone vip",
-    imgLink: "https://placehold.co/600x300",
+    imgLink:
+      "https://res.cloudinary.com/yx1tcr1y/image/upload/t_optimize-more-info/poltrone-vip.png",
     link: "#",
   },
   {
-    label: "Lorem ipsum",
-    imgLink: "https://placehold.co/600x300",
+    label: "Festaggia il tuo compleanno",
+    imgLink:
+      "https://res.cloudinary.com/yx1tcr1y/image/upload/t_optimize-more-info/sala-compleanno.png",
     link: "#",
   },
   {
     label: "Per le aziende",
-    imgLink: "https://placehold.co/600x300",
+    imgLink:
+      "https://res.cloudinary.com/yx1tcr1y/image/upload/t_optimize-more-info/per-le-aziende.png",
     link: "#",
   },
 ]

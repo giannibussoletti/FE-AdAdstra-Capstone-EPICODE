@@ -201,7 +201,7 @@ body,
     #fde778 75%,
     #c48429 100%
   );
-  padding: 2px;
+  padding: 1px;
   transition: all 100ms ease-in-out;
 
   &:hover {
@@ -250,7 +250,7 @@ body,
 
 //Card More info CSS
 .card-info-bg {
-  background-image: linear-gradient(to top, #000000b5, #00000000);
+  background-image: linear-gradient(to top, #000000b5 0%, #00000000 40%);
   transition: all 200ms ease-in-out;
 }
 
