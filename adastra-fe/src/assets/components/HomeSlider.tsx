@@ -1,7 +1,9 @@
 import { Carousel, Container, Row, Col, Button } from "react-bootstrap"
 import { useAppSelector } from "../redux/hooks"
-
+import { useNavigate } from "react-router"
 const HomeSlider = () => {
+  const navigate = useNavigate()
+
   const movies = useAppSelector((state) => state.movieState.allMovies)
   const banners = movies
     .filter((movie) => movie.bannerLink !== null)
@@ -38,8 +40,12 @@ const HomeSlider = () => {
                           <h2 className="mb-1 mt-2 text-uppercase">{img.movieName}</h2>
                           <p>{img.tagline}</p>
                         </Col>
-                        <Col xs="auto">
-                          <Button>Ciao</Button>
+                        <Col xs={5} className="d-flex justify-content-center align-items-center ">
+                          <Button
+                            onClick={() => navigate("/dettagli/" + img.movieId)}
+                            className="rounded-pill fw-semibold text-uppercase py-2 more-info-slider-button border-0">
+                            <span className="mx-3">Maggiori informazioni</span>
+                          </Button>
                         </Col>
                       </Row>
                     </Carousel.Caption>
