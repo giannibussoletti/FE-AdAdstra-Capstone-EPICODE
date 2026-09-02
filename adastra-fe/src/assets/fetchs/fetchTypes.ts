@@ -14,6 +14,10 @@ export type MovieDetails = {
   id: string
   isDeleted: string
   releaseDate: string
+  director: string
+  bannerLink: string
+  trailer: string
+  tagline: string
 }
 
 export type ScreeningTime = {
