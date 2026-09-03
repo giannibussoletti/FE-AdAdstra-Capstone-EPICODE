@@ -4,11 +4,12 @@ import { faCircleInfo, faRightFromBracket } from "@fortawesome/free-solid-svg-ic
 import { Container, Row, Col, Image } from "react-bootstrap"
 import { useNavigate } from "react-router"
 import { useAppDispatch, useAppSelector } from "../../redux/hooks"
-import { handleLogout } from "../../misc/functions"
-import { useEffect } from "react"
+import { handleLogout, sortingMovies } from "../../misc/functions"
+import { useEffect, useState } from "react"
 import { fetchUserMovies } from "../../fetchs"
 import { setUserMovies } from "../../redux/reducers/UserSlice"
 import TicketUserProfile from "../TicketUserProfile"
+import type { UserMovies } from "../../fetchs/fetchTypes"
 
 const ProfilePage = () => {
   const dispatch = useAppDispatch()
@@ -17,11 +18,14 @@ const ProfilePage = () => {
   const name = useAppSelector((state) => state.userState.name)
   const surname = useAppSelector((state) => state.userState.surname)
   const profilePicLink = useAppSelector((state) => state.userState.profilePicLink)
-  const userMovies = useAppSelector((state) => state.userState.userMovies)
+  const [userMovies, setMovies] = useState<UserMovies[]>([])
 
   useEffect(() => {
     fetchUserMovies()
-      .then((data) => dispatch(setUserMovies(data)))
+      .then((data) => {
+        dispatch(setUserMovies(sortingMovies(data)))
+        setMovies(sortingMovies(data))
+      })
       .catch((err) => console.error(err))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])

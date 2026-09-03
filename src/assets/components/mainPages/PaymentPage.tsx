@@ -2,26 +2,13 @@ import TicketsCount from "../TicketsCount"
 import TopBarInfoBooking from "../TopBarInfoBooking"
 import MainTitles from "../MainTitles"
 import { useAppDispatch, useAppSelector } from "../../redux/hooks"
-import {
-  Form,
-  Container,
-  Row,
-  Col,
-  Popover,
-  OverlayTrigger,
-  Modal,
-  Button,
-} from "react-bootstrap"
+import { Form, Container, Row, Col, Popover, OverlayTrigger, Modal, Button } from "react-bootstrap"
 import { resetState } from "../../redux/reducers/TicketSlice"
 import ResponseModal from "../ResponseModal"
 import { fetchBooking } from "../../fetchs"
 import { useRef, useState } from "react"
 import { blueCost, GREEN, greenCost, RED, redCost } from "../../misc/variables"
-import {
-  faCircle,
-  faCircleCheck,
-  faCircleXmark,
-} from "@fortawesome/free-solid-svg-icons"
+import { faCircle, faCircleCheck, faCircleXmark } from "@fortawesome/free-solid-svg-icons"
 
 const PaymentPage = () => {
   const requiredPopover = (
@@ -48,21 +35,13 @@ const PaymentPage = () => {
   const [showConfirmation, setShowConfirmation] = useState(false)
 
   const emailUser = useAppSelector((state) => state.userState.email)
-  const screenTimeId = useAppSelector(
-    (state) => state.movieState.screeningTimeId,
-  )
+  const screenTimeId = useAppSelector((state) => state.movieState.screeningTimeId)
   const maxSeats = useAppSelector((state) => state.bookingState.maxSeats)
   const totalCost = useAppSelector((state) => state.bookingState.totalCost)
 
-  const greenSeatsPosition = useAppSelector(
-    (state) => state.bookingState.greenSeatsPosition,
-  )
-  const redSeatsPosition = useAppSelector(
-    (state) => state.bookingState.redSeatsPosition,
-  )
-  const blueSeatsPosition = useAppSelector(
-    (state) => state.bookingState.blueSeatsPosition,
-  )
+  const greenSeatsPosition = useAppSelector((state) => state.bookingState.greenSeatsPosition)
+  const redSeatsPosition = useAppSelector((state) => state.bookingState.redSeatsPosition)
+  const blueSeatsPosition = useAppSelector((state) => state.bookingState.blueSeatsPosition)
 
   const totalRed = redSeatsPosition.length * redCost
   const totalBlue = blueSeatsPosition.length * blueCost
@@ -135,8 +114,7 @@ const PaymentPage = () => {
             show={showAlert}
             delay={{ show: 100, hide: 400 }}
             placement="top"
-            overlay={requiredPopover}
-          >
+            overlay={requiredPopover}>
             <Col className="text-center mt-4">
               <Button
                 onClick={() => {
@@ -148,8 +126,7 @@ const PaymentPage = () => {
                   }
                 }}
                 variant="buttons"
-                className="rounded-pill fw-semibold text-uppercase py-2"
-              >
+                className="rounded-pill fw-semibold text-uppercase py-2">
                 <span className="mx-3">Acquista</span>
               </Button>
             </Col>
@@ -166,20 +143,14 @@ const PaymentPage = () => {
         </Modal.Header>
         <Modal.Body>
           <p>L'email inserita è corretta?</p>
-          <strong>{guestEmail}</strong>
+          <strong>{guestEmail ? guestEmail : emailUser}</strong>
         </Modal.Body>
         <Modal.Footer>
           <Button
             variant="success"
             onClick={() => {
               setShowConfirmation(false)
-              fetchBooking(
-                screenTimeId,
-                maxSeats,
-                totalCost,
-                guestEmail,
-                coupon,
-              )
+              fetchBooking(screenTimeId, maxSeats, totalCost, guestEmail, coupon)
                 .then((data) => {
                   setModalData({
                     title: "Tutto ok!",
@@ -201,16 +172,14 @@ const PaymentPage = () => {
                   })
                   setShow(true)
                 })
-            }}
-          >
+            }}>
             Confermo
           </Button>
           <Button
             variant="danger"
             onClick={() => {
               setShowConfirmation(false)
-            }}
-          >
+            }}>
             C'è un errore
           </Button>
         </Modal.Footer>

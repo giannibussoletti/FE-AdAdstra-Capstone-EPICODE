@@ -69,9 +69,9 @@ const TheaterMap = () => {
             <g>
               <defs>
                 <radialGradient id="backgroundMap" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color={bgMapColor} stop-opacity="0.8" />
+                  <stop offset="0%" stopColor={bgMapColor} stopOpacity="0.8" />
 
-                  <stop offset="100%" stop-color={bgMapColor} stop-opacity="0" />
+                  <stop offset="100%" stopColor={bgMapColor} stopOpacity="0" />
                 </radialGradient>
               </defs>
               <rect className="cls-10" width="1130" height="1000" />

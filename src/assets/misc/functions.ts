@@ -4,7 +4,7 @@ import type { EmptyFunction, FillFunction, Menus, PropString } from "../misc/typ
 import { useNavigate } from "react-router"
 import type { useDispatch } from "react-redux"
 import { resetUserState } from "../redux/reducers/UserSlice"
-import type { MovieDetails } from "../fetchs/fetchTypes"
+import type { MovieDetails, UserMovies } from "../fetchs/fetchTypes"
 
 export const fillSeat = ({
   e,
@@ -99,4 +99,10 @@ export const movieDetailsMapped = (movie: MovieDetails) => {
       details: new Date(movie.releaseDate).toLocaleDateString(),
     },
   ]
+}
+
+export const sortingMovies = (data: UserMovies[]) => {
+  return [...data].sort(
+    (a, b) => new Date(b.screeningDate).getTime() - new Date(a.screeningDate).getTime(),
+  )
 }
