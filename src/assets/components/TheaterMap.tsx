@@ -29,10 +29,8 @@ const TheaterMap = () => {
 
   const cinemaId = useAppSelector((state) => state.menuState.cinemaId)
   const screenId = useAppSelector((state) => state.movieState.screenId)
-  const screeningTimeId = useAppSelector(
-    (state) => state.movieState.screeningTimeId,
-  )
-
+  const screeningTimeId = useAppSelector((state) => state.movieState.screeningTimeId)
+  const bgMapColor = "#000000"
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false)
   const handleOpen = () => setShow(true)
@@ -64,254 +62,170 @@ const TheaterMap = () => {
         id="theater-map"
         data-name="Layer 2"
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1130 1000"
-      >
+        viewBox="0 0 1130 1000">
         <g id="Layer_1-2" data-name="Layer 1">
           <g>
             {/* <!--Background things--> */}
             <g>
+              <defs>
+                <radialGradient id="backgroundMap" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color={bgMapColor} stop-opacity="0.8" />
+
+                  <stop offset="100%" stop-color={bgMapColor} stop-opacity="0" />
+                </radialGradient>
+              </defs>
               <rect className="cls-10" width="1130" height="1000" />
               {/*Lettere e numeri*/}
               <g>
                 <g>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(74.13 332.84)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(74.13 332.84)">
                     <tspan x="0" y="0">
                       A
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(73.82 381.3)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(73.82 381.3)">
                     <tspan x="0" y="0">
                       B
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(73.11 429.76)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(73.11 429.76)">
                     <tspan x="0" y="0">
                       C
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(71.67 478.22)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(71.67 478.22)">
                     <tspan x="0" y="0">
                       D
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(74.93 577.74)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(74.93 577.74)">
                     <tspan x="0" y="0">
                       E
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(75.37 626.23)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(75.37 626.23)">
                     <tspan x="0" y="0">
                       F
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(72.36 674.71)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(72.36 674.71)">
                     <tspan x="0" y="0">
                       G
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(71.85 723.19)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(71.85 723.19)">
                     <tspan x="0" y="0">
                       H
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(74.63 771.67)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(74.63 771.67)">
                     <tspan x="0" y="0">
                       L
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(70.03 820.15)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(70.03 820.15)">
                     <tspan x="0" y="0">
                       M
                     </tspan>
                   </text>
                 </g>
                 <g>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(148.31 269.54)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(148.31 269.54)">
                     <tspan x="0" y="0">
                       1
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(189.07 269.54)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(189.07 269.54)">
                     <tspan x="0" y="0">
                       2
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(232.45 269.54)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(232.45 269.54)">
                     <tspan x="0" y="0">
                       3
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(274.57 269.54)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(274.57 269.54)">
                     <tspan x="0" y="0">
                       4
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(319.14 269.54)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(319.14 269.54)">
                     <tspan x="0" y="0">
                       5
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(361.95 269.54)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(361.95 269.54)">
                     <tspan x="0" y="0">
                       6
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(405.54 269.54)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(405.54 269.54)">
                     <tspan x="0" y="0">
                       7
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(448.31 269.54)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(448.31 269.54)">
                     <tspan x="0" y="0">
                       8
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(492.02 269.54)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(492.02 269.54)">
                     <tspan x="0" y="0">
                       9
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(530.02 269.54)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(530.02 269.54)">
                     <tspan x="0" y="0">
                       10
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(577.16 269.54)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(577.16 269.54)">
                     <tspan x="0" y="0">
                       11
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(617.92 269.54)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(617.92 269.54)">
                     <tspan x="0" y="0">
                       12
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(661.3 269.54)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(661.3 269.54)">
                     <tspan x="0" y="0">
                       13
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(703.42 269.54)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(703.42 269.54)">
                     <tspan x="0" y="0">
                       14
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(747.99 269.54)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(747.99 269.54)">
                     <tspan x="0" y="0">
                       15
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(790.8 269.54)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(790.8 269.54)">
                     <tspan x="0" y="0">
                       16
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(834.4 269.54)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(834.4 269.54)">
                     <tspan x="0" y="0">
                       17
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(877.16 269.54)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(877.16 269.54)">
                     <tspan x="0" y="0">
                       18
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(920.87 269.54)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(920.87 269.54)">
                     <tspan x="0" y="0">
                       19
                     </tspan>
                   </text>
-                  <text
-                    className="letterAndNumbers"
-                    transform="translate(961 269.54)"
-                  >
+                  <text className="letterAndNumbers" transform="translate(961 269.54)">
                     <tspan x="0" y="0">
                       20
                     </tspan>
@@ -363,7 +277,7 @@ const TheaterMap = () => {
               />
               <text className="cls-11" transform="translate(176.72 918.32)">
                 <tspan x="0" y="0">
-                  Rossa {redCost.toLocaleString()}€
+                  {redCost.toLocaleString()}€
                 </tspan>
               </text>
               <path
@@ -372,7 +286,7 @@ const TheaterMap = () => {
               />
               <text className="cls-11" transform="translate(535.61 918.32)">
                 <tspan x="0" y="0">
-                  Blu {blueCost.toLocaleString()}€
+                  {blueCost.toLocaleString()}€
                 </tspan>
               </text>
               <path
@@ -381,7 +295,7 @@ const TheaterMap = () => {
               />
               <text className="cls-11" transform="translate(866.31 918.32)">
                 <tspan x="0" y="0">
-                  Verde {greenCost.toLocaleString()}€
+                  {greenCost.toLocaleString()}€
                 </tspan>
               </text>
               <text className="cls-12" transform="translate(419.22 166.17)">
@@ -406,13 +320,7 @@ const TheaterMap = () => {
                         handleOpen,
                       })
                     }
-                    key={
-                      seat.svgCoordinates +
-                      seat.id +
-                      seat.row +
-                      seat.number +
-                      seat.color
-                    }
+                    key={seat.svgCoordinates + seat.id + seat.row + seat.number + seat.color}
                     className={
                       seat.color === RED
                         ? "cls-9"
@@ -430,9 +338,7 @@ const TheaterMap = () => {
                 ? maxSeats.map((seat) => {
                     return (
                       <path
-                        onClick={(e) =>
-                          emptySeat({ e, seat, color: seat.color, dispatch })
-                        }
+                        onClick={(e) => emptySeat({ e, seat, color: seat.color, dispatch })}
                         fill={
                           seat.color === RED
                             ? redSeat
@@ -442,13 +348,7 @@ const TheaterMap = () => {
                                 ? greenSeat
                                 : ""
                         }
-                        key={
-                          seat.svgCoordinates +
-                          seat.id +
-                          seat.row +
-                          seat.number +
-                          seat.color
-                        }
+                        key={seat.svgCoordinates + seat.id + seat.row + seat.number + seat.color}
                         stroke={
                           seat.color === RED
                             ? redSeat
@@ -476,13 +376,7 @@ const TheaterMap = () => {
                             ? greenSeat
                             : ""
                     }
-                    key={
-                      seat.svgCoordinates +
-                      seat.id +
-                      seat.row +
-                      seat.number +
-                      seat.color
-                    }
+                    key={seat.svgCoordinates + seat.id + seat.row + seat.number + seat.color}
                     stroke={
                       seat.color === RED
                         ? redSeat

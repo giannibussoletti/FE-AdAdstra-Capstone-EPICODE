@@ -1,13 +1,14 @@
 import MainTitles from "../MainTitles"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {
-  faCircleInfo,
-  faRightFromBracket,
-} from "@fortawesome/free-solid-svg-icons"
+import { faCircleInfo, faRightFromBracket } from "@fortawesome/free-solid-svg-icons"
 import { Container, Row, Col, Image } from "react-bootstrap"
 import { useNavigate } from "react-router"
 import { useAppDispatch, useAppSelector } from "../../redux/hooks"
 import { handleLogout } from "../../misc/functions"
+import { useEffect } from "react"
+import { fetchUserMovies } from "../../fetchs"
+import { setUserMovies } from "../../redux/reducers/UserSlice"
+import TicketUserProfile from "../TicketUserProfile"
 
 const ProfilePage = () => {
   const dispatch = useAppDispatch()
@@ -15,9 +16,15 @@ const ProfilePage = () => {
   const email = useAppSelector((state) => state.userState.email)
   const name = useAppSelector((state) => state.userState.name)
   const surname = useAppSelector((state) => state.userState.surname)
-  const profilePicLink = useAppSelector(
-    (state) => state.userState.profilePicLink,
-  )
+  const profilePicLink = useAppSelector((state) => state.userState.profilePicLink)
+  const userMovies = useAppSelector((state) => state.userState.userMovies)
+
+  useEffect(() => {
+    fetchUserMovies()
+      .then((data) => dispatch(setUserMovies(data)))
+      .catch((err) => console.error(err))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <Container className="mt-5 px-5">
@@ -74,10 +81,7 @@ const ProfilePage = () => {
                 i tuoi film più recenti
               </h4>
             </Col>
-            <Col className="d-flex gap-3">
-              <img className="rounded-3" src="./ticket-odissea.jpg" alt="" />
-              <img className="rounded-3" src="./ticket-backrooms.jpg" alt="" />
-            </Col>
+            {userMovies.slice(0, 2).map((movie) => TicketUserProfile(movie))}
           </Row>
         </Col>
       </Row>

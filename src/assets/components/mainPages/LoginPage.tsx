@@ -17,11 +17,7 @@ import { useState } from "react"
 import { useAppDispatch } from "../../redux/hooks"
 import { fetchLogin } from "../../fetchs"
 import { setUserState } from "../../redux/reducers/UserSlice"
-import {
-  faCircle,
-  faCircleCheck,
-  faCircleXmark,
-} from "@fortawesome/free-solid-svg-icons"
+import { faCircle, faCircleCheck, faCircleXmark } from "@fortawesome/free-solid-svg-icons"
 import { GREEN, RED } from "../../misc/variables"
 
 const LoginPage = () => {
@@ -59,12 +55,14 @@ const LoginPage = () => {
         handleClose={handleClose}
         icon={modalData.icon}
         style={modalData.style}
-        buttonText={modalData.buttonText}
-      ></ResponseModal>
+        buttonText={modalData.buttonText}></ResponseModal>
       <Row lg={2} xs={1} className="my-5 justify-content-center">
         <Col className="justify-content-center justify-content-lg-end align-items-center d-flex">
-          <Card className=" border-2 border-white">
-            <Card.Img variant="top" src="https://placehold.co/400x200" />
+          <Card className=" border-2 border-white" style={{ maxWidth: "400px" }}>
+            <Card.Img
+              variant="top"
+              src="https://res.cloudinary.com/yx1tcr1y/image/upload/v1788449099/login.png"
+            />
             <Card.Body className="px-4">
               <Card.Title className="mt-2 mb-3">Login utente</Card.Title>
 
@@ -79,7 +77,7 @@ const LoginPage = () => {
                   />
                 </Form.Group>
                 <Form.Group className="mb-3">
-                  <Form.Label>password</Form.Label>
+                  <Form.Label>Password</Form.Label>
                   <Form.Control
                     required
                     onChange={(e) => setPassword(e.target.value)}
@@ -92,13 +90,11 @@ const LoginPage = () => {
                     <OverlayTrigger
                       delay={{ show: 100, hide: 400 }}
                       placement="top"
-                      overlay={requiredPopover}
-                    >
+                      overlay={requiredPopover}>
                       <Button
                         variant="buttons"
-                        className="rounded-pill fw-semibold text-uppercase py-2 mb-4 mt-3"
-                      >
-                        registrati
+                        className="rounded-pill fw-semibold text-uppercase py-2 mb-4 mt-3">
+                        login
                       </Button>
                     </OverlayTrigger>
                   </div>
@@ -109,10 +105,7 @@ const LoginPage = () => {
                         e.preventDefault()
                         fetchLogin(email, password)
                           .then((data) => {
-                            localStorage.setItem(
-                              "accessToken",
-                              data.accessToken,
-                            )
+                            localStorage.setItem("accessToken", data.accessToken)
                             dispatch(
                               setUserState({
                                 accessToken: data.accessToken,
@@ -136,8 +129,7 @@ const LoginPage = () => {
                           .catch((err) => {
                             setModalData({
                               title: "Ops!",
-                              message:
-                                "Qualcosa è andato storto, riprova " + err,
+                              message: "Qualcosa è andato storto, riprova " + err,
                               icon: faCircleXmark,
                               style: RED,
                               buttonText: "Riprova",
@@ -146,8 +138,7 @@ const LoginPage = () => {
                           })
                       }}
                       variant="buttons"
-                      className="rounded-pill fw-semibold text-uppercase py-2 mb-4 mt-3"
-                    >
+                      className="rounded-pill fw-semibold text-uppercase py-2 mb-4 mt-3">
                       Login
                     </Button>
                   </div>
@@ -168,8 +159,7 @@ const LoginPage = () => {
                   navigate("/registrazione")
                 }}
                 variant="buttons"
-                className="rounded-pill fw-semibold text-uppercase py-2 mb-4 mt-3"
-              >
+                className="rounded-pill fw-semibold text-uppercase py-2 mb-4 mt-3">
                 Clicca qui!
               </Button>
             </Col>

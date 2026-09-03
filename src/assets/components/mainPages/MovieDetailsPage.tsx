@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react"
-import { Container, Row, Col, Image, Spinner, Accordion } from "react-bootstrap"
+import { Container, Row, Col, Image, Spinner, Accordion, Button } from "react-bootstrap"
 import { useParams } from "react-router"
 import { fetchMovieDetails } from "../../fetchs"
 import type { MovieDetails } from "../../fetchs/fetchTypes"
 import { movieDetailsMapped } from "../../misc/functions"
 import MovieTimesTabs from "../MovieTimesTabs"
 import { useAppSelector } from "../../redux/hooks"
+import { useNavigate } from "react-router"
 const MovieDetailsPage = () => {
+  const navigate = useNavigate()
   const params = useParams()
   const [details, setDetails] = useState<MovieDetails>()
   const movieId = params.movieId
@@ -55,6 +57,14 @@ const MovieDetailsPage = () => {
               <div className="d-none d-lg-block">
                 <p>{details.plot}</p>
               </div>
+            </Col>
+            <Col xs={12}>
+              <Button
+                onClick={() => navigate(-1)}
+                variant="buttons"
+                className="rounded-2 fw-semibold text-uppercase py-2 my-3">
+                <span className="mx-3">Torna indietro </span>
+              </Button>
             </Col>
             {cinemaId && findMovie && (
               <Col xxl={4}>

@@ -25,9 +25,9 @@ const NowPlayingMappedMovies = () => {
 
   return (
     <div className="mt-5">
-      {movies.map((movie) => {
+      {movies.map((movie, i) => {
         return (
-          <Row key={movie.movieDetails.id} className="mt-4 mb-xxl-5">
+          <Row key={movie.movieDetails.id} className="mt-0 mb-xxl-0">
             <Col xs={4} xxl={3}>
               <Image fluid src={movie.movieDetails.posterLink} />
             </Col>
@@ -62,6 +62,7 @@ const NowPlayingMappedMovies = () => {
             <Col xxl={4}>
               <MovieTimesTabs movie={movie} />
             </Col>
+            {i !== movies.length - 1 && <hr className="hr-movies-home" />}
           </Row>
         )
       })}

@@ -33,7 +33,7 @@ const Navbar = () => {
             {location.pathname !== "/" ? (
               ""
             ) : (
-              <div className="me-auto me-lg-5">
+              <div className="me-auto">
                 <CitySearch />
               </div>
             )}
@@ -75,8 +75,7 @@ const Navbar = () => {
                   return (
                     <li
                       className="text-uppercase fw-medium cursor-pointer"
-                      key={item.label + item.label}
-                    >
+                      key={item.label + item.label}>
                       {item.label}
                     </li>
                   )
@@ -104,8 +103,7 @@ const Navbar = () => {
                     className="cursor-pointer"
                   />
                 }
-                align="end"
-              >
+                align="end">
                 {userMenufilter.map((item) => {
                   const link = item.link
                   const label = item.label
@@ -114,8 +112,7 @@ const Navbar = () => {
                       key={link + label}
                       onClick={() => {
                         userMenuMapped(navigate, dispatch, { link, label })
-                      }}
-                    >
+                      }}>
                       {label}
                     </Dropdown.Item>
                   )

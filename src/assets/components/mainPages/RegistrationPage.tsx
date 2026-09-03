@@ -51,8 +51,11 @@ const RegistrationPage = () => {
       />
       <Row className="justify-content-center align-items-center my-5">
         <Col className="justify-content-center align-items-center d-flex">
-          <Card className=" border-2 border-white">
-            <Card.Img variant="top" src="https://placehold.co/400x200" />
+          <Card className=" border-2 border-white" style={{ maxWidth: "400px" }}>
+            <Card.Img
+              variant="top"
+              src="https://res.cloudinary.com/yx1tcr1y/image/upload/v1788449099/registration.png"
+            />
             <Card.Body className="px-4">
               <Card.Title className="mt-2 mb-3">Registrazione utente</Card.Title>
 
@@ -76,7 +79,7 @@ const RegistrationPage = () => {
                   />
                 </Form.Group>
                 <Form.Group className="mb-3">
-                  <Form.Label>data di nascita</Form.Label>
+                  <Form.Label>Data di nascita</Form.Label>
                   <Form.Control
                     required
                     onChange={(e) => {
@@ -110,7 +113,7 @@ const RegistrationPage = () => {
                   />
                 </Form.Group>
                 <Form.Group className="mb-3">
-                  <Form.Label>password</Form.Label>
+                  <Form.Label>Password</Form.Label>
                   <Form.Control
                     required
                     onChange={(e) => setPassword(e.target.value)}
