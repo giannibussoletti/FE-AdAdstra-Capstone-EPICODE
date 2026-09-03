@@ -78,7 +78,7 @@ Alcune funzionalità in programma per le prossime versioni:
 - Gestione della mappa dei posti riservati alle persone diversamente abili
 - Crop della foto profilo per una migliore gestione dell'aspect ratio dell'avatar
 - Creazione di una pagina di gestione per la creazione e la manutenzione di film, orari e cinema
-
+- Apliamento del profilo utente con una nuova gestione dedicata ai punti raccolti tramite fidelity card
 ---
 
 ## 🔗 Link utili
