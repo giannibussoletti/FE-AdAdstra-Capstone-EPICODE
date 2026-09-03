@@ -1,33 +1,36 @@
-import { Card } from "react-bootstrap"
+import { Col, Row } from "react-bootstrap"
 import type { UserMovies } from "../fetchs/fetchTypes"
 import { isAddingZero } from "../misc/functions"
-const TicketUserProfile = (details: UserMovies) => {
+import QRCode from "react-qr-code"
+const TicketUserProfile = ({ details }: { details: UserMovies }) => {
   const hours = new Date(details.screeningDate).getHours()
   const minutes = new Date(details.screeningDate).getMinutes()
 
   return (
-    <Card style={{ maxWidth: "300px" }} className="profile-ticket">
-      <Card.Body className=" bg-body text-black rounded-3">
-        <Card.Title className="ticket-movie-title">{details.title}</Card.Title>
-        <Card.Text>
-          <p>
-            Sala <span>{details.theater}</span>
-          </p>
-          <p>
-            Posto <span>{details.seat}</span>
-          </p>
-          <p>
-            data <span>{new Date(details.screeningDate).toLocaleDateString()}</span>
-          </p>
-          <p>
-            orario{" "}
-            <span>
-              {isAddingZero(hours)}:{isAddingZero(minutes)}
-            </span>
-          </p>
-        </Card.Text>
-      </Card.Body>
-    </Card>
+    <Row
+      xs={1}
+      style={{ maxWidth: "250px" }}
+      className="profile-ticket bg-body text-black rounded-3 px-3 py-4 h-100">
+      <h5 className="ticket-movie-title">{details.title}</h5>
+      <Col>
+        Sala <span>{details.theater}</span>
+      </Col>
+      <Col>
+        Posto <span>{details.seat}</span>
+      </Col>
+      <Col>
+        data <span>{new Date(details.screeningDate).toLocaleDateString()}</span>
+      </Col>
+      <Col>
+        orario{" "}
+        <span>
+          {isAddingZero(hours)}:{isAddingZero(minutes)}
+        </span>
+      </Col>
+      <Col className="d-flex justify-content-center mt-auto">
+        <QRCode size={150} value={self.crypto.randomUUID()} />
+      </Col>
+    </Row>
   )
 }
 
