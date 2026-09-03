@@ -6,15 +6,11 @@ const Footer = () => {
       <Container fluid="md" className="px-4 pb-3 pt-2 mt-5">
         <Row xs={1} md={2}>
           <Col xs={{ order: 1 }} md={{ order: 0 }} className="p-0">
-            <Accordion className="" flush alwaysOpen>
+            <Accordion flush>
               {footerInfo.map((info) => {
                 return (
-                  <Accordion.Item
-                    className="p-0 "
-                    eventKey={info.eventKey}
-                    key={info.id}
-                  >
-                    <Accordion.Header className="">
+                  <Accordion.Item className="p-0 " eventKey={info.eventKey} key={info.id}>
+                    <Accordion.Header>
                       <h6 className="h5 fw-normal text-uppercase mt-3 text-center text-md-start w-100">
                         {info.title}
                       </h6>
@@ -28,8 +24,7 @@ const Footer = () => {
           <Col
             md={{ order: 1 }}
             xs={{ order: 0 }}
-            className="py-4 d-flex justify-content-md-end justify-content-center align-items-start"
-          >
+            className="py-4 d-flex justify-content-md-end justify-content-center align-items-start">
             <Image style={{ maxHeight: "190px" }} src="/logo-adastra.png" />
           </Col>
         </Row>
