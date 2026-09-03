@@ -76,9 +76,6 @@ Alcune funzionalità in programma per le prossime versioni:
 
 - Prevendita per i film di prossima uscita
 - Gestione della mappa dei posti riservati alle persone diversamente abili
-- Visualizzazione ordinata degli orari (rimando alla pagina dettaglio film quando gli orari sono numerosi)
-- Validazione del biglietto per impedirne il riutilizzo
-- Invio dei biglietti tramite PDF via email (lato back-end)
 - Crop della foto profilo per una migliore gestione dell'aspect ratio dell'avatar
 - Creazione di una pagina di gestione per la creazione e la manutenzione di film, orari e cinema
 
