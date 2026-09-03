@@ -1,8 +1,6 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useAppSelector } from "../../redux/hooks"
 import { Container, Row, Col, Image, Button, Form, ListGroup } from "react-bootstrap"
-import { fetchUserMovies } from "../../fetchs"
-import type { UserMovies } from "../../fetchs/fetchTypes"
 import { useNavigate } from "react-router"
 import ResponseModal from "../ResponseModal"
 import UpdateProfileResponseModal from "../UpdateProfileResponseModal"
@@ -18,6 +16,7 @@ const ProfileDetails = () => {
   const email = useAppSelector((state) => state.userState.email)
   const profilePicLink = useAppSelector((state) => state.userState.profilePicLink)
   const birthDate = useAppSelector((state) => state.userState.birthDate)
+  const userMovies = useAppSelector((state) => state.userState.userMovies)
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false)
   const [modalData, setModalData] = useState({
@@ -30,19 +29,12 @@ const ProfileDetails = () => {
   const [modalPicShow, setModalPicShow] = useState(false)
   const handleCloseModalPic = () => setModalPicShow(false)
 
-  const [userMovies, setUserMovies] = useState<UserMovies[]>([])
   const [oldPsw, setOldPsw] = useState<string>("")
   const [newPsw, setNewPsw] = useState<string>("")
   const [newMail, setNewMail] = useState<string>("")
   const [showConfirmation, setShowConfirmation] = useState(false)
   const [mailOrPsw, setMailOrPsw] = useState("")
   const handleCloseShowConfirmation = () => setShowConfirmation(false)
-
-  useEffect(() => {
-    fetchUserMovies()
-      .then((data) => setUserMovies(data))
-      .catch((err) => console.error(err))
-  }, [])
 
   return (
     <Container className="justify-content-center align-items-center d-flex pt-5">
@@ -131,7 +123,7 @@ const ProfileDetails = () => {
         </Col>
         <Col>
           <h5>I tuoi film:</h5>
-          {userMovies.length > 0 ? (
+          {userMovies && userMovies.length > 0 ? (
             <ListGroup>
               {userMovies.map((movie) => {
                 return (

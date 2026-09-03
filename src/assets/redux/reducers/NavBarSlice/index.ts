@@ -1,13 +1,9 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit"
-import type {
-  MenuState,
-  PayloadStateMenu,
-  PayloadStateCinema,
-} from "../SlicesTypes"
+import type { MenuState, PayloadStateMenu, PayloadStateCinema } from "../SlicesTypes"
 
 const initialState: MenuState = {
   isOpen: "start-100",
-  cinemaSearchMenu: "-",
+  cinemaSearchMenu: "scegli il tuo cinema",
   arrayMenu: [],
   isCinema: false,
   arrayCinema: [],

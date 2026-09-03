@@ -1,6 +1,16 @@
 import type { bottomCardInfo, FooterTypes, NavBarMenus } from "./types"
 import { faCircle } from "@fortawesome/free-solid-svg-icons"
 
+export const weekDay = [
+  "Domenica",
+  "Lunedì",
+  "Martedì",
+  "Mercoledì",
+  "Giovedì",
+  "Venerdì",
+  "Sabato",
+]
+
 export const burgerMenu: NavBarMenus[] = [
   {
     label: "trailer",

@@ -61,10 +61,16 @@ export type ProfileType = {
   accessToken: string
 }
 
+export type ProfileInitialState = ProfileType & {
+  userMovies: UserMovies[]
+}
+
 export type UserMovies = {
   title: string
-  releaseDate: string
+  screeningDate: string
   movieId: string
+  seat: string
+  theater: number
 }
 
 export type UpdateResponse = {

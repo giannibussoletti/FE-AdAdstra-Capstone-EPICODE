@@ -26,6 +26,7 @@ $table-bg: transparent;
 $table-cell-padding-y: 1rem;
 $nav-link-color: $input-color;
 $nav-link-hover-color: $input-color;
+$nav-tabs-border-width: 0;
 
 // Accordion variable
 $accordion-padding-y: 0rem;
@@ -88,7 +89,7 @@ $list-group-action-active-bg: null;
 $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "bootstrap/scss/bootstrap.scss";
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 body {
   font-family: "Poppins", sans-serif;
@@ -115,6 +116,12 @@ body,
 .mobile-menu {
   background: linear-gradient(45deg, #04042c 0%, #010217 100%);
 }
+
+//link underline hover
+.underline-link:hover {
+  text-decoration: underline;
+}
+
 //NAVBAR
 .mobile-menu {
   transition: all 200ms ease-in-out;
@@ -211,7 +218,7 @@ body,
 
 .single-movie-time,
 .more-info-slider-button {
-  background-image: linear-gradient(#023f87 0%, #070038 100%);
+  background-image: linear-gradient(315deg, #023f87 0%, #070038 100%);
 }
 
 .golden-border,
@@ -277,7 +284,7 @@ body,
   background-color: rgb(203, 0, 0);
 }
 .seat-blue {
-  background-color: #324ba6;
+  background-color: #0037ff;
 }
 .seat-green {
   background-color: #007800;
@@ -299,14 +306,17 @@ body,
 
 .cls-1,
 .cls-3 {
-  stroke: #324ba6;
+  stroke: #0037ff;
 }
 
 .cls-1,
-.cls-10,
 .cls-7,
 .cls-9 {
-  fill: #fff;
+  fill: transparent;
+}
+
+.cls-10 {
+  fill: url(#backgroundMap);
 }
 
 .cls-1,
@@ -321,9 +331,16 @@ body,
   stroke-width: 3.94px;
 }
 
-.cls-2,
-.cls-3,
-.cls-4,
+.cls-2 {
+  fill: rgb(203, 0, 0);
+}
+.cls-3 {
+  fill: #0037ff;
+}
+.cls-4 {
+  fill: #007800;
+}
+
 .cls-5 {
   fill: none;
 }
@@ -336,6 +353,7 @@ body,
 .cls-11 {
   font-family: Poppins-Regular, Poppins;
   font-size: 26.66px;
+  fill: white;
 }
 
 .cls-4,
@@ -344,7 +362,7 @@ body,
 }
 
 .cls-12 {
-  fill: gray;
+  fill: rgb(255, 255, 255);
   font-family: Montserrat-SemiBold, Montserrat;
   font-size: 59.11px;
   font-variation-settings: "wght" 600;
@@ -352,7 +370,7 @@ body,
 }
 
 .cls-5 {
-  stroke: gray;
+  stroke: rgb(255, 255, 255);
   stroke-linecap: round;
   stroke-width: 5.91px;
 }
@@ -372,6 +390,7 @@ body,
   font-size: 25.5px;
   font-variation-settings: "wght" 500;
   font-weight: 500;
+  fill: white;
 }
 
 //Dropdown user menu Desktop
@@ -440,4 +459,53 @@ body,
   text-align: start;
   padding-left: 2.4rem;
   box-shadow: 0px 0px 40px 40px #00000095;
+}
+
+//Table title
+.no-break-tab-title {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  li {
+    word-break: keep-all !important;
+    white-space: nowrap !important;
+    border-width: 1px 1px 0;
+    border-style: solid;
+    border-radius: 0.45rem 0.45rem 0 0;
+    margin-right: 0.5rem;
+  }
+}
+
+// <hr/> movies home
+.hr-movies-home {
+  margin: 2rem 0 3rem;
+  border-width: 1px;
+  border-style: solid;
+  color: #ffd64d;
+  opacity: 0.8;
+}
+
+//profile ticket
+.profile-ticket {
+  font-family: "Space Mono", monospace;
+  font-style: normal;
+  text-transform: uppercase;
+  .card-body {
+    padding: 1.5rem 2rem;
+  }
+  p {
+    margin-bottom: 0.5em;
+    font-size: 0.9em;
+    span {
+      font-weight: 700;
+    }
+  }
+  .ticket-movie-title {
+    font-weight: 700;
+    font-size: 1.1em;
+    margin-bottom: 0.7em;
+  }
 }

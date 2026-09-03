@@ -1,7 +1,7 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit"
-import type { ProfileType } from "../../../fetchs/fetchTypes"
+import type { ProfileInitialState, ProfileType, UserMovies } from "../../../fetchs/fetchTypes"
 
-const initialState: ProfileType = {
+const initialState: ProfileInitialState = {
   name: "",
   surname: "",
   email: "",
@@ -9,6 +9,7 @@ const initialState: ProfileType = {
   profilePicLink: "",
   username: "",
   accessToken: "",
+  userMovies: [],
 }
 
 export const userSlice = createSlice({
@@ -36,8 +37,11 @@ export const userSlice = createSlice({
     setProPicLink: (state, action: PayloadAction<string>) => {
       state.profilePicLink = action.payload
     },
+    setUserMovies: (state, action: PayloadAction<UserMovies[]>) => {
+      state.userMovies = action.payload
+    },
   },
 })
 
-export const { setUserState, resetUserState, setProPicLink } = userSlice.actions
+export const { setUserState, resetUserState, setProPicLink, setUserMovies } = userSlice.actions
 export default userSlice.reducer

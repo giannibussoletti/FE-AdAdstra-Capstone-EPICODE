@@ -7,9 +7,7 @@ import type { CinemaFetchType } from "../fetchs/fetchTypes"
 
 const CitySearch = () => {
   const dispatch = useAppDispatch()
-  const selectCinema = useAppSelector(
-    (state) => state.menuState.cinemaSearchMenu,
-  )
+  const selectCinema = useAppSelector((state) => state.menuState.cinemaSearchMenu)
   const cinemaId = useAppSelector((state) => state.menuState.cinemaId)
   const [cinema, setCinema] = useState<CinemaFetchType[]>([])
 
@@ -42,7 +40,7 @@ const CitySearch = () => {
 
   return (
     <>
-      <Row className="align-items-center" style={{ minWidth: "200px" }}>
+      <Row className="align-items-center" style={{ minWidth: "200px", maxWidth: "300px" }}>
         <Col>
           {/* Mobile version */}
           <Dropdown className="w-100  d-lg-none">
@@ -59,8 +57,7 @@ const CitySearch = () => {
                 )
               }}
               id="dropdown-basic"
-              className="w-100 d-flex justify-content-between align-items-center px-3 rounded-0 bg-transparent border-1 border-white "
-            >
+              className="w-100 d-flex justify-content-between align-items-center px-3 rounded-0 bg-transparent border-1 border-white ">
               {selectCinema}
             </Dropdown.Toggle>
           </Dropdown>
@@ -68,14 +65,12 @@ const CitySearch = () => {
           <Dropdown className="w-100 d-none d-lg-block">
             <Dropdown.Toggle
               id="dropdown-basic"
-              className="w-100 d-flex justify-content-between align-items-center px-3 rounded-0 bg-transparent border-1 border-white"
-            >
+              className="w-100 d-flex justify-content-between align-items-center px-3 rounded-0 bg-transparent border-1 border-white">
               {selectCinema}
             </Dropdown.Toggle>
             <Dropdown.Menu
               style={{ maxHeight: "270px" }}
-              className="w-100 bg-black overflow-scroll mt-0"
-            >
+              className="w-100 bg-black overflow-scroll mt-0">
               {cinema.map((cin) => {
                 return (
                   <Dropdown.Item
@@ -91,8 +86,7 @@ const CitySearch = () => {
                         }),
                       )
                       dispatch(setId(cin.id))
-                    }}
-                  >
+                    }}>
                     {cin.cinemaName}
                   </Dropdown.Item>
                 )

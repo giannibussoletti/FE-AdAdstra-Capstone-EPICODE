@@ -43,6 +43,14 @@ export const numbersToTime = (value: number) => {
   return `${hours}h ${minutes}`
 }
 
+export const isAddingZero = (minute: number) => {
+  if (minute < 10) {
+    return `0${minute}`
+  } else {
+    return minute
+  }
+}
+
 export const calculateMovieTime = (date: string, duration: number) => {
   const hours = new Date(date).getHours()
   const minute = new Date(date).getMinutes()
@@ -50,14 +58,6 @@ export const calculateMovieTime = (date: string, duration: number) => {
   const timeEnd = time + duration * 60000
   const endHours = new Date(timeEnd).getHours()
   const endMinute = new Date(timeEnd).getMinutes()
-
-  const isAddingZero = (minute: number) => {
-    if (minute < 10) {
-      return `0${minute}`
-    } else {
-      return minute
-    }
-  }
 
   return hours + ":" + isAddingZero(minute) + " - " + endHours + ":" + isAddingZero(endMinute)
 }

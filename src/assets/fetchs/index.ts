@@ -258,7 +258,6 @@ export const fetchUserMovies = async (): Promise<UserMovies[]> => {
       throw new Error(res.statusText || `Errore HTTP ${res.status}`)
     }
     const data: UserMovies[] = await res.json()
-
     return data
   } catch (err) {
     console.error(err)
