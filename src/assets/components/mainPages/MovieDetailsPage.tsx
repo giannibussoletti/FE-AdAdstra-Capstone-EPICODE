@@ -58,19 +58,19 @@ const MovieDetailsPage = () => {
                 <p>{details.plot}</p>
               </div>
             </Col>
-            <Col xs={12}>
-              <Button
-                onClick={() => navigate(-1)}
-                variant="buttons"
-                className="rounded-2 fw-semibold text-uppercase py-2 my-3">
-                <span className="mx-3">Torna indietro </span>
-              </Button>
-            </Col>
             {cinemaId && findMovie && (
               <Col xxl={4}>
                 <MovieTimesTabs movie={findMovie} />
               </Col>
             )}
+            <Col className="text-center text-xl-start">
+              <Button
+                onClick={() => navigate(-1)}
+                variant="buttons"
+                className="rounded-2 fw-semibold text-uppercase py-2 my-3 w-auto">
+                <span className="mx-3">Torna indietro</span>
+              </Button>
+            </Col>
           </>
         ) : (
           <Spinner animation="grow" variant="buttons" />

@@ -133,6 +133,7 @@ const ProfileDetails = () => {
                     onClick={() => navigate("/dettagli/" + movie.movieId)}
                     className="d-flex align-items-center justify-content-between">
                     <span>{movie.title}</span>
+                    <span>{new Date(movie.screeningDate).toLocaleDateString()}</span>
                   </ListGroup.Item>
                 )
               })}
