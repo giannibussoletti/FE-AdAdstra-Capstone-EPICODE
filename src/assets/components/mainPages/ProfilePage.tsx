@@ -74,14 +74,20 @@ const ProfilePage = () => {
           <hr className="d-block d-lg-none" />
         </Col>
         <Col>
-          <Row xs={1} className="py-1 pt-lg-0 pb-lg-1">
-            <Col>
+          <Row className="py-1 pt-lg-0 pb-lg-1">
+            <Col xs={12} className="p-0">
               {" "}
-              <h4 className="f fw-normal text-uppercase mt-3 mt-lg-0 mb-2">
+              <h4 className="f fw-normal text-uppercase mt-3 mt-lg-0 mb-3">
                 i tuoi film più recenti
               </h4>
             </Col>
-            {userMovies.slice(0, 2).map((movie) => TicketUserProfile(movie))}
+            {userMovies.slice(0, 2).map((movie) => {
+              return (
+                <Col key={movie.movieId}>
+                  <TicketUserProfile details={movie} />
+                </Col>
+              )
+            })}
           </Row>
         </Col>
       </Row>
