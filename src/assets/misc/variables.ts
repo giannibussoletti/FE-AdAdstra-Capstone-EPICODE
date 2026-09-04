@@ -3,6 +3,7 @@ export const RED = "red"
 export const BLUE = "blue"
 export const PASSWORD = "password"
 export const MAIL = "mail"
+export const CHOOSE_CINEMA = "Scegli il tuo cinema"
 
 export const redSeat = "rgb(203, 0, 0)"
 export const blueSeat = "#0037ff"
