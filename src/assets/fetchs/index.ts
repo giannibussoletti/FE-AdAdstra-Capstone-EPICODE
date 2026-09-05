@@ -12,7 +12,7 @@ import type {
 export const fetchCinemas = async (): Promise<CinemaFetchType[]> => {
   try {
     const res = await fetch(
-      "http://https://be-adadstra-capstone-epicode-production.up.railway.app:5555/public/cinemas",
+      "https://be-adadstra-capstone-epicode-production.up.railway.app:5555/public/cinemas",
     )
 
     if (!res.ok) {
@@ -31,7 +31,7 @@ export const fetchCinemas = async (): Promise<CinemaFetchType[]> => {
 export const fetchScreenTimes = async (cinemaId: string): Promise<MovieGroup[]> => {
   try {
     const res = await fetch(
-      "http://https://be-adadstra-capstone-epicode-production.up.railway.app:5555/public/screening-times",
+      "https://be-adadstra-capstone-epicode-production.up.railway.app:5555/public/screening-times",
       {
         method: "POST",
         headers: {
@@ -55,7 +55,7 @@ export const fetchScreenTimes = async (cinemaId: string): Promise<MovieGroup[]> 
 export const fetchSeats = async (cinemaId: string, screenId: string): Promise<SeatGroup[]> => {
   try {
     const res = await fetch(
-      "http://https://be-adadstra-capstone-epicode-production.up.railway.app:5555/public/seats",
+      "https://be-adadstra-capstone-epicode-production.up.railway.app:5555/public/seats",
       {
         method: "POST",
         headers: {
@@ -80,7 +80,7 @@ export const fetchSeats = async (cinemaId: string, screenId: string): Promise<Se
 export const fetchBookedSeats = async (screeningTimeId: string): Promise<SeatGroup[]> => {
   try {
     const res = await fetch(
-      "http://https://be-adadstra-capstone-epicode-production.up.railway.app:5555/public/tickets",
+      "https://be-adadstra-capstone-epicode-production.up.railway.app:5555/public/tickets",
       {
         method: "POST",
         headers: {
@@ -110,9 +110,8 @@ export const fetchBooking = async (
   coupon: string,
 ): Promise<BookingType> => {
   const publicBooking =
-    "http://https://be-adadstra-capstone-epicode-production.up.railway.app:5555/public/bookings"
-  const noPublic =
-    "http://https://be-adadstra-capstone-epicode-production.up.railway.app:5555/bookings"
+    "https://be-adadstra-capstone-epicode-production.up.railway.app:5555/public/bookings"
+  const noPublic = "https://be-adadstra-capstone-epicode-production.up.railway.app:5555/bookings"
   try {
     const isLogged = localStorage.getItem("accessToken")
     const res = await fetch(isLogged ? noPublic : publicBooking, {
@@ -151,7 +150,7 @@ export const fetchRegistration = async (
 ): Promise<BookingType> => {
   try {
     const res = await fetch(
-      "http://https://be-adadstra-capstone-epicode-production.up.railway.app:5555/auth/registration",
+      "https://be-adadstra-capstone-epicode-production.up.railway.app:5555/auth/registration",
       {
         method: "POST",
         headers: {
@@ -182,7 +181,7 @@ export const fetchRegistration = async (
 export const fetchLogin = async (email: string, password: string): Promise<ProfileType> => {
   try {
     const res = await fetch(
-      "http://https://be-adadstra-capstone-epicode-production.up.railway.app:5555/auth/login",
+      "https://be-adadstra-capstone-epicode-production.up.railway.app:5555/auth/login",
       {
         method: "POST",
         headers: {
@@ -210,7 +209,7 @@ export const fetchLogin = async (email: string, password: string): Promise<Profi
 export const fetchMovies = async (): Promise<MovieDetails[]> => {
   try {
     const res = await fetch(
-      "http://https://be-adadstra-capstone-epicode-production.up.railway.app:5555/public/movies",
+      "https://be-adadstra-capstone-epicode-production.up.railway.app:5555/public/movies",
     )
 
     if (!res.ok) {
@@ -228,7 +227,7 @@ export const fetchMovies = async (): Promise<MovieDetails[]> => {
 export const fetchMovieDetails = async (movieId: string): Promise<MovieDetails> => {
   try {
     const res = await fetch(
-      "http://https://be-adadstra-capstone-epicode-production.up.railway.app:5555/public/movies/" +
+      "https://be-adadstra-capstone-epicode-production.up.railway.app:5555/public/movies/" +
         movieId,
     )
 
@@ -247,7 +246,7 @@ export const fetchMovieDetails = async (movieId: string): Promise<MovieDetails> 
 export const verifyAccessToken = async (token: string): Promise<void> => {
   try {
     const res = await fetch(
-      "http://https://be-adadstra-capstone-epicode-production.up.railway.app:5555/auth/token",
+      "https://be-adadstra-capstone-epicode-production.up.railway.app:5555/auth/token",
       {
         method: "POST",
         headers: {
@@ -274,7 +273,7 @@ export const fetchUserMovies = async (): Promise<UserMovies[]> => {
   try {
     const isLogged = localStorage.getItem("accessToken")
     const res = await fetch(
-      "http://https://be-adadstra-capstone-epicode-production.up.railway.app:5555/tickets/user-movies",
+      "https://be-adadstra-capstone-epicode-production.up.railway.app:5555/tickets/user-movies",
       {
         headers: {
           Authorization: "Bearer " + isLogged,
@@ -301,7 +300,7 @@ export const fetchUpdatePsw = async (
   try {
     const isLogged = localStorage.getItem("accessToken")
     const res = await fetch(
-      "http://https://be-adadstra-capstone-epicode-production.up.railway.app:5555/user/profile/password",
+      "https://be-adadstra-capstone-epicode-production.up.railway.app:5555/user/profile/password",
       {
         method: "PATCH",
         headers: {
@@ -331,7 +330,7 @@ export const fetchUpdateMail = async (newEmail: string): Promise<UpdateResponse>
   try {
     const isLogged = localStorage.getItem("accessToken")
     const res = await fetch(
-      "http://https://be-adadstra-capstone-epicode-production.up.railway.app:5555/user/profile/new-email",
+      "https://be-adadstra-capstone-epicode-production.up.railway.app:5555/user/profile/new-email",
       {
         method: "PATCH",
         headers: {
@@ -364,7 +363,7 @@ export const fetchUpdateProPic = async (image: FileList): Promise<{ imageLink: s
     const isLogged = localStorage.getItem("accessToken")
 
     const res = await fetch(
-      "http://https://be-adadstra-capstone-epicode-production.up.railway.app:5555/user/profile/avatar",
+      "https://be-adadstra-capstone-epicode-production.up.railway.app:5555/user/profile/avatar",
       {
         method: "PATCH",
         headers: {
