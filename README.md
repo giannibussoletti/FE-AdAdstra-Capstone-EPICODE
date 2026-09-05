@@ -26,7 +26,7 @@ Prima di iniziare, assicurati di avere installato:
 | Node.js (include npm) | LTS ≥ 18                   | [nodejs.org](https://nodejs.org/)            |
 | Git                   | qualsiasi versione recente | [git-scm.com](https://git-scm.com/downloads) |
 
-> ⚠️ Il front-end comunica con il back-end di Adastra Cinema: per poter usare l'applicazione completa, il [server back-end](https://github.com/giannibussoletti/BE-AdAdstra-Capstone-EPICODE) deve essere avviato e raggiungibile (di default su `http://https://be-adadstra-capstone-epicode-production.up.railway.app:5555`).
+> ⚠️ Il front-end comunica con il back-end di Adastra Cinema: per poter usare l'applicazione completa, il [server back-end](https://github.com/giannibussoletti/BE-AdAdstra-Capstone-EPICODE) deve essere avviato e raggiungibile (di default su `localhost:5555`).
 
 ---
 
