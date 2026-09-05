@@ -51,7 +51,7 @@ Prima di iniziare, assicurati di avere installato:
    npm run dev
    ```
 
-4. Apri il browser all'indirizzo indicato nel terminale (di default Vite espone il progetto su `http://https://be-adadstra-capstone-epicode-production.up.railway.app:5173`).
+4. Apri il browser all'indirizzo indicato nel terminale (di default Vite espone il progetto su `localhost:5173`).
 
 ---
 
