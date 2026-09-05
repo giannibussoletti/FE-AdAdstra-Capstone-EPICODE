@@ -1,6 +1,9 @@
 import MainTitles from "../MainTitles"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCircleInfo, faRightFromBracket } from "@fortawesome/free-solid-svg-icons"
+import {
+  faCircleInfo,
+  faRightFromBracket,
+} from "@fortawesome/free-solid-svg-icons"
 import { Container, Row, Col, Image } from "react-bootstrap"
 import { useNavigate } from "react-router"
 import { useAppDispatch, useAppSelector } from "../../redux/hooks"
@@ -17,7 +20,9 @@ const ProfilePage = () => {
   const email = useAppSelector((state) => state.userState.email)
   const name = useAppSelector((state) => state.userState.name)
   const surname = useAppSelector((state) => state.userState.surname)
-  const profilePicLink = useAppSelector((state) => state.userState.profilePicLink)
+  const profilePicLink = useAppSelector(
+    (state) => state.userState.profilePicLink,
+  )
   const [userMovies, setMovies] = useState<UserMovies[]>([])
 
   useEffect(() => {
@@ -85,13 +90,15 @@ const ProfilePage = () => {
                 i tuoi film più recenti
               </h4>
             </Col>
-            {userMovies.slice(0, 2).map((movie) => {
-              return (
-                <Col key={movie.movieId}>
-                  <TicketUserProfile details={movie} />
-                </Col>
-              )
-            })}
+            {userMovies.length > 0
+              ? userMovies.slice(0, 2).map((movie) => {
+                  return (
+                    <Col key={movie.movieId}>
+                      <TicketUserProfile details={movie} />
+                    </Col>
+                  )
+                })
+              : "Nessun biglietto qui 😶‍🌫️"}
           </Row>
         </Col>
       </Row>
