@@ -1,6 +1,8 @@
 # 🎬 Adastra Cinema — Front-End
 
 Front-end della web application **Adastra Cinema**, un sito per la gestione dell'interazione utente con una catena di cinema: scelta del cinema, consultazione dei film in programmazione, selezione dei posti in sala e acquisto dei biglietti.
+**link:**[Sito Adastra Cinema](https://adastracinema.netlify.app/)
+
 
 > 🔗 Repository Back-End: [BE-AdAdstra-Capstone-EPICODE](https://github.com/giannibussoletti/BE-AdAdstra-Capstone-EPICODE)
 
