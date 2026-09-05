@@ -42,7 +42,7 @@ const Home = () => {
     <>
       <HomeSlider />
       <Container className="px-3 px-sm-0">
-        {cinema == CHOOSE_CINEMA ? (
+        {cinema == "" ? (
           <Row>
             <Col className="p-0 mt-4 mb-3 pb-4 mb-lg-4">
               <GeneralCinemaMovies />
@@ -70,12 +70,7 @@ const Home = () => {
             return (
               <Col
                 key={card.label + card.imgLink}
-                className={
-                  i % 2 === 0
-                    ? "ms-0 mt-3 cursor-pointer"
-                    : "me-0 mt-3 cursor-pointer"
-                }
-              >
+                className={i % 2 === 0 ? "ms-0 mt-3 cursor-pointer" : "me-0 mt-3 cursor-pointer"}>
                 <CardMoreInfo link={card.imgLink} label={card.label} />
               </Col>
             )
