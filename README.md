@@ -26,7 +26,7 @@ Prima di iniziare, assicurati di avere installato:
 | Node.js (include npm) | LTS ≥ 18                   | [nodejs.org](https://nodejs.org/)            |
 | Git                   | qualsiasi versione recente | [git-scm.com](https://git-scm.com/downloads) |
 
-> ⚠️ Il front-end comunica con il back-end di Adastra Cinema: per poter usare l'applicazione completa, il [server back-end](https://github.com/giannibussoletti/BE-AdAdstra-Capstone-EPICODE) deve essere avviato e raggiungibile (di default su `http://localhost:5555`).
+> ⚠️ Il front-end comunica con il back-end di Adastra Cinema: per poter usare l'applicazione completa, il [server back-end](https://github.com/giannibussoletti/BE-AdAdstra-Capstone-EPICODE) deve essere avviato e raggiungibile (di default su `http://https://be-adadstra-capstone-epicode-production.up.railway.app:5555`).
 
 ---
 
@@ -51,7 +51,7 @@ Prima di iniziare, assicurati di avere installato:
    npm run dev
    ```
 
-4. Apri il browser all'indirizzo indicato nel terminale (di default Vite espone il progetto su `http://localhost:5173`).
+4. Apri il browser all'indirizzo indicato nel terminale (di default Vite espone il progetto su `http://https://be-adadstra-capstone-epicode-production.up.railway.app:5173`).
 
 ---
 
@@ -79,6 +79,7 @@ Alcune funzionalità in programma per le prossime versioni:
 - Crop della foto profilo per una migliore gestione dell'aspect ratio dell'avatar
 - Creazione di una pagina di gestione per la creazione e la manutenzione di film, orari e cinema
 - Ampliamento del profilo utente con una nuova gestione dedicata ai punti raccolti tramite fidelity card
+
 ---
 
 ## 🔗 Link utili
