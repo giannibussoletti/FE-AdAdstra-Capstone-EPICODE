@@ -12,7 +12,6 @@ import { useAppDispatch } from "../../redux/hooks"
 import { resetUserState } from "../../redux/reducers/UserSlice"
 import { fetchMovies } from "../../fetchs"
 import { AllMoviesArray } from "../../redux/reducers/MovieSlice"
-import { CHOOSE_CINEMA } from "../../misc/variables"
 
 const Home = () => {
   const dispatch = useAppDispatch()
