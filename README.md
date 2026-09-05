@@ -1,4 +1,4 @@
-# 🎬 Adastra Cinema — Front-End [![Netlify Status](https://api.netlify.com/api/v1/badges/8facd8ef-4002-437d-9f42-89319a2c682f/deploy-status)](https://app.netlify.com/projects/adastracinema/deploys)
+# 🎬 Adastra Cinema - Front-End [![Netlify Status](https://api.netlify.com/api/v1/badges/8facd8ef-4002-437d-9f42-89319a2c682f/deploy-status)](https://app.netlify.com/projects/adastracinema/deploys)
 
 Front-end della web application **Adastra Cinema**, un sito per la gestione dell'interazione utente con una catena di cinema: scelta del cinema, consultazione dei film in programmazione, selezione dei posti in sala e acquisto dei biglietti.
 
