@@ -1,3 +1,6 @@
+[build]
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ':!src/assets/fetchs/index.ts' ':!netlify.toml'"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
