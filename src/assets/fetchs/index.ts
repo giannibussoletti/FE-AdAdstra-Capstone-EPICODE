@@ -101,6 +101,8 @@ export const fetchBooking = async (
   const publicBooking = import.meta.env.VITE_FETCH_URL + "/public/bookings"
   const noPublic = import.meta.env.VITE_FETCH_URL + "/bookings"
   try {
+    console.log(publicBooking)
+    console.log(noPublic)
     const isLogged = localStorage.getItem("accessToken")
     const res = await fetch(isLogged ? noPublic : publicBooking, {
       method: "POST",
