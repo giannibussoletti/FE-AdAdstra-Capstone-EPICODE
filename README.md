@@ -1,6 +1,11 @@
-# 🎬 Adastra Cinema — Front-End
+# 🎬 Adastra Cinema - Front-End [![Netlify Status](https://api.netlify.com/api/v1/badges/8facd8ef-4002-437d-9f42-89319a2c682f/deploy-status)](https://app.netlify.com/projects/adastracinema/deploys)
 
 Front-end della web application **Adastra Cinema**, un sito per la gestione dell'interazione utente con una catena di cinema: scelta del cinema, consultazione dei film in programmazione, selezione dei posti in sala e acquisto dei biglietti.
+
+**Link:** [Sito Adastra Cinema](https://adastracinema.netlify.app/)
+
+
+
 
 > 🔗 Repository Back-End: [BE-AdAdstra-Capstone-EPICODE](https://github.com/giannibussoletti/BE-AdAdstra-Capstone-EPICODE)
 
@@ -26,7 +31,7 @@ Prima di iniziare, assicurati di avere installato:
 | Node.js (include npm) | LTS ≥ 18                   | [nodejs.org](https://nodejs.org/)            |
 | Git                   | qualsiasi versione recente | [git-scm.com](https://git-scm.com/downloads) |
 
-> ⚠️ Il front-end comunica con il back-end di Adastra Cinema: per poter usare l'applicazione completa, il [server back-end](https://github.com/giannibussoletti/BE-AdAdstra-Capstone-EPICODE) deve essere avviato e raggiungibile (di default su `http://localhost:5555`).
+> ⚠️ Il front-end comunica con il back-end di Adastra Cinema: per poter usare l'applicazione completa, il [server back-end](https://github.com/giannibussoletti/BE-AdAdstra-Capstone-EPICODE) deve essere avviato e raggiungibile (di default su `localhost:5555`).
 
 ---
 
@@ -51,7 +56,7 @@ Prima di iniziare, assicurati di avere installato:
    npm run dev
    ```
 
-4. Apri il browser all'indirizzo indicato nel terminale (di default Vite espone il progetto su `http://localhost:5173`).
+4. Apri il browser all'indirizzo indicato nel terminale (di default Vite espone il progetto su `localhost:5173`).
 
 ---
 
@@ -79,6 +84,7 @@ Alcune funzionalità in programma per le prossime versioni:
 - Crop della foto profilo per una migliore gestione dell'aspect ratio dell'avatar
 - Creazione di una pagina di gestione per la creazione e la manutenzione di film, orari e cinema
 - Ampliamento del profilo utente con una nuova gestione dedicata ai punti raccolti tramite fidelity card
+
 ---
 
 ## 🔗 Link utili

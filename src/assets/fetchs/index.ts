@@ -11,7 +11,7 @@ import type {
 
 export const fetchCinemas = async (): Promise<CinemaFetchType[]> => {
   try {
-    const res = await fetch("http://localhost:5555/public/cinemas")
+    const res = await fetch(import.meta.env.VITE_FETCH_URL + "/public/cinemas")
 
     if (!res.ok) {
       console.log(res)
@@ -28,7 +28,7 @@ export const fetchCinemas = async (): Promise<CinemaFetchType[]> => {
 
 export const fetchScreenTimes = async (cinemaId: string): Promise<MovieGroup[]> => {
   try {
-    const res = await fetch("http://localhost:5555/public/screening-times", {
+    const res = await fetch(import.meta.env.VITE_FETCH_URL + "/public/screening-times", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -49,7 +49,7 @@ export const fetchScreenTimes = async (cinemaId: string): Promise<MovieGroup[]> 
 }
 export const fetchSeats = async (cinemaId: string, screenId: string): Promise<SeatGroup[]> => {
   try {
-    const res = await fetch("http://localhost:5555/public/seats", {
+    const res = await fetch(import.meta.env.VITE_FETCH_URL + "/public/seats", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -71,7 +71,7 @@ export const fetchSeats = async (cinemaId: string, screenId: string): Promise<Se
 
 export const fetchBookedSeats = async (screeningTimeId: string): Promise<SeatGroup[]> => {
   try {
-    const res = await fetch("http://localhost:5555/public/tickets", {
+    const res = await fetch(import.meta.env.VITE_FETCH_URL + "/public/tickets", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -98,8 +98,8 @@ export const fetchBooking = async (
   guestEmail: string,
   coupon: string,
 ): Promise<BookingType> => {
-  const publicBooking = "http://localhost:5555/public/bookings"
-  const noPublic = "http://localhost:5555/bookings"
+  const publicBooking = import.meta.env.VITE_FETCH_URL + "/public/bookings"
+  const noPublic = import.meta.env.VITE_FETCH_URL + "/bookings"
   try {
     const isLogged = localStorage.getItem("accessToken")
     const res = await fetch(isLogged ? noPublic : publicBooking, {
@@ -137,7 +137,7 @@ export const fetchRegistration = async (
   password: string,
 ): Promise<BookingType> => {
   try {
-    const res = await fetch("http://localhost:5555/auth/registration", {
+    const res = await fetch(import.meta.env.VITE_FETCH_URL + "/auth/registration", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -165,7 +165,7 @@ export const fetchRegistration = async (
 
 export const fetchLogin = async (email: string, password: string): Promise<ProfileType> => {
   try {
-    const res = await fetch("http://localhost:5555/auth/login", {
+    const res = await fetch(import.meta.env.VITE_FETCH_URL + "/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -190,7 +190,7 @@ export const fetchLogin = async (email: string, password: string): Promise<Profi
 
 export const fetchMovies = async (): Promise<MovieDetails[]> => {
   try {
-    const res = await fetch("http://localhost:5555/public/movies")
+    const res = await fetch(import.meta.env.VITE_FETCH_URL + "/public/movies")
 
     if (!res.ok) {
       console.log(res)
@@ -206,7 +206,7 @@ export const fetchMovies = async (): Promise<MovieDetails[]> => {
 
 export const fetchMovieDetails = async (movieId: string): Promise<MovieDetails> => {
   try {
-    const res = await fetch("http://localhost:5555/public/movies/" + movieId)
+    const res = await fetch(import.meta.env.VITE_FETCH_URL + "/public/movies/" + movieId)
 
     if (!res.ok) {
       console.log(res)
@@ -222,7 +222,7 @@ export const fetchMovieDetails = async (movieId: string): Promise<MovieDetails> 
 
 export const verifyAccessToken = async (token: string): Promise<void> => {
   try {
-    const res = await fetch("http://localhost:5555/auth/token", {
+    const res = await fetch(import.meta.env.VITE_FETCH_URL + "/auth/token", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -246,7 +246,7 @@ export const verifyAccessToken = async (token: string): Promise<void> => {
 export const fetchUserMovies = async (): Promise<UserMovies[]> => {
   try {
     const isLogged = localStorage.getItem("accessToken")
-    const res = await fetch("http://localhost:5555/tickets/user-movies", {
+    const res = await fetch(import.meta.env.VITE_FETCH_URL + "/tickets/user-movies", {
       headers: {
         Authorization: "Bearer " + isLogged,
       },
@@ -270,7 +270,7 @@ export const fetchUpdatePsw = async (
 ): Promise<UpdateResponse> => {
   try {
     const isLogged = localStorage.getItem("accessToken")
-    const res = await fetch("http://localhost:5555/user/profile/password", {
+    const res = await fetch(import.meta.env.VITE_FETCH_URL + "/user/profile/password", {
       method: "PATCH",
       headers: {
         Authorization: "Bearer " + isLogged,
@@ -297,7 +297,7 @@ export const fetchUpdatePsw = async (
 export const fetchUpdateMail = async (newEmail: string): Promise<UpdateResponse> => {
   try {
     const isLogged = localStorage.getItem("accessToken")
-    const res = await fetch("http://localhost:5555/user/profile/new-email", {
+    const res = await fetch(import.meta.env.VITE_FETCH_URL + "/user/profile/new-email", {
       method: "PATCH",
       headers: {
         Authorization: "Bearer " + isLogged,
@@ -327,7 +327,7 @@ export const fetchUpdateProPic = async (image: FileList): Promise<{ imageLink: s
 
     const isLogged = localStorage.getItem("accessToken")
 
-    const res = await fetch("http://localhost:5555/user/profile/avatar", {
+    const res = await fetch(import.meta.env.VITE_FETCH_URL + "/user/profile/avatar", {
       method: "PATCH",
       headers: {
         Authorization: "Bearer " + isLogged,

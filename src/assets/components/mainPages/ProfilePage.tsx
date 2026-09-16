@@ -1,9 +1,6 @@
 import MainTitles from "../MainTitles"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {
-  faCircleInfo,
-  faRightFromBracket,
-} from "@fortawesome/free-solid-svg-icons"
+import { faCircleInfo, faRightFromBracket } from "@fortawesome/free-solid-svg-icons"
 import { Container, Row, Col, Image } from "react-bootstrap"
 import { useNavigate } from "react-router"
 import { useAppDispatch, useAppSelector } from "../../redux/hooks"
@@ -20,9 +17,7 @@ const ProfilePage = () => {
   const email = useAppSelector((state) => state.userState.email)
   const name = useAppSelector((state) => state.userState.name)
   const surname = useAppSelector((state) => state.userState.surname)
-  const profilePicLink = useAppSelector(
-    (state) => state.userState.profilePicLink,
-  )
+  const profilePicLink = useAppSelector((state) => state.userState.profilePicLink)
   const [userMovies, setMovies] = useState<UserMovies[]>([])
 
   useEffect(() => {
@@ -37,17 +32,17 @@ const ProfilePage = () => {
 
   return (
     <Container className="mt-5 px-5">
-      <Row className="py-1">
+      <Row className="py-1 text-center text-sm-start">
         <Col>
           <MainTitles string="il tuo profilo" />
         </Col>
       </Row>
       <Row xs={1} lg={2}>
         <Col>
-          <Row className="align-items-center">
+          <Row className="align-items-center justify-content-center justify-content-sm-start">
             <Col xs={"auto"}>
               <Image
-                className="border border-5"
+                className="border border-5 mb-3 mb-md-0"
                 src={profilePicLink}
                 style={{
                   maxHeight: "100px",
@@ -58,7 +53,7 @@ const ProfilePage = () => {
                 roundedCircle
               />
             </Col>
-            <Col>
+            <Col xs={12} sm={6} className="text-center text-sm-start">
               {name + " " + surname} <br /> {email}
             </Col>
           </Row>
@@ -84,16 +79,19 @@ const ProfilePage = () => {
         </Col>
         <Col>
           <Row className="py-1 pt-lg-0 pb-lg-1">
-            <Col xs={12} className="p-0">
+            <Col xs={12} className="p-0 ">
               {" "}
-              <h4 className="f fw-normal text-uppercase mt-3 mt-lg-0 mb-3">
+              <h4 className="fw-normal text-uppercase mt-3 mt-lg-0 mb-3 text-md-start text-center">
                 i tuoi film più recenti
               </h4>
             </Col>
             {userMovies.length > 0
               ? userMovies.slice(0, 2).map((movie) => {
                   return (
-                    <Col key={movie.movieId}>
+                    <Col
+                      md={6}
+                      className="mb-4 mb-lg-0 d-flex justify-content-center justify-content-md-start pe-lg-4 pe-xl-0"
+                      key={movie.movieId}>
                       <TicketUserProfile details={movie} />
                     </Col>
                   )
