@@ -58,36 +58,38 @@ const ProfileDetails = () => {
             <Col>
               <Form.Group className="mb-3">
                 <Form.Label className="mb-0">Email:</Form.Label>
-                <div className="d-flex">
-                  <Form.Control
-                    onChange={(e) => setNewMail(e.target.value)}
-                    style={{ width: "auto" }}
-                    size="sm"
-                    type="email"
-                    defaultValue={email}
-                    className="text-light"
-                  />
+                <Row xs={1} sm={2} className="d-flex">
+                  <Col>
+                    <Form.Control
+                      onChange={(e) => setNewMail(e.target.value)}
+                      size="sm"
+                      type="email"
+                      defaultValue={email}
+                      className="text-light"
+                    />
+                  </Col>
 
-                  <Button
-                    onClick={() => {
-                      setShowConfirmation(true)
-                      setMailOrPsw(MAIL)
-                    }}
-                    size="sm"
-                    variant="buttons"
-                    className="rounded-pill fw-semibold text-uppercase py-2 ms-auto">
-                    <span className="mx-2">Aggiorna</span>
-                  </Button>
-                </div>
+                  <Col className="mt-4 mt-sm-0 text-center text-sm-end">
+                    <Button
+                      onClick={() => {
+                        setShowConfirmation(true)
+                        setMailOrPsw(MAIL)
+                      }}
+                      size="sm"
+                      variant="buttons"
+                      className="rounded-pill fw-semibold text-uppercase py-2">
+                      <span className="mx-2">Aggiorna</span>
+                    </Button>
+                  </Col>
+                </Row>
               </Form.Group>
 
               <Form.Group className="mb-3">
                 <Form.Label className="mb-0">Password:</Form.Label>
-                <Row xs={2}>
+                <Row xs={1} sm={2}>
                   <Col>
                     <Form.Control
                       onChange={(e) => setOldPsw(e.target.value)}
-                      style={{ width: "auto" }}
                       size="sm"
                       type="password"
                       className="text-light mb-3"
@@ -96,14 +98,13 @@ const ProfileDetails = () => {
                     <Form.Control
                       className="text-light"
                       onChange={(e) => setNewPsw(e.target.value)}
-                      style={{ width: "auto" }}
                       size="sm"
                       type="password"
                       placeholder="Nuova password"
                     />
                   </Col>
 
-                  <Col className="text-end">
+                  <Col className="mt-4 mt-sm-0 text-center text-sm-end">
                     <Button
                       onClick={() => {
                         setShowConfirmation(true)

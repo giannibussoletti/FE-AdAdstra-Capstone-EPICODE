@@ -150,7 +150,14 @@ const PaymentPage = () => {
             variant="success"
             onClick={() => {
               setShowConfirmation(false)
-              fetchBooking(screenTimeId, maxSeats, totalCost, guestEmail, coupon)
+
+              fetchBooking(
+                screenTimeId,
+                maxSeats,
+                totalCost,
+                emailUser ? emailUser : guestEmail,
+                coupon,
+              )
                 .then((data) => {
                   setModalData({
                     title: "Tutto ok!",

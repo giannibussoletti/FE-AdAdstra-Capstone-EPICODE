@@ -85,6 +85,7 @@ export const userMenuMapped = (
   if (label !== "Esci") {
     handleMenuLink(navigate, { string: link })
   } else {
+    localStorage.removeItem("accessToken")
     handleLogout(navigate, dispatch)
   }
 }

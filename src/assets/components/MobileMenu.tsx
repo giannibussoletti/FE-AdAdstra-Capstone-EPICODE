@@ -57,7 +57,7 @@ const MobileMenu = () => {
                     }),
                   )
                 }}>
-                <FontAwesomeIcon icon={menuItem.icon} className="me-3" />
+                <FontAwesomeIcon icon={menuItem.icon} size="2xs" className="me-3" />
                 {menuItem.label}
               </div>
             )

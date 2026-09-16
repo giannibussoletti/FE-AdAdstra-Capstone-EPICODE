@@ -15,21 +15,22 @@ const GeneralCinemaMovies = () => {
         {movies.slice(0, 12).map((movie) => {
           return (
             <Col key={movie.id} className="d-flex">
-              <Col className="text-center d-flex justify-content-between flex-column mb-5 p-4 rounded-4 shadow-lg bg-gradient">
+              <Col className="text-center d-flex justify-content-between flex-column mb-5 p-3 p-md-4 rounded-3 shadow-lg bg-gradient">
                 <div>
                   <Image
                     fluid
                     src={movie.posterLink}
                     alt={movie.title + " poster"}
-                    className=" rounded-3"
+                    className=" rounded-2"
                   />
                   <h6 className="text-uppercase mt-3">{movie.title}</h6>
                 </div>
                 <Button
                   onClick={() => navigate("/dettagli/" + movie.id)}
                   variant="buttons"
-                  className="rounded-pill fw-semibold text-uppercase py-2 mt-1">
-                  <span className="mx-3">scheda film</span>
+                  className="rounded-pill fw-semibold text-uppercase py-2 mt-1 ">
+                  <span className="mx-0 mx-md-3 d-none d-sm-inline">scheda film</span>
+                  <span className="mx-0 d-sm-none">info</span>
                 </Button>
               </Col>
             </Col>
