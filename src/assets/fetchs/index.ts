@@ -12,8 +12,6 @@ import type {
 export const fetchCinemas = async (): Promise<CinemaFetchType[]> => {
   try {
     const res = await fetch(import.meta.env.VITE_FETCH_URL + "/public/cinemas")
-    console.log(import.meta.env.VITE_FETCH_URL + "/public/cinemas")
-    console.log(import.meta.env.VITE_FETCH_URL)
 
     if (!res.ok) {
       console.log(res)
