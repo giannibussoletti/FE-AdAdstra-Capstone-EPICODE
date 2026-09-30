@@ -27,7 +27,7 @@ const NowPlayingMappedMovies = () => {
     <div className="mt-5">
       {movies.map((movie, i) => {
         return (
-          <Row key={movie.movieDetails.id} className="mt-0 mb-xxl-0">
+          <Row key={movie.movieDetails.id} className="mt-0 mx-0 mb-xxl-0">
             <Col xs={4} xxl={3}>
               <Image fluid src={movie.movieDetails.posterLink} />
             </Col>
